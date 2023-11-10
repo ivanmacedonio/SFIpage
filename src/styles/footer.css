@@ -54,18 +54,18 @@
     color: white;
 }
 
-h2 {
+.footer h2 {
     font-size: 2rem;
     font-weight: 700;
     transition: .3s ease;
 }
 
-h3 {
+.footer h3 {
     font-size: 1.5rem;
     transition: .3s ease;
 }
 
-h3:hover {
+.footer h3:hover {
     color: orange;
     cursor: pointer;
 }
