@@ -2,9 +2,9 @@
     background-image: url('../assets/wave.png');
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: bottom;
     height: 107rem;
     display: flex;
+
 }
 
 .logo img {
@@ -200,6 +200,29 @@
     }
     h2{
         font-size: 3rem;
+    }
+}
+
+@media (min-width: 1280px) and (max-width: 1600px){
+    .parent{
+        width: max-content;
+    }
+    .logo{
+        margin-left: 4rem;
+    }
+    .div1, .div2{
+        margin-right:5rem ;
+    }
+}
+
+@media (min-width: 1000px) and (max-width: 1200px){
+    .logo{
+        display: none;
+    }
+    .parent{
+        margin: 0;
+        margin-top: 20rem;
+        margin-left: 6rem;
     }
 }
 

@@ -30,7 +30,7 @@ export const Page1 = () => {
           <img src={familia} alt="" />
         </div>
         <div className="imgfamilia2">
-          <img src={mujeresinicio} alt="" />
+          <img src={mujeresinicio} alt="" id="imgfamilia2" />
         </div>
         <div className="textfamilia2">
           <p>Hazte miembro de</p>

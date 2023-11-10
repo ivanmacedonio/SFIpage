@@ -8,25 +8,38 @@
     position: relative;
     top: 10rem;
     z-index: 1;
+    border-radius: 1rem;
+
 }
 
 .divpage1 {
     position: relative;
     z-index: 1;
+    height: 77rem;
+
+}
+
+.imgfamilia2 {
+    border: .5rem;
+    border-radius: 1rem;
+    background-color: rgb(238, 238, 238);
+    box-shadow: 4px -2px 21px -2px rgba(0, 0, 0, 0.77);
 }
 
 .imgfamilia {
     position: absolute;
     z-index: 1;
-    left: 70rem;
+    left: 64rem;
     top: 13rem;
 }
+
 
 
 .textfamilia2 {
     position: relative;
     left: 90rem;
     bottom: 26rem;
+    width: max-content;
 }
 
 .textfamilia2 p {
@@ -46,7 +59,7 @@
     color: white;
 }
 
-.textfamilia2:hover{
+.textfamilia2:hover {
     cursor: pointer;
 }
 
@@ -76,3 +89,163 @@
     width: 50rem;
     font-size: 2rem;
 }
+
+@media (min-width: 1000px) and (max-width: 1200px){
+    .textp1{
+        width: min-content;
+    }
+    .imgfamilia2 img{
+        display: none;
+    }
+    .imgfamilia img{
+        display: none;
+    }
+    .welcome{
+        height: 80rem;
+    }
+    .textfamilia2{
+        display: none;
+    }
+
+}
+
+
+@media (min-width: 1200px) and (max-width: 1700px) {
+    .textp1 h2 {
+        font-size: 2.6rem;
+        width: max-content;
+    }
+
+    .textp1 h1 {
+        font-size: 5rem;
+        width: max-content;
+    }
+
+    .textp1 {
+        margin-left: 3rem;
+        width: max-content;
+    }
+
+    #big {
+        font-size: 1.3rem;
+        width: 35rem;
+    }
+
+    .imgfamilia {
+        left: 40rem;
+    }
+
+    .imgfamilia img {
+        width: 40rem;
+    }
+
+    .imgfamilia2 img {
+        width: 70rem;
+    }
+
+    .textfamilia2 {
+        left: 66rem;
+        bottom: 20rem;
+    }
+
+    .welcome {
+        height: 45rem;
+    }
+
+}
+
+@media(min-width: 1360px) and (max-width: 1500px) {
+    .textfamilia2 {
+        left: 60rem;
+        bottom: 20rem;
+    }
+}
+
+@media(min-width: 300px) and (max-width: 900px) {
+    .textp1 {
+        margin-left: 3rem;
+        padding-top: 2rem;
+        width: max-content;
+    }
+
+    .textp1 h2 {
+        text-align: center;
+        font-size: 2rem;
+        width: 20rem;
+    }
+
+    .textp1 h1 {
+        text-align: center;
+        width: 20rem;
+        padding-top: 0;
+        font-size: 5rem;
+    }
+
+    #big {
+        width: 20rem;
+        margin-left: .5rem;
+        margin-top: 2rem;
+        font-size: 1.4rem;
+    }
+
+    .imgfamilia {
+        display: none;
+    }
+
+    .imgfamilia2 img {
+        display: none;
+    }
+
+    .welcome {
+        height: 100rem;
+        position: static;
+    }
+
+    .textfamilia2 {
+        position: static;
+        margin-left: 2.6rem;
+    }
+
+    .divpage1 {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1400px) {
+    .textfamilia2 {
+        left: 55rem;
+        bottom: 20rem;
+    }
+}
+
+@media (min-width: 700px) and (max-width: 1000px) {
+    .textp1 {
+        margin-left: 5rem;
+    }
+
+    .textp1 h2 {
+        font-size: 3rem;
+        text-align: justify;
+
+        width: max-content;
+    }
+
+    .textp1 h1 {
+        width: 30rem;
+        font-size: 5rem;
+        text-align: justify;
+
+    }
+
+    #big {
+        margin-top: 5rem;
+        width: 40rem;
+        font-size: 2rem;
+    }
+
+    .textfamilia2{
+        margin-left: 15rem;
+    }
+}
+
