@@ -1,0 +1,339 @@
+.containerp3 {
+    margin-top: 5rem;
+    background-image: url('../assets/afiliacion_familia.png');
+    height: 50rem;
+    background-repeat: no-repeat;
+    border-radius: 1rem;
+    margin-left: 9.5rem;
+}
+
+.titlep3 {
+    position: relative;
+    top: 40rem;
+    left: 20rem;
+    border-radius: 1rem;
+    background-color: rgb(0, 114, 166);
+    width: 60rem;
+    color: white;
+    padding: 1rem 2rem 1rem 2rem;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.pasosp3 {
+    margin-top: 14rem;
+    display: flex;
+    margin-left: 10rem;
+}
+
+.pasosp3 img {
+    padding-top: 20rem;
+}
+
+.numbers {
+    margin-left: 10rem;
+    position: relative;
+    top: 5rem;
+    left: 8rem;
+}
+
+.numbers h1 {
+    font-size: 10rem;
+    line-height: .8;
+    font-family: 'Monserrat', sans-serif;
+    font-weight: 700;
+    background: linear-gradient(to right, rgb(26, 191, 219), rgb(2, 80, 116));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.textpasos {
+    margin-top: 10rem;
+    margin-left: 10rem;
+}
+
+.card h1 {
+    font-family: 'Monserrat', sans-serif;
+    font-weight: 900;
+    font-size: 1.5rem;
+    width: max-content;
+    color: rgb(0, 80, 117);
+}
+
+.card p {
+    font-family: 'Monserrat', sans-serif;
+    font-weight: 500;
+    font-size: 1.2rem;
+    color: rgb(0, 114, 166);
+}
+
+.card {
+    width: 30rem;
+    background-color: rgb(233, 233, 233, 0.6);
+    border-bottom-right-radius: 3rem;
+    border-top-right-radius: 3rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+}
+
+.planesp3 {
+    font-family: 'Monserrat', sans-serif;
+    font-weight: 700;
+    font-size: 7rem;
+    background: linear-gradient(to right, rgb(26, 191, 219), rgb(2, 80, 116));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-left: 5rem;
+    position: relative;
+    bottom: 10rem;
+}
+
+.planesp3 h1 {
+    border-top: 1rem solid rgb(1, 102, 149);
+    width: min-content;
+    margin-bottom: 0;
+}
+
+.planesp3 p {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.razonescontainer {
+    display: flex;
+    width: 100%;
+    background: linear-gradient(to bottom, white, rgb(250, 249, 248));
+}
+
+.razones ul,
+.razones2 ul {
+    background-color: rgb(236, 236, 236);
+    border-radius: 1rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    margin-left: 10rem;
+    list-style: disc;
+    font-size: 2rem;
+    font-weight: 200;
+    font-family: 'Monserrat', sans-serif;
+    color: rgb(12, 109, 154);
+    width: 40rem;
+}
+
+.razones li,
+.razones2 li {
+    margin-bottom: 2rem;
+}
+
+
+@media only screen and (max-width: 767px) {
+    .containerp3 {
+        background: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .titlep3 {
+        position: static;
+        width: 20rem;
+    }
+
+    .imagenp3 img {
+        display: none;
+    }
+
+    .numbers {
+        display: none;
+    }
+
+    .textpasos {
+        position: static;
+        margin: 0;
+    }
+
+    .card {
+        width: 10rem;
+    }
+
+    .pasosp3 {
+        margin: 0;
+    }
+
+    .card h1 {
+        width: min-content;
+    }
+
+    .planesp3 h1 {
+        font-size: 2rem;
+        width: 10rem;
+        border: none;
+        margin-top: 20rem;
+    }
+
+    .razones ul,
+    .razones2 ul {
+        margin: 0;
+        font-size: 1rem;
+        width: 20rem;
+        padding-right: 0;
+        margin-bottom: 2rem;
+    }
+
+    .razones li,
+    .razones2 li {
+        width: 15rem;
+        font-size: 1.5rem;
+    }
+
+    .razonescontainer {
+        display: flex;
+        flex-direction: column;
+        background: none;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .containerp3 {
+        background-position: center; 
+        margin: 0;
+        padding: 0;
+    }
+
+    .titlep3 {
+        position: relative;
+        left: 0;
+        top: 40rem;
+        width: 92%;
+
+    }
+
+    .imagenp3 img {
+        display: none;
+    }
+
+    .numbers {
+        display: none;
+    }
+
+    .textpasos {
+        position: static;
+        margin: 0;
+    }
+
+    .card {
+        width: 30rem;
+    }
+
+    .card p{
+        font-size: 2rem;
+    }
+    .card h1{
+        font-size: 3rem;
+    }
+
+    .pasosp3 {
+        margin: 0;
+        margin-top: 20rem;
+    }
+
+    .card h1 {
+        width: min-content;
+    }
+
+    .planesp3 h1 {
+        font-size: 6rem;
+        width: 10rem;
+        border: none;
+        margin-top: 20rem;
+    }
+
+    .razones ul,
+    .razones2 ul {
+        margin: 0;
+        margin-left: 3.5rem;
+        font-size: 1rem;
+        width: 35rem;
+        padding-right: 0;
+        margin-bottom: 2rem;
+    }
+
+    .razones li,
+    .razones2 li {
+        width: 30rem;
+        font-size: 2rem;
+    }
+
+    .razonescontainer {
+        display: flex;
+        flex-direction: column;
+        background: none;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .containerp3{
+        margin: 0;
+    }
+    .titlep3{
+        left: 10rem;
+        width: 70%;
+    }
+    .pasosp3{
+        display: flex;
+        flex-direction: column;
+        height: 80rem;
+    }
+    .imagenp3{
+        display: none;
+    }
+    .numbers{
+        margin: 0;
+        left: 0;
+    }
+
+    .textpasos{
+        position: relative;
+        bottom: 65rem;
+    }
+
+    .razonescontainer{
+        display: flex;
+        flex-direction: column;
+    }
+  }
+
+  @media only screen and (min-width: 1200px) and  (max-width: 1700px) {
+    .titlep3{
+        left: 12rem;
+    }
+    .pasosp3{
+        margin-left: 0;
+    }
+    .numbers{
+        margin-left: 0;
+        left: 0rem;
+    }
+    .textpasos{
+        margin-left: 2rem;
+    }
+
+    .razonescontainer{
+        display: flex;
+        flex-direction: column;
+    }
+    .containerp3{
+        margin-left: 0rem;
+    }
+
+    .razones ul, .razones2 ul{
+        margin-left: 20rem;
+    }
+  }

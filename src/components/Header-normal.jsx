@@ -1,7 +1,8 @@
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import React from "react";
-import baricon from '../assets/header-icon.svg';
+import { Link } from "react-router-dom";
+import baricon from "../assets/header-icon.svg";
 import logo from "../assets/logoSPI.png";
 import "../styles/headerNormal.css";
 export const HeaderNormal = () => {
@@ -19,18 +20,26 @@ export const HeaderNormal = () => {
         <img src={logo} alt="" />
       </div>
       <div className="links">
-        <h2>Inicio</h2>
-        <h2>Nosotros</h2>
-        <h2>Afiliacion</h2>
-        <h2
-          id="basic-button"
-          aria-controls={open ? "basic-menu" : undefined}
-          aria-haspopup="true"
-          aria-expanded={open ? "true" : undefined}
-          onClick={handleClick}
-        >
-          Blog
-        </h2>
+        <Link to={"/"}>
+          <h2>Inicio</h2>
+        </Link>
+        <Link to={"/nosotros"}>
+          <h2>Nosotros</h2>
+        </Link>
+        <Link to={"/afiliacion"}>
+          <h2>Afiliacion</h2>
+        </Link>
+        <Link to={'/blog'}>
+          <h2
+            id="basic-button"
+            aria-controls={open ? "basic-menu" : undefined}
+            aria-haspopup="true"
+            aria-expanded={open ? "true" : undefined}
+            onClick={handleClick}
+          >
+            Blog
+          </h2>
+        </Link>
         <Menu
           id="basic-menu"
           anchorEl={anchorEl}
@@ -45,7 +54,7 @@ export const HeaderNormal = () => {
         </Menu>
         <h2>Contacto</h2>
         <h2 id="session">Iniciar sesion</h2>
-        <img  id='iconbar' src={baricon} alt="" />
+        <img id="iconbar" src={baricon} alt="" />
       </div>
     </div>
   );

@@ -135,6 +135,12 @@
         background-repeat: no-repeat;
         background-position: top right;
     }
+    .confianza{
+        background-color: rgb(101, 101, 252);
+    }
+    .confianza h1{
+        color: white;
+    }
 
     .textp2 h1 {
         width: 5rem;

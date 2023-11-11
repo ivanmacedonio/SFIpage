@@ -26,8 +26,11 @@
     border: .5rem;
     border-radius: 1rem;
     background-color: rgb(238, 238, 238);
-    box-shadow: 10px 130px 33px 0 rgba(255, 255, 255, 0.75)
+    box-shadow: 0px 400px 65px 0px  rgba(254, 254, 254, 0.75);
+    margin-bottom: 20rem;
 }
+
+
 
 .imgfamilia {
     position: absolute;
@@ -39,7 +42,7 @@
 .textfamilia2 {
     position: relative;
     left: 90rem;
-    bottom: 26rem;
+    bottom: 50rem;
     width: max-content;
 
 }
@@ -256,7 +259,7 @@
 @media (min-width: 1200px) and (max-width: 1400px) {
     .textfamilia2 {
         left: 55rem;
-        bottom: 20rem;
+        bottom: 40rem;
     }
 }
 
@@ -298,6 +301,9 @@
     .parent {
         margin-left: 8rem;
     }
+    .textfamilia2{
+        bottom: 40rem;
+    }
 }
 
 @media (min-width: 750px) and (max-width: 900px){
@@ -313,3 +319,4 @@
         top: 10rem;
     }
 }
+
