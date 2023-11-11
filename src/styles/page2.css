@@ -1,0 +1,329 @@
+.textp2 {
+    border-radius: .5rem;
+    background-image: url('../assets/Nosotros.png');
+    height: 59rem;
+    margin-top: 5rem;
+}
+
+.textp2 h1 {
+    padding-top: 10rem;
+    padding-left: 6rem;
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    font-size: 5rem;
+    width: 37rem;
+    color: rgb(130, 94, 246);
+}
+
+.textp2 p {
+    padding-left: 6rem;
+    font-size: 2.2rem;
+    font-family: 'Montserrat', sans-serif;
+    width: 50rem;
+    color: rgb(2, 80, 116);
+}
+
+
+.mision h1,
+.vision h1 {
+    font-size: 5rem;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    color: rgb(130, 94, 246);
+}
+
+.mision p,
+.vision p,
+.vision2 p {
+    font-size: 1.4rem;
+    width: 24rem;
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(2, 80, 116);
+}
+
+.textContainerNosotros {
+    display: flex;
+}
+
+.vision2 {
+    padding-top: 11.2rem;
+}
+
+.mision {
+    margin-left: 13rem;
+    margin-right: 5rem;
+}
+
+.vision {
+    margin-right: 5rem;
+}
+
+.vision p,
+.vision2 p {
+    width: 30rem;
+}
+
+.valores {
+    margin-top: 6rem;
+    background-image: url('../assets/valores.png');
+    background-repeat: no-repeat;
+    box-shadow: 0px 56px 5px 0px white
+}
+
+.valorestitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.valorestitle h1 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    font-size: 5rem;
+    border-radius: 3rem;
+    background: rgb(130, 94, 246);
+    color: white;
+    padding: 1rem 4rem 1rem 4rem;
+
+}
+
+.lista {
+    display: flex;
+    justify-content: end;
+    margin-right: 15rem;
+}
+
+.lista li {
+    font-size: 2rem;
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(2, 80, 116);
+    font-weight: 400;
+}
+
+.listvalores {
+    margin-right: 5rem;
+}
+
+.confianza h1 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    font-size: 4rem;
+    color: rgb(228, 149, 2);
+}
+
+.confianza p {
+    font-size: 1.6rem;
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(255, 255, 255);
+}
+
+.confianza {
+    background-color: rgba(30, 163, 186, 0.8);
+    width: 75%;
+    margin-left: 15rem;
+    border-radius: 1.5rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-top: 7rem;
+}
+
+@media (max-width: 767px) {
+    .textp2 {
+        height: 100rem;
+        background-repeat: no-repeat;
+        background-position: top right;
+    }
+
+    .textp2 h1 {
+        width: 5rem;
+        padding-left: 2rem;
+    }
+
+    .textp2 p {
+        width: 20rem;
+        font-size: 2rem;
+        padding-left: 2rem;
+    }
+
+    .textContainerNosotros {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .textContainerNosotros h1 {
+        font-size: 3rem;
+    }
+
+    .textContainerNosotros p {
+        width: 20rem;
+        font-size: 2rem;
+    }
+
+    .mision {
+        margin: 0;
+        margin-left: 3rem;
+    }
+
+    .vision, .vision2 {
+        margin: 0;
+        margin-left: 3rem;
+    }
+    .vision2{
+        padding-top: 2rem;
+    }
+
+    .valorestitle h1{
+        font-size: 4rem;
+        height: min-content;
+        margin: 0;
+    }
+    .valorestitle{
+        width: max-content;
+        margin-left: 1rem;
+    }
+    .lista{
+        margin: 0;
+        margin-top: 3rem;
+        margin-left: 1.5rem;
+        margin-bottom: 13rem;
+        width: max-content;
+    }
+
+    .lista ul{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        margin-right: 2rem;
+    }
+
+    .lista li{
+        list-style: none;
+        font-size: 1.5rem;
+        color: rgb(101, 101, 252);
+    }
+    .listvalores{
+        margin: 0;
+        margin-left: 1.5rem;
+    }
+    .listvalores2{
+        width: min-content;
+    }
+    .confianza{
+        margin: 0;
+        margin-top: 23rem;
+        padding: 3rem;
+        width: 80%;
+    }
+
+    .valores{
+        background-position: top right;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .textp2 p{
+        width: 40rem;
+        background-color: rgba(181, 181, 181, 0.6);
+        border-radius: 1rem;
+        padding: 1rem;
+        margin-left: 2rem;
+    }
+    .textp2{
+        background-position: top right;
+    }
+
+    .textContainerNosotros{
+        display: flex;
+        flex-direction: column;
+        width: max-content;
+    }
+    .mision, .vision, .vision2{
+        margin: 0;
+        width: max-content;
+        margin-left: 5rem;
+    }
+    .mision p, .vision p, .vision2 p{
+        width: 40rem;
+    }
+
+    .vision2{
+        padding: 0;
+    }
+    .lista{
+        margin: 0;
+        background-color: rgba(181, 181, 181, 0.7);
+        border-radius: 1rem;
+    }
+    .confianza{
+        margin: 0;
+        margin-top: 15rem;
+        width: 80%
+    }
+  }
+
+  @media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .textp2{
+        background-position: top right;
+    }
+    .textContainerNosotros{
+        display: flex;
+        flex-direction: column;
+    }
+    .mision, .vision, .vision2{
+        margin: 0;
+        width: max-content;
+        margin-left: 5rem;
+    }
+
+    .mision p, .vision p, .vision2 p{
+        width: 40rem;
+    }
+
+    .vision2{
+        padding: 0;
+    }
+
+    .lista{
+        margin: 0;
+        background-color: rgba(181, 181, 181, 0.7);
+        border-radius: 1rem;
+    }
+
+    .confianza{
+        margin: 0;
+        margin-top: 15rem;
+        width: 84%
+    }
+  }
+  
+  @media only screen and (min-width: 1200px) and (max-width: 1600px) {
+    .textContainerNosotros{
+        display: flex;
+        flex-direction: column;
+    }
+    .mision, .vision, .vision2{
+        margin: 0;
+        width: max-content;
+        margin-left: 5rem;
+    }
+    .mision p, .vision p, .vision2 p{
+        width: 50rem;
+        padding-left: 20rem;
+    }
+    .vision2{
+        padding: 0;
+    }
+    .lista{
+        margin: 0;
+        background-color: rgba(181, 181, 181, 0.7);
+        border-radius: 1rem;
+    }
+    .confianza{
+        margin: 0;
+        margin-top: 15rem;
+        width: 88%
+    }
+  }
+  

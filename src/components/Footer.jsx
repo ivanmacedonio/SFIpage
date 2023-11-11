@@ -30,7 +30,6 @@ export const Footer = () => {
         </div>
         <div class="div3">
           <h2>CONTACT US</h2> <h3>+506 XXX XXX</h3>
-          <h3>smartfutureincome@outlook.com</h3>{" "}
         </div>
       </div>
     </div>
