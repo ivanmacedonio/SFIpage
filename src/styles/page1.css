@@ -23,7 +23,6 @@
     border: .5rem;
     border-radius: 1rem;
     background-color: rgb(238, 238, 238);
-    box-shadow: 4px -2px 21px -2px rgba(0, 0, 0, 0.77);
 }
 
 .imgfamilia {
@@ -246,6 +245,15 @@
 
     .textfamilia2{
         margin-left: 15rem;
+    }
+}
+
+@media (min-width: 1500px) and (max-width: 1700px){
+    .logo{
+        margin-left: 10rem;
+    }
+    .parent{
+        margin-left: 8rem;
     }
 }
 

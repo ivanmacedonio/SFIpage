@@ -76,12 +76,7 @@
     }
 }
 
-@media (max-width: 1550px){
-    .footer{
-        background-image: none;
-        background-color: rgb(1, 102, 120);
-    }
-}
+
 
 
 
@@ -90,13 +85,13 @@
 @media (min-width: 1187px) and (max-width: 1549px) {
     .parent {
         margin-left: 0;
-        margin-top: 52rem;
+        margin-top: 82rem;
     }
 
     .logo {
         margin-left: 10rem;
         margin-right: 5rem;
-        margin-top: 20rem;
+        margin-top: 80rem;
     }
 
     .logo img {
@@ -121,6 +116,7 @@
         margin-left: 0;
         margin-top: 20rem;
     }
+
 
     .logo {
         margin-left: 4rem;
@@ -159,6 +155,10 @@
         justify-content: center;
         align-items: center;
         text-align: center;
+        background-image: none;
+        background-color: rgb(1, 102, 120);
+        border: 1rem;
+        border-radius: .5rem;
     }
 
     .parent {
@@ -201,6 +201,7 @@
     h2{
         font-size: 3rem;
     }
+
 }
 
 @media (min-width: 1280px) and (max-width: 1600px){
@@ -208,7 +209,7 @@
         width: max-content;
     }
     .logo{
-        margin-left: 4rem;
+        margin-left: 5rem;
     }
     .div1, .div2{
         margin-right:5rem ;
@@ -223,6 +224,17 @@
         margin: 0;
         margin-top: 20rem;
         margin-left: 6rem;
+    }
+    .footer{
+        background-image: none;
+        background-color: rgb(1, 102, 120);
+    }
+}
+
+@media (min-width: 1500px) and (max-width: 1700px){
+    .logo{
+        margin-left: 6rem;
+        margin-right: 8rem;
     }
 }
 

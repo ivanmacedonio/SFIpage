@@ -20,7 +20,7 @@ export const HeaderNormal = () => {
       </div>
       <div className="links">
         <h2>Inicio</h2>
-        <h2>Nostros</h2>
+        <h2>Nosotros</h2>
         <h2>Afiliacion</h2>
         <h2
           id="basic-button"
