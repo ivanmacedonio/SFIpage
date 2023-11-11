@@ -9,7 +9,10 @@
     top: 10rem;
     z-index: 1;
     border-radius: 1rem;
+}
 
+.imagenmid {
+    display: none;
 }
 
 .divpage1 {
@@ -23,6 +26,7 @@
     border: .5rem;
     border-radius: 1rem;
     background-color: rgb(238, 238, 238);
+    box-shadow: -1px -3px 46px 1px rgba(0, 0, 0, 0.75);
 }
 
 .imgfamilia {
@@ -32,13 +36,12 @@
     top: 13rem;
 }
 
-
-
 .textfamilia2 {
     position: relative;
     left: 90rem;
     bottom: 26rem;
     width: max-content;
+
 }
 
 .textfamilia2 p {
@@ -89,20 +92,24 @@
     font-size: 2rem;
 }
 
-@media (min-width: 1000px) and (max-width: 1200px){
-    .textp1{
+@media (min-width: 1000px) and (max-width: 1200px) {
+    .textp1 {
         width: min-content;
     }
-    .imgfamilia2 img{
+
+    .imgfamilia2 img {
         display: none;
     }
-    .imgfamilia img{
+
+    .imgfamilia img {
         display: none;
     }
-    .welcome{
+
+    .welcome {
         height: 80rem;
     }
-    .textfamilia2{
+
+    .textfamilia2 {
         display: none;
     }
 
@@ -177,38 +184,71 @@
         text-align: center;
         width: 20rem;
         padding-top: 0;
-        font-size: 5rem;
+        font-size: 4rem;
     }
 
     #big {
         width: 20rem;
         margin-left: .5rem;
         margin-top: 2rem;
-        font-size: 1.4rem;
+        font-size: 1.5rem;
+        margin-bottom: 6rem;
     }
 
     .imgfamilia {
         display: none;
     }
 
+    .imagenmid img {
+        width: 25rem;
+    }
+
+    .imagenmid {
+        display: block;
+        margin-left: 0rem;
+    }
+
     .imgfamilia2 img {
+        width: 14rem;
+        height: 10rem;
+        position: absolute;
+        bottom: 5rem;
+    }
+
+    .imgfamilia2 {
         display: none;
+        border: none;
+        border-radius: 0%;
+        box-shadow: none;
     }
 
     .welcome {
-        height: 100rem;
+        height: 120rem;
         position: static;
+        background-position: initial;
     }
 
     .textfamilia2 {
         position: static;
-        margin-left: 2.6rem;
+        margin-left: 4rem;
+        width: max-content;
+
+    }
+
+    .textfamilia2 p {
+        font-size: 2rem;
+        color: white;
+    }
+
+    .textfamilia2 h1 {
+        font-size: 1.5rem;
     }
 
     .divpage1 {
         display: flex;
         flex-direction: column;
     }
+
 }
 
 @media (min-width: 1200px) and (max-width: 1400px) {
@@ -243,17 +283,31 @@
         font-size: 2rem;
     }
 
-    .textfamilia2{
+    .textfamilia2 {
         margin-left: 15rem;
     }
 }
 
-@media (min-width: 1500px) and (max-width: 1700px){
-    .logo{
+@media (min-width: 1500px) and (max-width: 1700px) {
+    .logo {
         margin-left: 10rem;
     }
-    .parent{
+
+    .parent {
         margin-left: 8rem;
     }
 }
 
+@media (min-width: 750px) and (max-width: 900px){
+    .imagenmid img{
+        margin-left: 11rem;
+        width: 30rem;
+    }
+    .textfamilia2{
+        margin-left: 17rem;
+    }
+    .footer{
+        position: relative;
+        top: 10rem;
+    }
+}

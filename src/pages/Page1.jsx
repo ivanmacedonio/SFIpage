@@ -15,7 +15,7 @@ export const Page1 = () => {
           <div className="textp1">
             <h2>Bienvenido a</h2>
             <h1>Smart Future Income.</h1>
-            <h2>¡Por un futuro mas seguro!</h2>
+            <h2 id="h2delete">¡Por un futuro mas seguro!</h2>
             <p id="big">
               Estamos aquí para ayudarte a asegurar tu futuro. Nuestra membresía
               te brinda la oportunidad de construir futuro sólido y seguro a lo
@@ -31,6 +31,9 @@ export const Page1 = () => {
         </div>
         <div className="imgfamilia2">
           <img src={mujeresinicio} alt="" id="imgfamilia2" />
+        </div>
+        <div className="imagenmid">
+          <img src={familia} alt="" />
         </div>
         <div className="textfamilia2">
           <p>Hazte miembro de</p>
