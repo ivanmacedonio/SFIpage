@@ -41,6 +41,9 @@ export const Page1 = () => {
           <p>para tu futuro</p>
           <h1>Conoce más...</h1>
         </div>
+        <div className="transforma">
+          <h1>Transforma tu futuro</h1>
+        </div>
       </div>
       <div className="footer">
         <Footer></Footer>

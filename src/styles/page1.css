@@ -30,6 +30,24 @@
     margin-bottom: 20rem;
 }
 
+.transforma{
+    position: relative;
+    bottom: 40rem;
+    font-size: 2rem;
+    left: 30rem;
+    background-color: blueviolet;
+    width: 50rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: white;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-radius: 1rem;
+    text-align: center;
+}
+
 
 
 .imgfamilia {
@@ -189,7 +207,7 @@
         text-align: center;
         width: 20rem;
         padding-top: 0;
-        font-size: 4rem;
+        font-size: 3rem;
     }
 
     #big {
@@ -319,4 +337,17 @@
         top: 10rem;
     }
 }
+
+@media only screen and (max-width: 991px) {
+    .transforma{
+        display: none;
+    }
+  }
+
+  @media only screen and (min-width: 992px) and (max-width: 1700px) {
+    .transforma{
+        left: 15rem;
+    }
+  }
+  
 
