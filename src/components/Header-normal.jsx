@@ -29,17 +29,16 @@ export const HeaderNormal = () => {
         <Link to={"/afiliacion"}>
           <h2>Afiliacion</h2>
         </Link>
-        <Link to={'/blog'}>
-          <h2
-            id="basic-button"
-            aria-controls={open ? "basic-menu" : undefined}
-            aria-haspopup="true"
-            aria-expanded={open ? "true" : undefined}
-            onClick={handleClick}
-          >
-            Blog
-          </h2>
-        </Link>
+        <h2
+          id="basic-button"
+          aria-controls={open ? "basic-menu" : undefined}
+          aria-haspopup="true"
+          aria-expanded={open ? "true" : undefined}
+          onClick={handleClick}
+        >
+          Blog
+        </h2>
+
         <Menu
           id="basic-menu"
           anchorEl={anchorEl}

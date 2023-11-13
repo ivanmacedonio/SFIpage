@@ -1,3 +1,7 @@
+img{
+    max-width: 100%;
+}
+
 .textp2 {
     border-radius: .5rem;
     background-image: url('../assets/Nosotros.png');
@@ -137,9 +141,11 @@
     }
     .confianza{
         background-color: rgb(101, 101, 252);
+        max-width: 18rem;
     }
     .confianza h1{
         color: white;
+        margin: 0;
     }
 
     .textp2 h1 {
@@ -211,10 +217,10 @@
     }
     .listvalores{
         margin: 0;
-        margin-left: 1.5rem;
+        margin-left: 1rem;
     }
     .listvalores2{
-        width: min-content;
+        width: 5rem;
     }
     .confianza{
         margin: 0;

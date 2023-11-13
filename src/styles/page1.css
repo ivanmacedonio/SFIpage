@@ -1,3 +1,7 @@
+img{
+    max-width: 100%;
+}
+
 .welcome {
     background-image: url('../assets/fondoazul.png');
     background-size: cover;
@@ -347,6 +351,21 @@
   @media only screen and (min-width: 992px) and (max-width: 1700px) {
     .transforma{
         left: 15rem;
+    }
+  }
+
+  @media(max-width: 768px){
+    .textp1 h2{
+        display: none;
+    }
+    .textfamilia2 {
+        background-color: blueviolet;
+        border-radius: 1rem;
+        padding: 1rem;
+        margin-left: 2rem;
+    }
+    .textfamilia2 h1{
+        background-color: rgb(168, 102, 206);
     }
   }
   
