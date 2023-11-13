@@ -1,0 +1,135 @@
+.contenthub{
+    background-image: url('../assets/fondomorado.png');
+    background-repeat: round;
+    height: 60rem;
+    margin-top: 5rem;
+    border-radius: 1rem;
+    display: flex;
+    color: white;
+    font-family: 'Monserrat', sans-serif;
+}
+
+.texthub h1{
+    font-size: 6rem;
+    margin: 0;
+    font-weight: 400;
+}
+
+#negrita{
+    font-weight: 700;
+}
+
+.texthub h2{
+    max-width: 60rem;
+    font-size: 2.2rem;
+    font-weight: 200;
+    font-family: 'Lato', sans-serif;
+}
+
+.texthub{
+    margin-left: 10rem;
+    margin-top: 10rem;
+}
+
+.imagehub{
+    margin-top: 10rem;
+    margin-left: 3rem;
+}
+
+@media only screen and (max-width: 767px) {
+    .contenthub{
+        margin: 0;
+        margin-left: 2rem;
+        max-width: 20rem;
+        flex-direction: column;
+    }
+    .texthub{
+        margin: 0;
+        padding-top: 4rem;
+        padding-left: 1rem;
+    }
+    .texthub h1{
+        font-size: 3rem;
+    }
+    .texthub h2{
+        font-size: 1.5rem;
+    }
+    .imagehub{
+        position: relative;
+        bottom: 10rem;
+        right: 2.5rem;
+        width: 20rem;
+    }
+  }
+
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    .contenthub{
+        margin: 0;
+        margin-left: 0rem;
+        max-width: 60rem;
+        flex-direction: column;
+    }
+    .texthub{
+        margin: 0;
+        padding-top: 4rem;
+        padding-left: 6rem;
+    }
+    .texthub h1{
+        font-size: 4rem;
+    }
+    .texthub h2{
+        font-size: 1.5rem;
+        width: 40rem;
+    }
+    .imagehub{
+        position: relative;
+        bottom: 10rem;
+        right: 4rem;
+    }
+    .imagehub img{
+        width: 50rem;
+    }
+  }
+
+
+  @media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .contenthub{
+        margin: 0;
+        margin-left: 0rem;
+        max-width: 70rem;
+        flex-direction: column;
+    }
+    .texthub{
+        margin: 0;
+        padding-top: 4rem;
+        padding-left: 6rem;
+    }
+    .texthub h1{
+        font-size: 4rem;
+    }
+    .texthub h2{
+        font-size: 2rem;
+        width: 50rem;
+    }
+    .imagehub{
+        position: relative;
+        bottom: 13rem;
+        right: 4rem;
+    }
+    .imagehub img{
+        width: 50rem;
+    }
+  }
+
+  @media only screen and (min-width: 1200px) and (max-width: 1700px) {
+    .imagehub img{
+        width: 70rem;
+    }
+    .texthub{
+        margin-top: 5rem;
+    }
+    .texthub h1{
+        font-size: 4rem;
+        width: 40rem;
+    }
+  }

@@ -4,6 +4,7 @@ import { Page2 } from "../src/pages/Page2";
 import { Page3 } from "../src/pages/Page3";
 import { Register } from "../src/pages/Register";
 import "./App.css";
+import { Blog } from "./pages/Blog";
 import { Membresia } from "./pages/Membresia";
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/afiliacion" element={<Page3></Page3>} />
           <Route path="/register" element={<Register></Register>} />
           <Route path="/membresia" element={<Membresia></Membresia>} />
+          <Route path="/blog" element={<Blog></Blog>} />
         </Routes>
       </BrowserRouter>
     </>

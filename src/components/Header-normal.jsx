@@ -29,6 +29,7 @@ export const HeaderNormal = () => {
         <Link to={"/afiliacion"}>
           <h2>Afiliacion</h2>
         </Link>
+
         <h2
           id="basic-button"
           aria-controls={open ? "basic-menu" : undefined}
@@ -48,6 +49,10 @@ export const HeaderNormal = () => {
             "aria-labelledby": "basic-button",
           }}
         >
+          <Link to={'/blog'}>
+            <MenuItem onClick={handleClose}>Hub</MenuItem>
+          </Link>
+
           <MenuItem onClick={handleClose}>Preguntas Frecuentes</MenuItem>
           <MenuItem onClick={handleClose}>Foro</MenuItem>
         </Menu>
