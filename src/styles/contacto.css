@@ -1,0 +1,245 @@
+.contactocontainer {
+    display: flex;
+    margin-top: 5rem;
+    background-image: url('../assets/fondoblanco.png');
+    background-repeat: round;
+    border-radius: 1rem;
+}
+
+.imagencontacto {
+    margin-top: 10rem;
+    margin-left: 10rem;
+    width: 40rem;
+}
+
+.formulariocontacto {
+    font-family: 'Lato', sans-serif;
+    margin-left: 10rem;
+    margin-top: 10rem;
+}
+
+.formulariocontacto h1 {
+    font-weight: 900;
+    color: rgb(2, 80, 116);
+    font-size: 5rem;
+}
+
+.formulariocontacto form {
+    display: flex;
+    flex-direction: column;
+}
+
+.formulariocontacto input {
+    border-color: rgb(197, 197, 197);
+    font-size: 1rem;
+    color: rgb(2, 80, 116);
+    border-radius: .9rem;
+    width: 24rem;
+    padding-left: 2rem;
+    height: 3rem;
+    margin-bottom: 1rem;
+    font-family: 'Monserrat', sans-serif;
+}
+
+#mensaje {
+    text-align: left;
+    padding-bottom: 7rem;
+}
+
+#check {
+    height: 1rem;
+    margin: 0;
+    padding: 0;
+    width: 2rem;
+}
+
+.formulariocontacto label {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+
+.formulariocontacto button {
+    font-family: 'Monserrat', sans-serif;
+    font-weight: 700;
+    font-size: 3rem;
+    color: white;
+    text-align: center;
+    background: linear-gradient(to right, rgb(26, 191, 219), rgb(2, 80, 116));
+    border-radius: .6rem;
+    border-style: none;
+    margin-bottom: 15rem;
+}
+
+@media (max-width: 768px) {
+    .contactocontainer {
+        margin: 0;
+        flex-direction: column;
+    }
+
+    .formulariocontacto {
+        margin: 0;
+    }
+
+    .formulariocontacto h1 {
+        margin: 0;
+        margin-left: 1rem;
+        margin-top: 2rem;
+    }
+
+    .formulariocontacto form {
+        margin-top: 4rem;
+    }
+
+    .formulariocontacto input {
+        margin-left: 1rem;
+        width: 20rem;
+    }
+
+    .contactocontainer img {
+        width: 20rem;
+    }
+
+    .imagencontacto {
+        margin-left: 2rem;
+        margin-top: 4rem;
+        max-width: max-content;
+    }
+
+    #check {
+        height: 1.5rem;
+
+    }
+
+    .formulariocontacto label {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+    }
+
+    .formulariocontacto button {
+        margin-top: 2rem;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .contactocontainer {
+        margin: 0;
+        flex-direction: column;
+        background-repeat: repeat;
+    }
+
+    .formulariocontacto {
+        margin: 0;
+    }
+
+    .formulariocontacto h1 {
+        margin: 0;
+        margin-left: 13rem;
+        margin-top: 2rem;
+    }
+
+    .formulariocontacto form {
+        margin-top: 4rem;
+        margin-left: 7rem;
+    }
+
+    .formulariocontacto input {
+        margin-left: 1rem;
+        width: 30rem;
+    }
+
+    .contactocontainer img {
+        width: 30rem;
+    }
+
+    .imagencontacto {
+        margin-left: 8rem;
+        margin-top: 4rem;
+        max-width: max-content;
+    }
+
+    #check {
+        height: 1.5rem;
+
+    }
+
+    .formulariocontacto label {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+    }
+
+    .formulariocontacto button {
+        margin-top: 2rem;
+        width: 35rem;
+    }
+}
+
+
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .contactocontainer {
+        margin: 0;
+        flex-direction: column;
+        background-repeat: repeat;
+    }
+
+    .formulariocontacto {
+        margin: 0;
+    }
+
+    .formulariocontacto h1 {
+        margin: 0;
+        margin-left: 16rem;
+        margin-top: 2rem;
+    }
+
+    .formulariocontacto form {
+        margin-top: 4rem;
+        margin-left: 15rem;
+        margin-bottom: 20rem;
+    }
+
+    .formulariocontacto input {
+        margin-left: 1rem;
+        width: 30rem;
+    }
+
+    .contactocontainer img {
+        width: 20rem;
+    }
+
+    .imagencontacto {
+        margin-left: 17rem;
+        margin-top: 4rem;
+        max-width: max-content;
+    }
+
+    #check {
+        height: 1.5rem;
+
+    }
+
+    .formulariocontacto label {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+    }
+
+    .formulariocontacto button {
+        margin-top: 2rem;
+        width: 35rem;
+    }
+}
+
+
+
+@media only screen and (min-width: 1200px) and (max-width: 1700px) {
+    .imagencontacto{
+        margin-left: 3rem;
+    }
+    .formulariocontacto{
+        margin-right: 8rem;
+    }
+    .imagencontacto img{
+        width: 30rem;
+    }
+}

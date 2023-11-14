@@ -49,14 +49,19 @@ export const HeaderNormal = () => {
             "aria-labelledby": "basic-button",
           }}
         >
-          <Link to={'/blog'}>
+          <Link to={"/blog"}>
             <MenuItem onClick={handleClose}>Hub</MenuItem>
           </Link>
+          <Link to={'/faq'}>
+            <MenuItem onClick={handleClose}>Preguntas Frecuentes</MenuItem>
+          </Link>
 
-          <MenuItem onClick={handleClose}>Preguntas Frecuentes</MenuItem>
           <MenuItem onClick={handleClose}>Foro</MenuItem>
         </Menu>
+        <Link to={"/contacto"}>
         <h2>Contacto</h2>
+        </Link>
+        
         <h2 id="session">Iniciar sesion</h2>
         <img id="iconbar" src={baricon} alt="" />
       </div>

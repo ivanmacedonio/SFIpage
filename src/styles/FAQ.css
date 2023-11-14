@@ -1,0 +1,156 @@
+.faqcontent {
+    margin-top: 5rem;
+    border-radius: 1rem;
+    display: flex;
+    background-image: url('../assets/fondomorado.png');
+    background-repeat: round;
+}
+
+.textfaq {
+    margin-top: 5rem;
+    margin-left: 7rem;
+    max-width: 40%;
+    margin-right: 10rem;
+    font-size: 2.2rem;
+    font-weight: 200;
+    font-family: 'Lato', sans-serif;
+    color: white;
+}
+
+.textfaq h1 {
+    font-weight: 900;
+}
+
+.textfaq p {
+    font-size: 1.5rem;
+}
+
+@media only screen and (max-width: 767px) {
+    .faqcontent {
+        background-repeat: repeat-y;
+        flex-direction: column;
+    }
+
+    #quest {
+        margin-left: 2rem;
+    }
+
+    .textfaq h1 {
+        font-size: 4rem;
+        margin-left: 2rem;
+    }
+
+    .textfaq {
+        margin-left: 0rem;
+    }
+
+    .textfaq p {
+        width: 20rem;
+    }
+
+    .acordeon p {
+        font-size: 1.5rem;
+    }
+
+    .acordeon {
+        margin-left: 0;
+        margin-top: 6rem;
+        width: 24.3rem;
+    }
+
+
+}
+
+
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .faqcontent {
+        background-repeat: round;
+        flex-direction: column;
+    }
+
+    .textfaq h1 {
+        font-size: 5rem;
+    }
+
+    .textfaq {
+        margin-left: 6rem;
+    }
+
+    .textfaq p {
+        width: 30rem;
+    }
+
+    #quest {
+        width: 40rem;
+    }
+
+    .acordeon p {
+        font-size: 1.5rem;
+    }
+
+    .acordeon {
+        margin-top: 5rem;
+        margin-bottom: 1rem;
+        margin-left: 0;
+        width: 37rem;
+    }
+
+    .imgfaq {
+        margin: 0;
+    }
+
+}
+
+
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .faqcontent {
+        background-repeat: round;
+        flex-direction: column;
+    }
+
+    .textfaq h1 {
+        font-size: 5rem;
+    }
+
+    .textfaq {
+        margin-left: 6rem;
+    }
+
+    .textfaq p {
+        width: 30rem;
+    }
+
+    #quest {
+        width: 40rem;
+    }
+
+    .acordeon p {
+        font-size: 1.5rem;
+    }
+
+    .acordeon {
+        margin-top: 5rem;
+        margin-bottom: 1rem;
+        margin-left: 0;
+        width: 51rem;
+    }
+
+    .imgfaq {
+        margin: 0;
+        margin-bottom: 20rem;
+        margin-left: 8rem;
+    }
+
+}
+
+
+
+@media only screen and (min-width: 1200px) {
+    .acordeon{
+        margin-bottom: 10rem;
+        width: 40rem;
+    }
+}
