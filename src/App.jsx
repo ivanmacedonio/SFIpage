@@ -10,6 +10,7 @@ import { FAQ } from "./pages/FAQ";
 import { Inicio } from "./pages/Inicio";
 import { Membresia } from "./pages/Membresia";
 import { Perfil } from "./pages/Perfil";
+import { Verificacion } from "./pages/Verificacion";
 function App() {
   return (
     <>
@@ -25,6 +26,7 @@ function App() {
           <Route path="/contacto" element={<Contacto></Contacto>} />
           <Route path="/inicio" element={<Inicio></Inicio>} />
           <Route path="/perfil" element={<Perfil></Perfil>} />
+          <Route path="/verificacion" element={<Verificacion></Verificacion>} />
         </Routes>
       </BrowserRouter>
     </>

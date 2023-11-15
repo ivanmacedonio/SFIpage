@@ -102,3 +102,205 @@
     margin-left: 1.5rem;
     padding-top: 4rem;
 }
+
+@media only screen and (max-width: 767px) {
+    .profilecontainer {
+        flex-direction: column;
+    }
+
+    .formprofile1 {
+        margin: 0;
+        margin-left: 1rem;
+        width: max-content;
+    }
+
+    .formprofile2 {
+        max-width: max-content;
+        margin-left: 1rem;
+    }
+
+    .formprofile1 h1 {
+        font-size: 5rem;
+        width: 20rem;
+    }
+
+    .formprofile2 h1 {
+        font-size: 3.5rem;
+        width: max-content;
+    }
+
+    .form1 h2,
+    .form1 p,
+    .form2 h2,
+    .form2 p {
+        width: 19rem;
+        margin-left: 1rem;
+        padding-left: 1rem;
+    }
+
+    .form1 h2 {
+        font-size: 1.8rem;
+    }
+
+    .form1,
+    .form2 {
+        width: 22rem;
+    }
+
+    #datos {
+        margin-left: 1rem;
+        width: min-content;
+    }
+
+    .form2 {
+        padding-bottom: 5rem;
+    }
+
+    .form1 {
+        margin-bottom: 2rem;
+    }
+}
+
+
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .profilecontainer {
+        flex-direction: column;
+    }
+
+    .formprofile1 {
+        margin: 0;
+        margin-left: 1rem;
+        width: max-content;
+    }
+
+    .formprofile2 {
+        max-width: max-content;
+        margin-left: 1rem;
+    }
+
+    .formprofile1 h1 {
+        font-size: 5rem;
+        width: 20rem;
+        margin-left: 4rem;
+    }
+
+    .formprofile2 h1 {
+        font-size: 5rem;
+        width: max-content;
+        margin-left: 4rem;
+    }
+
+    .form1 h2,
+    .form1 p,
+    .form2 h2,
+    .form2 p {
+        width: 30rem;
+        margin-left: 2rem;
+        padding-left: 1rem;
+    }
+
+    .form1 h2 {
+        font-size: 1.8rem;
+    }
+
+    .form1,
+    .form2 {
+        width: 40rem;
+        margin-left: 3rem;
+    }
+
+    #datos {
+        margin-left: 1rem;
+    }
+
+    .form2 {
+        padding-bottom: 5rem;
+    }
+
+    .form1 {
+        margin-bottom: 2rem;
+    }
+}
+
+
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .profilecontainer {
+        flex-direction: column;
+    }
+
+    .formprofile1 {
+        margin: 0;
+        margin-left: 1rem;
+        width: max-content;
+    }
+
+    .formprofile2 {
+        max-width: max-content;
+        margin-left: 1rem;
+    }
+
+    .formprofile1 h1 {
+        font-size: 5rem;
+        width: 20rem;
+        margin-left: 4rem;
+    }
+
+    .formprofile2 h1 {
+        font-size: 5rem;
+        width: max-content;
+        margin-left: 4rem;
+    }
+
+    .form1 h2,
+    .form1 p,
+    .form2 h2,
+    .form2 p {
+        width: 40rem;
+        margin-left: 4rem;
+        padding-left: 1rem;
+    }
+
+    .form1 h2 {
+        font-size: 1.8rem;
+    }
+
+    .form1,
+    .form2 {
+        width: 60rem;
+        margin-left: 4.5rem;
+        padding-top: 2rem;
+    }
+
+    #datos {
+        margin-left: 1rem;
+        padding-top: 1rem;
+    }
+
+    .form2 {
+        padding-bottom: 5rem;
+    }
+
+    .form1 {
+        margin-bottom: 2rem;
+    }
+}
+
+
+
+@media only screen and (min-width: 1200px) and (max-width: 1700px) {
+    .formprofile1{
+        margin-left: 3rem;
+    }
+    .form1{
+        width: 30rem;
+    }
+    .formprofile2 h1{
+        font-size: 5rem;
+        margin-top: 3.8rem;
+    }
+    .formprofile1 h1{
+        font-size: 5rem;
+    }
+}
