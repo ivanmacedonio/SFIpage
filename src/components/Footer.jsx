@@ -8,7 +8,7 @@ export const Footer = () => {
   return (
     <div className="footer">
       <div className="logo">
-        <img src={logo} alt="" />
+        <img src={logo} alt="" id="logoimg" />
         <div className="icons">
           <img src={wp} alt="" />
           <img src={fb} alt="" />

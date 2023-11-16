@@ -44,6 +44,8 @@ img {
     height: 3rem;
     margin-bottom: 1rem;
     font-family: 'Monserrat', sans-serif;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 .formp4 h1 {
@@ -57,7 +59,7 @@ img {
 #afiliarsebutton {
     font-family: 'Monserrat', sans-serif;
     font-weight: 700;
-    font-size: 3rem;
+    font-size: 4rem;
     color: white;
     text-align: center;
     background: linear-gradient(to right, rgb(26, 191, 219), rgb(2, 80, 116));

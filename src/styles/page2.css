@@ -3,10 +3,14 @@ img{
 }
 
 .textp2 {
-    border-radius: .5rem;
+    border-radius: 1rem;
+    width: 115rem;
     background-image: url('../assets/Nosotros.png');
+    background-repeat: no-repeat;
     height: 59rem;
     margin-top: 5rem;
+    margin-left: 8.5rem;
+
 }
 
 .textp2 h1 {
@@ -112,7 +116,7 @@ img{
     font-family: 'Lato', sans-serif;
     font-weight: 900;
     font-size: 4rem;
-    color: rgb(228, 149, 2);
+    color: rgb(255, 255, 255);
 }
 
 .confianza p {
@@ -122,9 +126,11 @@ img{
 }
 
 .confianza {
-    background-color: rgba(30, 163, 186, 0.8);
+    background-color: rgb(0, 103, 150);
     width: 75%;
-    margin-left: 15rem;
+    position: relative;
+    top: 7rem;
+    margin-left: 12rem;
     border-radius: 1.5rem;
     padding-left: 5rem;
     padding-right: 5rem;
@@ -135,6 +141,8 @@ img{
 
 @media (max-width: 767px) {
     .textp2 {
+        width: 24.2rem;
+        margin-left: 0;
         height: 100rem;
         background-repeat: no-repeat;
         background-position: top right;
@@ -224,9 +232,9 @@ img{
     }
     .confianza{
         margin: 0;
-        margin-top: 23rem;
+        margin-top: 10rem;
         padding: 3rem;
-        width: 80%;
+        width: 90%;
     }
 
     .valores{
@@ -244,6 +252,8 @@ img{
     }
     .textp2{
         background-position: top right;
+        margin-left: 0;
+        width: 56rem;
     }
 
     .textContainerNosotros{
@@ -278,6 +288,8 @@ img{
   @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .textp2{
         background-position: top right;
+        margin-left: 0;
+        width: 70rem;
     }
     .textContainerNosotros{
         display: flex;
@@ -311,6 +323,11 @@ img{
   }
   
   @media only screen and (min-width: 1200px) and (max-width: 1600px) {
+    
+    .textp2{
+        margin-left: 0;
+        width: 85rem;
+    }
     .textContainerNosotros{
         display: flex;
         flex-direction: column;

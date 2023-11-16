@@ -34,11 +34,17 @@
     font-size: 1rem;
     color: rgb(2, 80, 116);
     border-radius: .9rem;
-    width: 24rem;
+    width: 40rem;
     padding-left: 2rem;
     height: 3rem;
     margin-bottom: 1rem;
     font-family: 'Monserrat', sans-serif;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
+
+.formulariocontacto input::placeholder{
+    font-size: 1.3rem;
 }
 
 #mensaje {
@@ -69,6 +75,9 @@
     border-radius: .6rem;
     border-style: none;
     margin-bottom: 15rem;
+}
+.formulariocontacto button:hover{
+    cursor: pointer;
 }
 
 @media (max-width: 768px) {
