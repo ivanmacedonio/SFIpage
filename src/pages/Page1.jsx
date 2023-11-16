@@ -3,6 +3,7 @@ import mujeresinicio from "../assets/mujeres_inicio.png";
 import familia from "../assets/pareja_inicio.png";
 import { Footer } from "../components/Footer";
 import { HeaderNormal } from "../components/Header-normal";
+import { Scrollpage1 } from "../components/Scrollpage1";
 import "../styles/page1.css";
 export const Page1 = () => {
   return (
@@ -24,6 +25,9 @@ export const Page1 = () => {
               alentador. Únete a nosotros y descubre cómo convirtiéndote en
               afiliado hoy puedes asegurarte un mañana estable.
             </p>
+            <div className="scroll">
+              <Scrollpage1></Scrollpage1>
+            </div>
           </div>
         </div>
         <div className="imgfamilia">

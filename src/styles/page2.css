@@ -1,5 +1,14 @@
-img{
+img {
     max-width: 100%;
+}
+
+.scrollvalores {
+    display: none;
+}
+
+.carrouselp2,
+.carrouselvalores {
+    display: none;
 }
 
 .textp2 {
@@ -140,21 +149,54 @@ img{
 }
 
 @media (max-width: 767px) {
+
+
+    .scrollvalores {
+        display: block;
+        margin-left: 5rem;
+        margin-bottom: 10rem;
+    }
+
+    .carrouselp2 {
+        display: block;
+    }
+
+    .page2 {
+        max-width: 100%;
+    }
+
+    .valorestitle h1 {
+        font-size: 3rem;
+    }
+
+    .valorestitle {
+        width: 10rem;
+        margin-left: 7.5rem;
+    }
+
+    .valores {
+        width: fit-content;
+        background-position: right;
+        height: 40rem;
+    }
+
+    .lista {
+        display: none;
+    }
+
     .textp2 {
-        width: 24.2rem;
+        max-width: 100%;
         margin-left: 0;
         height: 100rem;
         background-repeat: no-repeat;
         background-position: top right;
     }
-    .confianza{
-        background-color: rgb(101, 101, 252);
-        max-width: 18rem;
+
+    .confianza {
+
+        display: none;
     }
-    .confianza h1{
-        color: white;
-        margin: 0;
-    }
+
 
     .textp2 h1 {
         width: 5rem;
@@ -162,9 +204,90 @@ img{
     }
 
     .textp2 p {
-        width: 20rem;
-        font-size: 2rem;
+        width: 17rem;
+        font-size: 1.8rem;
         padding-left: 2rem;
+    }
+
+    .textContainerNosotros {
+        display: none;
+    }
+
+
+
+    .valores {
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .textp2 p {
+        width: 40rem;
+        background-color: rgb(0, 103, 150, 0.8);
+        color: white;
+        border-radius: 1rem;
+        padding: 1rem;
+        margin-left: 2rem;
+    }
+
+    .textp2 {
+        background-position: top right;
+        margin-left: 0rem;
+        width: 100%;
+    }
+
+    .textContainerNosotros {
+        display: flex;
+        flex-direction: column;
+        width: max-content;
+    }
+
+    .mision,
+    .vision,
+    .vision2 {
+        margin: 0;
+        width: max-content;
+        margin-left: 5rem;
+    }
+
+    .mision p,
+    .vision p,
+    .vision2 p {
+        width: 40rem;
+    }
+
+    .listvalores li,
+    .lista li {
+        color: white;
+    }
+
+    .vision2 {
+        padding: 0;
+    }
+
+    .lista {
+        margin: 0;
+        background-color: rgb(0, 103, 150, 0.8);
+        border-radius: 1rem;
+    }
+
+    .confianza {
+        margin: 0;
+        margin-top: 10rem;
+        width: 80%
+    }
+
+    .footer {
+        margin-top: 10rem;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .textp2 {
+        background-position: top right;
+        margin-left: 0;
+        width: 70rem;
     }
 
     .textContainerNosotros {
@@ -172,187 +295,92 @@ img{
         flex-direction: column;
     }
 
-    .textContainerNosotros h1 {
-        font-size: 3rem;
-    }
-
-    .textContainerNosotros p {
-        width: 20rem;
-        font-size: 2rem;
-    }
-
-    .mision {
+    .mision,
+    .vision,
+    .vision2 {
         margin: 0;
-        margin-left: 3rem;
-    }
-
-    .vision, .vision2 {
-        margin: 0;
-        margin-left: 3rem;
-    }
-    .vision2{
-        padding-top: 2rem;
-    }
-
-    .valorestitle h1{
-        font-size: 4rem;
-        height: min-content;
-        margin: 0;
-    }
-    .valorestitle{
         width: max-content;
-        margin-left: 1rem;
-    }
-    .lista{
-        margin: 0;
-        margin-top: 3rem;
-        margin-left: 1.5rem;
-        margin-bottom: 13rem;
-        width: max-content;
+        margin-left: 5rem;
     }
 
-    .lista ul{
-        list-style: none;
-        margin: 0;
+    .mision p,
+    .vision p,
+    .vision2 p {
+        width: 40rem;
+    }
+
+    .vision2 {
         padding: 0;
-        margin-right: 2rem;
     }
 
+    .lista {
+        margin: 0;
+        background-color: rgb(0, 103, 150, 0.8);
+        border-radius: 1rem;
+    }
     .lista li{
-        list-style: none;
-        font-size: 1.5rem;
-        color: rgb(101, 101, 252);
-    }
-    .listvalores{
-        margin: 0;
-        margin-left: 1rem;
-    }
-    .listvalores2{
-        width: 5rem;
-    }
-    .confianza{
-        margin: 0;
-        margin-top: 10rem;
-        padding: 3rem;
-        width: 90%;
+        color: white;
     }
 
-    .valores{
-        background-position: top right;
+    .confianza {
+        margin: 0;
+        margin-top: 12rem;
+        width: 84%
     }
 }
 
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-    .textp2 p{
-        width: 40rem;
-        background-color: rgba(181, 181, 181, 0.6);
-        border-radius: 1rem;
-        padding: 1rem;
-        margin-left: 2rem;
-    }
-    .textp2{
-        background-position: top right;
-        margin-left: 0;
-        width: 56rem;
-    }
+@media only screen and (min-width: 1200px) and (max-width: 1600px) {
 
-    .textContainerNosotros{
-        display: flex;
-        flex-direction: column;
-        width: max-content;
-    }
-    .mision, .vision, .vision2{
-        margin: 0;
-        width: max-content;
-        margin-left: 5rem;
-    }
-    .mision p, .vision p, .vision2 p{
-        width: 40rem;
-    }
-
-    .vision2{
-        padding: 0;
-    }
-    .lista{
-        margin: 0;
-        background-color: rgba(181, 181, 181, 0.7);
-        border-radius: 1rem;
-    }
-    .confianza{
-        margin: 0;
-        margin-top: 15rem;
-        width: 80%
-    }
-  }
-
-  @media only screen and (min-width: 992px) and (max-width: 1199px) {
-    .textp2{
-        background-position: top right;
-        margin-left: 0;
-        width: 70rem;
-    }
-    .textContainerNosotros{
-        display: flex;
-        flex-direction: column;
-    }
-    .mision, .vision, .vision2{
-        margin: 0;
-        width: max-content;
-        margin-left: 5rem;
-    }
-
-    .mision p, .vision p, .vision2 p{
-        width: 40rem;
-    }
-
-    .vision2{
-        padding: 0;
-    }
-
-    .lista{
-        margin: 0;
-        background-color: rgba(181, 181, 181, 0.7);
-        border-radius: 1rem;
-    }
-
-    .confianza{
-        margin: 0;
-        margin-top: 15rem;
-        width: 84%
-    }
-  }
-  
-  @media only screen and (min-width: 1200px) and (max-width: 1600px) {
-    
-    .textp2{
+    .textp2 {
         margin-left: 0;
         width: 85rem;
     }
-    .textContainerNosotros{
+
+    .textContainerNosotros {
         display: flex;
         flex-direction: column;
     }
-    .mision, .vision, .vision2{
+
+    .mision,
+    .vision,
+    .vision2 {
         margin: 0;
         width: max-content;
         margin-left: 5rem;
     }
-    .mision p, .vision p, .vision2 p{
+
+    .mision p,
+    .vision p,
+    .vision2 p {
         width: 50rem;
         padding-left: 20rem;
     }
-    .vision2{
+
+    .vision2 {
         padding: 0;
     }
-    .lista{
+
+    .lista {
         margin: 0;
-        background-color: rgba(181, 181, 181, 0.7);
+        background-color: rgb(0, 103, 150, 0.8);
         border-radius: 1rem;
     }
-    .confianza{
+    .lista li{
+        color: white;
+    }
+
+    .confianza {
         margin: 0;
-        margin-top: 15rem;
+        margin-top: 10rem;
         width: 88%
     }
-  }
-  
+}
+
+@media only screen and (min-width: 1600px) and (max-width: 1800px){
+    .textp2{
+        margin-left: 7rem;
+    }
+    .confianza{
+        margin-left: 1rem;
+    }
+}

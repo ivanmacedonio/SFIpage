@@ -1,6 +1,11 @@
-img{
+img {
     max-width: 100%;
 }
+
+.scroll {
+    display: none;
+}
+
 
 .welcome {
     background-image: url('../assets/fondoazul.png');
@@ -30,11 +35,11 @@ img{
     border: .5rem;
     border-radius: 1rem;
     background-color: rgb(238, 238, 238);
-    box-shadow: 0px 400px 65px 0px  rgba(254, 254, 254, 0.75);
+    box-shadow: 0px 400px 65px 0px rgba(254, 254, 254, 0.75);
     margin-bottom: 20rem;
 }
 
-.transforma{
+.transforma {
     position: relative;
     bottom: 40rem;
     font-size: 2rem;
@@ -119,254 +124,177 @@ img{
     font-size: 2rem;
 }
 
-@media (min-width: 1000px) and (max-width: 1200px) {
-    .textp1 {
-        width: min-content;
-    }
-
-    .imgfamilia2 img {
-        display: none;
-    }
-
-    .imgfamilia img {
-        display: none;
-    }
+@media(max-width: 767px) {
 
     .welcome {
-        height: 80rem;
+        background-position: right;
+        height: 72rem;
     }
 
-    .textfamilia2 {
+    .transforma {
         display: none;
     }
 
-}
-
-
-@media (min-width: 1200px) and (max-width: 1700px) {
-    .textp1 h2 {
-        font-size: 2.6rem;
-        width: max-content;
-    }
-
-    .textp1 h1 {
-        font-size: 5rem;
-        width: max-content;
-    }
-
     .textp1 {
-        margin-left: 3rem;
-        width: max-content;
+        margin-left: 0;
+        width: 20rem;
+        margin-left: 2rem;
     }
 
+    #imgfamilia2,
+    .textfamilia2,
+    #h2delete,
     #big {
-        font-size: 1.3rem;
-        width: 35rem;
-    }
-
-    .imgfamilia {
-        left: 40rem;
-    }
-
-    .imgfamilia img {
-        width: 40rem;
-    }
-
-    .imgfamilia2 img {
-        width: 70rem;
-    }
-
-    .textfamilia2 {
-        left: 66rem;
-        bottom: 20rem;
-    }
-
-    .welcome {
-        height: 45rem;
-    }
-
-}
-
-@media(min-width: 1360px) and (max-width: 1500px) {
-    .textfamilia2 {
-        left: 60rem;
-        bottom: 20rem;
-    }
-}
-
-@media(min-width: 300px) and (max-width: 900px) {
-    .textp1 {
-        margin-left: 3rem;
-        padding-top: 2rem;
-        width: max-content;
+        display: none;
     }
 
     .textp1 h2 {
-        text-align: center;
-        font-size: 2rem;
-        width: 20rem;
-    }
-
-    .textp1 h1 {
-        text-align: center;
-        width: 20rem;
-        padding-top: 0;
         font-size: 3rem;
     }
 
-    #big {
+    .scroll {
+        display: block;
         width: 20rem;
-        margin-left: .5rem;
-        margin-top: 2rem;
-        font-size: 1.5rem;
-        margin-bottom: 6rem;
+        margin-top: 5rem;
+        margin-left: .3rem;
+    }
+}
+
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .welcome {
+        background-position: right;
+        height: 72rem;
     }
 
+    .transforma {
+        display: none;
+    }
+
+    .textp1 {
+        margin-left: 0;
+        width: 40rem;
+        margin-left: 2rem;
+    }
+
+    #imgfamilia2,
+    .textfamilia2,
+    #h2delete,
+    #big {
+        display: none;
+    }
+
+    .textp1 h2 {
+        font-size: 3rem;
+    }
+
+    .scroll {
+        display: block;
+        width: 20rem;
+        margin-top: 5rem;
+        margin-left: 2rem;
+    }
+}
+
+
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
     .imgfamilia {
         display: none;
     }
 
-    .imagenmid img {
-        width: 25rem;
-    }
-
-    .imagenmid {
-        display: block;
-        margin-left: 0rem;
-    }
-
-    .imgfamilia2 img {
-        width: 14rem;
-        height: 10rem;
-        position: absolute;
-        bottom: 5rem;
-    }
-
-    .imgfamilia2 {
-        display: none;
-        border: none;
-        border-radius: 0%;
-        box-shadow: none;
-    }
-
     .welcome {
-        height: 120rem;
-        position: static;
-        background-position: initial;
+        background-position: right;
+        height: 72rem;
     }
 
-    .textfamilia2 {
-        position: static;
-        margin-left: 4rem;
-        width: max-content;
-
+    .transforma {
+        left: 6rem;
+        bottom: 25rem;
     }
 
-    .textfamilia2 p {
-        font-size: 2rem;
-        color: white;
+    #big {
+        margin-left: 0;
     }
 
-    .textfamilia2 h1 {
-        font-size: 1.5rem;
-    }
-
-    .divpage1 {
-        display: flex;
-        flex-direction: column;
-    }
-
-}
-
-@media (min-width: 1200px) and (max-width: 1400px) {
-    .textfamilia2 {
-        left: 55rem;
-        bottom: 40rem;
-    }
-}
-
-@media (min-width: 700px) and (max-width: 1000px) {
     .textp1 {
+        margin-left: 0;
+        width: 40rem;
         margin-left: 5rem;
     }
 
-    .textp1 h2 {
-        font-size: 3rem;
-        text-align: justify;
-
-        width: max-content;
+    .imgfamilia2 {
+        box-shadow: none;
     }
 
-    .textp1 h1 {
-        width: 30rem;
-        font-size: 5rem;
-        text-align: justify;
+    .textfamilia2,
+    #h2delete,
+    .scroll {
+        display: none;
+    }
 
+    .textp1 h2 {
+        font-size: 3rem;
+    }
+
+    .scroll {
+        display: block;
+        width: 20rem;
+        margin-top: 5rem;
+        margin-left: 2rem;
+    }
+}
+
+
+
+@media only screen and (min-width: 1200px) and (max-width: 1800px) {
+    .imgfamilia {
+        left: 43rem;
+        top: 5rem;
+    }
+    .imgfamilia img{
+        width: 45rem;
+    }
+
+    .welcome {
+        background-position: right;
+        height: 72rem;
+    }
+
+    .transforma {
+        left: 14rem;
+        bottom: 25rem;
     }
 
     #big {
-        margin-top: 5rem;
-        width: 40rem;
-        font-size: 2rem;
+        margin-left: 0;
     }
 
-    .textfamilia2 {
-        margin-left: 15rem;
-    }
-}
-
-@media (min-width: 1500px) and (max-width: 1700px) {
-    .logo {
-        margin-left: 10rem;
-    }
-
-    .parent {
-        margin-left: 8rem;
-    }
-    .textfamilia2{
-        bottom: 40rem;
-    }
-}
-
-@media (min-width: 750px) and (max-width: 900px){
-    .imagenmid img{
-        margin-left: 11rem;
+    .textp1 {
+        margin-left: 0;
         width: 30rem;
+        margin-left: 5rem;
     }
-    .textfamilia2{
-        margin-left: 17rem;
-    }
-    .footer{
-        position: relative;
-        top: 10rem;
-    }
-}
 
-@media only screen and (max-width: 991px) {
-    .transforma{
+    .imgfamilia2 {
+        box-shadow: none;
+    }
+
+    .textfamilia2,
+    #h2delete,
+    .scroll {
         display: none;
     }
-  }
 
-  @media only screen and (min-width: 992px) and (max-width: 1700px) {
-    .transforma{
-        left: 15rem;
+    .textp1 h2 {
+        font-size: 4rem;
     }
-  }
 
-  @media(max-width: 768px){
-    .textp1 h2{
-        display: none;
-    }
-    .textfamilia2 {
-        background-color: blueviolet;
-        border-radius: 1rem;
-        padding: 1rem;
+
+    .scroll {
+        display: block;
+        width: 20rem;
+        margin-top: 5rem;
         margin-left: 2rem;
     }
-    .textfamilia2 h1{
-        background-color: rgb(168, 102, 206);
-    }
-  }
-  
-
+}

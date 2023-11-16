@@ -7,6 +7,7 @@ export const Test = () => {
       <div className="header">
         <HeaderNormal></HeaderNormal>
       </div>
+
       <div className="footer">
         <Footer></Footer>
       </div>

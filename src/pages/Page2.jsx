@@ -1,6 +1,8 @@
 import React from "react";
+import { Carrouselp2 } from "../components/Carrouselp2";
 import { Footer } from "../components/Footer";
 import { HeaderNormal } from "../components/Header-normal";
+import { Scrollvalores } from "../components/Scrollvalores";
 import "../styles/page2.css";
 export const Page2 = () => {
   return (
@@ -18,6 +20,9 @@ export const Page2 = () => {
             activos digitales para dirigir el camino hacia tu prosperidad
             futura.
           </p>
+        </div>
+        <div className="carrouselp2">
+          <Carrouselp2></Carrouselp2>
         </div>
         <div className="textContainerNosotros">
           <div className="mision">
@@ -55,6 +60,9 @@ export const Page2 = () => {
           <div className="valorestitle">
             <h1>Valores</h1>
           </div>
+          <div className="scrollvalores">
+            <Scrollvalores></Scrollvalores>
+          </div>
           <div className="lista">
             <div className="listvalores">
               <ul>
@@ -66,7 +74,6 @@ export const Page2 = () => {
             </div>
             <div className="listvalores2">
               <ul>
-                <li>Seguridad</li>
                 <li>Transparencia</li>
                 <li>Principio de Servicio</li>
                 <li>Equidad</li>
