@@ -129,12 +129,14 @@ img {
 
 
 .adquirir {
-    max-width: max-content;
+    width: 100%;
+    padding-bottom: 2rem;
     position: relative;
-    bottom: 14rem;
+    background: linear-gradient(to bottom, #ffffff, rgb(250, 249, 248));
 }
 
 .escoge {
+    display: none;
     font-family: 'Lato', sans-serif;
     font-size: 2rem;
     font-weight: 700;
@@ -336,6 +338,9 @@ img {
         padding-top: 1rem;
         padding-bottom: 1rem;
     }
+    .footer{
+        margin-top: 0rem;
+    }
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -431,6 +436,9 @@ img {
         padding-left: 1rem;
         padding-top: 1rem;
         padding-bottom: 1rem;
+    }
+    .footer{
+        margin-top: 0rem;
     }
   }
 
