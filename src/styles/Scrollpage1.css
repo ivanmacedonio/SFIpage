@@ -9,6 +9,7 @@
   width: 20rem;
   scroll-snap-type: y mandatory;
   overflow: auto;
+  overflow-x: hidden;
   border-radius: 10px;
 }
 
@@ -40,6 +41,16 @@
 
 .scroll-snap-card::-webkit-scrollbar-track {
   background-color: rgb(2, 80, 116);
+}
+
+#ch{
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+#hc{
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {

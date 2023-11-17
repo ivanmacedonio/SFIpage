@@ -2,10 +2,9 @@ import React from "react";
 import "../styles/Carrouselp2.css";
 export const Carrouselp2 = () => {
   return (
-    <div>
+    <div className="carrouselp2">
       <div class="container scroll-1">
-        <div class="card">
-          <div class="card__image"></div>
+        <div class="cards">
           <div class="card__content">
             <span class="card__title">Misión</span>
             <p class="card__describe">
@@ -17,8 +16,7 @@ export const Carrouselp2 = () => {
             </p>
           </div>
         </div>
-        <div class="card">
-          <div class="card__image"></div>
+        <div class="cards">
           <div class="card__content">
             <span class="card__title">Visión</span>
             <p class="card__describe">
@@ -31,8 +29,7 @@ export const Carrouselp2 = () => {
             </p>
           </div>
         </div>
-        <div class="card">
-          <div class="card__image"></div>
+        <div class="cards">
           <div class="card__content">
             <span class="card__title">Objetivos</span>
             <p class="card__describe">

@@ -247,7 +247,7 @@ img {
 
 
 
-@media only screen and (min-width: 1200px) and (max-width: 1800px) {
+@media only screen and (min-width: 1200px) and (max-width: 1599px) {
     .imgfamilia {
         left: 43rem;
         top: 5rem;
@@ -296,5 +296,14 @@ img {
         width: 20rem;
         margin-top: 5rem;
         margin-left: 2rem;
+    }
+}
+
+@media only screen and (min-width: 1600px) and (max-width: 1800px){
+    .transforma{
+        left: 23rem;
+    }
+    .textfamilia2{
+        left: 75rem;
     }
 }

@@ -8,6 +8,7 @@ export const Membresia = () => {
       <div className="header">
         <HeaderNormal></HeaderNormal>
       </div>
+      <div className="imagenmembresia"> </div>
       <div className="calcularMembresia">
         <div className="tipoplanes">
           <h1 id="calculah1">Calcula tu membresía</h1>

@@ -1,0 +1,32 @@
+.carousel {
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    max-width: 100%;
+}
+
+.slide {
+    background-color: rgb(12, 109, 154);
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    width: 300px;
+    margin-right: 20px;
+    margin-left: 20px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    color: white;
+    border-radius: 1rem;
+}
+#higher{
+    height: 400px;
+}
+
+.slide p{
+    height: fit-content;
+    font-family: 'Monserrat', sans-serif;
+    font-size: 1.3rem;
+    width: 15rem;
+}

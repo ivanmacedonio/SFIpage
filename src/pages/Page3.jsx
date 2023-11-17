@@ -1,7 +1,9 @@
 import React from "react";
 import boy from "../assets/pasosSFI.png";
+import { Carrouselp3 } from "../components/Carrouselp3";
 import { Footer } from "../components/Footer";
 import { HeaderNormal } from "../components/Header-normal";
+import { Scrollp3 } from "../components/Scrollp3";
 import "../styles/page3.css";
 export const Page3 = () => {
   return (
@@ -13,6 +15,9 @@ export const Page3 = () => {
         <div className="titlep3">
           <h1>Únete a Smart Future Income en cuatro sencillos pasos:</h1>
         </div>
+      </div>
+      <div className="carrouselp3">
+        <Carrouselp3></Carrouselp3>
       </div>
       <div className="pasosp3">
         <div className="imagenp3">
@@ -63,6 +68,9 @@ export const Page3 = () => {
       <div className="planesp3">
         <h1>Planes</h1>
         <p>¿7 Razones para convertirme en afiliado? </p>
+      </div>
+      <div className="scrollp3">
+        <Scrollp3></Scrollp3>
       </div>
       <div className="razonescontainer">
         <div className="razones">

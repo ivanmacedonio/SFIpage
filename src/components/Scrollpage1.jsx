@@ -4,14 +4,14 @@ export const Scrollpage1 = () => {
   return (
     <div>
       <div class="scroll-snap-card">
-        <div class="slide red">
+        <div class="slide red" id="ch">
           <p class="tip">
             Estamos aquí para ayudarte a asegurar tu futuro. Nuestra membresía
             te brinda la oportunidad de construir futuro sólido y seguro a lo
             largo del tiempo. Con nuestra experiencia en la gestión de activos
           </p>
         </div>
-        <div class="slide blue">
+        <div class="slide blue" id="hc">
           <p class="tip">
             
             digitales, puedes tener la tranquilidad de un futuro más

@@ -19,14 +19,14 @@
     display: flex;
     overflow-x: scroll;
     padding: 24px;
-    width: 300px;
+    width: 90%;
     scroll-snap-type: x mandatory;
     scroll-padding-top: 24px;
     border-radius: 8px;
     gap: 20px;
 }
 
-.container .card {
+.container .cards {
     flex: 0 0 100%;
     overflow: hidden;
     border-radius: 8px;
@@ -34,12 +34,12 @@
     scroll-snap-align: start;
 }
 
-.card .card__image {
+.cards .card__image {
     flex: 1;
     height: 140px;
 }
 
-.card:nth-child(1) .card__image {
+.cards:nth-child(1) .card__image {
     background-image: linear-gradient(to right top,
             rgb(0, 114, 166),
             rgb(0, 114, 166),
@@ -48,7 +48,7 @@
             rgb(0, 114, 166));
 }
 
-.card:nth-child(2) .card__image {
+.cards:nth-child(2) .card__image {
     background-image: linear-gradient(to right top,
             rgb(0, 114, 166),
             rgb(0, 114, 166),
@@ -57,7 +57,7 @@
             rgb(0, 114, 166));
 }
 
-.card:nth-child(3) .card__image {
+.cards:nth-child(3) .card__image {
     background-image: linear-gradient(to right top,
             rgb(0, 114, 166),
             rgb(0, 114, 166),
@@ -66,22 +66,68 @@
             rgb(0, 114, 166));
 }
 
-.card .card__content {
+.cards .card__content {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 2px;
     padding: 20px;
+    padding-left: 0;
 }
 
-.card .card__content .card__title {
+.cards .card__content .card__title {
     font-family: 'Montserrat', sans-serif;
     font-size: 32px;
     color: #fff;
     text-transform: capitalize;
 }
 
-.card .card__content .card__describe {
+.cards .card__content .card__describe {
     font-family: 'Montserrat', sans-serif;
     color: #fff;
     font-size: 1.2rem;
+
 }
+
+.carrouselp2{
+    width: 100%;
+    height: auto;
+}
+
+.card__describe {
+    width: 15rem;
+    height: auto;
+    padding-top: 1rem;
+}
+
+
+.card__content{
+    height: 28rem;
+}
+
+.card__title{
+    background-color: rgb(0, 114, 166);
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-left: 1rem;
+    text-align: center;
+}
+
+.card__describe {
+    padding-left: 2rem;
+}
+
+.container.scroll-1{
+    max-width: 380px;
+    padding: 0;
+}
+
+.cards{
+    height: 38rem;
+    margin-bottom: 1rem;
+    max-width: 250px;
+}
+
+
+
+
+

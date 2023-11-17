@@ -1,0 +1,57 @@
+#global {
+	height: 500px;
+	width: 95%;
+	overflow-y: scroll;
+	border-radius: 1rem;
+	scroll-behavior: smooth;
+}
+
+#mensajes {
+	height: auto;
+}
+
+.texto {
+	font-family: 'Monserrat', sans-serif;
+	font-size: 1.5rem;
+	padding: 4px;
+	background-color: rgb(19, 146, 204);
+	color: white;
+}
+
+.scrollp3 li{
+	margin-bottom: 2rem;
+}
+
+#global::-webkit-scrollbar {
+    width: .5rem; 
+}
+
+#global::-webkit-scrollbar-thumb {
+	background-color: rgb(197, 197, 197);
+    border-radius: 6px;
+}
+
+#global::-webkit-scrollbar-track {
+    background-color: rgb(0, 71, 103);
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+	#global {
+		height: 400px;
+		width: 85%;
+		overflow-y: scroll;
+		border-radius: 1rem;
+	}
+
+	#mensajes {
+		height: auto;
+	}
+
+	.texto {
+		font-family: 'Monserrat', sans-serif;
+		font-size: 1.9rem;
+		padding: 4px;
+		background-color: rgb(19, 146, 204);
+		color: white;
+	}
+}
