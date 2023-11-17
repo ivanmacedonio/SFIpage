@@ -10,6 +10,13 @@ img {
 .carrouselvalores {
     display: none;
 }
+.lista li{
+    transition: .3s ease;
+}
+.lista li:hover{
+    color: orange;
+    cursor: pointer;
+}
 
 .textp2 {
     border-radius: 1rem;
