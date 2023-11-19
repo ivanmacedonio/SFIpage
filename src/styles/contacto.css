@@ -1,7 +1,7 @@
 .contactocontainer {
     display: flex;
     margin-top: 5rem;
-    background-image: url('../assets/fondoblanco.png');
+    background-image: url('../assets/fondoblanco.webp');
     background-repeat: round;
     border-radius: 1rem;
 }

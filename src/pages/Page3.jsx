@@ -1,5 +1,5 @@
 import React from "react";
-import boy from "../assets/pasosSFI.png";
+import boy from "../assets/pasosSFI.webp";
 import { Carrouselp3 } from "../components/Carrouselp3";
 import { Footer } from "../components/Footer";
 import { HeaderNormal } from "../components/Header-normal";

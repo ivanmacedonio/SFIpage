@@ -1,6 +1,6 @@
 import React from "react";
-import mujeresinicio from "../assets/mujeres_inicio.png";
-import familia from "../assets/pareja_inicio.png";
+import mujeresinicio from "../assets/mujeres_inicio.webp";
+import familia from "../assets/pareja_inicio.webp";
 import { Footer } from "../components/Footer";
 import { HeaderNormal } from "../components/Header-normal";
 import { Scrollpage1 } from "../components/Scrollpage1";

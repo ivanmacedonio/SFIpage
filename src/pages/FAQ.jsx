@@ -1,5 +1,5 @@
 import React from "react";
-import faq from "../assets/parejaFAQ.png";
+import faq from "../assets/parejaFAQ.webp";
 import BasicAccordion from "../components/AcordeonFAQ";
 import { HeaderNormal } from "../components/Header-normal";
 import "../styles/FAQ.css";

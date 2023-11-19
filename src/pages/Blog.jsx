@@ -1,5 +1,5 @@
 import React from "react";
-import familia from "../assets/Blog.png";
+import familia from "../assets/blog.webp";
 import { HeaderNormal } from "../components/Header-normal";
 import "../styles/Blog.css";
 export const Blog = () => {

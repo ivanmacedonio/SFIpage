@@ -1,5 +1,5 @@
 import React from "react";
-import contacto from "../assets/Contacto.png";
+import contacto from "../assets/contacto.webp";
 import { HeaderNormal } from "../components/Header-normal";
 import "../styles/contacto.css";
 export const Contacto = () => {

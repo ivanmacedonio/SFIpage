@@ -1,5 +1,5 @@
 import React from "react";
-import familia from "../assets/Inicio_cuenta.png";
+import familia from "../assets/inicio-cuenta.webp";
 import { HeaderNormal } from "../components/Header-normal";
 import "../styles/inicio.css";
 export const Inicio = () => {

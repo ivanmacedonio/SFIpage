@@ -1,5 +1,5 @@
 import React from "react";
-import chicablog from "../assets/Afiliarse.png";
+import chicablog from "../assets/afiliarse.webp";
 import { HeaderNormal } from "../components/Header-normal";
 import "../styles/Register.css";
 export const Register = () => {
