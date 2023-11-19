@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { Carrouselp2 } from "../components/Carrouselp2";
 import { Footer } from "../components/Footer";
 import { HeaderNormal } from "../components/Header-normal";
 import { Scrollvalores } from "../components/Scrollvalores";
 import "../styles/page2.css";
 export const Page2 = () => {
+  const [title, setTitle] = useState("Confianza");
+  const [description, setDescription] = useState(
+    "Construimos la confianza a través de la transparencia, la honestidad y la seguridad en todas nuestras interacciones. Nuestros socios confían en que estamos comprometidos a salvaguardar y hacer crecer su patrimonio de manera responsable y confiable. "
+  );
+
   return (
     <div className="page2">
       <div className="headerp2">
@@ -65,30 +70,97 @@ export const Page2 = () => {
           <div className="lista">
             <div className="listvalores">
               <ul>
-                <li>Confianza</li>
-                <li>Seguridad</li>
-                <li>Lealtad</li>
-                <li>Integridad</li>
+                <li
+                  onClick={() => {
+                    setDescription(
+                      "Construimos la confianza a través de la transparencia, la honestidad y la seguridad en todas nuestras interacciones. Nuestros socios confían en que estamos comprometidos a salvaguardar y hacer crecer su patrimonio de manera responsable y confiable. "
+                    );
+                    setTitle("Confianza");
+                  }}
+                >
+                  Confianza
+                </li>
+                <li
+                  onClick={() => {
+                    setTitle("Seguridad");
+                    setDescription(
+                      "Operamos con los más altos estándares de seguridad en todos los aspectos de nuestro negocio. Desde la gestión de activos hasta la protección de los datos de nuestros socios, nos comprometemos a garantizar un entorno seguro y confiable. La seguridad de nuestras operaciones y la protección de nuestros clientes son fundamentales para nosotros.  "
+                    );
+                  }}
+                >
+                  Seguridad
+                </li>
+                <li
+                  onClick={() => {
+                    setTitle("Lealtad");
+                    setDescription(
+                      "Estamos comprometidos con nuestros socios a largo plazo y trabajamos incansablemente para asegurarnos de que sus intereses siempre estén protegidos. Nuestra lealtad hacia nuestros socios se refleja en la construcción de relaciones sólidas y duraderas.  "
+                    );
+                  }}
+                >
+                  Lealtad
+                </li>
+                <li
+                  onClick={() => {
+                    setTitle("Integridad");
+                    setDescription(
+                      "Operamos de manera ética y moral, siempre tomando decisiones basadas en principios sólidos. Nos comprometemos a mantener los más altos estándares de integridad en todas nuestras actividades, brindando a nuestros socios la tranquilidad de saber que sus futuros prósperos están en buenas manos.  "
+                    );
+                  }}
+                >
+                  Integridad
+                </li>
               </ul>
             </div>
             <div className="listvalores2">
               <ul>
-                <li>Transparencia</li>
-                <li>Principio de Servicio</li>
-                <li>Equidad</li>
+                <li
+                  onClick={() => {
+                    setTitle("Transparencia");
+                    setDescription(
+                      "Comunicamos de manera abierta y honesta con nuestros socios sobre su futuro. "
+                    );
+                  }}
+                >
+                  Transparencia
+                </li>
+                <li
+                  onClick={() => {
+                    setTitle("Principio de Servicio");
+                    setDescription(
+                      "Brindamos un servicio personalizado y atento a cada uno de nuestros socios. Brindando la plataforma para toda persona que quiera un mejor futuro."
+                    );
+                  }}
+                >
+                  Principio de Servicio
+                </li>
+                <li
+                  onClick={() => {
+                    setTitle("Equidad");
+                    setDescription(
+                      "Creemos en la justicia y la igualdad de oportunidades para todos nuestros socios, independientemente de la situación o circunstancias personales. Nos esforzamos por asegurarnos de que cada individuo tenga acceso a soluciones reales que les permitan alcanzar sus objetivos para futuro, de manera justa y equitativa. "
+                    );
+                  }}
+                >
+                  Equidad
+                </li>
+                <li
+                  onClick={() => {
+                    setTitle("Excelencia");
+                    setDescription(
+                      "Nos esforzamos por alcanzar la excelencia en la gestión empresarial, proporcionando un servicio al socio excepcional y comprometiéndonos a superar cualquier expectativa. Nuestro enfoque en la excelencia nos impulsa a ser líderes en la industria y a ofrecer a nuestros socios la máxima calidad en todas las áreas de nuestro negocio.  "
+                    );
+                  }}
+                >
+                  Excelencia
+                </li>
               </ul>
             </div>
           </div>
+
           <div className="confianza">
-            <h1>Confianza</h1>
-            <p>
-              Operamos con los más altos estándares de seguridad en todos los
-              aspectos de nuestro negocio. Desde la gestión de activos hasta la
-              protección de los datos de nuestros socios, nos comprometemos a
-              garantizar un entorno seguro y confiable. La seguridad de nuestras
-              operaciones y la protección de nuestros clientes son fundamentales
-              para nosotros.
-            </p>
+            <h1>{title}</h1>
+            <p>{description}</p>
           </div>
         </div>
       </div>
