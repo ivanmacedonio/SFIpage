@@ -38,12 +38,11 @@ export const Page2 = () => {
           <div className="vision">
             <h1>Visión:</h1>
             <p>
-              En Smart Future Income, la visión de Smart Future Income es llegar
-              a ser la principal herramienta de las nuevas y futuras
-              generaciones, por el cual se aseguran sus próximos años. Legando a
-              garantizar un estilo de vida mejor para nuestras socias y socios,
-              a pesar de las crisis o situaciones sociales que se vengan en los
-              años siguientes.
+              La visión de Smart Future Income es ser la principal herramienta
+              de las nuevas y futuras generaciones, por la cual se aseguran sus
+              próximos años. Legando a garantizar un estilo de vida mejor para
+              nuestras socias y socios, a pesar de las crisis o situaciones
+              sociales que se vengan en los años siguientes.
             </p>
           </div>
           <div className="vision2">
@@ -52,7 +51,7 @@ export const Page2 = () => {
               futuro, reconocidos por nuestra innovación constante, nuestro
               compromiso con la seguridad y la excelencia en el servicio al
               socio. Queremos empoderar a las personas para que tomen el control
-              de su objetivo económico y confiando en nuestros servicios.
+              de su objetivo económico confiando en nuestros servicios.
             </p>
           </div>
         </div>

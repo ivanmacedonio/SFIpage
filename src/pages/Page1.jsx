@@ -16,12 +16,12 @@ export const Page1 = () => {
           <div className="textp1">
             <h2>Bienvenido a</h2>
             <h1>Smart Future Income.</h1>
-            <h2 id="h2delete">¡Por un futuro mas seguro!</h2>
+            <h2 id="h2delete">¡Por un futuro más seguro!</h2>
             <p id="big">
               Estamos aquí para ayudarte a asegurar tu futuro. Nuestra membresía
-              te brinda la oportunidad de construir futuro sólido y seguro a lo
-              largo del tiempo. Con nuestra experiencia en la gestión de activos
-              digitales, puedes tener la tranquilidad de un futuro más
+              te brinda la oportunidad de construir UN futuro sólido y seguro a
+              lo largo del tiempo. Con nuestra experiencia en la gestión de
+              activos digitales, puedes tener la tranquilidad de un futuro más
               alentador. Únete a nosotros y descubre cómo convirtiéndote en
               afiliado hoy puedes asegurarte un mañana estable.
             </p>

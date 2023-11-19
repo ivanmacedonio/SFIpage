@@ -382,3 +382,15 @@ img {
         margin-left: 20rem;
     }
 }
+
+@media only screen and (min-width: 1700px){
+    .planesp3{
+        position: static;
+        margin-bottom: 5rem;
+    }
+    .imagenp3 img{
+        position: relative;
+        top: 9.6rem;
+        width: 40rem;
+    }
+}
