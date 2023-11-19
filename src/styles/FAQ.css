@@ -2,8 +2,6 @@
     margin-top: 5rem;
     border-radius: 1rem;
     display: flex;
-    background-image: url('../assets/fondomorado.webp');
-    background-repeat: round;
 }
 
 .textfaq {
@@ -14,15 +12,25 @@
     font-size: 2.2rem;
     font-weight: 200;
     font-family: 'Lato', sans-serif;
-    color: white;
+    color: rgb(113, 113, 113);
 }
 
 .textfaq h1 {
     font-weight: 900;
+    font-size: 5rem;
 }
 
 .textfaq p {
     font-size: 1.5rem;
+}
+
+#quest{
+    color: white;
+    border-radius: 1rem;
+    padding: 1rem;
+    background-color: rgb(60, 50, 163);
+    font-size: 2rem;
+    margin-bottom: 5rem;
 }
 
 @media only screen and (max-width: 767px) {
@@ -32,7 +40,7 @@
     }
 
     #quest {
-        margin-left: 2rem;
+        margin-left: 1rem;
     }
 
     .textfaq h1 {
