@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import familia from "../assets/blog.webp";
 import { HeaderNormal } from "../components/Header-normal";
 import "../styles/Blog.css";
 export const Blog = () => {
+  useEffect(() => {
+    window.scrollTo(0,0)
+  }, [])
   return (
     <div className="hubpage">
       <div className="header">

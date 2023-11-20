@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import mujeresinicio from "../assets/mujeres_inicio.webp";
 import familia from "../assets/pareja_inicio.webp";
 import { Footer } from "../components/Footer";
@@ -6,6 +7,9 @@ import { HeaderNormal } from "../components/Header-normal";
 import { Scrollpage1 } from "../components/Scrollpage1";
 import "../styles/page1.css";
 export const Page1 = () => {
+  useEffect(() => {
+    window.scrollTo(0,0)
+  }, [])
   return (
     <div className="page1">
       <div className="header">
@@ -19,7 +23,7 @@ export const Page1 = () => {
             <h2 id="h2delete">¡Por un futuro más seguro!</h2>
             <p id="big">
               Estamos aquí para ayudarte a asegurar tu futuro. Nuestra membresía
-              te brinda la oportunidad de construir UN futuro sólido y seguro a
+              te brinda la oportunidad de construir un futuro sólido y seguro a
               lo largo del tiempo. Con nuestra experiencia en la gestión de
               activos digitales, puedes tener la tranquilidad de un futuro más
               alentador. Únete a nosotros y descubre cómo convirtiéndote en
@@ -43,7 +47,9 @@ export const Page1 = () => {
           <p>Hazte miembro de</p>
           <p>este gran apoyo</p>
           <p>para tu futuro</p>
-          <h1>Conoce más...</h1>
+          <Link to={'/contacto'}>
+            <h1>Conoce más...</h1>
+          </Link>
         </div>
         <div className="transforma">
           <h1>Transforma tu futuro</h1>

@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { HeaderNormal } from "../components/Header-normal";
 import "../styles/Verificacion.css";
+
 export const Verificacion = () => {
+  useEffect(() => {
+    window.scrollTo(0,0)
+  }, [])
   return (
     <div className="verificacionpage">
       <div className="header">

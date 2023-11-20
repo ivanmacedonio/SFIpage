@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import familia from "../assets/inicio-cuenta.webp";
 import { HeaderNormal } from "../components/Header-normal";
+
 import "../styles/inicio.css";
 export const Inicio = () => {
+  useEffect(() => {
+    window.scrollTo(0,0)
+  }, [])
   return (
     <div className="pageinicio">
       <div className="header">

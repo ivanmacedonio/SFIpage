@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import chicablog from "../assets/afiliarse.webp";
 import { HeaderNormal } from "../components/Header-normal";
 import "../styles/Register.css";
+
 export const Register = () => {
+  useEffect(() => {
+    window.scrollTo(0,0)
+  }, [])
   return (
     <div className="page4">
       <div className="header">

@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { HeaderNormal } from "../components/Header-normal";
 import "../styles/perfil.css";
+
 export const Perfil = () => {
+  useEffect(() => {
+    window.scrollTo(0,0)
+  }, [])
   return (
     <div className="perfilpage">
       <div className="header">

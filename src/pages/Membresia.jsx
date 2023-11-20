@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Footer } from "../components/Footer";
 import { HeaderNormal } from "../components/Header-normal";
+
 import "../styles/Membresia.css";
 export const Membresia = () => {
+  useEffect(() => {
+    window.scrollTo(0,0)
+  }, [])
   return (
     <div className="Membresiapage">
       <div className="header">

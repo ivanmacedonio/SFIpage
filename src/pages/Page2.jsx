@@ -1,17 +1,21 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+
 import { Carrouselp2 } from "../components/Carrouselp2";
 import { Footer } from "../components/Footer";
 import { HeaderNormal } from "../components/Header-normal";
 import { Scrollvalores } from "../components/Scrollvalores";
 import "../styles/page2.css";
 export const Page2 = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const [title, setTitle] = useState("Confianza");
   const [description, setDescription] = useState(
     "Construimos la confianza a través de la transparencia, la honestidad y la seguridad en todas nuestras interacciones. Nuestros socios confían en que estamos comprometidos a salvaguardar y hacer crecer su patrimonio de manera responsable y confiable. "
   );
 
   return (
-    <div className="page2">
+    <div className="page2" id="nosotros">
       <div className="headerp2">
         <HeaderNormal></HeaderNormal>
       </div>

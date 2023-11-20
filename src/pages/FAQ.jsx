@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import faq from "../assets/parejaFAQ.webp";
 import BasicAccordion from "../components/AcordeonFAQ";
 import { HeaderNormal } from "../components/Header-normal";
+
 import "../styles/FAQ.css";
 
 export const FAQ = () => {
+  useEffect(() => {
+    window.scrollTo(0,0)
+  }, [])
   return (
     <div className="faqpage">
       <div className="header">
