@@ -10,3 +10,9 @@ Currently, two official plugins are available:
 - # Route management
 
 - View routes in "App.jsx" File
+
+- # Deploy
+
+- cd SPI-page
+- npm install
+- npm run dev
