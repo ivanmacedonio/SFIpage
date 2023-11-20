@@ -47,7 +47,7 @@ export const Page1 = () => {
           <p>Hazte miembro de</p>
           <p>este gran apoyo</p>
           <p>para tu futuro</p>
-          <Link to={'/contacto'}>
+          <Link to={'/membresia'}>
             <h1>Conoce más...</h1>
           </Link>
         </div>

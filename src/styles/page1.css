@@ -200,7 +200,10 @@ img {
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .imgfamilia {
-        display: none;
+        display: none;;
+    }
+    .imgfamilia img{
+        width: 30rem;
     }
 
     .welcome {
@@ -209,17 +212,17 @@ img {
     }
 
     .transforma {
-        left: 6rem;
-        bottom: 25rem;
+        display: none;
     }
 
     #big {
         margin-left: 0;
+        font-size: 2.5rem;
     }
 
     .textp1 {
         margin-left: 0;
-        width: 40rem;
+        width: 60rem;
         margin-left: 5rem;
     }
 
@@ -234,7 +237,7 @@ img {
     }
 
     .textp1 h2 {
-        font-size: 3rem;
+        font-size: 7rem;
     }
 
     .scroll {
@@ -243,6 +246,12 @@ img {
         margin-top: 5rem;
         margin-left: 2rem;
     }
+
+    .footer{
+        position: relative;
+        top: 25rem;
+    }
+    
 }
 
 

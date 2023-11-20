@@ -330,7 +330,8 @@ img {
     .confianza {
         margin: 0;
         margin-top: 12rem;
-        width: 84%
+        width: 84%;
+        margin-bottom: 10rem;
     }
 }
 

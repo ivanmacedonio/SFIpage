@@ -3,7 +3,7 @@ img {
 }
 
 .contentp4 {
-    margin-top: 5rem;
+    margin-top: 3rem;
     border-radius: 1rem;
     background-image: url('../assets/fondoblanco.webp');
     background-repeat: no-repeat;
@@ -94,12 +94,19 @@ img {
         display: none;
     }
 
+
     .formp4 {
+        border-radius: 0%;
         margin: 0;
         padding-left: 1rem;
         padding-right: 1rem;
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
+        margin-bottom: 10rem;
+    }
+    .formp4 button{
+        margin-bottom: 5rem;
+    }
+    .buttonslogin button{
+        margin-bottom: 0;
     }
 
     .formp4 input {
@@ -108,8 +115,10 @@ img {
         width: 20rem;
         padding-left: 2rem;
         height: 5rem;
-        margin-bottom: 1rem;
+        margin-bottom: 3rem;
         font-family: 'Monserrat', sans-serif;
+        padding-top: 0;
+        padding-bottom: 0;
     }
 }
 
@@ -146,10 +155,12 @@ img {
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .contentp4{
         height: 100rem;
+        margin-bottom: 10rem;
+        background-image: none;
     }
     
     .formp4 {
-        margin-left: 12rem;
+        margin-left: 15rem;
     }
 
     .imageblog {
@@ -161,9 +172,15 @@ img {
         border-radius: .9rem;
         width: 30rem;
         padding-left: 2rem;
-        height: 8rem;
-        margin-bottom: 1rem;
+        padding-top: 0;
+        padding-bottom: 0;
+        height: 5rem;
+        margin-bottom: 3rem;
         font-family: 'Monserrat', sans-serif;
+    }
+
+    .formp4 input::placeholder{
+        font-size: 1.3rem;
     }
 
     .option button {
