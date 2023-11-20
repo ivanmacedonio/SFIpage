@@ -9,9 +9,10 @@ Currently, two official plugins are available:
 
 - # Route management
 
-- "/" Inicio
-- "/nosotros" Pagina 2
-- "/afiliacion" Pagina 3
-- "/register" Registro de usuarios
-- "/membresia" Planes
-- "/blog" Primera seccion de blog, el acordeon despliega 3, refiere a "hub"
+- View routes in "App.jsx" File
+
+- # Deploy
+
+- cd SPI-page
+- npm install
+- npm run dev
