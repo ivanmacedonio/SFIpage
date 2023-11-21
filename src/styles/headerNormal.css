@@ -116,7 +116,7 @@ a {
         margin-top: 7rem;
         margin-bottom: 4rem;
         width: 6rem;
-        margin-left: 26rem;
+        margin-left: 24rem;
     }
 
     .hamburguesa {
@@ -144,7 +144,7 @@ a {
     .imagenlogo img {
         margin: 0;
         width: 35rem;
-        margin-left: 12rem;
+        margin-left: 9rem;
         margin-top: 3rem;
     }
     .header{
@@ -164,7 +164,7 @@ a {
         margin-top: 7rem;
         margin-bottom: 4rem;
         width: 8rem;
-        margin-left: 33rem;
+        margin-left: 30rem;
     }
     .hamburguesa {
         width: max-content;
@@ -194,7 +194,7 @@ a {
     .imagenlogo img {
         margin: 0;
         width: 45rem;
-        margin-left: 13rem;
+        margin-left: 11rem;
         margin-top: 3rem;
     }
 }
