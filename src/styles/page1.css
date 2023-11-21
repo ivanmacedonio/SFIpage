@@ -43,7 +43,7 @@ img {
     position: relative;
     bottom: 40rem;
     font-size: 2rem;
-    left: 37rem;
+    left: 30rem;
     background: linear-gradient(to right, rgb(130, 94, 246), rgb(60, 50, 163));
     width: 50rem;
     font-family: 'Montserrat', sans-serif;
@@ -259,7 +259,9 @@ img {
 @media only screen and (min-width: 1200px) and (max-width: 1599px) {
     .imgfamilia {
         left: 43rem;
-        top: 5rem;
+        top: 0;
+        bottom: 5rem;
+        z-index: 1;
     }
     .imgfamilia img{
         width: 45rem;
