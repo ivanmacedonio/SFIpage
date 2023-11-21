@@ -72,7 +72,9 @@ export const HeaderNormal = () => {
           <h2>Contacto</h2>
         </Link>
 
-        <h2 id="session">Iniciar sesion</h2>
+        <Link to={"/register"}>
+          <h2 id="session">Iniciar sesion</h2>
+        </Link>
       </div>
       <img id="iconbar" src={baricon} alt="" onClick={toggleMenu} />
 

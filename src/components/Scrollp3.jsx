@@ -1,11 +1,7 @@
 import React from "react";
 import "../styles/Scrollp3.css";
 export const Scrollp3 = () => {
-  function scrollAutomatico() {
-    var global = document.getElementById("global");
-    global.scrollTop = global.scrollHeight;
-  }
-  setTimeout(scrollAutomatico, 100);
+
   return (
     <div id="global">
       <div id="mensajes">

@@ -8,8 +8,8 @@ import { Scrollp3 } from "../components/Scrollp3";
 import "../styles/page3.css";
 export const Page3 = () => {
   useEffect(() => {
-    window.scrollTo(0,0)
-  }, [])
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="page3">
       <div className="header">
