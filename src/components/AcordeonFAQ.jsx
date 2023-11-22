@@ -3,14 +3,18 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
-import '../styles/acordeonfaq.css';
+import arrow from "../assets/arrow.png";
+import "../styles/acordeonfaq.css";
 
 export default function BasicAccordion() {
   return (
     <div id="acordeon">
       <Accordion>
         <AccordionSummary aria-controls="panel1a-content" id="panel1a-header">
-          <Typography>1. ¿Qué es Smart Future Income? </Typography>
+          <Typography>1. ¿Qué es Smart Future Income?</Typography>
+          <div className="imagenarrow">
+            <img src={arrow}></img>
+          </div>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
@@ -24,6 +28,9 @@ export default function BasicAccordion() {
       <Accordion>
         <AccordionSummary aria-controls="panel2a-content" id="panel2a-header">
           <Typography>2. ¿Cómo funciona la membresía? </Typography>
+          <div className="imagenarrow">
+            <img src={arrow}></img>
+          </div>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
@@ -34,7 +41,10 @@ export default function BasicAccordion() {
       </Accordion>
       <Accordion>
         <AccordionSummary aria-controls="panel1a-content" id="panel1a-header">
-          <Typography>3. ¿Cómo se gestionan los activos digitales?</Typography>
+          <Typography>3. ¿Cómo se gestionan los activos digitales? </Typography>
+          <div className="imagenarrow">
+            <img src={arrow}></img>
+          </div>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
@@ -45,7 +55,12 @@ export default function BasicAccordion() {
       </Accordion>
       <Accordion>
         <AccordionSummary aria-controls="panel1a-content" id="panel1a-header">
-          <Typography>4. ¿Cómo puedo contactar a Smart Future Income? </Typography>
+          <Typography>
+            4. ¿Cómo puedo contactar a Smart Future Income?{" "}
+          </Typography>
+          <div className="imagenarrow">
+            <img src={arrow}></img>
+          </div>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>

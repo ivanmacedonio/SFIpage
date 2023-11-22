@@ -2,6 +2,10 @@ img {
     max-width: 100%;
 }
 
+.imagenp2r{
+    display: none;
+}
+
 .scrollvalores {
     display: none;
 }
@@ -156,7 +160,10 @@ img {
 
 @media (max-width: 767px) {
 
-
+    .imagenp2r{
+        display: block;
+        margin-top: 2rem;
+    }
     .scrollvalores {
         display: block;
         margin-left: 2rem;
@@ -181,7 +188,7 @@ img {
 
     .valores {
         width: fit-content;
-        background-position: right;
+        background-position: top left;
         height: 40rem;
     }
 
@@ -192,9 +199,8 @@ img {
     .textp2 {
         max-width: 100%;
         margin-left: 0;
-        height: 100rem;
-        background-repeat: no-repeat;
-        background-position: top right;
+        height: 45rem;
+        background-image: none;
     }
 
     .confianza {
@@ -204,14 +210,17 @@ img {
 
 
     .textp2 h1 {
-        width: 5rem;
+        width: fit-content;
+        font-size: 2.7rem;
         padding-left: 2rem;
+        padding-top: 0;
     }
 
     .textp2 p {
         width: 17rem;
-        font-size: 1.8rem;
+        font-size: 1.2rem;
         padding-left: 2rem;
+        text-align: left;
     }
 
     .textContainerNosotros {
@@ -223,6 +232,11 @@ img {
     .valores {
         max-width: 100%;
         width: 100%;
+    }
+
+    .headerp2{
+        position: sticky;
+        top: 0;
     }
 }
 

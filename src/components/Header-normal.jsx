@@ -24,11 +24,16 @@ export const HeaderNormal = () => {
 
   return (
     <div className="header">
-      <div className="imagenlogo">
-        <Link to={"/"}>
-          <img src={logo} alt="" />
-        </Link>
+      <div className="chan">
+        <div className="imagenlogo">
+          <Link to={"/"}>
+            <img src={logo} alt="" />
+          </Link>
+        </div>
+      <img id="iconbar" src={baricon} alt="" onClick={toggleMenu} />
+
       </div>
+
       <div className="links">
         <Link to={"/"}>
           <h2>Inicio</h2>
@@ -76,54 +81,52 @@ export const HeaderNormal = () => {
           <h2 id="session">Iniciar sesion</h2>
         </Link>
       </div>
-      <img id="iconbar" src={baricon} alt="" onClick={toggleMenu} />
-
       {menuAbierto && (
-        <div className="hamburguesa">
-          <Link to={"/"}>
-            <h2>Inicio</h2>
-          </Link>
-          <Link to={"/nosotros"}>
-            <h2>Nosotros</h2>
-          </Link>
-          <Link to={"/afiliacion"}>
-            <h2>Afiliacion</h2>
-          </Link>
-
-          <h2
-            id="basic-button"
-            aria-controls={open ? "basic-menu" : undefined}
-            aria-haspopup="true"
-            aria-expanded={open ? "true" : undefined}
-            onClick={handleClick}
-          >
-            Blog
-          </h2>
-
-          <Menu
-            id="basic-menu"
-            anchorEl={anchorEl}
-            open={open}
-            onClose={handleClose}
-            MenuListProps={{
-              "aria-labelledby": "basic-button",
-            }}
-          >
-            <Link to={"/blog"}>
-              <MenuItem onClick={handleClose}>Hub</MenuItem>
+          <div className="hamburguesa">
+            <Link to={"/"}>
+              <h2>Inicio</h2>
             </Link>
-            <Link to={"/faq"}>
-              <MenuItem onClick={handleClose}>Preguntas Frecuentes</MenuItem>
+            <Link to={"/nosotros"}>
+              <h2>Nosotros</h2>
+            </Link>
+            <Link to={"/afiliacion"}>
+              <h2>Afiliacion</h2>
             </Link>
 
-            <MenuItem onClick={handleClose}>Foro</MenuItem>
-          </Menu>
-          <Link to={"/contacto"}>
-            <h2>Contacto</h2>
-          </Link>
-          <h2 id="session">Iniciar sesion</h2>
-        </div>
-      )}
+            <h2
+              id="basic-button"
+              aria-controls={open ? "basic-menu" : undefined}
+              aria-haspopup="true"
+              aria-expanded={open ? "true" : undefined}
+              onClick={handleClick}
+            >
+              Blog
+            </h2>
+
+            <Menu
+              id="basic-menu"
+              anchorEl={anchorEl}
+              open={open}
+              onClose={handleClose}
+              MenuListProps={{
+                "aria-labelledby": "basic-button",
+              }}
+            >
+              <Link to={"/blog"}>
+                <MenuItem onClick={handleClose}>Hub</MenuItem>
+              </Link>
+              <Link to={"/faq"}>
+                <MenuItem onClick={handleClose}>Preguntas Frecuentes</MenuItem>
+              </Link>
+
+              <MenuItem onClick={handleClose}>Foro</MenuItem>
+            </Menu>
+            <Link to={"/contacto"}>
+              <h2>Contacto</h2>
+            </Link>
+            <h2 id="session">Iniciar sesion</h2>
+          </div>
+        )}
     </div>
   );
 };

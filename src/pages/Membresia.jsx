@@ -17,7 +17,7 @@ export const Membresia = () => {
         <div className="tipoplanes">
           <h1 id="calculah1">Calcula tu membresía</h1>
           <h2>Tipo de plan:</h2>
-          <p>Plan educativo a Corto Plazo:</p>
+          <p>Plan educativo a Corto Plazo</p>
           <h2>Membresía Mensual</h2>
           <p>$167</p>
           <h2>Plazo de maduración:</h2>

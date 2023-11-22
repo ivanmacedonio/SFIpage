@@ -1,0 +1,9 @@
+#panel1a-header img, #panel2a-header img{
+    width: 2rem;
+    float: right;
+    margin-top: .3rem;
+}
+
+#panel1a-header, #panel2a-header{
+    background-color: gainsboro;
+}

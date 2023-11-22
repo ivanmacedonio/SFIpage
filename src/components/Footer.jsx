@@ -15,8 +15,12 @@ export const Footer = () => {
         </Link>
         <div className="icons">
           <img src={wp} alt="" />
-          <img src={fb} alt="" />
-          <img src={ig} alt="" />
+          <a href="https://www.facebook.com/profile.php?id=61553878077986">
+            <img src={fb} alt="" />
+          </a>
+          <a href="https://instagram.com/sf.income?igshid=OGQ5ZDc2ODk2ZA%3D%3D&utm_source=qr">
+            <img src={ig} alt="" />
+          </a>
         </div>
       </div>
       <div class="parent">

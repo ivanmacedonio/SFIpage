@@ -37,19 +37,23 @@
     .faqcontent {
         background-repeat: repeat-y;
         flex-direction: column;
+        margin-top: 0;
     }
 
     #quest {
         margin-left: 1rem;
+        font-size: 1.4rem;
     }
 
     .textfaq h1 {
         font-size: 4rem;
         margin-left: 2rem;
+        margin-top: 0;
     }
 
     .textfaq {
         margin-left: 0rem;
+        margin-top: 0;
     }
 
     .textfaq p {

@@ -32,10 +32,6 @@ img {
     margin-left: 10rem;
 }
 
-.pasosp3 img {
-    padding-top: 20rem;
-}
-
 .numbers {
     margin-left: 10rem;
     position: relative;
@@ -142,6 +138,7 @@ img {
 .scrollp3 {
     display: none;
 }
+
 
 
 @media only screen and (max-width: 767px) {
@@ -353,6 +350,11 @@ img {
 @media only screen and (min-width: 1200px) and (max-width: 1700px) {
     .titlep3 {
         left: 12rem;
+    }
+
+
+    .imagenp3{
+        padding-top: 20rem;
     }
 
     .pasosp3 {
