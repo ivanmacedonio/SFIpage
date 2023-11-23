@@ -25,7 +25,7 @@ export const Membresia = () => {
         </div>
         <div className="precio">
           <h2>*Bonificación Mensual</h2>
-          <h1>500 USDT</h1>
+          <h1>1000 USDT</h1>
           <p>
             *Este monto es aproximado y se liberará una vez alcanzada la
             maduración de la membresía. Nota, el programa de bonificación
