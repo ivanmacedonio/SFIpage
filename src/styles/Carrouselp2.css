@@ -19,7 +19,7 @@
     display: flex;
     overflow-x: scroll;
     padding: 24px;
-    width: 90%;
+    width: 100%;
     scroll-snap-type: x mandatory;
     scroll-padding-top: 24px;
     border-radius: 8px;
@@ -114,6 +114,7 @@
 
 .card__describe {
     padding-left: 2rem;
+    width: 100%;
 }
 
 .container.scroll-1{
@@ -122,11 +123,10 @@
 }
 
 .cards{
-    height: 38rem;
+    height: 27rem;
     margin-bottom: 1rem;
-    max-width: 250px;
+    max-width: 100%;
 }
-
 
 
 
