@@ -5,8 +5,8 @@ import { HeaderNormal } from "../components/Header-normal";
 import "../styles/Membresia.css";
 export const Membresia = () => {
   useEffect(() => {
-    window.scrollTo(0,0)
-  }, [])
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="Membresiapage">
       <div className="header">
@@ -40,40 +40,62 @@ export const Membresia = () => {
         <div className="tipos">
           <h2 id="tiposd">Tipo de Membresía:</h2>
           <div className="plan">
-            <h2>1. Plan Educativo a Corto Plazo</h2>
+            <h2>Membresía Años Dorados: </h2>
             <p>
-              Propósito: Este plan está diseñado para miembros que desean
-              enfocarse en la educación
+              Ideal para aquellos que están planeando con anticipación su
+              jubilación y buscan construir un futuro sólido. La membresía "Años
+              Dorados" ofrece un plazo de cuotas a largo plazo de 120 meses,
+              brindando la oportunidad de acumular activos digitales y generar
+              ingresos pasivos durante la jubilación. Con este plan, los
+              miembros pueden disfrutar de la tranquilidad de saber que están
+              tomando medidas proactivas para asegurar un retiro cómodo y sin
+              preocupaciones.
             </p>
           </div>
           <div className="plan">
-            <h2>2. Plan de Seguridad a Largo Plazo</h2>
+            <h2>Membresía Lustro: </h2>
             <p>
-              Propósito: Este plan está destinado a quienes desean asegurar su
-              futuro a largo plazo
+              Diseñada para aquellos que desean un enfoque más ágil y efectivo
+              para construir su patrimonio en activos digitales. La membresía
+              "Lustro" ofrece un plazo de cuotas de 60 meses, permitiendo a los
+              miembros acelerar su camino hacia la seguridad financiera. Este
+              plan es perfecto para quienes buscan resultados a mediano plazo y
+              desean experimentar los beneficios de la membresía en un período
+              más breve.
             </p>
           </div>
           <div className="plan">
-            <h2>3. Plan de Años Dorados:</h2>
+            <h2>Membresía Flash: </h2>
             <p>
-              Propósito: Este plan está diseñado para aquellos que buscan una
-              solución a largo plazo para su jubilación. Los miembros pueden
-              contar con una estrategia de inversión que se enfoca en la
-              acumulación de activos para asegurar un flujo de ingresos pasivos
-              una vez que se retiren.
+              Para aquellos que desean resultados rápidos y una ruta rápida
+              hacia la estabilidad financiera. La membresía "Flash" ofrece un
+              plazo de cuotas de 24 meses, permitiendo a los miembros
+              beneficiarse de los ingresos pasivos generados por la gestión de
+              activos digitales en un tiempo relativamente corto. Ideal para
+              personas con metas financieras a corto plazo y la necesidad de ver
+              resultados tangibles en un futuro cercano.
             </p>
           </div>
           <div className="plan">
-            <h2>4. Plan de Educación para los Hijos:</h2>
-            <p>Propósito: Este plan se centra en la educación de los hijos.</p>
+            <h2>Membresía Futuro Seguro:</h2>
+            <p>
+              La opción perfecta para aquellos que desean comenzar de inmediato
+              a asegurar su futuro financiero. La membresía "Futuro Seguro"
+              ofrece un plazo de una única cuota, permitiendo a los miembros
+              sumergirse rápidamente en los beneficios de la membresía y la
+              gestión de activos digitales. Este plan es ideal para quienes
+              buscan una solución rápida y efectiva para empezar a construir su
+              patrimonio financiero.{" "}
+            </p>
           </div>
           <div className="plan">
-            <h2>5. Plan de Proyectos Sociales:</h2>
             <p>
-              Propósito: Este plan permite a los miembros invertir en proyectos
-              sociales y comunitarios que aseguren un mejor futuro para la
-              sociedad. Los ingresos generados se destinan a proyectos que
-              aborden problemas como la educación, la salud o el medio ambiente.
+              Cada membresía está cuidadosamente diseñada para adaptarse a
+              diferentes necesidades y plazos de tiempo, brindando a nuestros
+              miembros la flexibilidad y la seguridad que buscan en su camino
+              hacia un futuro sólido. ¡Descubre cómo podemos ayudarte a alcanzar
+              tus metas financieras con nuestra variedad de opciones de
+              membresía!
             </p>
           </div>
         </div>
