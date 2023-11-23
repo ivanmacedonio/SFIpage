@@ -7,3 +7,8 @@
 #panel1a-header, #panel2a-header{
     background-color: gainsboro;
 }
+
+#panel1a-header p::before, #panel2a-header p::before{
+    content: '+';
+    margin-right: 1rem;
+}

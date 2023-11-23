@@ -24,7 +24,7 @@
     cursor: pointer;
 }
 
-label::before{
+.accordion label::before{
     content: '+';
     margin-right: 10px;
     font-size: 1.5rem;
