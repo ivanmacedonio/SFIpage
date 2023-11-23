@@ -159,6 +159,11 @@ img {
         display: block;
     }
 
+    #slide4{
+        margin-left: 1rem;
+        margin-right: 2rem;
+    }
+
 
     .razonescontainer,
     .razones,
@@ -243,6 +248,8 @@ img {
     .carousel{
         margin-left: 2rem;
     }
+
+    
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {

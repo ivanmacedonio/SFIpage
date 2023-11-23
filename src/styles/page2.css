@@ -165,7 +165,12 @@ img {
     margin-top: 7rem;
 }
 
+
+
 @media (max-width: 767px) {
+
+    
+
 
     .acordeonmembresia{
         display: block;
@@ -244,6 +249,7 @@ img {
     .valores {
         max-width: 100%;
         width: 100%;
+        background-image: none;
     }
 
     .headerp2{
