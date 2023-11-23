@@ -1,6 +1,6 @@
 .carousel {
     display: flex;
-    overflow-x: scroll;
+    overflow-x: auto;
     scroll-snap-type: x mandatory;
     max-width: 100%;
 }
@@ -20,6 +20,7 @@
     color: white;
     border-radius: 1rem;
 }
+
 #higher{
     height: 400px;
 }
