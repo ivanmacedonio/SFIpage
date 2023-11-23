@@ -14,6 +14,7 @@
   height: 18rem;
   width: 20rem;
   scroll-snap-type: y mandatory;
+  display: flex;
   overflow: auto;
   border-radius: 10px;
   scroll-behavior: smooth; /* Agregamos la propiedad para un scroll suave */

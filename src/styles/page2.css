@@ -177,7 +177,6 @@ img {
     }
     .scrollvalores {
         display: block;
-        margin-left: 2rem;
         margin-bottom: 10rem;
     }
 
@@ -250,6 +249,10 @@ img {
     .headerp2{
         position: sticky;
         top: 0;
+    }
+
+    .footer{
+        margin-top: 10rem;
     }
 }
 
