@@ -140,9 +140,19 @@ img {
     display: none;
 }
 
+.imagepage3 {
+    display: none;
+}
+
 
 
 @media only screen and (max-width: 767px) {
+
+
+    .imagepage3 {
+        display: block;
+    }
+
 
     .razonescontainer,
     .razones,
@@ -163,7 +173,9 @@ img {
     .containerp3 {
         margin: 0;
         padding: 0;
-        background-position: top right;
+        background-image: none;
+        height: fit-content;
+        margin-bottom: 5rem;
     }
 
     .titlep3 {
@@ -212,13 +224,20 @@ img {
         flex-direction: column;
         background: none;
     }
+
+    .titlep3 h1 {
+        font-size: 2.5rem;
+        margin-top: 0;
+        padding-top: 0;
+    }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
 
     .razonescontainer,
     .razones,
-    .razones2, .carousel {
+    .razones2,
+    .carousel {
         display: none;
     }
 
@@ -354,7 +373,7 @@ img {
     }
 
 
-    .imagenp3{
+    .imagenp3 {
         padding-top: 20rem;
     }
 
@@ -362,7 +381,7 @@ img {
         margin-left: 0;
     }
 
-    .planesp3{
+    .planesp3 {
         margin-top: 9.5rem;
     }
 
@@ -390,12 +409,13 @@ img {
     }
 }
 
-@media only screen and (min-width: 1700px){
-    .planesp3{
+@media only screen and (min-width: 1700px) {
+    .planesp3 {
         position: static;
         margin-bottom: 5rem;
     }
-    .imagenp3 img{
+
+    .imagenp3 img {
         position: relative;
         top: 9.6rem;
         width: 40rem;

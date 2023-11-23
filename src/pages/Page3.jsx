@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import familia from '../assets/afiliacion-familia.webp';
 import boy from "../assets/pasosSFI.webp";
 import { Carrouselp3 } from "../components/Carrouselp3";
 import { Footer } from "../components/Footer";
@@ -16,6 +17,9 @@ export const Page3 = () => {
         <HeaderNormal></HeaderNormal>
       </div>
       <div className="containerp3">
+        <div className="imagepage3">
+          <img src={familia} alt="" />
+        </div>
         <div className="titlep3">
           <h1>Únete a Smart Future Income en cuatro sencillos pasos:</h1>
         </div>

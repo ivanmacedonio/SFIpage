@@ -14,6 +14,7 @@
     margin-left: 20px;
     height: 300px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     font-size: 36px;
@@ -21,9 +22,21 @@
     border-radius: 1rem;
 }
 
-#higher{
-    height: 400px;
+.slide h1{
+    font-size: 2rem;
+    font-family: 'Monserrat', sans-serif;
+    font-weight: 600;
+    margin-bottom: 0;
+    background-color: rgb(2, 91, 132);
+    border-radius: 1rem;
+    padding: 10px 20px 10px 20px;
 }
+
+#higher{
+    height: 450px;
+}
+
+
 
 .slide p{
     height: fit-content;
