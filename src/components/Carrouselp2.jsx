@@ -1,9 +1,20 @@
-import React from "react";
+import React, { useRef } from "react";
 import "../styles/Carrouselp2.css";
 export const Carrouselp2 = () => {
+  const scrollContainerRef = useRef(null);
+
+  const scrollToCard = (index) => {
+    const scrollContainer = scrollContainerRef.current;
+    const cards = scrollContainer.children;
+    const cardToScroll = cards[index];
+
+    if (cardToScroll) {
+      scrollContainer.scrollLeft = cardToScroll.offsetLeft;
+    }
+  };
   return (
     <div className="carrouselp2">
-      <div class="container scroll-1">
+      <div class="container scroll-1" ref={scrollContainerRef}>
         <div class="cards">
           <div class="card__content">
             <span class="card__title">Misión</span>
@@ -40,6 +51,17 @@ export const Carrouselp2 = () => {
               de su objetivo económico y confiando en nuestros servicios.
             </p>
           </div>
+        </div>
+      </div>
+      <div className="navigation">
+        <div className="nav-item" onClick={() => scrollToCard(0)}>
+          1
+        </div>
+        <div className="nav-item" onClick={() => scrollToCard(1)}>
+          2
+        </div>
+        <div className="nav-item" onClick={() => scrollToCard(2)}>
+          3
         </div>
       </div>
     </div>
