@@ -4,8 +4,8 @@ export const Scrollvalores = () => {
   return (
     <div>
       <div class="scroll-snap-card2">
-        <div class="slide2 red2">
-          <p class="tip2">Scroll!</p>
+      <div class="slide2 blue2">
+          <p class="tip2">Desliza!</p>
         </div>
         <div class="slide2 blue2">
           <p class="tip2">Confianza</p>

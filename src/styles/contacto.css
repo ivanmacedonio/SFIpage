@@ -33,7 +33,7 @@
     border: none;
     font-size: 1.4rem;
     border-radius: .9rem;
-    width: 40rem;
+    width: 30rem;
     padding-left: 2rem;
     height: 3rem;
     margin-bottom: 1rem;
@@ -79,7 +79,7 @@
     border-radius: .6rem;
     border-style: none;
     margin-bottom: 15rem;
-    width: 30rem;
+    width: 22rem;
     margin-top: 2rem;
 }
 .formulariocontacto button:hover{
