@@ -9,9 +9,9 @@
     background-color: rgb(12, 109, 154);
     flex-shrink: 0;
     scroll-snap-align: start;
-    width: 300px;
+    width: 90%;
     margin-right: 20px;
-    margin-left: 20px;
+    margin-left: 2rem;
     height: 300px;
     display: flex;
     flex-direction: column;
@@ -62,3 +62,27 @@
     width: fit-content;
     margin-left: 3rem;
 }
+
+
+.navigation2 {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .nav-item2 {
+    font-family: 'Montserrat', sans-serif;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: rgb(4, 39, 115);
+    color: #fff;
+    border-radius: 1rem;
+    text-align: center;
+    line-height: 20px;
+    cursor: pointer;
+    margin-right: 20px;
+    margin-top: 20px;
+    font-size: 1rem;
+    cursor: pointer;
+  }

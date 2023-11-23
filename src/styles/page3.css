@@ -239,6 +239,10 @@ img {
         margin-top: 0;
         padding-top: 0;
     }
+
+    .carousel{
+        margin-left: 2rem;
+    }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
