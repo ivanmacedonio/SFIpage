@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
+import { Ac } from "../components/Ac";
 import { Footer } from "../components/Footer";
 import { HeaderNormal } from "../components/Header-normal";
-
 import "../styles/Membresia.css";
 export const Membresia = () => {
   useEffect(() => {
@@ -36,6 +36,9 @@ export const Membresia = () => {
       </div>
       <div className="adquirir">
         <h1>Adquirir membresía</h1>
+        <div className="ac">
+          <Ac></Ac>
+        </div>
 
         <div className="tipos">
           <h2 id="tiposd">Tipo de Membresía:</h2>

@@ -2,6 +2,10 @@ img {
     max-width: 100%;
 }
 
+.acordeonmembresia{
+    display: none;
+}
+
 .imagenp2r{
     display: none;
 }
@@ -27,7 +31,7 @@ img {
     width: 117rem;
     background-image: url('../assets/Nosotros.webp');
     background-repeat: no-repeat;
-    margin-left: 1.5rem;
+    margin-left: 1rem;
     height: 59rem;
 
 }
@@ -159,6 +163,10 @@ img {
 }
 
 @media (max-width: 767px) {
+
+    .acordeonmembresia{
+        display: block;
+    }
 
     .imagenp2r{
         display: block;
