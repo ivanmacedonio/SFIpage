@@ -79,6 +79,8 @@
     border-radius: .6rem;
     border-style: none;
     margin-bottom: 15rem;
+    width: 30rem;
+    margin-top: 2rem;
 }
 .formulariocontacto button:hover{
     cursor: pointer;

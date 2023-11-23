@@ -91,7 +91,7 @@ export const Page3 = () => {
               Decide cuál es el modelo de membresía entre nuestra gama de planes
               y haz las aportaciones que más te convengan
             </li>
-            <li>Comienza tu membresía desde tan solo $84 al mes.</li>
+            <li>Comienza tu membresía desde tan solo 84 USDT al mes.</li>
             <li>Realizar membresías periódicas o sumas únicas. </li>
             <li>
               Cualquiera puede realizar el aporte de tu membresía para cultivar

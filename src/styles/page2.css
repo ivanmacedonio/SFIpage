@@ -129,6 +129,10 @@ img {
     font-family: 'Montserrat', sans-serif;
     color: rgb(2, 80, 116);
     font-weight: 400;
+    background-color: gainsboro;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    padding: 10px;
 }
 
 .listvalores {
@@ -151,8 +155,7 @@ img {
 .confianza {
     background-color: rgb(0, 103, 150);
     width: 75%;
-    position: relative;
-    top: 7rem;
+    position: static;
     margin-left: 10rem;
     border-radius: 1.5rem;
     padding-left: 5rem;
@@ -187,6 +190,7 @@ img {
 
     .valorestitle h1 {
         font-size: 3rem;
+        margin-right: 1rem;
     }
 
     .valorestitle {
@@ -347,7 +351,8 @@ img {
         border-radius: 1rem;
     }
     .lista li{
-        color: white;
+        color: rgb(255, 255, 255);
+        background-color: rgb(0, 103, 150);
     }
 
     .confianza {
@@ -395,7 +400,8 @@ img {
         border-radius: 1rem;
     }
     .lista li{
-        color: white;
+        color: rgb(255, 255, 255);
+        background-color: rgb(0, 103, 150);
     }
 
     .confianza {

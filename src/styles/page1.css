@@ -118,10 +118,10 @@ img {
 
 #big {
     font-family: 'Montserrat', sans-serif;
-    margin-top: 4rem;
+    margin-top: 2rem;
     margin-left: 2rem;
     width: 50rem;
-    font-size: 2rem;
+    font-size: 1.7rem;
 }
 
 @media(max-width: 767px) {

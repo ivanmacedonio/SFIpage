@@ -19,18 +19,18 @@ export const Membresia = () => {
           <h2>Tipo de plan:</h2>
           <p>Plan educativo a Corto Plazo</p>
           <h2>Membresía Mensual</h2>
-          <p>$167</p>
+          <p>167 USDT</p>
           <h2>Plazo de maduración:</h2>
           <p>2 Años</p>
         </div>
         <div className="precio">
           <h2>*Bonificación Mensual</h2>
-          <h1>$500</h1>
+          <h1>500 USDT</h1>
           <p>
             *Este monto es aproximado y se liberará una vez alcanzada la
             maduración de la membresía. Nota, el programa de bonificación
-            mensual tiene una caducidad desde 60 meses hasta 240 meses,
-            dependiendo del plan 2 Años seleccionado.
+            mensual tiene una caducidad de hasta 240 meses,
+            dependiendo del plan seleccionado.
           </p>
         </div>
       </div>

@@ -44,3 +44,21 @@
     font-size: 1.3rem;
     width: 15rem;
 }
+
+.content2{
+    margin-bottom: 4rem;
+
+}
+.content2 h1{
+    width: fit-content;
+    margin-left: 3rem;
+}
+
+.content4{
+    margin-bottom: 2.5rem;
+}
+
+.content4 h1{
+    width: fit-content;
+    margin-left: 3rem;
+}

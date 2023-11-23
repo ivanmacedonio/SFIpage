@@ -12,14 +12,16 @@ export const Carrouselp3 = () => {
         </p>
       </div>
       <div className="slide">
-      <h1>Paso 2</h1>
-        <p>
-          Explora nuestras opciones de membresía y elige la que se adapte mejor
-          a tus necesidades y objetivos.
-        </p>
+        <div className="content2">
+          <h1>Paso 2</h1>
+          <p>
+            Explora nuestras opciones de membresía y elige la que se adapte
+            mejor a tus necesidades y objetivos.
+          </p>
+        </div>
       </div>
       <div className="slide" id="higher">
-      <h1>Paso 3</h1>
+        <h1>Paso 3</h1>
         <p>
           Una vez que te conviertas en miembro, tendrás acceso a una amplia gama
           de beneficios, incluyendo a sesiones sobre educación de alta calidad,
@@ -27,13 +29,15 @@ export const Carrouselp3 = () => {
           de participar en proyectos que asegurarán tus años futuros.
         </p>
       </div>
-      <div className="slide">
-      <h1>Paso 4</h1>
-        <p>
-          Realiza el pago de tu membresía mensual utilizando tu wallet de
-          activos digitales. Nuestro sistema seguro te guiará a través del
-          proceso.
-        </p>
+      <div className="slide" id="slide4">
+        <div className="content4">
+          <h1>Paso 4</h1>
+          <p>
+            Realiza el pago de tu membresía mensual utilizando tu wallet de
+            activos digitales. Nuestro sistema seguro te guiará a través del
+            proceso.
+          </p>
+        </div>
       </div>
     </div>
   );

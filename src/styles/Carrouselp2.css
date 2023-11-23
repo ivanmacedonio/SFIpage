@@ -104,6 +104,7 @@
 
 .card__content{
     height: 28rem;
+    width: 100%;
 }
 
 .card__title{
@@ -127,7 +128,7 @@
 .cards{
     height: 30rem;
     margin-bottom: 1rem;
-    max-width: 85%;
+    max-width: 95%;
 }
 
 .navigation {
@@ -141,7 +142,7 @@
     display: inline-block;
     width: 20px;
     height: 20px;
-    background-color: #333;
+    background-color: rgb(4, 39, 115);
     color: #fff;
     border-radius: 1rem;
     text-align: center;
