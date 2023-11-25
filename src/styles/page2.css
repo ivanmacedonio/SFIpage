@@ -2,11 +2,11 @@ img {
     max-width: 100%;
 }
 
-.acordeonmembresia{
+.acordeonmembresia {
     display: none;
 }
 
-.imagenp2r{
+.imagenp2r {
     display: none;
 }
 
@@ -18,10 +18,12 @@ img {
 .carrouselvalores {
     display: none;
 }
-.lista li{
+
+.lista li {
     transition: .3s ease;
 }
-.lista li:hover{
+
+.lista li:hover {
     color: orange;
     cursor: pointer;
 }
@@ -169,24 +171,26 @@ img {
 
 @media (max-width: 767px) {
 
-    
-
-
-    .acordeonmembresia{
+    .acordeonmembresia {
         display: block;
     }
 
-    .imagenp2r{
+    .imagenp2r {
         display: block;
         margin-top: 2rem;
     }
+
     .scrollvalores {
         display: block;
         margin-bottom: 10rem;
+        margin-left: .5rem;
     }
 
     .carrouselp2 {
-        display: block;    }
+        display: block;
+        max-width: 95%;
+        margin-left: .5rem;
+    }
 
     .page2 {
         max-width: 100%;
@@ -199,7 +203,7 @@ img {
 
     .valorestitle {
         width: 10rem;
-        margin-left: 7.5rem;
+        margin-left: 8rem;
     }
 
     .valores {
@@ -252,12 +256,12 @@ img {
         background-image: none;
     }
 
-    .headerp2{
+    .headerp2 {
         position: sticky;
         top: 0;
     }
 
-    .footer{
+    .footer {
         margin-top: 10rem;
     }
 }
@@ -359,7 +363,8 @@ img {
         background-color: rgb(0, 103, 150, 0.8);
         border-radius: 1rem;
     }
-    .lista li{
+
+    .lista li {
         color: rgb(255, 255, 255);
         background-color: rgb(0, 103, 150);
     }
@@ -408,7 +413,8 @@ img {
         background-color: rgb(0, 103, 150, 0.8);
         border-radius: 1rem;
     }
-    .lista li{
+
+    .lista li {
         color: rgb(255, 255, 255);
         background-color: rgb(0, 103, 150);
     }
@@ -420,11 +426,12 @@ img {
     }
 }
 
-@media only screen and (min-width: 1600px) and (max-width: 1800px){
-    .textp2{
+@media only screen and (min-width: 1600px) and (max-width: 1800px) {
+    .textp2 {
         margin-left: 7rem;
     }
-    .confianza{
+
+    .confianza {
         margin-left: 1rem;
     }
 }

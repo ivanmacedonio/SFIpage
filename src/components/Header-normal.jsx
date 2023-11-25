@@ -42,7 +42,7 @@ export const HeaderNormal = () => {
           <h2>Nosotros</h2>
         </Link>
         <Link to={"/afiliacion"}>
-          <h2>Afiliacion</h2>
+          <h2>Afiliación</h2>
         </Link>
 
         <h2

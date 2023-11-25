@@ -5,7 +5,8 @@
 }
 
 #panel1a-header, #panel2a-header{
-    background-color: gainsboro;
+    background-color: rgba(59, 50, 163, 0.938);
+    color: white;
 }
 
 #panel1a-header p::before, #panel2a-header p::before{
