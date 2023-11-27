@@ -1,28 +1,43 @@
 .contactocontainer {
     display: flex;
     margin-top: 5rem;
-    background-image: url('../assets/fondoblanco.webp');
-    background-repeat: round;
     border-radius: 1rem;
+    flex-direction: row-reverse;
 }
 
 .imagencontacto {
-    margin-top: 10rem;
+    margin-top: 2rem;
     margin-left: 10rem;
+    margin-right: 15rem;
     width: 40rem;
 }
 
 .formulariocontacto {
     font-family: 'Lato', sans-serif;
-    margin-left: 10rem;
-    margin-top: 10rem;
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+    background-color: rgb(2, 80, 116);
+    border-radius: 1rem;
+    height: fit-content;
+    padding: 2rem;
 }
+
 
 .formulariocontacto h1 {
     font-weight: 900;
-    color: rgb(2, 80, 116);
+    color: rgb(255, 255, 255);
     font-size: 5rem;
 }
+
+.labels {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    background-color: rgb(0, 104, 194);
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
 
 .formulariocontacto form {
     display: flex;
@@ -35,19 +50,19 @@
     border-radius: .9rem;
     width: 30rem;
     padding-left: 2rem;
-    height: 3rem;
+    height: 2.5rem;
     margin-bottom: 1rem;
     font-family: 'Monserrat', sans-serif;
     padding-top: .5rem;
     padding-bottom: .5rem;
 }
 
-.formulariocontacto input:focus{
-    border: none; 
+.formulariocontacto input:focus {
+    border: none;
     outline: none;
 }
 
-.formulariocontacto input::placeholder{
+.formulariocontacto input::placeholder {
     font-size: 1.3rem;
 }
 
@@ -78,11 +93,12 @@
     background: linear-gradient(to right, rgb(26, 191, 219), rgb(2, 80, 116));
     border-radius: .6rem;
     border-style: none;
-    margin-bottom: 15rem;
+    margin-bottom: 2rem;
     width: 22rem;
     margin-top: 2rem;
 }
-.formulariocontacto button:hover{
+
+.formulariocontacto button:hover {
     cursor: pointer;
 }
 
@@ -93,17 +109,18 @@
         flex-direction: column;
     }
 
-    #mensaje{
+    #mensaje {
         margin-bottom: 2rem;
     }
 
     .formulariocontacto {
         margin: 0;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
     }
 
     .formulariocontacto h1 {
         margin: 0;
-        margin-left: 1.5rem;
         margin-top: 2rem;
     }
 
@@ -112,13 +129,12 @@
     }
 
     .formulariocontacto input {
-        margin-left: 1rem;
-        width: 20rem;
+        width: 90%;
         border: none;
-        background-color: gainsboro;
+        background-color: rgb(255, 255, 255);
     }
 
-    .formulariocontacto input::placeholder{
+    .formulariocontacto input::placeholder {
         color: rgb(114, 114, 114);
     }
 
@@ -170,24 +186,17 @@
 
     .formulariocontacto form {
         margin-top: 4rem;
-        margin-left: 7rem;
+        margin-left: 4.5rem;
     }
 
     .formulariocontacto input {
-        margin-left: 1rem;
-        width: 30rem;
-        background-color: gainsboro;
+        width: 80%;
+        background-color: rgb(255, 255, 255);
     }
 
-    .contactocontainer img {
-        width: 25rem;
-        margin-left: 3.5rem;
-    }
 
     .imagencontacto {
-        margin-left: 8rem;
-        margin-top: 4rem;
-        max-width: max-content;
+        display: none;
     }
 
     #check {
@@ -203,6 +212,10 @@
     .formulariocontacto button {
         margin-top: 2rem;
         width: 35rem;
+        margin-bottom: 10rem;
+    }
+    .labels{
+        width: 70%;
     }
 }
 
@@ -217,7 +230,6 @@
 
     .formulariocontacto {
         margin: 0;
-        margin-left: 6rem;
     }
 
     .formulariocontacto h1 {
@@ -233,15 +245,17 @@
     }
 
     .formulariocontacto input {
-        margin-left: 1rem;
         width: 30rem;
-        background-color: gainsboro;
+        background-color: rgb(255, 255, 255);
     }
 
     .contactocontainer img {
         width: 25rem;
         margin-left: 6rem;
         display: none;
+    }
+    .labels{
+        width: 60%;
     }
 
     .imagencontacto {
@@ -263,19 +277,30 @@
     .formulariocontacto button {
         margin-top: 2rem;
         width: 35rem;
+        margin-bottom: 10rem;
     }
 }
 
 
 
 @media only screen and (min-width: 1200px) and (max-width: 1700px) {
-    .imagencontacto{
-        margin-left: 3rem;
+    .imagencontacto {
+        width: 100%;
+        margin-left: 0rem;
+        position: relative;
+        left: 5rem;
     }
-    .formulariocontacto{
-        margin-right: 8rem;
+
+    .formulariocontacto {
+        margin-left: 10rem;
     }
-    .imagencontacto img{
-        width: 30rem;
+    .formulariocontacto input{
+        background-color: white;
     }
+
+    .imagencontacto img {
+        width: 100%;
+    }
+     
+    
 }

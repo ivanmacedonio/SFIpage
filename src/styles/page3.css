@@ -112,7 +112,6 @@ img {
 .razonescontainer {
     display: flex;
     width: 100%;
-    background: linear-gradient(to bottom, white, rgb(250, 249, 248));
 }
 
 .razones ul,
