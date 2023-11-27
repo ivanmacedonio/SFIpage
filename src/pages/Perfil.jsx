@@ -27,19 +27,7 @@ export const Perfil = () => {
         </div>
         <div className="formprofile2">
           <h1>Membresía</h1>
-          <div className="form2">
-            <h2 id="datos">Datos de membresía</h2>
-            <p>Tipo de membresia</p>
-            <h2>Educativo a corto plazo</h2>
-            <p>Cuotas</p>
-            <h2>24/24</h2>
-            <p>Fecha de inicio</p>
-            <h2>01/12/23</h2>
-            <p>Fecha de vencimiento</p>
-            <h2>1/12/25</h2>
-            <p>Cantidad de bonos</p>
-            <h2 id="end">0/60</h2>
-          </div>
+          
         </div>
       </div>
     </div>

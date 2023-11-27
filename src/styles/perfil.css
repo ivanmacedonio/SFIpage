@@ -57,37 +57,6 @@
     padding-bottom: 1rem;
 }
 
-.form2 {
-    font-family: 'Lato', sans-serif;
-    background-color: rgb(52, 52, 52);
-    border-radius: 3rem;
-    width: 65rem;
-    height:30rem;
-    margin-bottom: 10rem;
-}
-
-.form2 p {
-    font-size: 1.5rem;
-    font-weight: 400;
-    color: white;
-    margin-left: 3rem;
-    margin-bottom: 0;
-    width: fit-content;
-}
-
-.form2 h2 {
-    margin-top: 1rem;
-    font-size: 2rem;
-    color: rgb(2, 80, 116);
-    background-color: white;
-    border-radius: 1rem;
-    width: 25rem;
-    font-weight: 900;
-    padding-bottom: 1rem;
-    padding-top: 1rem;
-    padding-left: 1.5rem;
-    margin-left: 3rem;
-}
 
 #datos {
     margin-top: 0;
