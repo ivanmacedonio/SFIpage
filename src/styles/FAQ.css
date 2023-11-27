@@ -54,6 +54,7 @@
     .textfaq {
         margin-left: 0rem;
         margin-top: 0;
+        width: 100%;
     }
 
     .textfaq p {
@@ -67,8 +68,10 @@
     .acordeon {
         margin-left: 0;
         margin-top: 6rem;
-        width: 24.3rem;
+        width: 100vw;
     }
+
+    
 
 
 }
