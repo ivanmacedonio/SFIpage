@@ -5,6 +5,11 @@ img {
 .scroll {
     display: none;
 }
+.footer{
+    z-index: 4;
+    width: 100%;
+    margin-top: 9rem;
+}
 
 
 .welcome {
@@ -35,29 +40,8 @@ img {
     border: .5rem;
     border-radius: 1rem;
     background-color: rgb(238, 238, 238);
-    box-shadow: 0px 400px 65px 0px rgba(254, 254, 254, 0.75);
     margin-bottom: 20rem;
 }
-
-.transforma {
-    position: relative;
-    bottom: 40rem;
-    font-size: 2rem;
-    left: 30rem;
-    background: linear-gradient(to right, rgb(130, 94, 246), rgb(60, 50, 163));
-    width: 50rem;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    color: white;
-    padding-left: 4rem;
-    padding-right: 4rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    border-radius: 1rem;
-    text-align: center;
-}
-
-
 
 .imgfamilia {
     position: absolute;
@@ -124,6 +108,8 @@ img {
     font-size: 1.7rem;
 }
 
+
+
 @media(max-width: 767px) {
 
     .welcome {
@@ -164,6 +150,11 @@ img {
     
 }
 
+@media (width: 430px){
+    .scroll{
+        margin-left: 1.2rem;
+    }
+}
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
     .welcome {
@@ -281,19 +272,20 @@ img {
         height: 72rem;
     }
 
-    .transforma {
-        left: 14rem;
-        bottom: 25rem;
-    }
-
     #big {
         margin-left: 0;
+        width: 40rem;
     }
 
     .textp1 {
         margin-left: 0;
-        width: 30rem;
+        width: 50rem;
         margin-left: 5rem;
+    }
+    .footer{
+        position: relative;
+        z-index: 4;
+        margin-top: 15rem;
     }
 
     .imgfamilia2 {

@@ -1,10 +1,11 @@
 .footer {
-    background-image: url('../assets/wave.png');
+    background-image: url('../assets/wave.svg');
     background-size: cover;
     background-repeat: no-repeat;
-    height: 107rem;
+    height: 80vh;
     display: flex;
 }
+
 .logo img {
     width: 30rem;
 }
@@ -21,11 +22,11 @@
 
 
 .logo {
-    margin-top: 70rem;
     margin-bottom: 10rem;
-    margin-left: 20rem;
+    margin-left: 10rem;
     margin-right: 15rem;
-    max-width: 20rem;
+    margin-top: 5rem;
+    max-width: 30rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -34,7 +35,7 @@
 }
 
 .parent {
-    margin-top: 70rem;
+    margin-top: 17rem;
     max-width: fit-content;
     display: flex;
 }
@@ -52,13 +53,13 @@
 }
 
 .footer h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 700;
     transition: .3s ease;
 }
 
 .footer h3 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     transition: .3s ease;
 }
 
@@ -70,46 +71,54 @@
 @media (max-width: 767px) {
     .parent {
         display: flex;
-        flex-direction: column;
         margin-top: 0;
-        margin-left: 7rem;
+        margin-left: auto;
+        margin-right: auto;
         text-align: center;
     }
 
     .parent h2 {
-        font-size: 2.6rem;
-    }
-
-    .parent h3 {
         font-size: 2rem;
     }
 
-    .div3 {
-        position: relative;
-        right: 3rem;
+    .parent h3 {
+        font-size: 1.5rem;
     }
 
     .logo {
-        margin-top: 20rem;
+        margin-top: 0rem;
         margin-right: 0;
-        margin-left: 2rem;
-        margin-bottom: 2rem;
+        margin-left: 7vw;
+        margin-bottom: 5rem;
+        width: 20rem;
     }
 
     .footer {
-        background-image: none;
         flex-direction: column;
-        background-color: rgb(1, 102, 120);
-        ;
+    }
+
+    .div1,
+    .div2 {
+        margin-left: 1rem;
+        margin-right: 2rem;
+        margin-bottom: 3rem;
+    }
+    .icons img {
+        width: 2rem;
+    }
+}
+
+@media (width: 430px) {
+    .logo {
+        margin-left: 11vw;
     }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
     .parent {
         display: flex;
-        flex-direction: column;
         margin-top: 0;
-        margin-left: 18rem;
+        margin-left: 4rem;
     }
 
     .parent h2 {
@@ -119,33 +128,24 @@
     .div1,
     .div2 {
         text-align: center;
+        margin-left: 3.5rem;
     }
 
     .parent h3 {
-        font-size: 2rem;
-    }
-
-    .div3 {
-        position: relative;
-        right: 1rem;
+        font-size: 1.5rem;
     }
 
     .logo {
-        margin-top: 5rem;
-        width: 100rem;
-        margin-bottom: 2rem;
-        margin-left: 14.5rem;
+        margin-top: 10rem;
+        margin-bottom: 3rem;
+        margin-left: 17vw;
         margin-right: 0;
     }
 
-    #logoimg {
-        width: 90rem;
-    }
+
 
     .footer {
-        background-image: none;
         flex-direction: column;
-        background-color: rgb(1, 102, 120);
     }
 }
 
@@ -154,13 +154,12 @@
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .parent {
         display: flex;
-        flex-direction: column;
         margin-top: 0;
-        margin-left: 25rem;
+        margin-left: 22%;
     }
 
     .parent h2 {
-        font-size: 3rem;
+        font-size: 4rem;
     }
 
     .div1,
@@ -169,46 +168,36 @@
     }
 
     .parent h3 {
-        font-size: 2rem;
-    }
-
-    .div3 {
-        position: relative;
-        right: 1rem;
-        margin-bottom: 30rem;
+        font-size: 3rem;
     }
 
     .logo {
-        margin-top: 5rem;
-        width: 100rem;
-        margin-bottom: 2rem;
-        margin-left: 21.5rem;
+        margin-top: 0;
+        margin-bottom: 7rem;
+        margin-left: 25vw;
+        margin-right: 0;
     }
 
-    #logoimg {
-        width: 90rem;
-    }
 
     .footer {
-        margin-top: 30rem;
-        height: fit-content;
-        background-image: none;
         flex-direction: column;
-        background-color: rgb(1, 102, 120);
     }
 }
 
 
 
 @media only screen and (min-width: 1200px) and (max-width: 1700px) {
-    .logo{
+    .logo {
+        margin-left: 5rem;
+        margin-right: 5rem;
+    }
+
+    .div2 {
+        margin-right: 5rem;
+    }
+
+    .parent {
+        margin-top: 7rem;
         margin-left: 10rem;
-        margin-right: 5rem;
-    }
-    .div2{
-        margin-right: 5rem;
-    }
-    .parent{
-        margin-top: 76.5rem;
     }
 }

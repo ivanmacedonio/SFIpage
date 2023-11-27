@@ -1,10 +1,10 @@
 import React from "react";
-import SpringModal from "../components/Modal";
+import '../styles/test.css';
 export const Test = () => {
   return (
     <div>
-      <div className="header">
-        <SpringModal></SpringModal>
+      <div className="test">
+        <h1>Hola</h1>
       </div>
     </div>
   );
