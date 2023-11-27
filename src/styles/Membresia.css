@@ -88,6 +88,7 @@ img {
     width: 100%;
     height: max-content;
     background-repeat: no-repeat;
+    margin-top: 1rem;
 }
 
 
@@ -186,6 +187,32 @@ img {
     top: 4rem;
     color: rgb(255, 255, 255);
 }
+
+
+#ulbutton{
+    display: flexbox;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#ulbutton button{
+    font-size: 1rem;
+    border: none;
+    background-color: rgb(0, 63, 89);
+    padding: .5rem;
+    border-radius: 1rem;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    cursor: pointer;
+    margin-right: 1rem;
+}
+
+.modalp3{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 
 @media only screen and (max-width: 767px) {
 
@@ -350,11 +377,11 @@ img {
     .precio {
         margin: 0;
         padding: 0;
-        width: max-content;
+        width: 70%;
         margin-top: 5rem;
-        margin-left: 6rem;
+        margin-left: 9rem;
         background-color: rgb(0, 80, 117);
-        padding-left: 5rem;
+        padding-left: 1rem;
         padding-right: 5rem;
         padding-top: 2rem;
         border-radius: 1rem;
@@ -410,6 +437,7 @@ img {
         padding-top: 5rem;
         padding-left: 0;
         padding-bottom: 0;
+        width: 100%;
     }
 
     .tipoplanes p {
@@ -420,6 +448,9 @@ img {
 
     .footer {
         margin-top: 0rem;
+    }
+    .calcularMembresia{
+        width: 100%;
     }
 }
 

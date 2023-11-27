@@ -127,24 +127,22 @@ a {
     #iconbar {
         display: block;
         margin: 0;
-        margin-top: 7rem;
+        margin-top: 6rem;
         margin-bottom: 4rem;
-        width: 6rem;
-        margin-left: 5rem;
+        width: 4.5rem;
+        margin-left: 10rem;
     }
 
     .hamburguesa {
         width: max-content;
         display: flex;
         flex-direction: column;
-        margin-left: 6rem;
-        transition: max-height 0.3s ease-in-out;
-        transition: opacity 0.3s ease-in-out;
+        margin-left: 18rem;
     }
 
     .hamburguesa h2 {
         width: max-content;
-        font-size: 3rem;
+        font-size: 2rem;
     }
 
     .links {
@@ -153,11 +151,12 @@ a {
 
     .header {
         flex-direction: column;
+        margin-left: .5rem;
     }
 
     .imagenlogo img {
         margin: 0;
-        width: 35rem;
+        width: 20rem;
         margin-left: 3rem;
         margin-top: 5rem;
     }
@@ -168,6 +167,10 @@ a {
 
     #session {
         margin-left: 0;
+    }
+
+    .header{
+        width: 100%;
     }
 }
 

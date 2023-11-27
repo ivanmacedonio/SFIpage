@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import { Ac } from "../components/Ac";
 import { Footer } from "../components/Footer";
 import { HeaderNormal } from "../components/Header-normal";
+import TransitionsModal from "../components/Modal";
 import "../styles/Membresia.css";
-
 export const Membresia = () => {
   const [estilos, setEstilos] = useState({
     maxHeight: "0",
@@ -20,6 +20,9 @@ export const Membresia = () => {
     months: "Selecciona un plan",
     cuotes: "Selecciona un plan",
   });
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalName, setModalName] = useState("");
+  const [modalDescrip, setModalDescrip] = useState("");
 
   const handlePlanClick = (plan) => {
     setPlandata({
@@ -41,7 +44,7 @@ export const Membresia = () => {
 
   useEffect(() => {
     async function getData() {
-      const res = await axios.get("http://127.0.0.1:8000/api/plans/");
+      const res = await axios.get("http://127.0.0.1:8000/api/memberships/");
       setData(res.data);
     }
     getData();
@@ -52,16 +55,25 @@ export const Membresia = () => {
       <div className="header">
         <HeaderNormal></HeaderNormal>
       </div>
-      <div className="imagenmembresia"> </div>
+      <div className="imagenmembresia"></div>
+
       <div className="calcularMembresia">
         <div className="tipoplanes">
           <h1 id="calculah1">Calcula tu membresía</h1>
           <h2>Tipo de plan:</h2>
           <p onClick={desplegar}>{plandata.name} </p>
           <div className="contentacc" style={estilos}>
-            <ul>
+            <ul id="ulbutton">
               {data.map((plan) => (
-                <li onClick={() => handlePlanClick(plan)}>{plan.name}</li>
+                <li onClick={() => handlePlanClick(plan)}>
+                  <div className="modalp3">
+                    {plan.name}{" "}
+                    <TransitionsModal
+                      name={plan.name}
+                      descrip={plan.full_description}
+                    ></TransitionsModal>
+                  </div>
+                </li>
               ))}
             </ul>
           </div>

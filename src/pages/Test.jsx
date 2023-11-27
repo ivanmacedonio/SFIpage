@@ -1,10 +1,10 @@
 import React from "react";
-import { Ac } from "../components/Ac";
+import SpringModal from "../components/Modal";
 export const Test = () => {
   return (
     <div>
       <div className="header">
-        <Ac></Ac>
+        <SpringModal></SpringModal>
       </div>
     </div>
   );
