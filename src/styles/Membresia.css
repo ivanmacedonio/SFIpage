@@ -168,7 +168,6 @@ img {
     width: 100%;
     padding-bottom: 2rem;
     position: relative;
-    background: linear-gradient(to bottom, #ffffff, rgb(250, 249, 248));
 }
 
 .escoge {
@@ -211,6 +210,10 @@ img {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.footer{
+    
 }
 
 
