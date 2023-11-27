@@ -266,6 +266,15 @@ img {
     }
 }
 
+@media (width: 430px){
+    .carrouselp2{
+        margin-left: 0.8rem;
+    }
+    .valorestitle{
+        margin-left: 9rem;
+    }
+}
+
 @media only screen and (min-width: 768px) and (max-width: 991px) {
     .textp2 p {
         width: 40rem;
