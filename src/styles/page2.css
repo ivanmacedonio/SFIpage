@@ -388,6 +388,7 @@ img {
     .textp2 {
         margin-left: 0;
         width: 85rem;
+        background-position: center;
     }
 
     .textContainerNosotros {

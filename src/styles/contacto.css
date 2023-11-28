@@ -20,6 +20,7 @@
     border-radius: 1rem;
     height: fit-content;
     padding: 2rem;
+    padding-top: 0rem;
 }
 
 
@@ -27,6 +28,7 @@
     font-weight: 900;
     color: rgb(255, 255, 255);
     font-size: 5rem;
+    margin-top: .5;
 }
 
 .labels {
@@ -48,7 +50,7 @@
     border: none;
     font-size: 1.4rem;
     border-radius: .9rem;
-    width: 30rem;
+    max-width: 95%;
     padding-left: 2rem;
     height: 2.5rem;
     margin-bottom: 1rem;
@@ -68,7 +70,19 @@
 
 #mensaje {
     text-align: left;
-    padding-bottom: 7rem;
+    overflow-wrap: break-word;
+    margin-bottom: 2rem;
+    border-style: none;
+    font-family: 'Monserrat', sans-serif;
+    font-size: 1.4rem;
+    max-height: 5rem;
+    border-radius: 1rem;
+    padding-left: 2rem;
+    padding-top: 1rem;
+}
+
+#mensaje:focus{
+    outline: none;
 }
 
 #check {
@@ -94,7 +108,7 @@
     border-radius: .6rem;
     border-style: none;
     margin-bottom: 2rem;
-    width: 22rem;
+    width: 90%;
     margin-top: 2rem;
 }
 

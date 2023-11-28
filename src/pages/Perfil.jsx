@@ -27,7 +27,6 @@ export const Perfil = () => {
         </div>
         <div className="formprofile2">
           <h1>Membresía</h1>
-          
         </div>
       </div>
     </div>

@@ -22,7 +22,7 @@ export const Contacto = () => {
           <form>
             <input type="text" placeholder="Ingresa tu nombre" />
             <input type="text" placeholder="Ingresa tu correo electronico" />
-            <input type="text" id="mensaje" placeholder="Mensaje" />
+            <textarea placeholder="Mensaje" id="mensaje" cols="30" rows="10"></textarea>
             <div className="labels">
               <label>
                 <input type="checkbox" id="check" />
