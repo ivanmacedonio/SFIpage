@@ -176,11 +176,18 @@ img {
 .textfamilia2 {
     left: 4rem;
     z-index: 3;
-    bottom: 28rem;
+    bottom: 27rem;
 }
 
 .textfamilia2 p {
     display: none;
+}
+
+#h2delete {
+    background-color: white;
+    color: rgb(0, 92, 115);
+    border-radius: 1rem;
+    padding: 1rem;
 }
 
 
@@ -221,7 +228,7 @@ img {
     .textfamilia2 {
         left: 5rem;
         z-index: 3;
-        bottom: 28rem;
+        bottom: 25rem;
     }
 
 
