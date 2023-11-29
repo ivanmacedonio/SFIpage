@@ -12,6 +12,7 @@ export const Perfil = () => {
   const [active, setActive] = useState(false);
   const [estilo, setEstilo] = useState({ display: "none" });
   const [isMember, setIsMember] = useState(false);
+  const [isVerificated, setIsVerificated] = useState(false);
 
   function handleQuinquenio() {
     setActive(!active);
@@ -40,49 +41,103 @@ export const Perfil = () => {
         <div className="formprofile2">
           <h1 id="deletemem">Membresía</h1>
           {isMember ? (
-            <div className="form2">
-              <h1 id="datosmem">Datos de membresia</h1>
-              <div className="caja">
-                <p>Tipo de membresia</p>
-                <h2>Educativo a corto plazo</h2>
-              </div>
-              <div className="caja">
-                <p>Cuotas</p>
-                <h2 id="cuotas">24/24</h2>
-              </div>
-              <div className="caja">
-                <p>Tiempo de maduracion</p>
-                <h2 id="maduracion">2 meses</h2>
-              </div>
-              <div className="caja">
-                <p>Fecha de inicio</p>
-                <h2 id="fecha">1/2/3</h2>
-              </div>
-              <div className="caja">
-                <h3 id="descargar">Descargar contrato</h3>
-              </div>
-              <div className="caja" id="quinquenio">
-                <input type="checkbox" onClick={handleQuinquenio} /> Retiro de
-                quinquenio
-              </div>
-              <div className="caja" id="estadocuota">
-                <img src={estado} alt="" />
-              </div>
-              <h1 id="bonificacionh1">Bonificacion proyectada</h1>
-              <div className="containerfechas">
-                <div className="caja">
-                  <p>Fecha de inicio</p>
-                  <h2>1/12/15</h2>
+            <div className="containerperfil2">
+              {isVerificated ? (
+                <div className="form2">
+                  <h1 id="datosmem">Datos de membresia</h1>
+                  <div className="caja">
+                    <p>Tipo de membresia</p>
+                    <h2>Educativo a corto plazo</h2>
+                  </div>
+                  <div className="caja">
+                    <p>Cuotas</p>
+                    <h2 id="cuotas">24/24</h2>
+                  </div>
+                  <div className="caja">
+                    <p>Tiempo de maduracion</p>
+                    <h2 id="maduracion">2 meses</h2>
+                  </div>
+                  <div className="caja">
+                    <p>Fecha de inicio</p>
+                    <h2 id="fecha">1/2/3</h2>
+                  </div>
+                  <div className="caja">
+                    <h3 id="descargar">Descargar contrato</h3>
+                  </div>
+                  <div className="caja" id="quinquenio">
+                    <input type="checkbox" onClick={handleQuinquenio} /> Retiro
+                    de quinquenio
+                  </div>
+                  <div className="caja" id="estadocuota">
+                    <img src={estado} alt="" />
+                  </div>
+                  <h1 id="bonificacionh1">Bonificacion proyectada</h1>
+                  <div className="containerfechas">
+                    <div className="caja">
+                      <p>Fecha de inicio</p>
+                      <h2>1/12/15</h2>
+                    </div>
+                    <div className="caja">
+                      <p>Fecha de vencimiento</p>
+                      <h2>1/12/25</h2>
+                    </div>
+                    <div className="caja">
+                      <p>Cantidad de bonos</p>
+                      <h2>0/60</h2>
+                    </div>
+                  </div>
                 </div>
-                <div className="caja">
-                  <p>Fecha de vencimiento</p>
-                  <h2>1/12/25</h2>
+              ) : (
+                <div className="form2b">
+                  <h1 id="datosmemb">Datos de membresia</h1>
+                  <div className="caja" id="expand">
+                    <p>Tipo de membresia</p>
+                    <h2>Educativo a corto plazo</h2>
+                  </div>
+                  <div className="caja">
+                    <p>Cuotas</p>
+                    <h2 >24/24</h2>
+                  </div>
+                  <div className="caja">
+                    <p>Tiempo de maduracion</p>
+                    <h2>2 meses</h2>
+                  </div>
+                  <div className="caja">
+                    <p>Fecha de inicio</p>
+                    <h2>1/2/3</h2>
+                  </div>
+                  <div className="caja">
+                    <h3 id="pending">Pendiente de firmar</h3>
+                  </div>
+                  <div className="caja" id="quinqueniob">
+                    <input type="checkbox" onClick={handleQuinquenio} /> Retiro
+                    de quinquenio
+                  </div>
+                  <h1 id="bonificacionh1b">Bonificacion proyectada</h1>
+                  <div className="containerfechasb">
+                    <div className="caja">
+                      <p>Fecha de inicio</p>
+                      <h2>1/12/15</h2>
+                    </div>
+                    <div className="caja">
+                      <p>Fecha de vencimiento</p>
+                      <h2>1/12/25</h2>
+                    </div>
+                    <div className="caja">
+                      <p>Cantidad de bonos</p>
+                      <h2>0/240</h2>
+                    </div>
+                    <div className="caja" id="paddi">
+                      <p>Monto de cuota mensual en USDT</p>
+                      <h2>1000 USDT</h2>
+                    </div>
+                    <div className="caja" id="wallet">
+                      <p>Wallet</p>
+                      <h2>XXXX</h2>
+                    </div>
+                  </div>
                 </div>
-                <div className="caja">
-                  <p>Cantidad de bonos</p>
-                  <h2>0/60</h2>
-                </div>
-              </div>
+              )}
             </div>
           ) : (
             <div className="noMember">
