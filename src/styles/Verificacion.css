@@ -13,6 +13,36 @@
     width: 45rem;
 }
 
+.alertaverif {
+    background-color: rgb(52, 52, 52);
+    border-radius: 1rem;
+    width: 100%;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    height: 25rem;
+    margin-top: 10rem;
+}
+
+.alertaverif h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    border-radius: 1rem;
+    background: linear-gradient(to right, rgb(26, 191, 219), rgb(2, 80, 116));
+    width: max-content;
+    padding: 1rem;
+    margin-left: 35%;
+}
+
+.alertaverif p {
+    font-size: 1.7rem;
+    width: 35rem;
+    margin-left: 45rem;
+}
+
+.content {
+    padding-top: 2rem;
+}
+
 .textverif h2 {
     font-family: 'Lato', sans-serif;
     color: rgb(1, 104, 151);
@@ -52,6 +82,7 @@
     font-size: 4rem;
     text-align: center;
     margin-bottom: 1rem;
+
 }
 
 #direccion input {
@@ -72,11 +103,13 @@
     padding-bottom: 1.3rem;
     border-radius: 1rem;
     width: 13rem;
+    font-size: 1.4rem;
 }
+
 
 .formverif input::placeholder {
     font-family: 'Lato', sans-serif;
-    font-size: 1.1rem;
+    font-size: 1.4rem;
     color: rgba(116, 116, 116, 0.713);
 }
 
@@ -130,13 +163,29 @@
 }
 
 @media(max-width: 768px) {
+
+    .alertaverif h1 {
+        margin-left: 0;
+        margin-left: 2rem;
+        font-size: 1.5rem;
+    }
+
+    .alertaverif p {
+        margin-left: 0;
+        font-size: 1.4rem;
+        width: 20rem;
+        margin-left: 2rem;
+    }
+
     .verificacioncontainer {
         flex-direction: column;
         width: max-content;
+        background-image: none;
     }
 
     .textverif {
         margin-left: 1rem;
+        margin-top: 0;
         width: min-content;
     }
 
@@ -172,6 +221,8 @@
 
     #enviar button {
         margin: 0;
+        margin-top: 2rem;
+        margin-bottom: 5rem;
         width: 15rem;
     }
 
@@ -185,9 +236,28 @@
     }
 }
 
+@media (width: 430px) {
+    .formverif {
+        margin-left: 2rem;
+    }
+}
+
 
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .alertaverif h1 {
+        margin-left: 0;
+        margin-left: 12rem;
+        font-size: 2rem;
+    }
+
+    .alertaverif p {
+        margin-left: 12rem;
+        font-size: 1.5rem;
+        width: 20rem;
+    }
+
     .verificacioncontainer {
         flex-direction: column;
         width: 100%
@@ -247,13 +317,33 @@
 
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+    .alertaverif h1 {
+        margin-left: 0;
+        margin-left: 21rem;
+        font-size: 2rem;
+    }
+
+    .alertaverif p {
+        margin-left: 21rem;
+
+        font-size: 1.5rem;
+        width: 25rem;
+    }
+    .alertaverif{
+        margin-top: 0rem;
+        margin-bottom: 40rem;
+    }
+
     .verificacioncontainer {
-        width: 100%
+        width: 100%;
+        flex-direction: column;
+        background-image: none;
     }
 
     .textverif {
-        margin-left: 3rem;
-        width: min-content;
+        margin-left: 10rem;
+        width: 100%;
     }
 
     .textverif h1 {
@@ -267,7 +357,7 @@
     }
 
     .formverif {
-        margin-left: 4rem;
+        margin-left: 12rem;
         margin-top: 4rem;
         width: 40rem;
         height: 90rem;
@@ -335,13 +425,13 @@
     }
 
     #select {
-        margin-left: 3rem;
-        width: 16rem;
-
+        margin-left: 4rem;
+        width: 30rem;
+        height: fit-content;
     }
 
     #checkb p {
-        width: 10rem;
+        width: 20rem;
     }
 
     #enviar button {

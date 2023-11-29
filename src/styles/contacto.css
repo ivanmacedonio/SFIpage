@@ -165,7 +165,8 @@
     }
 
     #check {
-        height: 1.5rem;
+        height: 1.2rem;
+        border-radius: 3rem;
         margin-left: 1rem;
     }
 
@@ -179,6 +180,7 @@
         max-width: 80%;
         margin-left: 10%;
     }
+
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {

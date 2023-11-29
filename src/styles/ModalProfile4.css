@@ -1,0 +1,69 @@
+.caja4{
+    width: 50%;
+    flex: 1;
+}
+
+.caja4 p{
+    font-size: 1.2rem;
+    margin-bottom: .8rem;
+}
+.caja4 input{
+    font-size: 1.3rem;
+    border-radius: .5rem;
+    width: 10rem;
+    padding: .5rem 0 .5rem 0;
+    padding-left: 1rem;
+
+}
+
+.modal4{
+    display: flex;
+    flex-wrap: wrap;
+    font-family: 'Lato';
+}
+
+#beneficiario{
+    background-color: rgb(2, 80, 116);
+    padding-left: 1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+#db{
+    font-size: 2rem;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    text-align: center;
+}
+
+.continuar5{
+    margin-left: 2rem;
+    font-size: 2rem;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+}
+
+@media (max-width : 767px){
+    .caja4{
+        flex: 0;
+        width: 100%;
+    }
+    .modal4{
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+    }
+
+    .caja4 input{
+        width: 100%;
+    }
+    #beneficiario{
+        padding: 1rem;
+        margin-bottom: 0;
+    }
+    .continuar5{
+        margin-left: 0;
+        position: relative;
+        right: 1rem;
+    }
+}

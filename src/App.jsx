@@ -8,9 +8,10 @@ import { Blog } from "./pages/Blog";
 import { Contacto } from "./pages/Contacto";
 import { FAQ } from "./pages/FAQ";
 import { Inicio } from "./pages/Inicio";
+import { Login } from "./pages/Login";
 import { Membresia } from "./pages/Membresia";
 import { Perfil } from "./pages/Perfil";
-import { Test } from './pages/Test';
+import { Test } from "./pages/Test";
 import { Verificacion } from "./pages/Verificacion";
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path="/inicio" element={<Inicio></Inicio>} />
           <Route path="/perfil" element={<Perfil></Perfil>} />
           <Route path="/verificacion" element={<Verificacion></Verificacion>} />
+          <Route path="/login" element={<Login></Login>} />
           <Route path="/test" element={<Test></Test>} />
         </Routes>
       </BrowserRouter>

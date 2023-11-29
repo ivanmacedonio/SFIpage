@@ -1,0 +1,78 @@
+#continuar{
+    background: linear-gradient(to right, rgb(3, 180, 211), rgb(2, 80, 116));
+    width: fit-content;
+    padding: 0 2rem 0 2rem;
+    border-radius: 1rem;
+    font-size: 2rem;
+    margin-left: 2.5rem;
+    cursor: pointer;
+    color: white;
+    margin-top: 2rem;
+}
+
+.modal3{
+    font-family: 'Lato', sans-serif;
+}
+
+.modal3 h2{
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.montos2{
+    display: flex;
+}
+
+.montos2 p{
+    width: 70%;
+    margin-bottom: 0;
+    font-size: 1rem;
+    margin-left: .5rem;
+}
+
+.montos2 h1{
+    background-color: white;
+    width: fit-content;
+    border-radius: 1rem;
+    color: rgb(0, 68, 145);
+    padding: 0 1rem 0 1rem;
+    font-weight: 700;
+    width: 80%;
+}
+
+.modal3 input{
+    width: 100%;
+    padding: .5rem 0 .5rem 0;
+    border-radius: .5rem;
+    font-size: 1.3rem;
+    padding-left: 1rem;
+}
+
+
+.continuar4{
+    margin-left: 1.5rem;
+}
+
+@media(max-width: 767px){
+    .css-1llu0g7{
+        width: 300px !important;
+    }
+    .caja3 h1{
+        font-size: 1.4rem;
+        width: fit-content;
+    }
+
+    .caja3 p{
+        width: 10rem;
+    }
+    .continuar4{
+        position: relative;
+        right: 3rem;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .css-1llu0g7{
+    top: 35%;
+    }
+}

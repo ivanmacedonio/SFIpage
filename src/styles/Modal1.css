@@ -1,0 +1,144 @@
+.membresiaModal1 h1 {
+    font-weight: 900;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    color: rgb(0, 81, 128);
+    font-size: 2.4rem;
+    text-align: center;
+}
+
+#scrolleable {
+    overflow-y: auto;
+}
+
+.membresiaModal1 h3 {
+    font-size: 2rem;
+    font-weight: 900;
+    text-align: center;
+}
+
+.membresiaModal1 h2 {
+    background-color: white;
+    padding: 1rem;
+    color: rgb(0, 81, 128);
+    font-weight: 700;
+    border-radius: 1rem;
+}
+
+.membresiaModal1 label {
+    font-size: 1.3rem;
+}
+
+.membresiaModal1 label input {
+    margin-right: 1rem;
+    font-size: 2rem;
+}
+
+#btn-continue {
+    background: linear-gradient(to right, rgb(3, 180, 211), rgb(2, 80, 116));
+    padding: 1rem;
+    border-radius: 1rem;
+    text-align: center;
+    font-weight: 900;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.membresiaModal1 p {
+    font-size: 1.4rem;
+}
+
+.membresiaModal1 output {
+    font-size: 1.3rem;
+    margin-left: 2rem;
+    background-color: white;
+    border-radius: 1rem;
+    padding: .5rem;
+    color: rgb(2, 80, 116);
+    font-weight: 900;
+}
+
+#botonadquirirmodal {
+    font-size: 3rem;
+    background: linear-gradient(to right, rgb(3, 180, 211), rgb(2, 80, 116));
+    color: white;
+    border-radius: 1rem;
+    padding-left: 1rem;
+    padding-right: 2rem;
+    font-weight: 900;
+    font-style: italic;
+}
+
+.membresiaModal1 h4 {
+    font-size: 2rem;
+    margin-top: 0;
+    cursor: pointer;
+}
+
+
+@media (max-width: 767px) {
+    #botonadquirirmodal {
+        font-size: 2rem;
+    }
+
+
+    .membresiaModal1 h4 {
+        margin-left: 1rem;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        background-color: white;
+        width: fit-content;
+        color: black;
+        border-radius: 5rem;
+        padding: 0 1rem 0 1rem;
+    }
+
+    .membresiaModal1 h1 {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .membresiaModal1 h3 {
+        margin-top: 0;
+    }
+
+    .membresiaModal1 h2 {
+        width: 50%;
+        margin-left: 1rem;
+    }
+
+    .membresiaModal1 p {
+        margin-left: 1rem;
+    }
+
+    .membresiaModal1 label {
+        margin-left: 2rem;
+        width: 50%;
+    }
+}
+
+@media (width: 430px) {
+    #botonadquirirmodal {
+        font-size: 2rem;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    #scrolleable {
+        margin-bottom: 70rem;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    #scrolleable{
+        height: 40rem;
+        top:30%;
+    }
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1600px) {
+    #scrolleable{
+        height:30rem;
+    }
+}

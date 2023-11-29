@@ -1,0 +1,64 @@
+.t p,
+.t h3,
+.modal5 h1 {
+    margin: 0;
+    font-family: 'Lato', sans-serif
+}
+
+.t {
+    display: flex;
+    margin-bottom: .5rem;
+    align-items: center;
+}
+
+.t h3 {
+    margin-left: 1rem;
+    font-weight: 900;
+}
+
+.modal5 h1 {
+    margin-bottom: 1rem;
+}
+
+.modal5 label {
+    font-family: 'Lato', sans-serif;
+    margin-top: 2rem;
+}
+
+#transferir1 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    text-align: center;
+    background: linear-gradient(to right, rgb(3, 180, 211), rgb(2, 80, 116));
+    border-radius: 1rem;
+
+}
+
+@media (max-width: 767px) {
+    .modal5 h1 {
+        font-size: 1.3rem;
+        background-color: white;
+        border-radius: 1rem;
+        color: rgb(2, 80, 116);
+        padding-left: 1rem;
+    }
+
+    .t h3 {
+        font-size: .7rem;
+        width: max-content;
+        margin-top: .2rem;
+    }
+
+    #transferir1 {
+        font-size: 1.4rem;
+        padding: 1rem;
+    }
+}
+
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+    .css-1llu0g7{
+        top:35% !important;
+    }
+}

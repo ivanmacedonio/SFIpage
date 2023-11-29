@@ -1,8 +1,6 @@
 .profilecontainer {
     margin-top: 3rem;
     border-radius: 1rem;
-    background-image: url('../assets/fondoblanco.webp');
-    background-repeat: round;
     display: flex;
 }
 
@@ -10,13 +8,14 @@
     font-family: 'Monserrat', sans-serif;
     font-weight: 900;
     margin-bottom: 0;
-    font-size: 7rem;
+    font-size: 5rem;
     font-style: italic;
     background: linear-gradient(to right, rgb(3, 180, 211), rgb(2, 80, 116));
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
     margin-left: 2rem;
+    margin-top: 0;
 }
 
 .formprofile1 {
@@ -25,6 +24,32 @@
     margin-right: 10rem;
 }
 
+.formprofile2 h1 {
+    margin-top: 0;
+}
+
+#btn-adicional {
+    font-size: 2rem;
+    color: white;
+    background: linear-gradient(to right, rgb(185, 83, 190), rgb(180, 16, 201));
+    border-radius: 1rem;
+    width: fit-content;
+    padding: 0 2rem 0 2rem;
+    margin-left: auto;
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+}
+
+.alerta {
+    max-width: 70%;
+    font-size: 1.3rem;
+    background-color: rgb(242, 124, 124);
+    color: white;
+    padding: 1rem;
+    border-radius: 1rem;
+    font-family: 'Lato', sans-serif;
+    margin-top: 2rem;
+}
 
 .form1 {
     display: flex;
@@ -33,7 +58,9 @@
     border-radius: 3rem;
     margin-bottom: 10rem;
     font-family: 'Lato', sans-serif;
-    height: 45rem;
+    height: fit-content;
+    padding-top: 2rem;
+    width: 30rem;
 }
 
 .form1 p {
@@ -42,6 +69,7 @@
     font-weight: 400;
     margin-left: 3rem;
     margin-bottom: 1rem;
+    margin-top: 0;
 }
 
 .form1 h2 {
@@ -71,14 +99,167 @@
     padding-top: 2rem;
 }
 
+.form2 {
+    display: flex;
+    flex-wrap: wrap;
+    height: max-content;
+    background-color: rgb(52, 52, 52);
+    border-radius: 3rem;
+    padding: 1rem;
+    width: 42rem;
+}
+
+.caja {
+    height: fit-content;
+    flex: 1;
+    color: white;
+}
+
+
+.form2 h2 {
+    height: fit-content;
+    font-family: 'Lato', sans-serif;
+    margin-right: .5rem;
+    width: max-content;
+    background-color: white;
+    border-radius: 1rem;
+    padding: 1rem;
+    color: rgb(2, 80, 116);
+    font-weight: 900;
+    margin-top: 1rem;
+}
+
+#cuotas {
+    width: 8rem;
+}
+
+#maduracion {
+    width: 10rem;
+}
+
+#fecha {
+    width: 7rem;
+}
+
+#quinquenio {
+    margin-top: 2.5rem;
+    font-size: 1.2rem;
+    margin-left: 1rem;
+    background-color: rgb(2, 80, 116);
+    height: fit-content;
+    border-radius: 1rem;
+    padding-left: 1rem;
+    font-family: 'Lato', sans-serif;
+    padding-top: .3rem;
+    padding-bottom: .3rem;
+}
+
+#descargar {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.5rem;
+    color: rgb(255, 255, 255);
+    background: linear-gradient(to right, rgb(3, 180, 211), rgb(2, 80, 116));
+    border-radius: 1rem;
+    padding-left: 1rem;
+    font-weight: 900;
+    margin-bottom: 0;
+    margin-top: 2.5rem;
+}
+
+#estadocuota {
+    margin-top: 2.5rem;
+    margin-left: 1rem;
+}
+
+#datosmem {
+    font-size: 3rem;
+    background: none;
+    color: white;
+    font-style: normal;
+    font-weight: 700;
+    background: linear-gradient(to right, rgb(3, 180, 211), rgb(2, 80, 116));
+    margin: 2rem 0rem 2rem 4.5rem;
+    padding: 0 2rem 0 2rem;
+    border-radius: 1rem;
+}
+
+#bonificacionh1 {
+    font-size: 3rem;
+    background: none;
+    color: white;
+    font-style: normal;
+    font-weight: 700;
+    margin: 2rem 0rem 2rem 1.5rem;
+    background: linear-gradient(to right, rgb(3, 180, 211), rgb(2, 80, 116));
+    padding: 0rem 2rem 0rem 2rem;
+    border-radius: 1rem;
+
+}
+
+.containerfechas {
+    display: flex;
+}
+
+.containerfechas .caja {
+    margin-right: 2rem;
+}
+
+.containerfechas .caja h2 {
+    width: 10rem;
+    background: linear-gradient(to right, rgb(3, 180, 211), rgb(2, 80, 116));
+    color: white;
+}
+
+.form2 p {
+    font-size: 1.2rem;
+    font-family: 'Lato', sans-serif;
+    width: max-content;
+    padding-left: .5rem;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.noMember{
+    background-color: rgb(52, 52, 52);
+    border-radius: 1rem;
+    padding: 2rem;
+}
+.noMember h2{
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    color: white;
+    width: 30rem;
+    margin-left: 6rem;
+    
+}
+
 @media only screen and (max-width: 767px) {
+
+    #nomemberh1{
+        font-size: 1.7rem;
+        margin-left: 0rem;
+        padding: 1rem;
+        width: 18rem;
+    }
+
+    .noMember h2{
+        font-size: 1.4rem;
+        width: 20rem;
+        margin-left: 1rem;
+    }
+
+    .noMember{
+        width: 82%;
+    }
+    
     .profilecontainer {
         flex-direction: column;
     }
 
     .formprofile1 {
         margin: 0;
-        margin-left: 1rem;
+        margin-left: 1.2rem;
         width: max-content;
     }
 
@@ -95,6 +276,10 @@
     .formprofile2 h1 {
         font-size: 3.5rem;
         width: max-content;
+    }
+
+    #deletemem {
+        display: none;
     }
 
     .form1 h2,
@@ -127,44 +312,133 @@
     .form1 {
         margin-bottom: 2rem;
     }
+
+    .caja h2 {
+        width: 85%;
+    }
+
+    #datosmem {
+        margin-left: 0rem;
+        width: 80%;
+    }
+
+    .caja p {
+        margin-left: 0;
+    }
+
+    .form2 {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        flex: 0;
+        width: 86%;
+    }
+
+    #descargar {
+        font-size: 2rem;
+        padding: 1rem;
+    }
+
+    #cuotas {
+        width: 85%;
+    }
+
+    #quinquenio {
+        font-size: 1.5rem;
+        padding: 1rem;
+        margin-left: 0.2rem;
+        width: 87%;
+        background-color: white;
+        color: rgb(2, 80, 116);
+        font-weight: 700;
+
+    }
+
+    #bonificacionh1 {
+        width: 80%;
+        margin-left: 0rem;
+        font-size: 2.5rem;
+
+    }
+
+    #madruacion {
+        width: 85%;
+    }
+
+    .containerfechas {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .containerfechas .caja h2 {
+        width: 100%;
+        margin-left: 0;
+        background: white;
+        color: rgb(2, 80, 116);
+    }
+
+    #estadocuota {
+        margin-left: 0;
+    }
+
+    #perfilh11 {
+        color: rgb(153, 153, 153);
+        font-style: normal;
+        font-weight: 900;
+        margin-left: 1.5rem;
+    }
+
+    .alerta {
+        margin-left: 2rem;
+    }
+
+}
+
+@media (width: 430px){
+    .formprofile1 {
+        margin-left: 2.4rem;
+    }
 }
 
 
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
+
+
     .profilecontainer {
         flex-direction: column;
     }
 
     .formprofile1 {
         margin: 0;
-        margin-left: 1rem;
-        width: max-content;
+        margin-left: 8rem;
+        width: 80%;
     }
 
     .formprofile2 {
         max-width: max-content;
-        margin-left: 1rem;
+        margin-left: 5rem;
     }
 
     .formprofile1 h1 {
         font-size: 5rem;
         width: 20rem;
-        margin-left: 4rem;
     }
 
     .formprofile2 h1 {
-        font-size: 5rem;
+        font-size: 3.5rem;
         width: max-content;
-        margin-left: 4rem;
+    }
+
+    #deletemem {
+        display: none;
     }
 
     .form1 h2,
     .form1 p,
     .form2 h2,
     .form2 p {
-        width: 30rem;
-        margin-left: 2rem;
+        width: 19rem;
+        margin-left: 1rem;
         padding-left: 1rem;
     }
 
@@ -172,14 +446,14 @@
         font-size: 1.8rem;
     }
 
-    .form1,
-    .form2 {
-        width: 40rem;
-        margin-left: 3rem;
+    .form1 {
+        width: 80%;
+
     }
 
     #datos {
         margin-left: 1rem;
+        width: min-content;
     }
 
     .form2 {
@@ -188,6 +462,86 @@
 
     .form1 {
         margin-bottom: 2rem;
+    }
+
+    .caja h2 {
+        width: 85%;
+    }
+
+    #datosmem {
+        margin-left: 5rem;
+        width: 60%;
+    }
+
+    .caja p {
+        margin-left: 0;
+    }
+
+    .form2 {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        flex: 0;
+        width: 80%;
+    }
+
+    #descargar {
+        font-size: 2rem;
+        padding: 1rem;
+
+    }
+
+    #cuotas {
+        width: 85%;
+    }
+
+    #quinquenio {
+        font-size: 1.5rem;
+        padding: 1rem;
+        margin-left: 1rem;
+        width: 87%;
+
+    }
+
+    #bonificacionh1 {
+        width: 80%;
+        margin-left: 3rem;
+        font-size: 2rem;
+        padding: 1rem 0 1rem 1rem;
+
+    }
+
+    #madruacion {
+        width: 85%;
+    }
+
+    #btn-adicional {
+        margin-left: 10rem;
+        margin-bottom: 10rem;
+    }
+
+    .containerfechas {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .containerfechas .caja h2 {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    #estadocuota {
+        margin-left: 0;
+    }
+
+    #perfilh11 {
+        color: rgb(153, 153, 153);
+        font-style: normal;
+        font-weight: 900;
+        margin-left: 1.5rem;
+    }
+
+    .alerta {
+        margin-left: 2rem;
     }
 }
 
@@ -200,33 +554,36 @@
 
     .formprofile1 {
         margin: 0;
-        margin-left: 1rem;
-        width: max-content;
+        margin-left: 12rem;
+        width: 80%;
     }
 
     .formprofile2 {
-        max-width: max-content;
-        margin-left: 1rem;
+        max-width: 800px;
+        margin-left: 12rem;
+        margin-bottom:20rem;
     }
 
     .formprofile1 h1 {
         font-size: 5rem;
         width: 20rem;
-        margin-left: 4rem;
     }
 
     .formprofile2 h1 {
-        font-size: 5rem;
+        font-size: 3.5rem;
         width: max-content;
-        margin-left: 4rem;
+    }
+
+    #deletemem {
+        display: none;
     }
 
     .form1 h2,
     .form1 p,
     .form2 h2,
     .form2 p {
-        width: 40rem;
-        margin-left: 4rem;
+        width: 19rem;
+        margin-left: 1rem;
         padding-left: 1rem;
     }
 
@@ -234,16 +591,14 @@
         font-size: 1.8rem;
     }
 
-    .form1,
-    .form2 {
-        width: 60rem;
-        margin-left: 4.5rem;
-        padding-top: 2rem;
+    .form1 {
+        width: 80%;
+
     }
 
     #datos {
         margin-left: 1rem;
-        padding-top: 1rem;
+        width: min-content;
     }
 
     .form2 {
@@ -253,22 +608,132 @@
     .form1 {
         margin-bottom: 2rem;
     }
+
+    .caja h2 {
+        width: 85%;
+    }
+
+    #datosmem {
+        margin-left: 5rem;
+        width: 60%;
+    }
+
+    .caja p {
+        margin-left: 0;
+    }
+
+    .form2 {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        flex: 0;
+        width: 80%;
+    }
+
+    #descargar {
+        font-size: 2rem;
+        padding: 1rem;
+
+    }
+
+    #cuotas {
+        width: 85%;
+    }
+
+    #quinquenio {
+        font-size: 1.5rem;
+        padding: 1rem;
+        margin-left: 1rem;
+        width: 87%;
+
+    }
+
+    #bonificacionh1 {
+        width: 80%;
+        margin-left: 3rem;
+        font-size: 2rem;
+        padding: 1rem 0 1rem 1rem;
+
+    }
+
+    #madruacion {
+        width: 85%;
+    }
+
+    #btn-adicional {
+        margin-left: 10rem;
+        margin-bottom: 10rem;
+    }
+
+    .containerfechas {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .containerfechas .caja h2 {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    #estadocuota {
+        margin-left: 0;
+    }
+
+    #perfilh11 {
+        color: rgb(153, 153, 153);
+        font-style: normal;
+        font-weight: 900;
+        margin-left: 1.5rem;
+    }
+
+    .alerta {
+        margin-left: 2rem;
+    }
 }
 
 
 
-@media only screen and (min-width: 1200px) and (max-width: 1700px) {
-    .formprofile1{
+
+
+@media only screen and (min-width: 1200px) and (max-width: 1599px) {
+
+    .noMember{
+        width: 85%;
+    }
+
+    .noMember h2{
+        margin-left: 2rem;
+    }
+    .formprofile1 {
         margin-left: 3rem;
     }
-    .form1{
+
+    .form1 {
         width: 30rem;
     }
-    .formprofile2 h1{
+
+    .formprofile2 h1 {
         font-size: 5rem;
-        margin-top: 3.8rem;
     }
-    .formprofile1 h1{
+
+    .formprofile1 h1 {
         font-size: 5rem;
+    }
+
+    .alerta {
+        margin-left: 6rem;
+    }
+}
+
+@media (min-width: 1600px) and (max-width: 1900px) {
+    .alerta {
+        margin-left: 1rem;
+    }
+
+    .formprofile1 {
+        margin-left: 3rem;
+    }
+
+    #btn-adicional {
+        margin-left: 0;
     }
 }

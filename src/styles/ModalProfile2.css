@@ -1,0 +1,57 @@
+.modal2 {
+    padding: 1rem;
+    font-family: 'Lato', sans-serif;
+    width: 100%;
+}
+
+
+.modal2 h1 {
+    color: white;
+    font-weight: 900;
+}
+
+.modal2 p {
+    color: white;
+    width: 90%;
+    font-size: .9rem;
+}
+
+.montos{
+    display: flex;
+}
+
+.caja2 h2{
+    color: white;
+}
+
+.caja2 h1{
+    background-color: white;
+    width: 70%;
+    padding: 1rem;
+    border-radius: 1rem;
+    color: rgb(0, 71, 113)
+}
+
+.caja2 label{
+    color: white;
+    font-size: 1.5rem;
+    
+}
+
+.caja2 label input{
+    margin-right: 1rem;
+    transform: scale(1.5);
+}
+
+@media (max-width: 767px){
+    .modal2 h2{
+        font-size: 1.3rem;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .css-1x9pxnu{
+        top: 30% !important;
+    }
+}
+

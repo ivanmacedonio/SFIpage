@@ -1,0 +1,212 @@
+.logincontainer {
+    background-image: url('../assets/fondoblanco.webp');
+    background-repeat: round;
+    display: flex;
+    margin-top: 3rem;
+}
+
+.logincontainer img {
+    width: 40%;
+    margin-left: 5%;
+}
+
+.formlogin {
+    margin-left: 10%;
+    margin-top: 5rem;
+    background-color: rgb(52, 52, 52);
+    height: fit-content;
+    padding: 2rem;
+    border-radius: 2rem;
+    color: white;
+    font-family: 'Lato', sans-serif;
+}
+
+.formlogin form {
+    display: flex;
+    flex-direction: column;
+}
+
+.formlogin h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.formlogin input {
+    background-color: white;
+    color: rgb(0, 0, 0);
+    padding: 1.6rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    outline: none;
+    font-size: 1.5rem;
+}
+
+.formlogin input::placeholder {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+.formlogin label {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+#forgot {
+    font-size: 1.2rem;
+    color: rgb(0, 0, 164);
+    background-color: white;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    margin-left: 5rem;
+    width: fit-content;
+    margin-top: 2rem;
+    border-radius: 1rem;
+}
+
+.formlogin button {
+    font-family: 'Monserrat', sans-serif;
+    font-weight: 700;
+    font-size: 3rem;
+    color: white;
+    text-align: center;
+    background: linear-gradient(to right, rgb(26, 191, 219), rgb(2, 80, 116));
+    border-radius: .6rem;
+    border-style: none;
+    cursor: pointer;
+}
+
+.afiliar {
+    font-size: 1.2rem;
+    text-align: center;
+    color: white;
+    margin-top: 2rem;
+}
+
+@media (max-width: 767px) {
+    .logincontainer {
+        background-image: none;
+    }
+
+    .logincontainer img {
+        display: none;
+    }
+
+    .formlogin {
+        margin-left: 1rem;
+        width: 75%;
+        border-radius: 1rem;
+        margin-top: 1rem;
+
+    }
+
+    .formlogin h1 {
+        width: 100%;
+        font-size: 3rem;
+    }
+
+    .formlogin input {
+        padding: 1rem;
+    }
+
+    #forgot {
+        margin-left: 2.6rem;
+    }
+
+    .formlogin input::placeholder {
+        font-size: 1.3rem;
+    }
+}
+
+@media (width: 430px) {
+    #forgot {
+        margin-left: 3.5rem;
+    }
+
+    .formlogin {
+        margin-left: 1.3rem;
+    }
+}
+
+@media(min-width: 768px) and (max-width: 991px) {
+    .logincontainer {
+        background-image: none;
+    }
+
+    .logincontainer img {
+        display: none;
+    }
+
+    .formlogin {
+        margin-left: 10rem;
+        width: 50%;
+        border-radius: 1rem;
+        margin-top: 1rem;
+
+    }
+
+    .formlogin h1 {
+        width: 100%;
+        font-size: 3rem;
+    }
+
+    .formlogin input {
+        padding: 1rem;
+    }
+
+    #forgot {
+        margin-left: 5rem;
+    }
+
+    .formlogin input::placeholder {
+        font-size: 1.3rem;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .logincontainer {
+        background-image: none;
+    }
+
+    .logincontainer img {
+        display: none;
+    }
+
+    .formlogin {
+        margin-left: 15rem;
+        width: 50%;
+        border-radius: 1rem;
+        margin-top: 1rem;
+        margin-bottom: 35rem;
+    }
+
+    .formlogin h1 {
+        width: 100%;
+        font-size: 3rem;
+    }
+
+    .formlogin input {
+        padding: 1rem;
+    }
+
+    #forgot {
+        margin-left: 9rem;
+    }
+
+    .formlogin input::placeholder {
+        font-size: 1.3rem;
+    }
+}
+
+
+
+@media only screen and (min-width: 1200px) and (max-width: 1700px){
+    .formlogin{
+        margin-bottom: 2.7rem;
+    }
+
+    .logincontainer img{
+        width: 50%;
+        height: 50%;
+        margin-left: 1rem
+    };
+}

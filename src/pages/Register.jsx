@@ -5,8 +5,8 @@ import "../styles/Register.css";
 
 export const Register = () => {
   useEffect(() => {
-    window.scrollTo(0,0)
-  }, [])
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="page4">
       <div className="header">
@@ -22,7 +22,11 @@ export const Register = () => {
             <input type="text" placeholder="Ingresa tu nombre" />
             <input type="text" placeholder="Ingresa tu correo electronico" />
             <input type="text" placeholder="Ingresa tu numero de celular" />
-            <button type="submit" id="afiliarsebutton">Afiliarse</button>
+            <input type="text" placeholder="Ingresa tu contraseña" />
+            <input type="text" placeholder="Confirma tu contraseña" />
+            <button type="submit" id="afiliarsebutton">
+              Afiliarse
+            </button>
           </form>
           <div className="option">
             <p>Or signup with</p>
