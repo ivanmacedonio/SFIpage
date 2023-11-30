@@ -11,8 +11,9 @@ export const Perfil = () => {
 
   const [active, setActive] = useState(false);
   const [estilo, setEstilo] = useState({ display: "none" });
-  const [isMember, setIsMember] = useState(false);
-  const [isVerificated, setIsVerificated] = useState(false);
+  const [isMember, setIsMember] = useState(true);
+  const [isVerificated, setIsVerificated] = useState(true);
+  const [showText, setShowText] = useState(true);
 
   function handleQuinquenio() {
     setActive(!active);
@@ -40,6 +41,7 @@ export const Perfil = () => {
         </div>
         <div className="formprofile2">
           <h1 id="deletemem">Membresía</h1>
+
           {isMember ? (
             <div className="containerperfil2">
               {isVerificated ? (
@@ -54,8 +56,8 @@ export const Perfil = () => {
                     <h2 id="cuotas">24/24</h2>
                   </div>
                   <div className="caja">
-                    <p>Tiempo de maduracion</p>
-                    <h2 id="maduracion">2 meses</h2>
+                    <p>Cuota mensual</p>
+                    <h2 id="maduracion">416.68 USDT</h2>
                   </div>
                   <div className="caja">
                     <p>Fecha de inicio</p>
@@ -85,6 +87,27 @@ export const Perfil = () => {
                       <p>Cantidad de bonos</p>
                       <h2>0/60</h2>
                     </div>
+                    <div className="caja">
+                      <p>Monto de cuota mensual en USDT</p>
+                      <h2>1.000 USDT</h2>
+                    </div>
+                    <div className="caja">
+                      <p>Wallet</p>
+                      <h2>XXXXXXXX</h2>
+                    </div>
+                    <div className="caja" id="full">
+                      <p>Tiempo de maduracion</p>
+                      <h2>10 años</h2>
+                    </div>
+                  </div>
+                  <div className="texxt">
+                    <p>
+                      {" "}
+                      La maduracion de tu plan iniciara el proceso de maduracion
+                      por 10 años, una vez hayas alcanzado el estatus de
+                      "membresia activa" y cumplido con la cantidad de cuotas
+                      mensuales de tu membresia
+                    </p>
                   </div>
                 </div>
               ) : (
@@ -96,7 +119,7 @@ export const Perfil = () => {
                   </div>
                   <div className="caja">
                     <p>Cuotas</p>
-                    <h2 >24/24</h2>
+                    <h2>24/24</h2>
                   </div>
                   <div className="caja">
                     <p>Tiempo de maduracion</p>
@@ -160,6 +183,14 @@ export const Perfil = () => {
           <h1 id="btn-adicional">+ Membresia adicional</h1>
         </div>
       </div>
+      {isVerificated ? (
+        ""
+      ) : (
+        <div className="leyenda">
+          <h1>Estamos verificando tu cuenta</h1>
+          <h2>Vuelve en unos minutos</h2>
+        </div>
+      )}
     </div>
   );
 };

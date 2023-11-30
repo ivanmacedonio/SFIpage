@@ -4,6 +4,19 @@
     display: flex;
 }
 
+.leyenda {
+    background-color: rgb(52, 52, 52);
+    width: 100%;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    position: relative;
+    font-size: 2rem;
+    bottom: 45rem;
+    text-align: center;
+    padding: 2rem 0 2rem 0;
+}
+
 .profilecontainer h1 {
     font-family: 'Monserrat', sans-serif;
     font-weight: 900;
@@ -196,16 +209,21 @@
 
 }
 
+
+
 .containerfechas {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .containerfechas .caja {
     margin-right: 2rem;
+    flex: 1;
 }
 
+
 .containerfechas .caja h2 {
-    width: 10rem;
+    width: 90%;
     background: linear-gradient(to right, rgb(3, 180, 211), rgb(2, 80, 116));
     color: white;
 }
@@ -283,7 +301,8 @@
 
 .form2b #pending {
     font-size: 2rem;
-    width: max-content;
+    width: 100%;
+    margin-right: 3rem;
     background-color: gainsboro;
     color: rgb(95, 95, 95);
     padding: 1rem;
@@ -295,7 +314,7 @@
 
 #quinqueniob {
     font-size: 1.7rem;
-    width: max-content;
+    width: 100%;
     background-color: gainsboro;
     color: rgb(95, 95, 95);
     padding: 1rem;
@@ -303,11 +322,12 @@
     margin-top: 2.8rem;
     border-radius: 1rem;
     margin-bottom: 1rem;
+    margin-left: 2rem;
 }
 
 #wallet {
     width: 100%;
-    margin-left: 4.5rem;
+    margin-left: 0rem;
 }
 
 #bonificacionh1b {
@@ -333,7 +353,42 @@
     margin-bottom: 4rem;
 }
 
+
+#full h2 {
+    background: white;
+    margin-left: 2rem;
+    color: rgb(112, 112, 112);
+}
+
+.icono {
+    font-size: 2rem;
+    color: rgb(16, 189, 224);
+    position: relative;
+    left: 10rem;
+    bottom: 4.1rem;
+    cursor: pointer;
+    width: fit-content;
+}
+
+#full p {
+    margin-left: 2rem;
+}
+
+.texxt{
+    color: white;
+    margin-left: 3rem;
+    margin-bottom: 2rem;
+}
+.texxt p{
+    max-width: 35%;
+}
+
 @media only screen and (max-width: 767px) {
+
+    .leyenda {
+        bottom: 80rem;
+    }
+
     .form2b {
         background-color: rgb(52, 52, 52);
         padding: 1rem;
@@ -861,6 +916,10 @@
 
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .leyenda {
+        bottom: 70rem;
+    }
+
     .form2b {
         background-color: rgb(52, 52, 52);
         padding: 1rem;
@@ -1117,6 +1176,9 @@
 
 
 @media only screen and (min-width: 1200px) and (max-width: 1599px) {
+    .leyenda {
+        bottom: 60rem;
+    }
 
     .form2b {
         background-color: rgb(52, 52, 52);
