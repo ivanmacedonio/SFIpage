@@ -374,12 +374,13 @@
     margin-left: 2rem;
 }
 
-.texxt{
+.texxt {
     color: white;
     margin-left: 3rem;
     margin-bottom: 2rem;
 }
-.texxt p{
+
+.texxt p {
     max-width: 35%;
 }
 
@@ -629,13 +630,29 @@
     }
 
     .containerfechas .caja h2 {
-        width: 100%;
-        margin-left: 0;
+        width: 70%;
+        margin-left: 1rem;
         background: white;
         color: rgb(2, 80, 116);
     }
 
     #estadocuota {
+        margin-left: 0;
+    }
+
+    #full {
+        margin-right: 0;
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .texxt {
+        font-size: 1rem;
+        margin-left: 0;
+    }
+
+    .texxt p {
+        max-width: 20rem;
         margin-left: 0;
     }
 
@@ -661,6 +678,18 @@
 
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .texxt p {
+        max-width: 30rem;
+    }
+
+    .texxt {
+        margin-left: 5rem;
+    }
+
+    #full h2 {
+        width: 87%;
+    }
 
     .form2b {
         background-color: rgb(52, 52, 52);
@@ -916,6 +945,19 @@
 
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+    .texxt p {
+        max-width: 30rem;
+    }
+
+    .texxt {
+        margin-left: 7rem;
+    }
+
+    #full h2 {
+        width: 87%;
+    }
+
     .leyenda {
         bottom: 70rem;
     }
@@ -1176,6 +1218,11 @@
 
 
 @media only screen and (min-width: 1200px) and (max-width: 1599px) {
+
+    .texxt p {
+        max-width: 30rem;
+    }
+
     .leyenda {
         bottom: 60rem;
     }
@@ -1319,6 +1366,10 @@
 }
 
 @media (min-width: 1600px) and (max-width: 1900px) {
+    .texxt p {
+        max-width: 30rem;
+    }
+
     .alerta {
         margin-left: 1rem;
     }
