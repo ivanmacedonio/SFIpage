@@ -50,9 +50,9 @@ export const Membresia = () => {
       });
       localStorage.removeItem("access");
       localStorage.setItem("access", res.data.access);
-      window.location.reload();
+      console.log("nuevo access");
     } catch (error) {
-      setMessage("Token invalido, debes iniciar sesion");
+      setMessage("Token invalido, debes volver a iniciar sesion");
     }
   }
 
@@ -64,18 +64,18 @@ export const Membresia = () => {
         const headers = {
           Authorization: `Bearer ${token}`,
         };
-        const res = await axios.get("http://127.0.0.1:8000/api/memberships/", {
-          headers,
-        });
-        if (res.status === 401) {
-          if (refresh) {
-            await getNewAccess(refresh);
-          } else {
-            setMessage("Inicia sesion para acceder a las membresias");
-          }
-        } else {
+        try {
+          const res = await axios.get(
+            "http://127.0.0.1:8000/api/memberships/",
+            {
+              headers,
+            }
+          );
           setIsLogin(true);
           setData(res.data);
+        } catch (error) {
+          await getNewAccess(refresh);
+          window.location.reload();
         }
       } else {
         setMessage("Inicia sesion para acceder a las membresias");
