@@ -1,6 +1,6 @@
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import baricon from "../assets/header-icon.svg";
 import logo from "../assets/logoSPI.png";
@@ -8,6 +8,7 @@ import "../styles/headerNormal.css";
 
 export const HeaderNormal = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const [isLogin, setIsLogin] = useState();
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -22,6 +23,13 @@ export const HeaderNormal = () => {
     setMenuAbierto(!menuAbierto);
   }
 
+  useEffect(() => {
+    const token = localStorage.getItem("access");
+    if (token) {
+      setIsLogin(true);
+    }
+  });
+
   return (
     <div className="header">
       <div className="chan">
@@ -30,8 +38,7 @@ export const HeaderNormal = () => {
             <img src={logo} alt="" />
           </Link>
         </div>
-      <img id="iconbar" src={baricon} alt="" onClick={toggleMenu} />
-
+        <img id="iconbar" src={baricon} alt="" onClick={toggleMenu} />
       </div>
 
       <div className="links">
@@ -77,56 +84,64 @@ export const HeaderNormal = () => {
           <h2>Contacto</h2>
         </Link>
 
-        <Link to={"/register"}>
-          <h2 id="session">Iniciar sesion</h2>
+        {isLogin ? (
+          <Link to={"/perfil"}>
+            {" "}
+            <h2 id="session">Mi cuenta</h2>{" "}
+          </Link>
+        ) : (
+          <Link to={"/login"}>
+          {" "}
+          <h2 id="session">Iniciar sesion</h2>{" "}
         </Link>
+        )}
       </div>
       {menuAbierto && (
-          <div className="hamburguesa">
-            <Link to={"/"}>
-              <h2>Inicio</h2>
+        <div className="hamburguesa">
+          <Link to={"/"}>
+            <h2>Inicio</h2>
+          </Link>
+          <Link to={"/nosotros"}>
+            <h2>Nosotros</h2>
+          </Link>
+          <Link to={"/afiliacion"}>
+            <h2>Afiliacion</h2>
+          </Link>
+
+          <h2
+            id="basic-button"
+            aria-controls={open ? "basic-menu" : undefined}
+            aria-haspopup="true"
+            aria-expanded={open ? "true" : undefined}
+            onClick={handleClick}
+          >
+            Blog
+          </h2>
+
+          <Menu
+            id="basic-menu"
+            anchorEl={anchorEl}
+            open={open}
+            onClose={handleClose}
+            MenuListProps={{
+              "aria-labelledby": "basic-button",
+            }}
+          >
+            <Link to={"/blog"}>
+              <MenuItem onClick={handleClose}>Hub</MenuItem>
             </Link>
-            <Link to={"/nosotros"}>
-              <h2>Nosotros</h2>
-            </Link>
-            <Link to={"/afiliacion"}>
-              <h2>Afiliacion</h2>
+            <Link to={"/faq"}>
+              <MenuItem onClick={handleClose}>Preguntas Frecuentes</MenuItem>
             </Link>
 
-            <h2
-              id="basic-button"
-              aria-controls={open ? "basic-menu" : undefined}
-              aria-haspopup="true"
-              aria-expanded={open ? "true" : undefined}
-              onClick={handleClick}
-            >
-              Blog
-            </h2>
-
-            <Menu
-              id="basic-menu"
-              anchorEl={anchorEl}
-              open={open}
-              onClose={handleClose}
-              MenuListProps={{
-                "aria-labelledby": "basic-button",
-              }}
-            >
-              <Link to={"/blog"}>
-                <MenuItem onClick={handleClose}>Hub</MenuItem>
-              </Link>
-              <Link to={"/faq"}>
-                <MenuItem onClick={handleClose}>Preguntas Frecuentes</MenuItem>
-              </Link>
-
-              <MenuItem onClick={handleClose}>Foro</MenuItem>
-            </Menu>
-            <Link to={"/contacto"}>
-              <h2>Contacto</h2>
-            </Link>
-            <h2 id="session">Iniciar sesion</h2>
-          </div>
-        )}
+            <MenuItem onClick={handleClose}>Foro</MenuItem>
+          </Menu>
+          <Link to={"/contacto"}>
+            <h2>Contacto</h2>
+          </Link>
+          <h2 id="session">Iniciar sesion</h2>
+        </div>
+      )}
     </div>
   );
 };

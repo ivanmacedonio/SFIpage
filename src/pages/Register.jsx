@@ -1,19 +1,33 @@
+import axios from "axios";
 import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import chicablog from "../assets/afiliarse.webp";
 import { HeaderNormal } from "../components/Header-normal";
 import "../styles/Register.css";
-
 export const Register = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  const navigate = useNavigate();
 
   const { register, handleSubmit } = useForm({
     shouldUseNativeValidation: true,
   });
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = async (data) => {
+    if (data.password == data.password2) {
+      try {
+        const res = await axios.post(
+          "http://localhost:8000/api/register/",
+          data
+        );
+        navigate("/login");
+      } catch (error) {
+        console.error(error);
+      }
+    } else {
+      alert("Las contraseñas no coinciden");
+    }
   };
   return (
     <div className="page4">
@@ -30,12 +44,12 @@ export const Register = () => {
             <input
               type="text"
               placeholder="Ingresa tu nombre"
-              {...register("name", {
+              {...register("full_name", {
                 required: "Por favor ingresa tu nombre",
               })}
             />
             <input
-              type="text"
+              type="email"
               placeholder="Ingresa tu correo electronico"
               {...register("email", {
                 required: "Por favor ingresa tu email",
@@ -44,21 +58,21 @@ export const Register = () => {
             <input
               type="text"
               placeholder="Ingresa tu numero de celular"
-              {...register("number", {
+              {...register("phone_number", {
                 required: "Por favor ingresa tu numero",
               })}
             />
             <input
               type="text"
               placeholder="Ingresa tu contraseña"
-              {...register("pass1", {
+              {...register("password", {
                 required: "Por favor ingresa tu contraseña",
               })}
             />
             <input
               type="text"
               placeholder="Confirma tu contraseña"
-              {...register("pass2", {
+              {...register("password2", {
                 required: "Por favor ingresa tu contraseña",
               })}
             />

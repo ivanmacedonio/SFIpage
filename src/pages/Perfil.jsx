@@ -11,7 +11,7 @@ export const Perfil = () => {
 
   const [active, setActive] = useState(false);
   const [estilo, setEstilo] = useState({ display: "none" });
-  const [isMember, setIsMember] = useState(true);
+  const [isMember, setIsMember] = useState(false);
   const [isVerificated, setIsVerificated] = useState(true);
   const [showText, setShowText] = useState(true);
 

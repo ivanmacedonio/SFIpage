@@ -53,10 +53,10 @@ img {
 
 .textfamilia2 {
     position: relative;
-    left: 90rem;
-    bottom: 50rem;
+    z-index:3;
+    left:10rem;
+    bottom: 10rem;
     width: max-content;
-
 }
 
 .textfamilia2 p {
