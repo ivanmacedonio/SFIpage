@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import chicablog from "../assets/afiliarse.webp";
 import { HeaderNormal } from "../components/Header-normal";
 import "../styles/Register.css";
@@ -86,7 +86,9 @@ export const Register = () => {
               <button>Google</button>
               <button>Facebook</button>
             </div>
-            <p>Already have an account? Sign in</p>
+            <Link to={"/login"}>
+              <p>Already have an account? Sign in</p>
+            </Link>
           </div>
         </div>
       </div>

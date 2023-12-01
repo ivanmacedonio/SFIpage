@@ -16,7 +16,7 @@ const style = {
   p: 4,
 };
 
-export default function BasicModal2() {
+export default function BasicModal2({ membershipData }) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -46,7 +46,7 @@ export default function BasicModal2() {
             <div className="montos">
               <div className="caja2">
                 <h2>Porcentaje redimible</h2>
-                <h1>85%</h1>
+                <h1>{membershipData.optional_withdrawal_percentage}</h1>
                 <label>
                   <input type="checkbox" />
                   Activar

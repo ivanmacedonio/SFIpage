@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Ac } from "../components/Ac";
 import { Footer } from "../components/Footer";
 import { HeaderNormal } from "../components/Header-normal";
@@ -24,6 +24,7 @@ export const Membresia = () => {
 
   const [isLogin, setIsLogin] = useState(false);
   const [message, setMessage] = useState("");
+  const nav = useNavigate();
 
   const handlePlanClick = (plan) => {
     setPlandata({
@@ -79,6 +80,7 @@ export const Membresia = () => {
         }
       } else {
         setMessage("Inicia sesion para acceder a las membresias");
+        nav("/login");
       }
     }
     getData();

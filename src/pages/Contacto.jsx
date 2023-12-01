@@ -2,8 +2,8 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import contacto from "../assets/contacto.webp";
-import { HeaderNormal } from "../components/Header-normal";
 
+import { HeaderNormal } from "../components/Header-normal";
 import "../styles/contacto.css";
 export const Contacto = () => {
   useEffect(() => {
@@ -11,7 +11,7 @@ export const Contacto = () => {
   }, []);
 
   const [checked, setChecked] = useState(false);
-
+  const urlDelPDF = '../assets/terminos.pdf'
   const { register, handleSubmit } = useForm({
     shouldUseNativeValidation: true,
   });
@@ -22,6 +22,7 @@ export const Contacto = () => {
     );
     window.location.reload()
   }
+
   return (
     <div className="contactopage">
       <div className="header">
@@ -61,7 +62,7 @@ export const Contacto = () => {
                     required: "Debes aceptar los terminos y condiciones",
                   })}
                 />
-                Terminos y condiciones
+                <a href="urlDelPDF">Terminos y condiciones</a>
               </label>
               <label>
                 <input
