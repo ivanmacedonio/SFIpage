@@ -1,7 +1,7 @@
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import baricon from "../assets/header-icon.svg";
 import logo from "../assets/logoSPI.png";
 import "../styles/headerNormal.css";
@@ -29,6 +29,14 @@ export const HeaderNormal = () => {
       setIsLogin(true);
     }
   });
+
+  const nav = useNavigate();
+
+  function handleOnClick() {
+    localStorage.removeItem("access");
+    localStorage.removeItem("refresh");
+    nav("/login");
+  }
 
   return (
     <div className="header">
@@ -91,10 +99,11 @@ export const HeaderNormal = () => {
           </Link>
         ) : (
           <Link to={"/login"}>
-          {" "}
-          <h2 id="session">Iniciar sesion</h2>{" "}
-        </Link>
+            {" "}
+            <h2 id="session">Iniciar sesion</h2>{" "}
+          </Link>
         )}
+        {isLogin ? <h2 onClick={handleOnClick}>Cerrar sesion</h2> : ""}
       </div>
       {menuAbierto && (
         <div className="hamburguesa">
@@ -139,7 +148,19 @@ export const HeaderNormal = () => {
           <Link to={"/contacto"}>
             <h2>Contacto</h2>
           </Link>
-          <h2 id="session">Iniciar sesion</h2>
+
+          {isLogin ? (
+            <Link to={"/perfil"}>
+              {" "}
+              <h2 id="session">Mi cuenta</h2>{" "}
+            </Link>
+          ) : (
+            <Link to={"/login"}>
+              {" "}
+              <h2 id="session">Iniciar sesion</h2>{" "}
+            </Link>
+          )}
+          {isLogin ? <h2 onClick={handleOnClick}>Cerrar sesion</h2> : ""}
         </div>
       )}
     </div>

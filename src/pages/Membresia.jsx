@@ -6,6 +6,7 @@ import { Footer } from "../components/Footer";
 import { HeaderNormal } from "../components/Header-normal";
 import TransitionsModal from "../components/Modal";
 import "../styles/Membresia.css";
+
 export const Membresia = () => {
   const [estilos, setEstilos] = useState({
     maxHeight: "0",
@@ -20,10 +21,9 @@ export const Membresia = () => {
     months: "Selecciona un plan",
     cuotes: "Selecciona un plan",
   });
-  const [modalOpen, setModalOpen] = useState(false);
-  const [modalName, setModalName] = useState("");
-  const [modalDescrip, setModalDescrip] = useState("");
+
   const [isLogin, setIsLogin] = useState(false);
+  const [message, setMessage] = useState("");
 
   const handlePlanClick = (plan) => {
     setPlandata({
@@ -43,9 +43,23 @@ export const Membresia = () => {
     }));
   }
 
+  async function getNewAccess(refresh) {
+    try {
+      const res = await axios.post("http://localhost:8000/token/refresh/", {
+        refresh: refresh,
+      });
+      localStorage.removeItem("access");
+      localStorage.setItem("access", res.data.access);
+      window.location.reload();
+    } catch (error) {
+      setMessage("Token invalido, debes iniciar sesion");
+    }
+  }
+
   useEffect(() => {
     async function getData() {
       const token = localStorage.getItem("access");
+      const refresh = localStorage.getItem("refresh");
       if (token) {
         const headers = {
           Authorization: `Bearer ${token}`,
@@ -53,15 +67,24 @@ export const Membresia = () => {
         const res = await axios.get("http://127.0.0.1:8000/api/memberships/", {
           headers,
         });
-        setData(res.data);
-        setIsLogin(true);
+        if (res.status === 401) {
+          if (refresh) {
+            await getNewAccess(refresh);
+          } else {
+            setMessage("Inicia sesion para acceder a las membresias");
+          }
+        } else {
+          setIsLogin(true);
+          setData(res.data);
+        }
       } else {
-        console.log("not auth");
+        setMessage("Inicia sesion para acceder a las membresias");
       }
     }
     getData();
     window.scrollTo(0, 0);
   }, []);
+
   return (
     <div className="Membresiapage">
       <div className="header">
@@ -111,9 +134,7 @@ export const Membresia = () => {
           </div>
         </div>
       ) : (
-        <div className="notAuth">
-          Inicia sesion para acceder a las membresias
-        </div>
+        <div className="notAuth">{message}</div>
       )}
       <div className="adquirir">
         <div className="ac">

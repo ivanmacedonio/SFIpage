@@ -53,13 +53,14 @@ img {
 
 .textfamilia2 {
     position: relative;
-    z-index:3;
-    left:10rem;
-    bottom: 10rem;
+    z-index: 3;
+    left: 90rem;
+    bottom: 50rem;
     width: max-content;
 }
 
 .textfamilia2 p {
+    display: block;
     margin: 0;
     font-family: 'Montserrat', sans-serif;
     font-size: 2.3rem;
@@ -171,24 +172,25 @@ img {
         padding: 1rem;
         border-radius: 1rem;
     }
+
+    .textfamilia2 {
+        left: 4rem;
+        z-index: 3;
+        bottom: 27rem;
+    }
+
+    .textfamilia2 p {
+        display: none;
+    }
+
+    #h2delete {
+        background-color: white;
+        color: rgb(0, 92, 115);
+        border-radius: 1rem;
+        padding: 1rem;
+    }
 }
 
-.textfamilia2 {
-    left: 4rem;
-    z-index: 3;
-    bottom: 27rem;
-}
-
-.textfamilia2 p {
-    display: none;
-}
-
-#h2delete {
-    background-color: white;
-    color: rgb(0, 92, 115);
-    border-radius: 1rem;
-    padding: 1rem;
-}
 
 
 @media (width: 430px) {
@@ -226,15 +228,10 @@ img {
     }
 
     .textfamilia2 {
-        left: 5rem;
+        left: 5.5rem;
         z-index: 3;
         bottom: 25rem;
     }
-
-
-
-
-
 
 }
 
@@ -310,10 +307,16 @@ img {
         box-shadow: none;
     }
 
-    .textfamilia2,
     #h2delete,
     .scroll {
         display: none;
+    }
+    .textfamilia2{
+        left: 35rem;
+        background-color: rgb(0, 77, 160);
+        color: white;
+        padding: 1rem;
+        border-radius: 1rem;
     }
 
     .textp1 h2 {
@@ -334,9 +337,8 @@ img {
 
     .footer {
         position: relative;
-        top: 25rem;
+        top: 17rem;
     }
-
 }
 
 
