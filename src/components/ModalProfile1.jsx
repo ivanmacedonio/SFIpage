@@ -38,13 +38,13 @@ export default function BasicModal() {
   };
   const nav = useNavigate();
   const estiloLista = {
-    backgroundColor: "white",
+    background: 'linear-gradient(to right, rgb(3, 180, 211), rgb(2, 80, 116))',
     borderRadius: "1rem",
-    color: "black",
+    color: "white",
     listStyle: "none",
-    paddingLeft: "4rem",
+    paddingLeft: "1rem",
     fontWeight: "700",
-    fontSize: "1.2rem",
+    fontSize: "1rem",
     cursor: "pointer",
   };
 
@@ -93,7 +93,6 @@ export default function BasicModal() {
     window.scrollTo(0, 0);
   }, []);
 
-  console.log(membership);
 
   function handleData(member) {
     setMembershipData({

@@ -34,7 +34,7 @@ export default function BasicModal5() {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <div className="modal5" id="scrolleable">
+          <div className="modal5" id="scrolleableTransfer">
             <h1 id="res">Resumen de tu membresia</h1>
             <div className="t">
               <p>Membresia:</p>

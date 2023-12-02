@@ -10,7 +10,6 @@
 
 #scrolleable {
     overflow-y: auto;
-
 }
 
 .membresiaModal1 h3 {
@@ -80,9 +79,14 @@
 
 @media (max-width: 767px) {
 
+    .listaMembership ul{
+        font-size: 1rem;
+    }
+   
+
     #scrolleable{
         height: 70%;
-        width: 70%;
+        width: 70% !important;
     }
     #botonadquirirmodal {
         font-size: 2rem;
@@ -103,7 +107,6 @@
 
 
     .membresiaModal1 h4 {
-        margin-left: 1rem;
         margin-top: 2rem;
         margin-bottom: 1rem;
         background-color: white;
@@ -123,13 +126,10 @@
     }
 
     .membresiaModal1 h2 {
-        width: 50%;
-        margin-left: 1rem;
+        width: 80%;
     }
 
-    .membresiaModal1 p {
-        margin-left: 1rem;
-    }
+    
 
     .membresiaModal1 label {
         margin-left: 2rem;

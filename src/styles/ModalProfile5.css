@@ -36,7 +36,7 @@
 
 @media (max-width: 767px) {
 
-    #scrolleable{
+    #scrolleableTransfer{
         width: 100%;
     }
     .modal5 h1 {
@@ -65,4 +65,12 @@
     .css-1llu0g7{
         top:35% !important;
     }
+}
+
+@media (min-width: 1200px) and (max-width: 1600px){
+    .css-1llu0g7{
+        height: 35rem;
+        overflow-y: auto;
+    }
+    
 }
