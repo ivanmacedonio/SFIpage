@@ -29,8 +29,9 @@ export default function BasicModal() {
   const [precio, setPrecio] = useState(50000); // Valor inicial
   const [membership, setMembership] = useState([]);
   const [list, setList] = useState(true);
+  const [show, setShow] = useState(false);
   const [membershipData, setMembershipData] = useState({
-    name : 'Elige tu membresia'
+    name: "Elige tu membresia",
   });
 
   const handlePrecioChange = (event) => {
@@ -38,7 +39,7 @@ export default function BasicModal() {
   };
   const nav = useNavigate();
   const estiloLista = {
-    background: 'linear-gradient(to right, rgb(3, 180, 211), rgb(2, 80, 116))',
+    background: "linear-gradient(to right, rgb(3, 180, 211), rgb(2, 80, 116))",
     borderRadius: "1rem",
     color: "white",
     listStyle: "none",
@@ -59,7 +60,6 @@ export default function BasicModal() {
       });
       localStorage.removeItem("access");
       localStorage.setItem("access", res.data.access);
-      console.log("nuevo access");
     } catch (error) {
       nav("/login");
     }
@@ -93,16 +93,22 @@ export default function BasicModal() {
     window.scrollTo(0, 0);
   }, []);
 
-
   function handleData(member) {
     setMembershipData({
-      name : member.name,
+      name: member.name,
       savings_duration_in_months: member.savings_duration_in_months,
       monthly_membership_cost: member.monthly_membership_cost,
       maturity_period_in_months: member.maturity_period_in_months,
       optional_withdrawal_percentage: member.optional_withdrawal_percentage,
+      minimum: member.minimum_amount_threshold,
+      maximum: member.maximum_amount_threshold,
+      chunk: member.chunk_size_amount,
+      percentage_bonus: member.percentage_bonus,
+      base_monthly_benefit_amount: member.base_monthly_benefit_amount,
+      precio: precio,
     });
-    setList(!list)
+    setList(!list);
+    setShow(true);
   }
 
   return (
@@ -139,9 +145,9 @@ export default function BasicModal() {
                     type="range"
                     id="rangoPrecio"
                     name="rangoPrecio"
-                    min={10000}
-                    max={100000}
-                    step={1}
+                    min={membershipData.minimum}
+                    max={membershipData.maximum}
+                    step={membershipData.chunk}
                     value={precio}
                     onChange={handlePrecioChange}
                   />
@@ -157,17 +163,17 @@ export default function BasicModal() {
                 <p>Maduracion de membresia activa</p>
                 <h2>{membershipData.maturity_period_in_months}</h2>
               </div>
-              <div className="btn">
-                <BasicModal2 membershipData = {membershipData}></BasicModal2>
-              </div>
+              {show && (
+                <div className="btn">
+                  <BasicModal2 membershipData={membershipData}></BasicModal2>
+                </div>
+              )}
             </div>
           ) : (
             <ul>
               {membership.map((member) => (
                 <li className="listaMembership" style={estiloLista}>
-                  <h1 onClick={() => handleData(member)}>
-                    {member.name}
-                  </h1>
+                  <h1 onClick={() => handleData(member)}>{member.name}</h1>
                 </li>
               ))}
             </ul>

@@ -34,11 +34,32 @@
 
 }
 
+.t h3 {
+    overflow: auto;
+
+
+    &::-webkit-scrollbar {
+        width: 8px;
+        height: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: rgb(3, 180, 211);
+        border-radius: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: rgb(2, 80, 116);
+    }
+}
+
 @media (max-width: 767px) {
 
-    #scrolleableTransfer{
+    #scrolleableTransfer {
         width: 100%;
+        overflow-y: auto;
     }
+
     .modal5 h1 {
         font-size: 1.3rem;
         background-color: white;
@@ -51,6 +72,14 @@
         font-size: .7rem;
         width: max-content;
         margin-top: .2rem;
+        margin-left: 0.5rem;
+    }
+    .t p{
+        width: max-content;
+        font-size: 0.9rem;
+    }
+    .t{
+        margin-bottom: 1rem;
     }
 
     #transferir1 {
@@ -62,15 +91,15 @@
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
 
-    .css-1llu0g7{
-        top:35% !important;
+    .css-1llu0g7 {
+        top: 35% !important;
     }
 }
 
-@media (min-width: 1200px) and (max-width: 1600px){
-    .css-1llu0g7{
+@media (min-width: 1200px) and (max-width: 1600px) {
+    .css-1llu0g7 {
         height: 35rem;
         overflow-y: auto;
     }
-    
+
 }

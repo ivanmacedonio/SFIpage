@@ -46,7 +46,7 @@ export default function BasicModal2({ membershipData }) {
             <div className="montos">
               <div className="caja2">
                 <h2>Porcentaje redimible</h2>
-                <h1>{membershipData.optional_withdrawal_percentage}</h1>
+                <h1>{Math.floor(membershipData.percentage_bonus)}%</h1>
                 <label>
                   <input type="checkbox" />
                   Activar
@@ -54,10 +54,10 @@ export default function BasicModal2({ membershipData }) {
               </div>
               <div className="caja2">
                 <h2>Monto redimible en USDT</h2>
-                <h1>8.500</h1>
+                <h1>{(membershipData.percentage_bonus * membershipData.precio)}</h1>
               </div>
             </div>
-            <BasicModal3 id="continuar"></BasicModal3>
+            <BasicModal3 id="continuar" membershipData = {membershipData}></BasicModal3>
           </div>
         </Box>
       </Modal>

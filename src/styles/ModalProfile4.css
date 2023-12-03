@@ -16,6 +16,24 @@
 
 }
 
+.continuar5 button{
+    background: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+.check2{
+    background: linear-gradient(to right, rgb(3, 180, 211), rgb(2, 80, 116));
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    color: white;
+    width: 100%;
+    margin-left: 3.5rem;
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
 .modal4{
     display: flex;
     flex-wrap: wrap;

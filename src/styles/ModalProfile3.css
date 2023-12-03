@@ -53,7 +53,50 @@
     margin-left: 1.5rem;
 }
 
+.continuar4 button{
+    background: none;
+    border: none;
+}
+.check{
+    width: 80%;
+    background: linear-gradient(to right, rgb(3, 180, 211), rgb(2, 80, 116));
+
+    border-radius: 1rem;
+    padding: 1rem;
+    
+}
+
+#check{
+    color: white;
+    font-size: 1.3rem;
+    width: 100%;
+    cursor: pointer;
+}
+
+.errors{
+    background-color: orangered;
+    border-radius: 1rem;
+    padding: .2rem;
+    margin-top: 2rem;
+}
+
+.errors h2{
+    font-size: 1rem;
+    text-align: center;
+}
+
 @media(max-width: 767px){
+
+    .check{
+        margin-left: 1rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    #check{
+        margin-left: 0;
+        width: 100%;
+    }
     .css-1llu0g7{
         width: 300px !important;
     }
@@ -74,5 +117,16 @@
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .css-1llu0g7{
     top: 35%;
+    }
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1600px){
+    .continuar4{
+        margin-bottom: 2rem;
+    }
+
+    #scrolleable3{
+        height: 80%;
+        overflow-y: auto;
     }
 }

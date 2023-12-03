@@ -1,4 +1,6 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import estado from "../assets/Asset 26.png";
 import { HeaderNormal } from "../components/Header-normal";
 import BasicModal from "../components/ModalProfile1";
@@ -8,6 +10,39 @@ export const Perfil = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const nav = useNavigate();
+  const [profile, setProfile] = useState([]);
+  const [empty, setEmpty] = useState(false);
+
+  useEffect(() => {
+    async function getUser() {
+      const token = localStorage.getItem("access");
+      if (token) {
+        const headers = {
+          Authorization: `Bearer ${token}`,
+        };
+        try {
+          const res = await axios.get("http://127.0.0.1:8000/api/kyc/", {
+            headers,
+          });
+          if (res.data && res.data.length > 0) {
+            setProfile(res.data[0]);
+          } else {
+            setEmpty(true);
+          }
+        } catch (error) {
+          nav("/login");
+        }
+      } else {
+        nav("/login");
+      }
+    }
+    getUser();
+    window.scrollTo(0, 0);
+  }, []);
+
+  console.log(profile);
 
   const [active, setActive] = useState(false);
   const [estilo, setEstilo] = useState({ display: "none" });
@@ -28,16 +63,22 @@ export const Perfil = () => {
       <div className="profilecontainer">
         <div className="formprofile1">
           <h1 id="perfilh11">Perfil</h1>
-          <div className="form1">
-            <p>Nombre</p>
-            <h2>Cristopher</h2>
-            <p>Apellidos</p>
-            <h2>Saborio Alfaro</h2>
-            <p>Correo</p>
-            <h2>saboriocris@gmail.com</h2>
-            <p>Cumpleaños</p>
-            <h2>14/10/1997</h2>
-          </div>
+          {empty ? (
+            <div className="alert1">
+              <h5>Tu usuario se encuentra en revisión</h5>
+            </div>
+          ) : (
+            <div className="form1">
+              <p>Nombre</p>
+              <h2>{profile.user_name}</h2>
+              <p>Identificacion</p>
+              <h2>{profile.identification}</h2>
+              <p>Correo</p>
+              <h2>{profile.email}</h2>
+              <p>Cumpleaños</p>
+              <h2>{profile.date_of_birth}</h2>
+            </div>
+          )}
         </div>
         <div className="formprofile2">
           <h1 id="deletemem">Membresía</h1>

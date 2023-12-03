@@ -17,7 +17,7 @@ const style = {
   p: 4,
 };
 
-export default function BasicModal5() {
+export default function BasicModal5({ membershipData, wallet }) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -38,49 +38,49 @@ export default function BasicModal5() {
             <h1 id="res">Resumen de tu membresia</h1>
             <div className="t">
               <p>Membresia:</p>
-              <h3>Años dorados</h3>
+              <h3>{membershipData.name}</h3>
             </div>
             <div className="t">
               <p>Monto:</p>
-              <h3>10k USDT</h3>
+              <h3>{membershipData.precio} USDT</h3>
             </div>
             <div className="t">
               <p>Acumulacion para membresia activa:</p>
-              <h3>120 Meses</h3>
+              <h3>{membershipData.savings_duration_in_months} meses</h3>
             </div>
             <div className="t">
               <p>Monto de cuota mensual en USDT:</p>
-              <h3>83.33 USDT</h3>
+              <h3>{membershipData.base_monthly_benefit_amount} USDT</h3>
             </div>
             <div className="t">
               <p>Maduracion de membresia activa:</p>
-              <h3>120 Meses</h3>
+              <h3>{membershipData.maturity_period_in_months} Meses</h3>
             </div>
             <h1>Seleccion de bono redimible:</h1>
             <div className="t">
               <p>Porcentaje redimible:</p>
-              <h3>85%</h3>
+              <h3>{membershipData.percentage_bonus} %</h3>
             </div>
             <div className="t">
               <p>Monto redimible en USDT:</p>
-              <h3>8500 USDT</h3>
+              <h3>{(membershipData.percentage_bonus * membershipData.precio)} USDT</h3>
             </div>
             <div className="t">
               <p>Estado:</p>
               <h3>Desactivado</h3>
             </div>
-            <h1>Benficio a percibir</h1>
+            <h1>Beneficio a percibir</h1>
             <div className="t">
               <p>Monto de cuota mensual en USDT:</p>
-              <h3>1000 USDT</h3>
+              <h3>{membershipData.monthly_membership_cost} USDT</h3>
             </div>
             <div className="t">
               <p>Cantidad de cuotas mensuales:</p>
-              <h3>240</h3>
+              <h3>{membershipData.savings_duration_in_months}</h3>
             </div>
             <div className="t">
               <p>Wallet(ERC-20):</p>
-              <h3>0x00121201021020110</h3>
+              <h3>{wallet} </h3>
             </div>
             <h1>Datos beneficiario</h1>
             <div className="t">
