@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import fb from "../assets/face.png";
 import ig from "../assets/ig.png";
 import logo from "../assets/logo-white.png";
-import wp from "../assets/wp.png";
 import "../styles/footer.css";
 
 export const Footer = () => {
@@ -14,7 +13,6 @@ export const Footer = () => {
           <img src={logo} alt="" id="logoimg" />
         </Link>
         <div className="icons">
-          <img src={wp} alt="" />
           <a href="https://www.facebook.com/profile.php?id=61553878077986">
             <img src={fb} alt="" />
           </a>
