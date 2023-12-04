@@ -5,6 +5,7 @@ import { Page3 } from "../src/pages/Page3";
 import { Register } from "../src/pages/Register";
 import "./App.css";
 import { Blog } from "./pages/Blog";
+import { Checkout } from "./pages/Checkout";
 import { Contacto } from "./pages/Contacto";
 import { FAQ } from "./pages/FAQ";
 import { Inicio } from "./pages/Inicio";
@@ -30,6 +31,7 @@ function App() {
           <Route path="/perfil" element={<Perfil></Perfil>} />
           <Route path="/verificacion" element={<Verificacion></Verificacion>} />
           <Route path="/login" element={<Login></Login>} />
+          <Route path="/checkout" element={<Checkout></Checkout>} />
           <Route path="/test" element={<Test></Test>} />
         </Routes>
       </BrowserRouter>

@@ -64,6 +64,7 @@ export default function BasicModal3({ membershipData }) {
       >
         <Box sx={style} id="scrolleable3">
           <div className="modal3">
+            <h3 onClick={()=> {handleClose()}}>x</h3>
             <h2>Beneficio a percibir</h2>
             <div className="montos2">
               <div className="caja3">
@@ -102,8 +103,8 @@ export default function BasicModal3({ membershipData }) {
                 activo digital USDT a través de la red Ethereum ERC-20.
               </h3>
               <div className="continuar4">
-                <div className="check">
-                  <button type="submit" id="check">
+                <div className="check1">
+                  <button type="submit" id="check1">
                     Check Wallet
                   </button>
                 </div>

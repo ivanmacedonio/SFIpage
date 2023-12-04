@@ -3,9 +3,7 @@ import Button from "@mui/material/Button";
 import Modal from "@mui/material/Modal";
 import * as React from "react";
 import { useForm } from "react-hook-form";
-import "../styles/ModalProfile4.css";
-import BasicModal6 from "./ModalBeneficiario";
-import BasicModal5 from "./ModalProfile5";
+import '../styles/Beneficiario.css';
 
 const style = {
   position: "absolute",
@@ -20,13 +18,10 @@ const style = {
   p: 4,
 };
 
-export default function BasicModal4({ membershipData, wallet }) {
+export default function BasicModal6({sendBeneficiario}) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const [show, setShow] = React.useState(false);
-  const [datosbeneficiario, setDatosbeneficiario] = React.useState([]);
-  const [updatemembership, setUpdatemembership] = React.useState([]);
   const {
     register,
     handleSubmit,
@@ -35,19 +30,15 @@ export default function BasicModal4({ membershipData, wallet }) {
     shouldUseNativeValidation: true,
   });
 
-  function getBeneficiario(datos) {
-    setDatosbeneficiario(datos);
-  }
-
-  function onSubmit(data) {
-    setShow(true);
-    setUpdatemembership({ ...membershipData, data });
+  function onSubmit(data){
+        sendBeneficiario(data)
+        handleClose()
   }
 
   return (
     <div>
-      <Button onClick={handleOpen} id="continuar">
-        Continuar
+      <Button onClick={handleOpen} id="beneficiario">
+        Agregar beneficiario
       </Button>
       <Modal
         open={open}
@@ -56,9 +47,7 @@ export default function BasicModal4({ membershipData, wallet }) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <h4 onClick={()=> {handleClose()}}>x</h4>
-          <h2 id="db">Datos de beneficiario</h2>
-
+        <h2 id="db">Datos de beneficiario adicional</h2>
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="modal4">
               <div className="caja4">
@@ -84,15 +73,12 @@ export default function BasicModal4({ membershipData, wallet }) {
               <div className="caja4">
                 <p>Telefono</p>
                 <input
-                  type="text"
+                  type="number"
                   placeholder="Telefono"
                   {...register("telefono", {
                     required: "Ingresa un telefono valido",
                   })}
                 />
-                <div className="hide">
-                  <BasicModal6 sendBeneficiario={getBeneficiario}></BasicModal6>
-                </div>
               </div>
               <div className="caja4">
                 <p>Correo electronico</p>
@@ -104,19 +90,24 @@ export default function BasicModal4({ membershipData, wallet }) {
                   })}
                 />
               </div>
+              <div className="caja4">
+                <p>Porcentaje</p>
+                <input
+                  type="number"
+                  placeholder="Porcentaje"
+                  max={100}
+                  {...register("porcentaje", {
+                    required: "Ingresa un porcentaje valido",
+                  })}
+                />
+              </div>
             </div>
             <div className="continuar5">
               <button type="submit">
                 <div className="check2">
-                  <h2>Check data</h2>
+                  <h2>Continuar</h2>
                 </div>
               </button>
-              {show && (
-                <BasicModal5
-                  membershipData={updatemembership}
-                  wallet={wallet}
-                ></BasicModal5>
-              )}
             </div>
           </form>
         </Box>

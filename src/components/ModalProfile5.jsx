@@ -1,9 +1,10 @@
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Modal from "@mui/material/Modal";
+import axios from "axios";
 import * as React from "react";
+import { BASE_URL } from "../hooks/fetch";
 import "../styles/ModalProfile5.css";
-
 const style = {
   position: "absolute",
   top: "50%",
@@ -21,6 +22,35 @@ export default function BasicModal5({ membershipData, wallet }) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const [datapurchase, setDatapurchase] = React.useState({});
+  const [code, setCode] = React.useState('')
+
+  React.useEffect(() => {
+    setDatapurchase({
+      amount: membershipData.precio,
+      currency: "USDT",
+      user_id: membershipData.data.telefono,
+      user_name: membershipData.data.name,
+      membership_name: membershipData.name,
+    });
+  }, []);
+
+
+  async function handleTransfer() {
+    try {
+      const token = localStorage.getItem("access");
+      const headers = {
+        Authorization: `Bearer ${token}`,
+      };
+      const res = await axios.post(`${BASE_URL}create_charge/`, datapurchase, {
+        headers: headers,
+      });
+      setCode(res.data.detalleRespuesta.code)
+      window.location.href = `${res.data.detalleRespuesta.url}`    
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   return (
     <div>
@@ -63,7 +93,9 @@ export default function BasicModal5({ membershipData, wallet }) {
             </div>
             <div className="t">
               <p>Monto redimible en USDT:</p>
-              <h3>{(membershipData.percentage_bonus * membershipData.precio)} USDT</h3>
+              <h3>
+                {membershipData.percentage_bonus * membershipData.precio} USDT
+              </h3>
             </div>
             <div className="t">
               <p>Estado:</p>
@@ -85,19 +117,19 @@ export default function BasicModal5({ membershipData, wallet }) {
             <h1>Datos beneficiario</h1>
             <div className="t">
               <p>Nombre completo:</p>
-              <h3>XXXXXXXXXXXXXXX</h3>
+              <h3>{membershipData.data.name}</h3>
             </div>
             <div className="t">
               <p>Identificacion:</p>
-              <h3>XXXXXXXXXXXX</h3>
+              <h3>{membershipData.data.identificacion}</h3>
             </div>
             <div className="t">
               <p>Correo electronico:</p>
-              <h3>XXXXXXXXXXX</h3>
+              <h3>{membershipData.data.email}</h3>
             </div>
             <div className="t">
               <p>Telefono:</p>
-              <h3>XXXXXXXXXXXXX</h3>
+              <h3>{membershipData.data.telefono}</h3>
             </div>
             <label>
               <input type="checkbox" />
@@ -105,7 +137,9 @@ export default function BasicModal5({ membershipData, wallet }) {
               privacidad y acepta que sus datos seran enviados a SFI
             </label>
           </div>
-          <h1 id="transferir1">Realizar transferencia</h1>
+          <h1 id="transferir1" onClick={() => handleTransfer()}>
+            Realizar transferencia
+          </h1>
         </Box>
       </Modal>
     </div>

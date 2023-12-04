@@ -41,6 +41,8 @@
 }
 
 
+
+
 .formulariocontacto form {
     display: flex;
     flex-direction: column;
@@ -89,7 +91,7 @@
     height: 1rem;
     margin: 0;
     padding: 0;
-    width: 2rem;
+    width: 2rem !important;
 }
 
 .formulariocontacto label {

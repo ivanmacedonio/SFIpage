@@ -1,0 +1,87 @@
+svg {
+    width: 3.25em;
+    transform-origin: center;
+    animation: rotate4 2s linear infinite;
+   }
+   
+   circle {
+    fill: none;
+    stroke: hsl(214, 97%, 59%);
+    stroke-width: 2;
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+    stroke-linecap: round;
+    animation: dash4 1.5s ease-in-out infinite;
+   }
+   
+   @keyframes rotate4 {
+    100% {
+     transform: rotate(360deg);
+    }
+   }
+   
+   @keyframes dash4 {
+    0% {
+     stroke-dasharray: 1, 200;
+     stroke-dashoffset: 0;
+    }
+   
+    50% {
+     stroke-dasharray: 90, 200;
+     stroke-dashoffset: -35px;
+    }
+   
+    100% {
+     stroke-dashoffset: -125px;
+    }
+   }
+
+   
+   .loader{
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    font-size: 1.5rem;
+   }
+
+   #cancelado{
+    font-size: 3rem;
+    font-family: 'Lato', sans-serif;
+    margin-top: 7rem;
+    position: relative;
+    top: 50%;
+    left: 14.5rem;
+    font-weight: 700;
+}
+
+
+@media (max-width: 767px){
+    #cancelado{
+        font-size: 2rem;
+        left: 15%;
+        width: 80%;
+    }
+
+    .loader{
+        left: 45%;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1199px){
+    #cancelado{
+        font-size: 2rem;
+        left: 15%;
+        width: 80%;
+    }
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1600px){
+    #cancelado{
+        font-size: 2rem;
+        left: 15%;
+        width: 80%;
+    }
+    .loader{
+        top: 40%;
+    }
+}
