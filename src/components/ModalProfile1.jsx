@@ -5,6 +5,7 @@ import axios from "axios";
 import * as React from "react";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { BASE_URL } from '../hooks/fetch';
 import "../styles/Modal1.css";
 import BasicModal2 from "./ModalProfile2";
 
@@ -75,7 +76,7 @@ export default function BasicModal() {
         };
         try {
           const res = await axios.get(
-            " http://127.0.0.1:8000/api/membership/",
+            `${BASE_URL}membership/`,
             {
               headers,
             }

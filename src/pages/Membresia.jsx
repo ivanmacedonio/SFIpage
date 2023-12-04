@@ -5,6 +5,7 @@ import { Ac } from "../components/Ac";
 import { Footer } from "../components/Footer";
 import { HeaderNormal } from "../components/Header-normal";
 import TransitionsModal from "../components/Modal";
+import { BASE_URL } from '../hooks/fetch';
 import "../styles/Membresia.css";
 
 export const Membresia = () => {
@@ -67,7 +68,7 @@ export const Membresia = () => {
         };
         try {
           const res = await axios.get(
-            "http://127.0.0.1:8000/api/membership/",
+            `${BASE_URL}membership/`,
             {
               headers,
             }

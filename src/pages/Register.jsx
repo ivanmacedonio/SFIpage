@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import chicablog from "../assets/afiliarse.webp";
 import { HeaderNormal } from "../components/Header-normal";
+import { BASE_URL } from '../hooks/fetch';
 import "../styles/Register.css";
 export const Register = () => {
   useEffect(() => {
@@ -18,7 +19,7 @@ export const Register = () => {
     if (data.password == data.password2) {
       try {
         const res = await axios.post(
-          "http://localhost:8000/api/register/",
+          `${BASE_URL}register/`,
           data
         );
         navigate("/login");

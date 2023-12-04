@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import contacto from "../assets/contacto.webp";
+import { BASE_URL } from "../hooks/fetch";
 
 import { HeaderNormal } from "../components/Header-normal";
 import "../styles/contacto.css";
@@ -17,7 +18,7 @@ export const Contacto = () => {
   });
   async function onSubmit(data) {
     const res = await axios.post(
-      "http://127.0.0.1:8000/api/contact_form/",
+      `${BASE_URL}contact_form/`,
       data
     );
     window.location.reload()
