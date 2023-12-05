@@ -17,6 +17,28 @@ const style = {
 };
 
 export default function BasicModal2({ membershipData }) {
+  const [number, setNumber] = React.useState();
+
+  React.useEffect(() => {
+    function formatearNumero() {
+
+      let numero = (membershipData.percentage_bonus * membershipData.precio) / 100
+
+      let numeroRedondeado = Math.round(numero);
+
+      let cadenaNumero = numeroRedondeado.toString();
+
+      let resultadoFormateado = cadenaNumero.replace(
+        /\B(?=(\d{3})+(?!\d))/g,
+        ","
+      );
+
+      setNumber(resultadoFormateado);
+    }
+    formatearNumero()
+    console.log(membershipData)
+  }, []);
+
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -54,10 +76,13 @@ export default function BasicModal2({ membershipData }) {
               </div>
               <div className="caja2">
                 <h2>Monto redimible en USDT</h2>
-                <h1>{(membershipData.percentage_bonus * membershipData.precio)}</h1>
+                <h1>{number}</h1>
               </div>
             </div>
-            <BasicModal3 id="continuar" membershipData = {membershipData}></BasicModal3>
+            <BasicModal3
+              id="continuar"
+              membershipData={membershipData}
+            ></BasicModal3>
           </div>
         </Box>
       </Modal>

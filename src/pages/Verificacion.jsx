@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { HeaderNormal } from "../components/Header-normal";
 import "../styles/Verificacion.css";
 
@@ -7,7 +8,9 @@ export const Verificacion = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const [verificado, setVerificado] = useState(false);
+  const nav = useNavigate();
+
+  const [verificado, setVerificado] = useState(true);
   return (
     <div className="verificacionpage">
       <div className="header">
@@ -64,12 +67,22 @@ export const Verificacion = () => {
                 <input type="checkbox" />{" "}
                 <p>
                   Al hacer clic aquí, confirma que ha leído y acepta los
-                  Términos de uso, la Política de privacidad y acepta que sus
-                  datos serán enviados a Smart Furute Income.
+                  <a href="https://smartprofitinvestments-my.sharepoint.com/personal/transformacion_spiglobal_net/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Ftransformacion%5Fspiglobal%5Fnet%2FDocuments%2FMicrosoft%20Teams%20Chat%20Files%2FT%C3%89RMINOS%20DE%20USO%20DE%20BENEFICIO%20SFI%2Epdf&parent=%2Fpersonal%2Ftransformacion%5Fspiglobal%5Fnet%2FDocuments%2FMicrosoft%20Teams%20Chat%20Files&ga=1">
+                    {" "}
+                    términos de uso
+                  </a>
+                  , la Política de privacidad y acepta que sus datos serán
+                  enviados a Smart Furute Income.
                 </p>
               </div>
               <div className="slot" id="enviar">
-                <button>Enviar</button>
+                <button
+                  onClick={() => {
+                    nav("/membresia");
+                  }}
+                >
+                  Enviar
+                </button>
               </div>
             </form>
           </div>

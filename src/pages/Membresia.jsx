@@ -68,7 +68,7 @@ export const Membresia = () => {
         };
         try {
           const res = await axios.get(
-            `${BASE_URL}membership/`,
+            `${BASE_URL}memberships/`,
             {
               headers,
             }

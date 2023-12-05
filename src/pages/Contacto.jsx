@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import contacto from "../assets/contacto.webp";
 import { BASE_URL } from "../hooks/fetch";
 
@@ -11,19 +12,18 @@ export const Contacto = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  const nav = useNavigate();
+
   const [checked, setChecked] = useState(false);
-  const urlDelPDF = '../assets/terminos.pdf'
+  const urlDelPDF = "../assets/terminos.pdf";
   const { register, handleSubmit } = useForm({
     shouldUseNativeValidation: true,
   });
-  async function onSubmit(data) {
-    const res = await axios.post(
-      `${BASE_URL}contact_form/`,
-      data
-    );
-    window.location.reload()
-  }
 
+  async function onSubmit(data) {
+    const res = await axios.post(`${BASE_URL}contact_form/`, data);
+    window.location.reload();
+  }
   return (
     <div className="contactopage">
       <div className="header">
@@ -40,19 +40,21 @@ export const Contacto = () => {
             <input
               type="text"
               placeholder="Ingresa tu nombre"
-              {...register("name", { required: 'Ingresa un nombre valido' })}
+              {...register("name", { required: "Ingresa un nombre valido" })}
             />
             <input
               type="email"
               placeholder="Ingresa tu correo electronico"
-              {...register("email", { required: 'Ingresa un mail valido' })}
+              {...register("email", { required: "Ingresa un mail valido" })}
             />
             <textarea
               placeholder="Mensaje"
               id="mensaje"
               cols="30"
               rows="10"
-              {...register("message", { required: 'Ingresa un mensaje valido' })}
+              {...register("message", {
+                required: "Ingresa un mensaje valido",
+              })}
             ></textarea>
             <div className="labels">
               <label>
@@ -63,7 +65,15 @@ export const Contacto = () => {
                     required: "Debes aceptar los terminos y condiciones",
                   })}
                 />
-                <a href="urlDelPDF">Terminos y condiciones</a>
+                <a
+                  onClick={() => {
+                    window.location.assign(
+                      "https://smartprofitinvestments-my.sharepoint.com/personal/transformacion_spiglobal_net/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Ftransformacion%5Fspiglobal%5Fnet%2FDocuments%2FMicrosoft%20Teams%20Chat%20Files%2FT%C3%89RMINOS%20DE%20USO%20DE%20BENEFICIO%20SFI%2Epdf&parent=%2Fpersonal%2Ftransformacion%5Fspiglobal%5Fnet%2FDocuments%2FMicrosoft%20Teams%20Chat%20Files&ga=1"
+                    );
+                  }}
+                >
+                  Terminos y condiciones
+                </a>
               </label>
               <label>
                 <input

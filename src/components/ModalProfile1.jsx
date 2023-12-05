@@ -5,7 +5,6 @@ import axios from "axios";
 import * as React from "react";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { BASE_URL } from '../hooks/fetch';
 import "../styles/Modal1.css";
 import BasicModal2 from "./ModalProfile2";
 
@@ -54,18 +53,6 @@ export default function BasicModal() {
     cursor: "pointer",
   };
 
-  async function getNewAccess(refresh) {
-    try {
-      const res = await axios.post("http://localhost:8000/token/refresh/", {
-        refresh: refresh,
-      });
-      localStorage.removeItem("access");
-      localStorage.setItem("access", res.data.access);
-    } catch (error) {
-      nav("/login");
-    }
-  }
-
   useEffect(() => {
     async function getMemberships() {
       const token = localStorage.getItem("access");
@@ -76,15 +63,14 @@ export default function BasicModal() {
         };
         try {
           const res = await axios.get(
-            `${BASE_URL}membership/`,
+            `http://127.0.0.1:9000/api/memberships/`,
             {
               headers,
             }
           );
           setMembership(res.data);
         } catch (error) {
-          await getNewAccess(refresh);
-          window.location.reload();
+          nav("/login");
         }
       } else {
         nav("/login");
@@ -140,6 +126,7 @@ export default function BasicModal() {
           {list ? (
             <div className="list">
               <div className="membresiaModal1">
+             
                 <div className="slide2">
                   <p>Monto en USDT</p>
                   <input
@@ -164,11 +151,11 @@ export default function BasicModal() {
                 <p>Maduracion de membresia activa</p>
                 <h2>{membershipData.maturity_period_in_months}</h2>
               </div>
-              {show && (
+             
                 <div className="btn">
                   <BasicModal2 membershipData={membershipData}></BasicModal2>
                 </div>
-              )}
+            
             </div>
           ) : (
             <ul>

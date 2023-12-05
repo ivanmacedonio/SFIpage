@@ -3,6 +3,7 @@ import Button from "@mui/material/Button";
 import Modal from "@mui/material/Modal";
 import axios from "axios";
 import * as React from "react";
+import { useNavigate } from "react-router-dom";
 import { BASE_URL } from "../hooks/fetch";
 import "../styles/ModalProfile5.css";
 const style = {
@@ -23,7 +24,9 @@ export default function BasicModal5({ membershipData, wallet }) {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const [datapurchase, setDatapurchase] = React.useState({});
-  const [code, setCode] = React.useState('')
+  const [code, setCode] = React.useState("");
+  const [check, setCheck] = React.useState(false);
+  const nav = useNavigate()
 
   React.useEffect(() => {
     setDatapurchase({
@@ -35,18 +38,29 @@ export default function BasicModal5({ membershipData, wallet }) {
     });
   }, []);
 
-
   async function handleTransfer() {
     try {
       const token = localStorage.getItem("access");
       const headers = {
         Authorization: `Bearer ${token}`,
       };
-      const res = await axios.post(`${BASE_URL}create_charge/`, datapurchase, {
-        headers: headers,
-      });
-      setCode(res.data.detalleRespuesta.code)
-      window.location.href = `${res.data.detalleRespuesta.url}`    
+      if (token){
+        if (check === true) {
+          const res = await axios.post(
+            `${BASE_URL}create_charge/`,
+            datapurchase,
+            {
+              headers: headers,
+            }
+          );
+          setCode(res.data.detalleRespuesta.code);
+          window.location.href = `${res.data.detalleRespuesta.url}`;
+        } else {
+          console.log('not check')
+        }
+      } else{
+        nav('/login')
+      }
     } catch (error) {
       console.log(error);
     }
@@ -132,7 +146,12 @@ export default function BasicModal5({ membershipData, wallet }) {
               <h3>{membershipData.data.telefono}</h3>
             </div>
             <label>
-              <input type="checkbox" />
+              <input
+                type="checkbox"
+                onClick={() => {
+                  setCheck(!check);
+                }}
+              />
               Al hacer click aqui, acepto los terminos de uso, la Politica de
               privacidad y acepta que sus datos seran enviados a SFI
             </label>

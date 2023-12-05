@@ -23,6 +23,11 @@
     padding-top: 0rem;
 }
 
+.formulariocontacto a{
+    cursor: pointer;
+    font-weight: 900;
+}
+
 
 .formulariocontacto h1 {
     font-weight: 900;

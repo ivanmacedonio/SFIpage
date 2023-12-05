@@ -27,6 +27,8 @@ export const HeaderNormal = () => {
     const token = localStorage.getItem("access");
     if (token) {
       setIsLogin(true);
+    } else {
+      setIsLogin(false)
     }
   });
 

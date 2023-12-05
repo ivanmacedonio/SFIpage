@@ -21,7 +21,7 @@ export const Login = () => {
       const res = await axios.post(`${BASE_URL}login/`, data);
       localStorage.setItem('access', res.data.access)     
       localStorage.setItem('refresh', res.data.refresh)
-      nav('/') 
+      nav('/verificacion') 
     } catch (error) {
       alert('Usuario no valido');
     }

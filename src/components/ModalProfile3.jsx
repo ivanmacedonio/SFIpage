@@ -49,7 +49,6 @@ export default function BasicModal3({ membershipData }) {
     }
   }
 
-  console.log(membershipData);
 
   return (
     <div>
