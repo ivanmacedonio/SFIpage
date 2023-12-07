@@ -98,7 +98,7 @@ export default function BasicModal() {
     });
     setList(!list);
     setShow(true);
-    console.log(membershipData)
+
 
   }
 

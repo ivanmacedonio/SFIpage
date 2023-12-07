@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "../styles/Checkout.css";
@@ -7,12 +8,34 @@ export const Checkout = () => {
   const canceled = queryParams.get("canceled");
   const nav = useNavigate();
 
-  useEffect(() => {
+  /*useEffect(() => {
     const timer = setTimeout(() => {
       nav("/");
     }, 3500);
     return () => clearTimeout(timer)
-  }, []); 
+  }, []); */
+
+  async function Purchase(){
+    const token = localStorage.getItem('access')
+    if (token){
+      try{
+        const res = await axios.post('http://127.0.0.1:8000/api/purchase/')
+
+
+      } catch ( error ){
+        console.log(error)
+      }
+    }
+  }
+
+  useEffect(() => {
+    if (canceled === 'true'){
+      localStorage.removeItem('code')
+    } else {
+      const data = localStorage.getItem('dataCharge')
+      console.log(data)
+    }
+  })
 
   return (
     <div>

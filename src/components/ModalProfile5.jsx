@@ -24,18 +24,35 @@ export default function BasicModal5({ membershipData, wallet }) {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const [datapurchase, setDatapurchase] = React.useState({});
+  const [dataCharge, setDatacharge] = React.useState({});
   const [code, setCode] = React.useState("");
+  const [userid, setId] = React.useState("");
+  const [username, setUsername] = React.useState("");
   const [check, setCheck] = React.useState(false);
   const nav = useNavigate();
 
   React.useEffect(() => {
-    setDatapurchase({
-      amount: membershipData.precio,
-      currency: "USDT",
-      user_id: membershipData.data.telefono,
-      user_name: membershipData.data.name,
-      membership_name: membershipData.name,
-    });
+    async function getUser() {
+      const token = localStorage.getItem("access");
+      const headers = {
+        Authorization: `Bearer ${token}`,
+      };
+      if (token) {
+        try {
+          const res1 = await axios.get(`http://127.0.0.1:9000/api/kyc/`, {
+            headers,
+          });
+          setId(res1.data[0].identification);
+          setUsername(res1.data[0].user_name);
+        } catch (error) {
+          console.log(error);
+        }
+      } else {
+        nav("/login");
+      }
+    }
+
+    getUser();
   }, []);
 
   async function handleTransfer() {
@@ -46,6 +63,15 @@ export default function BasicModal5({ membershipData, wallet }) {
       };
       if (token) {
         if (check === true) {
+          setDatapurchase({
+            amount: membershipData.precio,
+            currency: "USDT",
+            membership: membershipData.id,
+            user_id: userid,
+            user_name: username,
+            membership_name: membershipData.name,
+          });
+
           const res = await axios.post(
             `${BASE_URL}create_charge/`,
             datapurchase,
@@ -53,14 +79,13 @@ export default function BasicModal5({ membershipData, wallet }) {
               headers: headers,
             }
           );
-          setCode(res.data.detalleRespuesta.code);
           window.location.href = `${res.data.detalleRespuesta.url}`;
         } else {
           console.log("not check");
         }
       } else {
-        nav("/login");
         localStorage.removeItem("access");
+        nav("/login");
       }
     } catch (error) {
       console.log(error);
@@ -146,7 +171,7 @@ export default function BasicModal5({ membershipData, wallet }) {
               <p>Telefono:</p>
               <h3>{membershipData.data.telefono}</h3>
             </div>
-            <label >
+            <label>
               <input
                 type="checkbox"
                 onClick={() => {
