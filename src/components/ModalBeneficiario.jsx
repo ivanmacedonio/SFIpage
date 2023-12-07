@@ -18,8 +18,9 @@ const style = {
   p: 4,
 };
 
-export default function BasicModal6({sendBeneficiario}) {
+export default function BasicModal6({enviarBeneficiario}) {
   const [open, setOpen] = React.useState(false);
+  const [datosBeneficiario, setDatosbeneficiario] = React.useState({})
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const {
@@ -31,7 +32,8 @@ export default function BasicModal6({sendBeneficiario}) {
   });
 
   function onSubmit(data){
-        sendBeneficiario(data)
+        setDatosbeneficiario(data)
+        enviarBeneficiario(datosBeneficiario)
         handleClose()
   }
 
@@ -55,7 +57,7 @@ export default function BasicModal6({sendBeneficiario}) {
                 <input
                   type="text"
                   placeholder="Nombre"
-                  {...register("name", {
+                  {...register("full_name", {
                     required: "Ingresa un nombre valido",
                   })}
                 />
@@ -64,7 +66,7 @@ export default function BasicModal6({sendBeneficiario}) {
                 <p>Identificacion</p>
                 <input
                   type="text"
-                  placeholder="Identificacion"
+                  placeholder="identification"
                   {...register("identificacion", {
                     required: "Ingresa una identificacion valida",
                   })}
@@ -75,7 +77,7 @@ export default function BasicModal6({sendBeneficiario}) {
                 <input
                   type="number"
                   placeholder="Telefono"
-                  {...register("telefono", {
+                  {...register("phone", {
                     required: "Ingresa un telefono valido",
                   })}
                 />
@@ -96,7 +98,7 @@ export default function BasicModal6({sendBeneficiario}) {
                   type="number"
                   placeholder="Porcentaje"
                   max={100}
-                  {...register("porcentaje", {
+                  {...register("percentage", {
                     required: "Ingresa un porcentaje valido",
                   })}
                 />

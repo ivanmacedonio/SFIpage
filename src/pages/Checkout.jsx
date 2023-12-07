@@ -1,41 +1,61 @@
-import axios from 'axios';
+import axios from "axios";
 import React, { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { BASE_URL } from "../hooks/fetch";
 import "../styles/Checkout.css";
+
 export const Checkout = () => {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const canceled = queryParams.get("canceled");
   const nav = useNavigate();
 
-  /*useEffect(() => {
-    const timer = setTimeout(() => {
-      nav("/");
-    }, 3500);
-    return () => clearTimeout(timer)
-  }, []); */
-
-  async function Purchase(){
-    const token = localStorage.getItem('access')
-    if (token){
-      try{
-        const res = await axios.post('http://127.0.0.1:8000/api/purchase/')
-
-
-      } catch ( error ){
-        console.log(error)
-      }
-    }
-  }
-
   useEffect(() => {
-    if (canceled === 'true'){
-      localStorage.removeItem('code')
+    if (canceled === "true") {
+      console.log("canceled");
     } else {
-      const data = localStorage.getItem('dataCharge')
-      console.log(data)
+      async function Purchase(datos) {
+        const token = localStorage.getItem("access");
+        if (token) {
+          const headers = {
+            Authorization: `Bearer ${token}`,
+          };
+          try {
+            const res = await axios.post(`${BASE_URL}purchase/`, datos, {
+              headers: headers,
+            });
+            localStorage.clear();
+            nav("/");
+          } catch (error) {
+            console.log(error);
+            localStorage.clear();
+          }
+        }
+      }
+      const datos = {
+        charge_coinbase_commerce: localStorage.getItem("code"),
+        amount: localStorage.getItem("precio"),
+        wallet: localStorage.getItem("wallet"),
+        membership: localStorage.getItem("id"),
+        currency: "USDT",
+        beneficiaries: [
+          {
+            full_name: localStorage.getItem("full_name"),
+            identification: localStorage.getItem("identification"),
+            email: localStorage.getItem("email"),
+            phone: localStorage.getItem("phone"),
+            percentage: localStorage.getItem("percentage"),
+          },
+        ],
+      };
+      Purchase(datos);
+      /*  const timer = setTimeout(() => {
+        nav("/");
+      }, 3500);
+      return () => clearTimeout(timer);
+    */
     }
-  })
+  }, [canceled]);
 
   return (
     <div>
@@ -53,7 +73,7 @@ export const Checkout = () => {
           </div>
         </div>
       ) : (
-        <div>
+        <div className="cancelado">
           <h1 id="cancelado">
             {" "}
             Tu pago se realizo correctamente, redireccionando a Smart Future

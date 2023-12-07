@@ -27,7 +27,7 @@ export default function BasicModal4({ membershipData, wallet }) {
   const [show, setShow] = React.useState(false);
   const [datosbeneficiario, setDatosbeneficiario] = React.useState([]);
   const [updatemembership, setUpdatemembership] = React.useState([]);
-  const [readOnly, setReadonly] = React.useState(false)
+  const [readOnly, setReadonly] = React.useState(false);
   const {
     register,
     handleSubmit,
@@ -36,15 +36,18 @@ export default function BasicModal4({ membershipData, wallet }) {
     shouldUseNativeValidation: true,
   });
 
-  function getBeneficiario(datos) {
-    setDatosbeneficiario(datos);
+  function recibirBeneficiario(data) {
+    setDatosbeneficiario({...datosbeneficiario, data})
   }
 
   function onSubmit(data) {
     setShow(true);
-    setReadonly(true)
+    setReadonly(true);
     setUpdatemembership({ ...membershipData, data });
+    setDatosbeneficiario(data);
   }
+
+  console.log(a)
 
   return (
     <div>
@@ -73,7 +76,7 @@ export default function BasicModal4({ membershipData, wallet }) {
                 <p>Nombre completo</p>
                 <input
                   type="text"
-                  readOnly = {readOnly}
+                  readOnly={readOnly}
                   placeholder="Nombre"
                   {...register("name", {
                     required: "Ingresa un nombre valido",
@@ -84,7 +87,7 @@ export default function BasicModal4({ membershipData, wallet }) {
                 <p>Identificacion</p>
                 <input
                   type="text"
-                  readOnly = {readOnly}
+                  readOnly={readOnly}
                   placeholder="Identificacion"
                   {...register("identificacion", {
                     required: "Ingresa una identificacion valida",
@@ -95,21 +98,23 @@ export default function BasicModal4({ membershipData, wallet }) {
                 <p>Telefono</p>
                 <input
                   type="text"
-                  readOnly = {readOnly}
+                  readOnly={readOnly}
                   placeholder="Telefono"
                   {...register("telefono", {
                     required: "Ingresa un telefono valido",
                   })}
                 />
                 <div className="hide">
-                  <BasicModal6 sendBeneficiario={getBeneficiario}></BasicModal6>
+                  <BasicModal6
+                    enviarBeneficiario={recibirBeneficiario}
+                  ></BasicModal6>
                 </div>
               </div>
               <div className="caja4">
                 <p>Correo electronico</p>
                 <input
                   type="email"
-                  readOnly = {readOnly}
+                  readOnly={readOnly}
                   placeholder="Email"
                   {...register("email", {
                     required: "Ingresa un email valido",
@@ -131,6 +136,7 @@ export default function BasicModal4({ membershipData, wallet }) {
                 <BasicModal5
                   membershipData={updatemembership}
                   wallet={wallet}
+                  datosBeneficiario={datosbeneficiario}
                 ></BasicModal5>
               )}
             </div>

@@ -19,13 +19,15 @@ const style = {
   p: 4,
 };
 
-export default function BasicModal5({ membershipData, wallet }) {
+export default function BasicModal5({
+  membershipData,
+  wallet,
+  datosBeneficiario,
+}) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const [datapurchase, setDatapurchase] = React.useState({});
-  const [dataCharge, setDatacharge] = React.useState({});
-  const [code, setCode] = React.useState("");
   const [userid, setId] = React.useState("");
   const [username, setUsername] = React.useState("");
   const [check, setCheck] = React.useState(false);
@@ -79,6 +81,15 @@ export default function BasicModal5({ membershipData, wallet }) {
               headers: headers,
             }
           );
+          localStorage.setItem("precio", membershipData.precio);
+          localStorage.setItem("id", membershipData.id);
+          localStorage.setItem("code", res.data.detalleRespuesta.code);
+          localStorage.setItem("wallet", wallet);
+          localStorage.setItem("full_name", res.data.name);
+          localStorage.setItem("identificacion", res.data.identificacion);
+          localStorage.setItem("email", res.data.email);
+          localStorage.setItem("phone", res.data.telefono);
+          localStorage.setItem("percentaje", 100);
           window.location.href = `${res.data.detalleRespuesta.url}`;
         } else {
           console.log("not check");
