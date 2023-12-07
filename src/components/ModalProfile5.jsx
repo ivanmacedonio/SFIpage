@@ -26,7 +26,7 @@ export default function BasicModal5({ membershipData, wallet }) {
   const [datapurchase, setDatapurchase] = React.useState({});
   const [code, setCode] = React.useState("");
   const [check, setCheck] = React.useState(false);
-  const nav = useNavigate()
+  const nav = useNavigate();
 
   React.useEffect(() => {
     setDatapurchase({
@@ -44,7 +44,7 @@ export default function BasicModal5({ membershipData, wallet }) {
       const headers = {
         Authorization: `Bearer ${token}`,
       };
-      if (token){
+      if (token) {
         if (check === true) {
           const res = await axios.post(
             `${BASE_URL}create_charge/`,
@@ -56,10 +56,11 @@ export default function BasicModal5({ membershipData, wallet }) {
           setCode(res.data.detalleRespuesta.code);
           window.location.href = `${res.data.detalleRespuesta.url}`;
         } else {
-          console.log('not check')
+          console.log("not check");
         }
-      } else{
-        nav('/login')
+      } else {
+        nav("/login");
+        localStorage.removeItem("access");
       }
     } catch (error) {
       console.log(error);
@@ -145,7 +146,7 @@ export default function BasicModal5({ membershipData, wallet }) {
               <p>Telefono:</p>
               <h3>{membershipData.data.telefono}</h3>
             </div>
-            <label>
+            <label >
               <input
                 type="checkbox"
                 onClick={() => {
@@ -156,9 +157,13 @@ export default function BasicModal5({ membershipData, wallet }) {
               privacidad y acepta que sus datos seran enviados a SFI
             </label>
           </div>
-          <h1 id="transferir1" onClick={() => handleTransfer()}>
-            Realizar transferencia
-          </h1>
+          {check ? (
+            <h1 id="transferir1" onClick={() => handleTransfer()}>
+              Realizar transferencia
+            </h1>
+          ) : (
+            ""
+          )}
         </Box>
       </Modal>
     </div>

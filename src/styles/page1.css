@@ -357,7 +357,7 @@ img {
 
     .welcome {
         background-position: right;
-        height: 72rem;
+        height: 55rem;
     }
 
     #big {
@@ -374,7 +374,7 @@ img {
     .footer {
         position: relative;
         z-index: 4;
-        margin-top: 25rem;
+        margin-top: 10rem;
     }
 
     .imgfamilia2 {

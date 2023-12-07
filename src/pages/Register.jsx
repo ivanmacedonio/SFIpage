@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import chicablog from "../assets/afiliarse.webp";
@@ -12,9 +12,14 @@ export const Register = () => {
   }, []);
   const navigate = useNavigate();
 
+
   const { register, handleSubmit } = useForm({
     shouldUseNativeValidation: true,
   });
+  const [error, setError] = useState('')
+  const [errorRegisterStyle, setErrorRegisterStyle] = useState({
+    display: 'none'
+  })
   const onSubmit = async (data) => {
     if (data.password == data.password2) {
       try {
@@ -24,7 +29,10 @@ export const Register = () => {
         );
         navigate("/login");
       } catch (error) {
-        console.error(error);
+        setError('Ya existe un usuario registrado con estos datos')
+        setErrorRegisterStyle({
+          display: 'block'
+        })
       }
     } else {
       alert("Las contraseñas no coinciden");
@@ -57,30 +65,34 @@ export const Register = () => {
               })}
             />
             <input
-              type="text"
+              type="number"
               placeholder="Ingresa tu numero de celular"
               {...register("phone_number", {
                 required: "Por favor ingresa tu numero",
               })}
             />
             <input
-              type="text"
+              type="password"
               placeholder="Ingresa tu contraseña"
               {...register("password", {
                 required: "Por favor ingresa tu contraseña",
               })}
             />
             <input
-              type="text"
+              type="password"
               placeholder="Confirma tu contraseña"
               {...register("password2", {
                 required: "Por favor ingresa tu contraseña",
               })}
             />
+
             <button type="submit" id="afiliarsebutton">
               Afiliarse
             </button>
           </form>
+          <div className="errorRegister" style={errorRegisterStyle}>
+            <h2>{error}</h2>
+          </div>
           <div className="option">
             <p>Or signup with</p>
             <div className="buttonslogin">

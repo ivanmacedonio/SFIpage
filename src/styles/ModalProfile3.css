@@ -10,6 +10,10 @@
     margin-top: 2rem;
 }
 
+#scrolleable3{
+    width: 30%;
+}
+
 .modal3{
     font-family: 'Lato', sans-serif;
 }
@@ -53,6 +57,10 @@
     margin-left: 1.5rem;
 }
 
+.continue{
+    margin-left: 5.5rem;
+}
+
 .continuar4 button{
     background: none;
     border: none;
@@ -62,6 +70,7 @@
     background: linear-gradient(to right, rgb(3, 180, 211), rgb(2, 80, 116));
     border-radius: 1rem;
     padding: 1rem;
+    margin-left: 2rem;
     
 }
 
@@ -85,6 +94,10 @@
 }
 
 @media(max-width: 767px){
+
+    .continue{
+        margin-left: 0rem;
+    }
 
     .check1{
         margin-left: 1rem;
@@ -113,10 +126,17 @@
     }
 }
 
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
   .css-1llu0g7{
     top: 35%;
     }
+    #scrolleable3{
+        width: 70%;
+    }
+    .continue{
+        margin-left: 5rem;
+    }
+
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 1600px){
@@ -127,5 +147,11 @@
     #scrolleable3{
         height: 80%;
         overflow-y: auto;
+        width: 50%;
     }
+
+    .continue{
+        margin-left: 9rem;
+    }
+    
 }

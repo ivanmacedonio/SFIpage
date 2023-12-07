@@ -41,7 +41,7 @@ export default function BasicAccordion() {
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            El proceso para afiliarse a SFI es super sencillo en 3 simples
+            El proceso para afiliarse a SFI es super sencillo en 4 simples
             pasos, solo debes completar y aprobar el KYC, escoger el plan que
             más se apega a tus necesidades y realizar las cuotas de membresía a
             través de tus activos digitales con la wallet de tu preferencia.

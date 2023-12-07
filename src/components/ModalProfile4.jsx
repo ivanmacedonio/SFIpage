@@ -27,6 +27,7 @@ export default function BasicModal4({ membershipData, wallet }) {
   const [show, setShow] = React.useState(false);
   const [datosbeneficiario, setDatosbeneficiario] = React.useState([]);
   const [updatemembership, setUpdatemembership] = React.useState([]);
+  const [readOnly, setReadonly] = React.useState(false)
   const {
     register,
     handleSubmit,
@@ -41,6 +42,7 @@ export default function BasicModal4({ membershipData, wallet }) {
 
   function onSubmit(data) {
     setShow(true);
+    setReadonly(true)
     setUpdatemembership({ ...membershipData, data });
   }
 
@@ -56,7 +58,13 @@ export default function BasicModal4({ membershipData, wallet }) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <h4 onClick={()=> {handleClose()}}>x</h4>
+          <h4
+            onClick={() => {
+              handleClose();
+            }}
+          >
+            x
+          </h4>
           <h2 id="db">Datos de beneficiario</h2>
 
           <form onSubmit={handleSubmit(onSubmit)}>
@@ -65,6 +73,7 @@ export default function BasicModal4({ membershipData, wallet }) {
                 <p>Nombre completo</p>
                 <input
                   type="text"
+                  readOnly = {readOnly}
                   placeholder="Nombre"
                   {...register("name", {
                     required: "Ingresa un nombre valido",
@@ -75,6 +84,7 @@ export default function BasicModal4({ membershipData, wallet }) {
                 <p>Identificacion</p>
                 <input
                   type="text"
+                  readOnly = {readOnly}
                   placeholder="Identificacion"
                   {...register("identificacion", {
                     required: "Ingresa una identificacion valida",
@@ -85,6 +95,7 @@ export default function BasicModal4({ membershipData, wallet }) {
                 <p>Telefono</p>
                 <input
                   type="text"
+                  readOnly = {readOnly}
                   placeholder="Telefono"
                   {...register("telefono", {
                     required: "Ingresa un telefono valido",
@@ -98,6 +109,7 @@ export default function BasicModal4({ membershipData, wallet }) {
                 <p>Correo electronico</p>
                 <input
                   type="email"
+                  readOnly = {readOnly}
                   placeholder="Email"
                   {...register("email", {
                     required: "Ingresa un email valido",
@@ -106,11 +118,15 @@ export default function BasicModal4({ membershipData, wallet }) {
               </div>
             </div>
             <div className="continuar5">
-              <button type="submit">
-                <div className="check2">
-                  <h2>Check data</h2>
-                </div>
-              </button>
+              {show ? (
+                ""
+              ) : (
+                <button type="submit">
+                  <div className="check2">
+                    <h2>Check data</h2>
+                  </div>
+                </button>
+              )}
               {show && (
                 <BasicModal5
                   membershipData={updatemembership}

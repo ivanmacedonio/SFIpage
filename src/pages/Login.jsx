@@ -11,10 +11,15 @@ export const Login = () => {
   const { register, handleSubmit } = useForm({
     shouldUseNativeValidation: true,
   });
+  const [error, setError] = useState('')
+  const [display1, setDisplay1] = useState({
+    display: 'none'
+  })
   const handleShow = () => {
     setPassword(!password);
   };
   const nav = useNavigate()
+ 
 
   const onSubmit = async (data) => {
     try {
@@ -23,7 +28,10 @@ export const Login = () => {
       localStorage.setItem('refresh', res.data.refresh)
       nav('/verificacion') 
     } catch (error) {
-      alert('Usuario no valido');
+      setError('El usuario o la contraseña son invalidos');
+      setDisplay1({
+        display: 'block'
+      })
     }
   };
   return (
@@ -50,9 +58,12 @@ export const Login = () => {
             />
             <label>
               <input type="checkbox" onClick={handleShow} />
-              Mostrar contraseña
+              Ocultar contraseña
             </label>
             <button type="submit">Enviar</button>
+            <div className="errorLogin" style={display1}>
+              <h3>{error}</h3>
+            </div>
             <a href="" id="forgot">
               Olvide mi contraseña
             </a>

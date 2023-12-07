@@ -10,6 +10,14 @@
     margin-left: 5%;
 }
 
+.errorLogin{
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 1rem;
+    background-color: rgb(254, 84, 46);
+    border-radius: 1rem;
+}
+
 .formlogin {
     margin-left: 10%;
     margin-top: 5rem;

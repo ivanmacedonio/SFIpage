@@ -38,32 +38,30 @@ svg {
 
    
    .loader{
-    position: absolute;
-    left: 50%;
-    bottom: 50%;
     font-size: 1.5rem;
+    margin-top: 10rem;
    }
 
    #cancelado{
     font-size: 3rem;
     font-family: 'Lato', sans-serif;
     margin-top: 7rem;
-    position: relative;
-    top: 50%;
-    left: 14.5rem;
+    width: fit-content;
     font-weight: 700;
+}
+
+.cancelado{
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
 @media (max-width: 767px){
     #cancelado{
         font-size: 2rem;
-        left: 15%;
         width: 80%;
-    }
-
-    .loader{
-        left: 45%;
     }
 }
 
@@ -78,10 +76,7 @@ svg {
 @media only screen and (min-width: 1200px) and (max-width: 1600px){
     #cancelado{
         font-size: 2rem;
-        left: 15%;
         width: 80%;
     }
-    .loader{
-        top: 40%;
-    }
+   
 }

@@ -12,18 +12,21 @@ export const Checkout = () => {
       nav("/");
     }, 3500);
     return () => clearTimeout(timer)
-  }, []);
+  }, []); 
+
   return (
     <div>
       {canceled === "true" ? (
         <div>
-          <h1 id="cancelado">
-            Tu pago ha sido cancelado, redireccionando a Smart Future Income
-          </h1>
-          <div className="loader">
-            <svg viewBox="25 25 50 50">
-              <circle r="20" cy="50" cx="50"></circle>
-            </svg>
+          <div className="cancelado">
+            <h1 id="cancelado">
+              Tu pago ha sido cancelado, redireccionando a Smart Future Income
+            </h1>
+            <div className="loader">
+              <svg viewBox="25 25 50 50">
+                <circle r="20" cy="50" cx="50"></circle>
+              </svg>
+            </div>
           </div>
         </div>
       ) : (

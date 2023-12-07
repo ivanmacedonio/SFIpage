@@ -45,18 +45,6 @@ export const Membresia = () => {
     }));
   }
 
-  async function getNewAccess(refresh) {
-    try {
-      const res = await axios.post("http://localhost:8000/token/refresh/", {
-        refresh: refresh,
-      });
-      localStorage.removeItem("access");
-      localStorage.setItem("access", res.data.access);
-      console.log("nuevo access");
-    } catch (error) {
-      setMessage("Token invalido, debes volver a iniciar sesion");
-    }
-  }
 
   useEffect(() => {
     async function getData() {
@@ -68,20 +56,21 @@ export const Membresia = () => {
         };
         try {
           const res = await axios.get(
-            `${BASE_URL}memberships/`,
+            `${BASE_URL}membership/`,
             {
-              headers,
+              headers: headers
             }
           );
           setIsLogin(true);
           setData(res.data);
+          console.log(res.data)
         } catch (error) {
-          await getNewAccess(refresh);
-          window.location.reload();
+          nav('/login')
         }
       } else {
         setMessage("Inicia sesion para acceder a las membresias");
         nav("/login");
+        localStorage.removeItem('access')
       }
     }
     getData();

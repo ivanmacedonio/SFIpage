@@ -28,6 +28,7 @@ export default function BasicModal3({ membershipData }) {
   const [walletData, setWalletData] = React.useState("");
   const [errorsData, setErrorsData] = React.useState("");
   const [error, setError] = React.useState(false);
+  const [readOnly, setReadonly] = React.useState(false)
   const { register, handleSubmit } = useForm({
     shouldUseNativeValidation: true,
   });
@@ -36,19 +37,20 @@ export default function BasicModal3({ membershipData }) {
     const errors = validateFormData(data.wallet1);
     console.log(errors);
     if (errors === "") {
-      if (data.wallet1 === data.wallet2) {
+      if (data.wallet1.slice(-4) === data.wallet2){
         setShow(true);
         setWalletData(data.wallet1);
         setError(false);
+        setReadonly(!readOnly)
       } else {
-        setErrorsData("Las direcciones no coinciden");
+        setErrorsData("Debes ingresar los ultimos 4 digitos de tu wallet");
+        setError(true)
       }
     } else {
       setError(true);
       setErrorsData(errors);
     }
   }
-
 
   return (
     <div>
@@ -63,7 +65,13 @@ export default function BasicModal3({ membershipData }) {
       >
         <Box sx={style} id="scrolleable3">
           <div className="modal3">
-            <h3 onClick={()=> {handleClose()}}>x</h3>
+            <h3
+              onClick={() => {
+                handleClose();
+              }}
+            >
+              x
+            </h3>
             <h2>Beneficio a percibir</h2>
             <div className="montos2">
               <div className="caja3">
@@ -79,17 +87,19 @@ export default function BasicModal3({ membershipData }) {
               <p>Ingresa tu wallet (debe ser de la red Ethereum)</p>
               <input
                 type="text"
+                readOnly = {readOnly}
                 placeholder="Ingresa tu Wallet"
                 {...register("wallet1", {
                   required: "Ingresa una wallet valida",
                 })}
               />
-              <p>Confirma tu wallet</p>
+              <p>Confirma tu wallet (últimos 4 digitos)</p>
               <input
                 type="text"
+                readOnly = {readOnly}
                 placeholder="Confirma tu Wallet"
                 {...register("wallet2", {
-                  required: "Vuelve a ingresar tu wallet",
+                  required: "Ingresa los ultimos cuatro digitos",
                 })}
               />
               <div className="errors">
@@ -102,16 +112,26 @@ export default function BasicModal3({ membershipData }) {
                 activo digital USDT a través de la red Ethereum ERC-20.
               </h3>
               <div className="continuar4">
-                <div className="check1">
-                  <button type="submit" id="check1">
-                    Check Wallet
-                  </button>
-                </div>
                 {show ? (
-                  <BasicModal4 membershipData={membershipData} wallet = {walletData}></BasicModal4>
-                ) : (
                   ""
+                ) : (
+                  <div className="check1">
+                    <button type="submit" id="check1">
+                      Check Wallet
+                    </button>
+                  </div>
                 )}
+
+                <div className="continue">
+                  {show ? (
+                    <BasicModal4
+                      membershipData={membershipData}
+                      wallet={walletData}
+                    ></BasicModal4>
+                  ) : (
+                    ""
+                  )}
+                </div>
               </div>
             </form>
           </div>

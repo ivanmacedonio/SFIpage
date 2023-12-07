@@ -104,7 +104,7 @@ export const Page3 = () => {
           <ul>
             <li>
               Obtenga beneficios informativos desde el día 1 en nuestro blog y a
-              partir de los 2 años de maduración de tus membresías para percibir
+              partir de los 10 años de maduración de tus membresías para percibir
               la tranquilidad prospera que solo SFI le puede ofrecer
             </li>
             <li>Asesoramiento especializado de SFI durante el proceso. </li>

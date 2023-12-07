@@ -1,6 +1,9 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { HeaderNormal } from "../components/Header-normal";
+import { BASE_URL } from "../hooks/fetch";
 import "../styles/Verificacion.css";
 
 export const Verificacion = () => {
@@ -8,9 +11,42 @@ export const Verificacion = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const nav = useNavigate();
+  async function onSubmit(data) {
+    const token = localStorage.getItem("access");
+    if (token) {
+      const headers = {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "multipart/form-data",
+      };
 
+      try {
+        const formData = new FormData();
+        formData.append("identification_file", data.identification_file);
+        formData.append("address", data.address);
+        formData.append("date_of_birth", data.date_of_birth);
+        formData.append("full_name", data.full_name);
+        formData.append("gender", data.gender);
+        formData.append("identification", data.identification);
+        formData.append("nationality", data.nationality);
+        formData.append("phone", data.phone);
+        const res = await axios.post(`${BASE_URL}kyc/`, formData, {
+          headers: headers,
+        });
+        //console.log(res.data);
+      } catch (error) {
+        console.log(error);
+      }
+    } else {
+      console.log("error");
+    }
+  }
+
+  const nav = useNavigate();
+  const { register, handleSubmit } = useForm({
+    shouldUseNativeValidation: true,
+  });
   const [verificado, setVerificado] = useState(true);
+
   return (
     <div className="verificacionpage">
       <div className="header">
@@ -27,41 +63,85 @@ export const Verificacion = () => {
           </div>
           <div className="formverif">
             <h1>Verificar</h1>
-            <form>
+            <form onSubmit={handleSubmit(onSubmit)}>
               <div className="slot">
                 <p>Nombre completo</p>
-                <input type="text" placeholder="Ingresa tu nombre" />
+                <input
+                  type="text"
+                  placeholder="Ingresa tu nombre"
+                  {...register("full_name", {
+                    required: "Por favor ingresa un nombre valido",
+                  })}
+                />
               </div>
               <div className="slot">
                 <p>Identificacion</p>
-                <input type="text" placeholder="Ingresa tu identificacion" />
+                <input
+                  type="text"
+                  placeholder="Ingresa tu identificacion"
+                  {...register("identification", {
+                    required: "Por favor ingresa una identificacion valida",
+                  })}
+                />
               </div>
               <div className="slot">
                 <p>Nacionalidad</p>
-                <input type="text" placeholder="Ingresa tu Nacionalidad" />
+                <input
+                  type="text"
+                  placeholder="Ingresa tu Nacionalidad"
+                  {...register("nationality", {
+                    required: "Por favor ingresa una nacionalidad valida",
+                  })}
+                />
               </div>
               <div className="slot">
                 <p>Genero</p>
-                <input type="text" placeholder="Ingresa tu Genero" />
+                <input
+                  type="text"
+                  placeholder="Ingresa tu Genero"
+                  {...register("gender", {
+                    required: "Por favor ingresa un genero",
+                  })}
+                />
               </div>
               <div className="slot">
                 <p>Telefono</p>
-                <input type="text" placeholder="Ingresa tu Telefono" />
+                <input
+                  type="number"
+                  placeholder="Ingresa tu Telefono"
+                  {...register("phone", {
+                    required: "Por favor ingresa un telefono valido",
+                  })}
+                />
               </div>
               <div className="slot">
                 <p>Fecha de nacimiento</p>
                 <input
-                  type="text"
+                  type="date"
                   placeholder="Ingresa tu Fecha de nacimiento"
+                  {...register("date_of_birth", {
+                    required: "Por favor ingresa una fecha valida",
+                  })}
                 />
               </div>
               <div className="slot" id="direccion">
                 <p>Direccion</p>
-                <input type="text" placeholder="Ingresa tu Direccion" />
+                <input
+                  type="text"
+                  placeholder="Ingresa tu Direccion"
+                  {...register("address", {
+                    required: "Por favor ingresa una direccion valida",
+                  })}
+                />
               </div>
               <div className="slot" id="select">
                 <p>Expediente de identificación/pasaporte o fotografía</p>
-                <input type="file" />
+                <input
+                  type="file"
+                  {...register("identification_file", {
+                    required: "Por favor ingresa una imagen",
+                  })}
+                />
               </div>
               <div className="slot" id="checkb">
                 <input type="checkbox" />{" "}
@@ -76,13 +156,7 @@ export const Verificacion = () => {
                 </p>
               </div>
               <div className="slot" id="enviar">
-                <button
-                  onClick={() => {
-                    nav("/membresia");
-                  }}
-                >
-                  Enviar
-                </button>
+                <button type="submit">Enviar</button>
               </div>
             </form>
           </div>

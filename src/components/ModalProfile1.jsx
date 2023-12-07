@@ -31,7 +31,7 @@ export default function BasicModal() {
   const [list, setList] = useState(true);
   const [show, setShow] = useState(false);
   const [membershipData, setMembershipData] = useState({
-    name: "Elige tu membresia",
+    name: "Elige tu membresía",
   });
 
   const handlePrecioChange = (event) => {
@@ -63,7 +63,7 @@ export default function BasicModal() {
         };
         try {
           const res = await axios.get(
-            `http://127.0.0.1:9000/api/memberships/`,
+            `http://127.0.0.1:9000/api/membership/`,
             {
               headers,
             }
@@ -71,6 +71,7 @@ export default function BasicModal() {
           setMembership(res.data);
         } catch (error) {
           nav("/login");
+          localStorage.removeItem('access')
         }
       } else {
         nav("/login");
@@ -82,6 +83,7 @@ export default function BasicModal() {
 
   function handleData(member) {
     setMembershipData({
+      id: member.id,
       name: member.name,
       savings_duration_in_months: member.savings_duration_in_months,
       monthly_membership_cost: member.monthly_membership_cost,
@@ -96,12 +98,14 @@ export default function BasicModal() {
     });
     setList(!list);
     setShow(true);
+    console.log(membershipData)
+
   }
 
   return (
     <div>
       <Button onClick={handleOpen} id="botonadquirirmodal">
-        + Adquirir membresia
+        + Adquirir membresía
       </Button>
       <Modal
         open={open}
@@ -112,7 +116,7 @@ export default function BasicModal() {
         <Box sx={style} id="scrolleable">
           <div className="membresiaModal1">
             <h4 onClick={handleClose}>X</h4>
-            <h3>Tipo de membresia</h3>
+            <h3>Tipo de membresía</h3>
             <h1
               onClick={() => {
                 setList(!list);
@@ -124,9 +128,10 @@ export default function BasicModal() {
           </div>
 
           {list ? (
-            <div className="list">
-              <div className="membresiaModal1">
-             
+            <div className="back">
+             {show ? 
+              <div className="list">
+              <div className="membresiaModal1">             
                 <div className="slide2">
                   <p>Monto en USDT</p>
                   <input
@@ -144,11 +149,11 @@ export default function BasicModal() {
                   </output>
                 </div>
 
-                <p>Acumulacion para membresia activa</p>
+                <p>Acumulacion para membresía activa</p>
                 <h2>{membershipData.savings_duration_in_months} </h2>
                 <p>Monto de cuota mensual en USDT</p>
                 <h2>{membershipData.monthly_membership_cost}</h2>
-                <p>Maduracion de membresia activa</p>
+                <p>Maduracion de membresía activa</p>
                 <h2>{membershipData.maturity_period_in_months}</h2>
               </div>
              
@@ -156,6 +161,8 @@ export default function BasicModal() {
                   <BasicModal2 membershipData={membershipData}></BasicModal2>
                 </div>
             
+            </div>
+             : ''}
             </div>
           ) : (
             <ul>
