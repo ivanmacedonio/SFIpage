@@ -8,12 +8,12 @@ import "./App.css";
 import { Blog } from "./pages/Blog";
 import { Checkout } from "./pages/Checkout";
 import { Contacto } from "./pages/Contacto";
+import { Error404 } from "./pages/Error404";
 import { FAQ } from "./pages/FAQ";
 import { Inicio } from "./pages/Inicio";
 import { Login } from "./pages/Login";
 import { Membresia } from "./pages/Membresia";
 import { Perfil } from "./pages/Perfil";
-import { Test } from "./pages/Test";
 import { Verificacion } from "./pages/Verificacion";
 
 
@@ -35,7 +35,8 @@ function App() {
             <Route path="/verificacion" element={<Verificacion />} />
             <Route path="/login" element={<Login />} />
             <Route path="/checkout" element={<Checkout />} />
-            <Route path="/test" element={<Test />} />
+            <Route path="/404" element={<Error404 />} />
+
         </Routes>
       </BrowserRouter>
     </>
