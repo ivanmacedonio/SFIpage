@@ -24,9 +24,10 @@ export default function BasicModal4({ membershipData, wallet }) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const [data, setData] = React.useState({})
   const [show, setShow] = React.useState(false);
   const [setted, setSetted] = React.useState(false);
-  const [datosbeneficiario, setDatosbeneficiario] = React.useState([]);
+  const [percent, setPercent] = React.useState(100);
   const [updatemembership, setUpdatemembership] = React.useState([]);
   const [aditionalBeneficiaty, setAditionalBeneficiaty] = React.useState([]);
   const [readOnly, setReadonly] = React.useState(false);
@@ -38,29 +39,37 @@ export default function BasicModal4({ membershipData, wallet }) {
     shouldUseNativeValidation: true,
   });
 
-  function recibirBeneficiario(data) {
+  function recibirBeneficiario(data, maxPercent) {
     setAditionalBeneficiaty((prevData) => {
       const newArray = Array.isArray(prevData) ? [...prevData, data] : [data];
       return newArray;
     });
+    setPercent(maxPercent);
   }
 
   function onSubmit(data) {
     setShow(true);
     setReadonly(true);
     setUpdatemembership({ ...membershipData, data });
+    setData(data)
+  }
+
+  function handleClick() {
+    const newData = { ...data, percent };
     if (setted === false) {
       setAditionalBeneficiaty((prevData) => {
-        const newArray = Array.isArray(prevData) ? [...prevData, data] : [data];
+        const newArray = Array.isArray(prevData)
+          ? [...prevData, newData]
+          : [newData];
         return newArray;
       });
-      setSetted(!setted);
+      setSetted(true);
     } else {
       console.log("pass");
     }
   }
-
   console.log(aditionalBeneficiaty);
+
 
   return (
     <div>
@@ -91,7 +100,7 @@ export default function BasicModal4({ membershipData, wallet }) {
                   type="text"
                   readOnly={readOnly}
                   placeholder="Nombre"
-                  {...register("name", {
+                  {...register("full_name", {
                     required: "Ingresa un nombre valido",
                   })}
                 />
@@ -102,7 +111,7 @@ export default function BasicModal4({ membershipData, wallet }) {
                   type="text"
                   readOnly={readOnly}
                   placeholder="Identificacion"
-                  {...register("identificacion", {
+                  {...register("identification", {
                     required: "Ingresa una identificacion valida",
                   })}
                 />
@@ -113,7 +122,7 @@ export default function BasicModal4({ membershipData, wallet }) {
                   type="text"
                   readOnly={readOnly}
                   placeholder="Telefono"
-                  {...register("telefono", {
+                  {...register("phone", {
                     required: "Ingresa un telefono valido",
                   })}
                 />
@@ -146,12 +155,13 @@ export default function BasicModal4({ membershipData, wallet }) {
                 </button>
               )}
               {show && (
-                <BasicModal5
-                  membershipData={updatemembership}
-                  wallet={wallet}
-                  datosBeneficiario={datosbeneficiario}
-                  aditionalBeneficiaty={aditionalBeneficiaty}
-                ></BasicModal5>
+                <div className="tes" onClick={handleClick}>
+                  <BasicModal5
+                    membershipData={updatemembership}
+                    wallet={wallet}
+                    aditionalBeneficiaty={aditionalBeneficiaty}
+                  ></BasicModal5>
+                </div>
               )}
             </div>
           </form>

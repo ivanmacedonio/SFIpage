@@ -3,7 +3,7 @@ import Button from "@mui/material/Button";
 import Modal from "@mui/material/Modal";
 import * as React from "react";
 import { useForm } from "react-hook-form";
-import '../styles/Beneficiario.css';
+import "../styles/Beneficiario.css";
 
 const style = {
   position: "absolute",
@@ -18,9 +18,10 @@ const style = {
   p: 4,
 };
 
-export default function BasicModal6({onEnviarDatos }) {
+export default function BasicModal6({ onEnviarDatos }) {
   const [open, setOpen] = React.useState(false);
-  const [datosBeneficiario, setDatosbeneficiario] = React.useState({})
+  const [datosBeneficiario, setDatosbeneficiario] = React.useState({});
+  const [maxPercent, setMaxPercent] = React.useState(100);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const {
@@ -31,10 +32,15 @@ export default function BasicModal6({onEnviarDatos }) {
     shouldUseNativeValidation: true,
   });
 
-  function onSubmit(data){
-        setDatosbeneficiario(data)
-        onEnviarDatos(datosBeneficiario)
-        handleClose()
+  function onSubmit(data) {
+    if (data.percentage <= maxPercent) {
+      setMaxPercent(maxPercent - data.percentage);
+      setDatosbeneficiario(data);
+      onEnviarDatos(datosBeneficiario, maxPercent);
+      handleClose();
+    } else {
+      console.log("tope");
+    }
   }
 
   return (
@@ -49,7 +55,7 @@ export default function BasicModal6({onEnviarDatos }) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-        <h2 id="db">Datos de beneficiario adicional</h2>
+          <h2 id="db">Datos de beneficiario adicional</h2>
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="modal4">
               <div className="caja4">
@@ -67,7 +73,7 @@ export default function BasicModal6({onEnviarDatos }) {
                 <input
                   type="text"
                   placeholder="identification"
-                  {...register("identificacion", {
+                  {...register("identification", {
                     required: "Ingresa una identificacion valida",
                   })}
                 />

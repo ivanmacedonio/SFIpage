@@ -34,7 +34,7 @@ export const Checkout = () => {
       }
       const datos = {
         charge_coinbase_commerce: localStorage.getItem("code"),
-        amount: localStorage.getItem("precio"),
+        amount: localStorage.getItem("amount"),
         wallet: localStorage.getItem("wallet"),
         membership: localStorage.getItem("id"),
         currency: "USDT",
@@ -49,13 +49,12 @@ export const Checkout = () => {
         ],
       };
       Purchase(datos);
-      /*  const timer = setTimeout(() => {
+      const timer = setTimeout(() => {
         nav("/");
       }, 3500);
       return () => clearTimeout(timer);
-    */
     }
-  }, [canceled]);
+  });
 
   return (
     <div>

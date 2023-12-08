@@ -22,7 +22,7 @@ const style = {
 export default function BasicModal5({
   membershipData,
   wallet,
-  datosBeneficiario,
+  aditionalBeneficiaty,
 }) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
@@ -46,6 +46,14 @@ export default function BasicModal5({
           });
           setId(res1.data[0].identification);
           setUsername(res1.data[0].user_name);
+          setDatapurchase({
+            amount: membershipData.precio,
+            currency: "USDT",
+            membership: membershipData.id,
+            user_id: userid,
+            user_name: username,
+            membership_name: membershipData.name,
+          });
         } catch (error) {
           console.log(error);
         }
@@ -65,15 +73,6 @@ export default function BasicModal5({
       };
       if (token) {
         if (check === true) {
-          setDatapurchase({
-            amount: membershipData.precio,
-            currency: "USDT",
-            membership: membershipData.id,
-            user_id: userid,
-            user_name: username,
-            membership_name: membershipData.name,
-          });
-
           const res = await axios.post(
             `${BASE_URL}create_charge/`,
             datapurchase,
@@ -81,15 +80,21 @@ export default function BasicModal5({
               headers: headers,
             }
           );
-          localStorage.setItem("precio", membershipData.precio);
+          localStorage.setItem("amount", membershipData.precio);
           localStorage.setItem("id", membershipData.id);
           localStorage.setItem("code", res.data.detalleRespuesta.code);
           localStorage.setItem("wallet", wallet);
-          localStorage.setItem("full_name", res.data.name);
-          localStorage.setItem("identificacion", res.data.identificacion);
-          localStorage.setItem("email", res.data.email);
-          localStorage.setItem("phone", res.data.telefono);
-          localStorage.setItem("percentaje", 100);
+          localStorage.setItem("full_name", aditionalBeneficiaty[0].full_name);
+          localStorage.setItem(
+            "identification",
+            aditionalBeneficiaty[0].identification
+          );
+          localStorage.setItem("email", aditionalBeneficiaty[0].email);
+          localStorage.setItem("phone", aditionalBeneficiaty[0].phone);
+          localStorage.setItem(
+            "percentage",
+            aditionalBeneficiaty[0].percentage
+          );
           window.location.href = `${res.data.detalleRespuesta.url}`;
         } else {
           console.log("not check");
@@ -194,7 +199,7 @@ export default function BasicModal5({
             </label>
           </div>
           {check ? (
-            <h1 id="transferir1" onClick={() => handleTransfer()}>
+            <h1 id="transferir1" onClick={handleTransfer}>
               Realizar transferencia
             </h1>
           ) : (

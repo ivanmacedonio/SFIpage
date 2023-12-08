@@ -56,7 +56,6 @@ export default function BasicModal() {
   useEffect(() => {
     async function getMemberships() {
       const token = localStorage.getItem("access");
-      const refresh = localStorage.getItem("refresh");
       if (token) {
         const headers = {
           Authorization: `Bearer ${token}`,
