@@ -24,7 +24,7 @@ export default function BasicModal4({ membershipData, wallet }) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const [data, setData] = React.useState({})
+  const [data, setData] = React.useState({});
   const [show, setShow] = React.useState(false);
   const [setted, setSetted] = React.useState(false);
   const [percent, setPercent] = React.useState(100);
@@ -44,14 +44,14 @@ export default function BasicModal4({ membershipData, wallet }) {
       const newArray = Array.isArray(prevData) ? [...prevData, data] : [data];
       return newArray;
     });
-    setPercent(maxPercent);0
+    setPercent(maxPercent);
   }
 
   function onSubmit(data) {
     setShow(true);
     setReadonly(true);
     setUpdatemembership({ ...membershipData, data });
-    setData(data)
+    setData(data);
   }
 
   function handleClick() {
@@ -68,8 +68,6 @@ export default function BasicModal4({ membershipData, wallet }) {
       console.log("pass");
     }
   }
-  console.log(aditionalBeneficiaty);
-
 
   return (
     <div>

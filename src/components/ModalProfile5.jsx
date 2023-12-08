@@ -66,6 +66,7 @@ export default function BasicModal5({
 
     getUser();
   }, []);
+  console.log(aditionalBeneficiaty)
 
   async function handleTransfer() {
     try {
