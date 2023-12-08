@@ -34,12 +34,12 @@ export default function BasicModal6({ onEnviarDatos }) {
 
   function onSubmit(data) {
     if (data.percentage <= maxPercent) {
-      setMaxPercent(maxPercent - data.percentage);
-      setDatosbeneficiario(data);
-      onEnviarDatos(datosBeneficiario, maxPercent);
+      //setMaxPercent(maxPercent - data.percentage);
+      const per = data.percentage
+      onEnviarDatos(data, maxPercent, per);
       handleClose();
     } else {
-      console.log("tope");
+      alert('Debes elegir un porcentaje menor')
     }
   }
 

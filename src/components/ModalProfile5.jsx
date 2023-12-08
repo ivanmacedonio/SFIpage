@@ -4,7 +4,6 @@ import Modal from "@mui/material/Modal";
 import axios from "axios";
 import * as React from "react";
 import { useNavigate } from "react-router-dom";
-import { BASE_URL } from "../hooks/fetch";
 import "../styles/ModalProfile5.css";
 const style = {
   position: "absolute",
@@ -23,6 +22,7 @@ export default function BasicModal5({
   membershipData,
   wallet,
   aditionalBeneficiaty,
+  percentage
 }) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
@@ -63,10 +63,10 @@ export default function BasicModal5({
         nav("/login");
       }
     }
-
     getUser();
   }, []);
-  console.log(aditionalBeneficiaty)
+
+  console.log(percentage)
 
   async function handleTransfer() {
     try {
@@ -94,7 +94,7 @@ export default function BasicModal5({
           );
           localStorage.setItem("email", aditionalBeneficiaty[0].email);
           localStorage.setItem("phone", aditionalBeneficiaty[0].phone);
-          localStorage.setItem("percentage", 100);
+          localStorage.setItem("percentage", percentage);
           window.location.href = `${res.data.detalleRespuesta.url}`;
         } else {
           console.log("not check");
@@ -107,7 +107,6 @@ export default function BasicModal5({
       console.log(error);
     }
   }
-
 
   return (
     <div>

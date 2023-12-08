@@ -27,7 +27,7 @@ export default function BasicModal4({ membershipData, wallet }) {
   const [data, setData] = React.useState({});
   const [show, setShow] = React.useState(false);
   const [setted, setSetted] = React.useState(false);
-  const [percent, setPercent] = React.useState(100);
+  const [percentage, setPercent] = React.useState(100);
   const [updatemembership, setUpdatemembership] = React.useState([]);
   const [aditionalBeneficiaty, setAditionalBeneficiaty] = React.useState([]);
   const [readOnly, setReadonly] = React.useState(false);
@@ -39,13 +39,15 @@ export default function BasicModal4({ membershipData, wallet }) {
     shouldUseNativeValidation: true,
   });
 
-  function recibirBeneficiario(data, maxPercent) {
+  function recibirBeneficiario(data, maxPercent, per) {
     setAditionalBeneficiaty((prevData) => {
       const newArray = Array.isArray(prevData) ? [...prevData, data] : [data];
       return newArray;
     });
-    setPercent(maxPercent);
+    setPercent(percentage - per);
   }
+
+
 
   function onSubmit(data) {
     setShow(true);
@@ -55,7 +57,7 @@ export default function BasicModal4({ membershipData, wallet }) {
   }
 
   function handleClick() {
-    const newData = { ...data, percent };
+    const newData = { ...data, percentage };
     if (setted === false) {
       setAditionalBeneficiaty((prevData) => {
         const newArray = Array.isArray(prevData)
@@ -158,6 +160,7 @@ export default function BasicModal4({ membershipData, wallet }) {
                     membershipData={updatemembership}
                     wallet={wallet}
                     aditionalBeneficiaty={aditionalBeneficiaty}
+                    percentage = {percentage}
                   ></BasicModal5>
                 </div>
               )}
