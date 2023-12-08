@@ -4,6 +4,8 @@ import Modal from "@mui/material/Modal";
 import axios from "axios";
 import * as React from "react";
 import { useNavigate } from "react-router-dom";
+import { usePurchaseContext } from "../context/PurchaseContext";
+import { BASE_URL } from "../hooks/fetch";
 import "../styles/ModalProfile5.css";
 const style = {
   position: "absolute",
@@ -22,7 +24,7 @@ export default function BasicModal5({
   membershipData,
   wallet,
   aditionalBeneficiaty,
-  percentage
+  percentage,
 }) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
@@ -33,6 +35,8 @@ export default function BasicModal5({
   const [kycdata, setKycdata] = React.useState([]);
   const [check, setCheck] = React.useState(false);
   const nav = useNavigate();
+
+  const { updatePurchaseData } = usePurchaseContext();
 
   React.useEffect(() => {
     async function getUser() {
@@ -66,7 +70,7 @@ export default function BasicModal5({
     getUser();
   }, []);
 
-  console.log(percentage)
+  console.log(percentage);
 
   async function handleTransfer() {
     try {
@@ -83,19 +87,19 @@ export default function BasicModal5({
               headers: headers,
             }
           );
-          localStorage.setItem("amount", membershipData.precio);
-          localStorage.setItem("id", membershipData.id);
-          localStorage.setItem("code", res.data.detalleRespuesta.code);
-          localStorage.setItem("wallet", wallet);
-          localStorage.setItem("full_name", aditionalBeneficiaty[0].full_name);
-          localStorage.setItem(
-            "identification",
-            aditionalBeneficiaty[0].identification
-          );
-          localStorage.setItem("email", aditionalBeneficiaty[0].email);
-          localStorage.setItem("phone", aditionalBeneficiaty[0].phone);
-          localStorage.setItem("percentage", percentage);
-          window.location.href = `${res.data.detalleRespuesta.url}`;
+          updatePurchaseData({
+            amount: membershipData.precio,
+            id: membershipData.id,
+            code: res.data.detalleRespuesta.code,
+            wallet: wallet,
+            full_name: aditionalBeneficiaty[0].full_name,
+            identification: aditionalBeneficiaty[0].identification,
+            email: aditionalBeneficiaty[0].email,
+            phone: aditionalBeneficiaty[0].phone,
+            percentage: percentage,
+          });
+          //window.location.href = `${res.data.detalleRespuesta.url}`;
+          nav('/checkout?canceled=false')
         } else {
           console.log("not check");
         }

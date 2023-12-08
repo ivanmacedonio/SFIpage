@@ -1,19 +1,23 @@
 import axios from "axios";
-import React, { useEffect } from "react";
+import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { usePurchaseContext } from "../context/PurchaseContext";
 import { BASE_URL } from "../hooks/fetch";
 import "../styles/Checkout.css";
 export const Checkout = () => {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const canceled = queryParams.get("canceled");
+  const { purchaseData } = usePurchaseContext();
+  const { amount, id, code, wallet, full_name, identification, email, phone, percentage } = purchaseData;
+  
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      nav("/");
-    }, 3500);
-    return () => clearTimeout(timer);
-  }, []);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     nav("/");
+  //   }, 3500);
+  //   return () => clearTimeout(timer);
+  // }, []);
 
   async function Purchase(datos) {
     const token = localStorage.getItem("access");
@@ -35,17 +39,17 @@ export const Checkout = () => {
 
   const datos = {
     charge_coinbase_commerce: localStorage.getItem("code"),
-    amount: localStorage.getItem("amount"),
-    wallet: localStorage.getItem("wallet"),
-    membership: localStorage.getItem("id"),
+    amount: amount,
+    wallet: wallet,
+    membership: id,
     currency: "USDT",
     beneficiaries: [
       {
-        full_name: localStorage.getItem("full_name"),
-        identification: localStorage.getItem("identification"),
-        email: localStorage.getItem("email"),
-        phone: localStorage.getItem("phone"),
-        percentage: localStorage.getItem("percentage"),
+        full_name: full_name,
+        identification: identification,
+        email: email,
+        phone: phone,
+        percentage: percentage,
       },
     ],
   };
@@ -55,8 +59,8 @@ export const Checkout = () => {
   if (canceled === "true") {
     console.log("canceled");
   } else {
-    console.log(datos);
-    Purchase(datos);
+     console.log(datos);
+     Purchase(datos);
   }
 
   return (
