@@ -93,7 +93,7 @@ export default function BasicModal5({
           localStorage.setItem("phone", aditionalBeneficiaty[0].phone);
           localStorage.setItem(
             "percentage",
-            aditionalBeneficiaty[0].percentage
+            100
           );
           window.location.href = `${res.data.detalleRespuesta.url}`;
         } else {

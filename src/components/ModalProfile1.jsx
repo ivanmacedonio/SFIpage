@@ -29,6 +29,7 @@ export default function BasicModal() {
   const [precio, setPrecio] = useState(50000); // Valor inicial
   const [membership, setMembership] = useState([]);
   const [list, setList] = useState(true);
+  const [data, setData] = useState([]);
   const [show, setShow] = useState(false);
   const [membershipData, setMembershipData] = useState({
     name: "Elige tu membresía",
@@ -61,16 +62,13 @@ export default function BasicModal() {
           Authorization: `Bearer ${token}`,
         };
         try {
-          const res = await axios.get(
-            `http://127.0.0.1:9000/api/membership/`,
-            {
-              headers,
-            }
-          );
+          const res = await axios.get(`http://127.0.0.1:9000/api/membership/`, {
+            headers,
+          });
           setMembership(res.data);
         } catch (error) {
           nav("/login");
-          localStorage.removeItem('access')
+          localStorage.removeItem("access");
         }
       } else {
         nav("/login");
@@ -97,8 +95,6 @@ export default function BasicModal() {
     });
     setList(!list);
     setShow(true);
-
-
   }
 
   return (
@@ -128,40 +124,49 @@ export default function BasicModal() {
 
           {list ? (
             <div className="back">
-             {show ? 
-              <div className="list">
-              <div className="membresiaModal1">             
-                <div className="slide2">
-                  <p>Monto en USDT</p>
-                  <input
-                    type="range"
-                    id="rangoPrecio"
-                    name="rangoPrecio"
-                    min={membershipData.minimum}
-                    max={membershipData.maximum}
-                    step={membershipData.chunk}
-                    value={precio}
-                    onChange={handlePrecioChange}
-                  />
-                  <output htmlFor="rangoPrecio">
-                    Valor: {precio.toLocaleString()} USDT
-                  </output>
-                </div>
+              {show ? (
+                <div className="list">
+                  <div className="membresiaModal1">
+                    <div className="slide2">
+                      <p>Monto en USDT</p>
+                      <input
+                        type="range"
+                        id="rangoPrecio"
+                        name="rangoPrecio"
+                        min={membershipData.minimum}
+                        max={membershipData.maximum}
+                        step={membershipData.chunk}
+                        value={precio}
+                        onChange={handlePrecioChange}
+                      />
+                      <output htmlFor="rangoPrecio">
+                        Valor: {precio.toLocaleString()} USDT
+                      </output>
+                    </div>
 
-                <p>Acumulacion para membresía activa</p>
-                <h2>{membershipData.savings_duration_in_months} </h2>
-                <p>Monto de cuota mensual en USDT</p>
-                <h2>{membershipData.monthly_membership_cost}</h2>
-                <p>Maduracion de membresía activa</p>
-                <h2>{membershipData.maturity_period_in_months}</h2>
-              </div>
-             
-                <div className="btn">
-                  <BasicModal2 membershipData={membershipData}></BasicModal2>
+                    <p>Acumulacion para membresía activa</p>
+                    <h2>{membershipData.savings_duration_in_months} </h2>
+                    <p>Monto de cuota mensual en USDT</p>
+                    <h2>{membershipData.monthly_membership_cost}</h2>
+                    <p>Maduracion de membresía activa</p>
+                    <h2>{membershipData.maturity_period_in_months}</h2>
+                  </div>
+
+                  <div
+                    className="btn"
+                    onClick={() => {
+                      setMembershipData((prevData) => ({
+                        ...prevData,
+                        precio: precio,
+                      }));
+                    }}
+                  >
+                    <BasicModal2 membershipData={membershipData}></BasicModal2>
+                  </div>
                 </div>
-            
-            </div>
-             : ''}
+              ) : (
+                ""
+              )}
             </div>
           ) : (
             <ul>

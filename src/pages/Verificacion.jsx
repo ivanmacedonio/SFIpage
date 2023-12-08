@@ -32,7 +32,7 @@ export const Verificacion = () => {
         const res = await axios.post(`${BASE_URL}kyc/`, formData, {
           headers: headers,
         });
-        //console.log(res.data);
+        console.log(res.data);
       } catch (error) {
         console.log(error);
       }

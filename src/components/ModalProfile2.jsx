@@ -42,6 +42,7 @@ export default function BasicModal2({ membershipData }) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  console.log(membershipData)
 
   return (
     <div>
