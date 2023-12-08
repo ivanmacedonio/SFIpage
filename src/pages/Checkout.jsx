@@ -1,13 +1,19 @@
 import axios from "axios";
-import React from "react";
-import { useLocation } from "react-router-dom";
+import React, { useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { BASE_URL } from "../hooks/fetch";
 import "../styles/Checkout.css";
-
 export const Checkout = () => {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const canceled = queryParams.get("canceled");
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      nav("/");
+    }, 3500);
+    return () => clearTimeout(timer);
+  }, []);
 
   async function Purchase(datos) {
     const token = localStorage.getItem("access");
@@ -19,7 +25,7 @@ export const Checkout = () => {
         const res = await axios.post(`${BASE_URL}purchase/`, datos, {
           headers: headers,
         });
-        console.log(res)
+        console.log(res);
         localStorage.clear();
       } catch (error) {
         localStorage.clear();
@@ -44,15 +50,13 @@ export const Checkout = () => {
     ],
   };
 
+  const nav = useNavigate();
+
   if (canceled === "true") {
     console.log("canceled");
   } else {
     console.log(datos);
     Purchase(datos);
-    /*const timer = setTimeout(() => {
-        nav("/");
-      }, 3500);
-      return () => clearTimeout(timer);*/
   }
 
   return (

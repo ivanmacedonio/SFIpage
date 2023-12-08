@@ -9,6 +9,29 @@ import "../styles/Verificacion.css";
 export const Verificacion = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
+    async function getUser() {
+      const token = localStorage.getItem("access");
+      const headers = {
+        Authorization: `Bearer ${token}`,
+      };
+      if (token) {
+        try {
+          const res = await axios.get(`${BASE_URL}kyc/`, {
+            headers: headers,
+          });
+          if (res.data[0].state != "") {
+            nav("/");
+          } else {
+            console.log(pass);
+          }
+        } catch (error) {
+          console.log(error);
+        }
+      } else {
+        nav("/login");
+      }
+    }
+    getUser();
   }, []);
 
   async function onSubmit(data) {
