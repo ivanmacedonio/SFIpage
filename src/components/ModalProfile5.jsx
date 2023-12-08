@@ -30,7 +30,7 @@ export default function BasicModal5({
   const [datapurchase, setDatapurchase] = React.useState({});
   const [userid, setId] = React.useState("");
   const [username, setUsername] = React.useState("");
-  const [kycdata, setKycdata] = React.useState([])
+  const [kycdata, setKycdata] = React.useState([]);
   const [check, setCheck] = React.useState(false);
   const nav = useNavigate();
 
@@ -45,7 +45,7 @@ export default function BasicModal5({
           const res1 = await axios.get(`http://127.0.0.1:9000/api/kyc/`, {
             headers,
           });
-          setKycdata(res1)
+          setKycdata(res1.data[0]);
           setId(res1.data[0].identification);
           setUsername(res1.data[0].user_name);
           setDatapurchase({
@@ -66,8 +66,6 @@ export default function BasicModal5({
 
     getUser();
   }, []);
-
-  console.log(kycdata.data[0])
 
   async function handleTransfer() {
     try {
@@ -95,10 +93,7 @@ export default function BasicModal5({
           );
           localStorage.setItem("email", aditionalBeneficiaty[0].email);
           localStorage.setItem("phone", aditionalBeneficiaty[0].phone);
-          localStorage.setItem(
-            "percentage",
-            100
-          );
+          localStorage.setItem("percentage", 100);
           window.location.href = `${res.data.detalleRespuesta.url}`;
         } else {
           console.log("not check");
@@ -111,6 +106,7 @@ export default function BasicModal5({
       console.log(error);
     }
   }
+
 
   return (
     <div>
@@ -181,16 +177,17 @@ export default function BasicModal5({
             </div>
             <div className="t">
               <p>Identificacion:</p>
-              <h3>{kycdata.data[0].identification}</h3>
+              <h3>{kycdata.identification}</h3>
             </div>
             <div className="t">
               <p>Correo electronico:</p>
-              <h3>{kycdata.data[0].email}</h3>
+              <h3>{kycdata.email}</h3>
             </div>
             <div className="t">
               <p>Telefono:</p>
-              <h3>{kycdata.data[0].phone}</h3>
+              <h3>{kycdata.phone}</h3>
             </div>
+
             <label>
               <input
                 type="checkbox"

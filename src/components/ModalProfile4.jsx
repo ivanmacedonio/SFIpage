@@ -44,7 +44,7 @@ export default function BasicModal4({ membershipData, wallet }) {
       const newArray = Array.isArray(prevData) ? [...prevData, data] : [data];
       return newArray;
     });
-    setPercent(maxPercent);
+    setPercent(maxPercent);0
   }
 
   function onSubmit(data) {
