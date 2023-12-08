@@ -263,11 +263,12 @@ img {
 
 }
 
-@media (width: 430px){
-    .carrouselp2{
+@media (width: 430px) {
+    .carrouselp2 {
         margin-left: 0.8rem;
     }
-    .valorestitle{
+
+    .valorestitle {
         margin-left: 9rem;
     }
 }
@@ -383,7 +384,46 @@ img {
     }
 }
 
-@media only screen and (min-width: 1200px) and (max-width: 1600px) {
+@media only screen and (min-width: 1200px) and (max-width: 1299px) {
+    .textp2 {
+        width: 100%;
+        background-position: right;
+        margin-left: 0;
+    }
+
+    .textContainerNosotros {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .mision {
+        margin-left: 4rem;
+    }
+    .mision p{
+        width: 30rem;
+
+    };
+ 
+
+    .vision {
+        margin-right: 0;
+    }
+
+    .vision2 {
+        padding: 2rem 0rem;
+    }
+    .vision2 p{
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    .confianza{
+        margin-left: 5rem;
+    }
+}
+
+@media only screen and (min-width: 1300px) and (max-width: 1600px) {
 
     .textp2 {
         margin-left: 0;

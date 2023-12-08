@@ -341,9 +341,32 @@ img {
     }
 }
 
+@media only screen and (min-width: 1200px) and (max-width: 1299px) {
+    .textfamilia2{
+        left: 50rem;
+        background-color: rgb(0, 89, 111);
+        color: white;
+        font-weight: 500;
+        border-radius: 1rem;
+        padding: 1rem;
+    }
 
+    .textfamilia2 p{
+        color: white;
+    }
+    .textp1{
+        width: fit-content;
+    }
+    .imgfamilia{
+        display: none;
+    }
 
-@media only screen and (min-width: 1200px) and (max-width: 1599px) {
+    .footer{
+        margin-top: 6rem;
+    }
+}
+
+@media only screen and (min-width: 1300px) and (max-width: 1599px) {
     .imgfamilia {
         left: 43rem;
         top: 0;
