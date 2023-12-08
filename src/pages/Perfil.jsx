@@ -43,7 +43,6 @@ export const Perfil = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  console.log(profile);
 
   const [active, setActive] = useState(false);
   const [estilo, setEstilo] = useState({ display: "none" });

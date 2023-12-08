@@ -18,7 +18,7 @@ const style = {
   p: 4,
 };
 
-export default function BasicModal6({enviarBeneficiario}) {
+export default function BasicModal6({onEnviarDatos }) {
   const [open, setOpen] = React.useState(false);
   const [datosBeneficiario, setDatosbeneficiario] = React.useState({})
   const handleOpen = () => setOpen(true);
@@ -33,7 +33,7 @@ export default function BasicModal6({enviarBeneficiario}) {
 
   function onSubmit(data){
         setDatosbeneficiario(data)
-        enviarBeneficiario(datosBeneficiario)
+        onEnviarDatos(datosBeneficiario)
         handleClose()
   }
 

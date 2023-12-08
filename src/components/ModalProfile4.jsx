@@ -25,8 +25,10 @@ export default function BasicModal4({ membershipData, wallet }) {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const [show, setShow] = React.useState(false);
+  const [setted, setSetted] = React.useState(false);
   const [datosbeneficiario, setDatosbeneficiario] = React.useState([]);
   const [updatemembership, setUpdatemembership] = React.useState([]);
+  const [aditionalBeneficiaty, setAditionalBeneficiaty] = React.useState([]);
   const [readOnly, setReadonly] = React.useState(false);
   const {
     register,
@@ -37,17 +39,28 @@ export default function BasicModal4({ membershipData, wallet }) {
   });
 
   function recibirBeneficiario(data) {
-    setDatosbeneficiario({...datosbeneficiario, data})
+    setAditionalBeneficiaty((prevData) => {
+      const newArray = Array.isArray(prevData) ? [...prevData, data] : [data];
+      return newArray;
+    });
   }
 
   function onSubmit(data) {
     setShow(true);
     setReadonly(true);
     setUpdatemembership({ ...membershipData, data });
-    setDatosbeneficiario(data);
+    if (setted === false) {
+      setAditionalBeneficiaty((prevData) => {
+        const newArray = Array.isArray(prevData) ? [...prevData, data] : [data];
+        return newArray;
+      });
+      setSetted(!setted);
+    } else {
+      console.log("pass");
+    }
   }
 
-  console.log(a)
+  console.log(aditionalBeneficiaty);
 
   return (
     <div>
@@ -106,7 +119,7 @@ export default function BasicModal4({ membershipData, wallet }) {
                 />
                 <div className="hide">
                   <BasicModal6
-                    enviarBeneficiario={recibirBeneficiario}
+                    onEnviarDatos={recibirBeneficiario}
                   ></BasicModal6>
                 </div>
               </div>
@@ -137,6 +150,7 @@ export default function BasicModal4({ membershipData, wallet }) {
                   membershipData={updatemembership}
                   wallet={wallet}
                   datosBeneficiario={datosbeneficiario}
+                  aditionalBeneficiaty={aditionalBeneficiaty}
                 ></BasicModal5>
               )}
             </div>
