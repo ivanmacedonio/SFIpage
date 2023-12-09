@@ -24,7 +24,8 @@ export const Verificacion = () => {
           const res = await axios.get(`${BASE_URL}kyc/`, {
             headers: headers,
           });
-          if (res.data[0].state != "") {
+
+          if (res.data.KYC_Detail.state != "") {
             nav("/");
           } else {
             console.log(pass);
@@ -39,19 +40,20 @@ export const Verificacion = () => {
     getUser();
   }, []);
 
-  const [formData, setFormData] = useState({
-    full_name: "",
-    nationality: "",
-    identification: "",
-    date_of_birth: "",
-    phone: "",
-    address: "",
-    gender: "",
-    // identification_file: "",
-  });
-  // function handleFileChange(e) {
-  //   setFormData({ ...formData, [e.target.name]: e.target.files[0] });
-  // }
+  const [archivo, setArchivo] = useState(null);
+
+  function handleFileChange(e) {
+    if (e.target.type === "file") {
+      setArchivo(e.target.files[0]);
+      console.log(e);
+    } else {
+      setFormulario({
+        ...formulario,
+        [e.target.name]: e.target.value,
+      });
+      console.log("no file");
+    }
+  }
 
   async function onSubmit(data) {
     const token = localStorage.getItem("access");
@@ -59,36 +61,26 @@ export const Verificacion = () => {
       const headers = {
         Authorization: `Bearer ${token}`,
       };
-      console.log(data);
-      setFormData({
-        full_name: data.full_name,
-        nationality: data.nationality,
-        identification: data.identification,
-        date_of_birth: data.date_of_birth,
-        phone: data.phone,
-        address: data.address,
-        gender: data.gender,
-      });
-
-      const form = new FormData();
-      form.append("full_name", formData.full_name);
-      form.append("nationality", formData.nationality);
-      form.append("identification", formData.identification);
-      form.append("date_of_birth", formData.date_of_birth);
-      form.append("phone", formData.phone);
-      form.append("address", formData.address);
-      form.append("gender", formData.gender);
-      // form.append("identification_file", formData.identification_file);
+      const formData = new FormData();
+      formData.append("full_name", data.full_name);
+      formData.append("nationality", data.nationality);
+      formData.append("identification", data.identification);
+      formData.append("date_of_birth", data.date_of_birth);
+      formData.append("email", data.email);
+      formData.append("phone", data.phone);
+      formData.append("address", data.address);
+      formData.append("gender", data.gender);
+      formData.append("identification_file", archivo);
       try {
-        const res = await axios.post(`${BASE_URL}kyc/`, form, {
+        const res = await axios.post(`${BASE_URL}kyc/`, formData, {
           headers: headers,
         });
-        console.log(res.data);
+        nav('/')
       } catch (error) {
         console.log(error);
       }
     } else {
-      console.log("error");
+      nav('/login')
     }
   }
 
@@ -108,10 +100,7 @@ export const Verificacion = () => {
           </div>
           <div className="formverif">
             <h1>Verificar</h1>
-            <form
-              onSubmit={handleSubmit(onSubmit)}
-              encType="multipart/form-data"
-            >
+            <form onSubmit={handleSubmit(onSubmit)}>
               <div className="slot">
                 <p>Nombre completo</p>
                 <input
@@ -173,6 +162,17 @@ export const Verificacion = () => {
                 />
               </div>
               <div className="slot" id="direccion">
+                <p>Email</p>
+                <input
+                  type="text"
+                  placeholder="Ingresa tu Email"
+                  {...register("email", {
+                    required:
+                      "Por favor ingresa una direccion de correo valida",
+                  })}
+                />
+              </div>
+              <div className="slot" id="direccion">
                 <p>Direccion</p>
                 <input
                   type="text"
@@ -182,18 +182,14 @@ export const Verificacion = () => {
                   })}
                 />
               </div>
-              {/* <div className="slot" id="select">
+              <div className="slot" id="select">
                 <p>Expediente de identificación/pasaporte o fotografía</p>
                 <input
                   type="file"
-                  name="identification_file"
-                  accept=".jpg,.jpeg,.png,.pdf"
+                  name="archivo"
                   onChange={handleFileChange}
-                  {...register("identification_file", {
-                    required: "Por favor ingresa una imagen",
-                  })}
                 />
-              </div> */}
+              </div>
               <div className="slot" id="checkb">
                 <input type="checkbox" />{" "}
                 <p>

@@ -14,6 +14,11 @@ export const Perfil = () => {
   const nav = useNavigate();
   const [profile, setProfile] = useState([]);
   const [empty, setEmpty] = useState(false);
+  const [active, setActive] = useState(false);
+  const [estilo, setEstilo] = useState({ display: "none" });
+  const [isMember, setIsMember] = useState(false);
+  const [isVerificated, setIsVerificated] = useState(true);
+  const [denegado, setDenegado] = useState(false);
 
   useEffect(() => {
     async function getUser() {
@@ -26,10 +31,30 @@ export const Perfil = () => {
           const res = await axios.get(`http://127.0.0.1:9000/api/kyc/`, {
             headers,
           });
-          if (res.data.KYC_Detail.state != "") {
-            setProfile(res.data.KYC_Detail);
-          } else {
-            setEmpty(true);
+          // if (res.data.KYC_Detail.state != "") {
+          //   setProfile(res.data.KYC_Detail);
+          // } else {
+          //   setEmpty(true);
+          // }
+          console.log(res.data.KYC_Detail.state);
+          switch (res.data.KYC_Detail.state) {
+            case "":
+              setIsVerificated(false);
+              setEmpty(true);
+              break;
+            case "Pendiente":
+              setEmpty(true);
+              setIsVerificated(false);
+              break;
+            case "Aprobado":
+              setEmpty(false);
+              setProfile(res.data.KYC_Detail);
+              setIsVerificated(true);
+              break;
+            case "Denegado":
+              setEmpty(true)
+              setDenegado(true);
+              break;
           }
         } catch (error) {
           setEmpty(true);
@@ -41,11 +66,6 @@ export const Perfil = () => {
     getUser();
     window.scrollTo(0, 0);
   }, []);
-
-  const [active, setActive] = useState(false);
-  const [estilo, setEstilo] = useState({ display: "none" });
-  const [isMember, setIsMember] = useState(false);
-  const [isVerificated, setIsVerificated] = useState(true);
 
   function handleQuinquenio() {
     setActive(!active);
@@ -62,10 +82,18 @@ export const Perfil = () => {
           <h1 id="perfilh11">Perfil</h1>
           {empty ? (
             <div className="alert1">
-              <h5>
-                Actualmente tu usuario se encuentra en revision. Una vez
-                verifiquemos el KYC, tendras acceso a nuestros planes.
-              </h5>
+              {denegado ? (
+                <h5>
+                  Decidimos denegar tu acceso a la plataforma. Para mas
+                  informacion acerca de los estados de KYC contactese con
+                  nosotros
+                </h5>
+              ) : (
+                <h5>
+                  Actualmente tu usuario se encuentra en revision. Una vez
+                  verifiquemos el KYC, tendras acceso a nuestros planes.
+                </h5>
+              )}
             </div>
           ) : (
             <div className="form1">
