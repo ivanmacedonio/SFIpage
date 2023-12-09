@@ -46,7 +46,7 @@ export default function BasicModal5({
       };
       if (token) {
         try {
-          const res1 = await axios.get(`http://127.0.0.1:9000/api/kyc/`, {
+          const res1 = await axios.get(`${BASE_URL}kyc/`, {
             headers,
           });
           console.log(res1.data);
@@ -105,7 +105,7 @@ export default function BasicModal5({
             ],
           };
           const res2 = await axios.post(
-            "http://127.0.0.1:9000/api/store_user_selections/",
+            `${BASE_URL}store_user_selections/`,
             dataP,
             {
               headers: headers,

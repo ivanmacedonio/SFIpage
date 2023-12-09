@@ -5,6 +5,7 @@ import axios from "axios";
 import * as React from "react";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { BASE_URL } from "../hooks/fetch";
 import "../styles/Modal1.css";
 import BasicModal2 from "./ModalProfile2";
 
@@ -62,7 +63,7 @@ export default function BasicModal() {
           Authorization: `Bearer ${token}`,
         };
         try {
-          const res = await axios.get(`http://127.0.0.1:9000/api/membership/`, {
+          const res = await axios.get(`${BASE_URL}membership/`, {
             headers,
           });
           setMembership(res.data);

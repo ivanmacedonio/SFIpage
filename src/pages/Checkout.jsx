@@ -21,7 +21,7 @@ export const Checkout = () => {
         };
         try {
           const res2 = await axios.get(
-            "http://127.0.0.1:9000/api/get_user_selections/",
+            `${BASE_URL}get_user_selections/`,
             {
               headers: headers,
             }

@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import estado from "../assets/Asset 26.png";
 import { HeaderNormal } from "../components/Header-normal";
 import BasicModal from "../components/ModalProfile1";
+import { BASE_URL } from "../hooks/fetch";
 import "../styles/perfil.css";
 
 export const Perfil = () => {
@@ -28,7 +29,7 @@ export const Perfil = () => {
           Authorization: `Bearer ${token}`,
         };
         try {
-          const res = await axios.get(`http://127.0.0.1:9000/api/kyc/`, {
+          const res = await axios.get(`${BASE_URL}kyc/`, {
             headers,
           });
           // if (res.data.KYC_Detail.state != "") {
