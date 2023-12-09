@@ -50,7 +50,7 @@ export const Login = () => {
               {...register("username", { required: "Ingresa un email valido" })}
             />
             <input
-              type={password ? "password" : "text"}
+              type={password ? "text" : "password"}
               placeholder="Ingrese la contraseña"
               {...register("password", {
                 required: "Ingresa un password valido",
@@ -58,7 +58,7 @@ export const Login = () => {
             />
             <label>
               <input type="checkbox" onClick={handleShow} />
-              Ocultar contraseña
+              Mostrar contraseña
             </label>
             <button type="submit">Enviar</button>
             <div className="errorLogin" style={display1}>

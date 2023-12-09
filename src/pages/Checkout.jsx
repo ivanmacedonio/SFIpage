@@ -12,35 +12,6 @@ export const Checkout = () => {
     const timer = setTimeout(() => {
       nav("/");
     }, 3500);
-
-    async function Purchase() {
-      const token = localStorage.getItem("access");
-      if (token) {
-        const headers = {
-          Authorization: `Bearer ${token}`,
-        };
-        try {
-          const res2 = await axios.get(
-            `${BASE_URL}get_user_selections/`,
-            {
-              headers: headers,
-            }
-          );
-          console.log(res2.data);
-          const res = await axios.post(`${BASE_URL}purchase/`, res2.data, {
-            headers: headers,
-          });
-          console.log(res);
-        } catch (error) {
-          // nav('/')
-          console.log("error 1");
-        }
-      } else {
-        // nav('/login')
-        console.log("error2");
-      }
-    }
-
     if (canceled === "true") {
       console.log("canceled");
     } else {
@@ -48,7 +19,32 @@ export const Checkout = () => {
     }
 
     return () => clearTimeout(timer);
-  }, [canceled]);
+  }, []);
+
+  async function Purchase() {
+    const token = localStorage.getItem("access");
+    if (token) {
+      const headers = {
+        Authorization: `Bearer ${token}`,
+      };
+      try {
+        const res2 = await axios.get(`${BASE_URL}get_user_selections/`, {
+          headers: headers,
+        });
+        console.log(res2.data);
+        const res = await axios.post(`${BASE_URL}purchase/`, res2.data, {
+          headers: headers,
+        });
+        console.log(res);
+      } catch (error) {
+        // nav('/')
+        console.log("error 1");
+      }
+    } else {
+      // nav('/login')
+      console.log("error2");
+    }
+  }
 
   const nav = useNavigate();
 

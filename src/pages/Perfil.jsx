@@ -37,25 +37,29 @@ export const Perfil = () => {
           // } else {
           //   setEmpty(true);
           // }
-          console.log(res.data.KYC_Detail.state);
-          switch (res.data.KYC_Detail.state) {
-            case "":
-              setIsVerificated(false);
-              setEmpty(true);
-              break;
-            case "Pendiente":
-              setEmpty(true);
-              setIsVerificated(false);
-              break;
-            case "Aprobado":
-              setEmpty(false);
-              setProfile(res.data.KYC_Detail);
-              setIsVerificated(true);
-              break;
-            case "Denegado":
-              setEmpty(true)
-              setDenegado(true);
-              break;
+          console.log(res.data.KYC_Detail);
+          if (res.data.KYC_Detail) {
+            switch (res.data.KYC_Detail.state) {
+              case "":
+                setIsVerificated(false);
+                setEmpty(true);
+                break;
+              case "Pendiente":
+                setEmpty(true);
+                setIsVerificated(false);
+                break;
+              case "Aprobado":
+                setEmpty(false);
+                setProfile(res.data.KYC_Detail);
+                setIsVerificated(true);
+                break;
+              case "Denegado":
+                setEmpty(true);
+                setDenegado(true);
+                break;
+            }
+          } else {
+            nav("/verificacion");
           }
         } catch (error) {
           setEmpty(true);
@@ -104,7 +108,7 @@ export const Perfil = () => {
               <h2>{profile.identification}</h2>
               <p>Correo</p>
               <h2>{profile.email}</h2>
-              <p>Cumpleaños</p>
+              <p>Fecha de nacimiento</p>
               <h2>{profile.date_of_birth}</h2>
             </div>
           )}
