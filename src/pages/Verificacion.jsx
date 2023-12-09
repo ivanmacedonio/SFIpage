@@ -7,6 +7,11 @@ import { BASE_URL } from "../hooks/fetch";
 import "../styles/Verificacion.css";
 
 export const Verificacion = () => {
+  const nav = useNavigate();
+  const { register, handleSubmit } = useForm({
+    shouldUseNativeValidation: true,
+  });
+  const [verificado, setVerificado] = useState(true);
   useEffect(() => {
     window.scrollTo(0, 0);
     async function getUser() {
@@ -34,25 +39,48 @@ export const Verificacion = () => {
     getUser();
   }, []);
 
+  const [formData, setFormData] = useState({
+    full_name: "",
+    nationality: "",
+    identification: "",
+    date_of_birth: "",
+    phone: "",
+    address: "",
+    gender: "",
+    // identification_file: "",
+  });
+  // function handleFileChange(e) {
+  //   setFormData({ ...formData, [e.target.name]: e.target.files[0] });
+  // }
+
   async function onSubmit(data) {
     const token = localStorage.getItem("access");
     if (token) {
       const headers = {
         Authorization: `Bearer ${token}`,
-        "Content-Type": "multipart/form-data",
       };
+      console.log(data);
+      setFormData({
+        full_name: data.full_name,
+        nationality: data.nationality,
+        identification: data.identification,
+        date_of_birth: data.date_of_birth,
+        phone: data.phone,
+        address: data.address,
+        gender: data.gender,
+      });
 
+      const form = new FormData();
+      form.append("full_name", formData.full_name);
+      form.append("nationality", formData.nationality);
+      form.append("identification", formData.identification);
+      form.append("date_of_birth", formData.date_of_birth);
+      form.append("phone", formData.phone);
+      form.append("address", formData.address);
+      form.append("gender", formData.gender);
+      // form.append("identification_file", formData.identification_file);
       try {
-        const formData = new FormData();
-        formData.append("identification_file", data.identification_file);
-        formData.append("address", data.address);
-        formData.append("date_of_birth", data.date_of_birth);
-        formData.append("full_name", data.full_name);
-        formData.append("gender", data.gender);
-        formData.append("identification", data.identification);
-        formData.append("nationality", data.nationality);
-        formData.append("phone", data.phone);
-        const res = await axios.post(`${BASE_URL}kyc/`, formData, {
+        const res = await axios.post(`${BASE_URL}kyc/`, form, {
           headers: headers,
         });
         console.log(res.data);
@@ -63,12 +91,6 @@ export const Verificacion = () => {
       console.log("error");
     }
   }
-
-  const nav = useNavigate();
-  const { register, handleSubmit } = useForm({
-    shouldUseNativeValidation: true,
-  });
-  const [verificado, setVerificado] = useState(true);
 
   return (
     <div className="verificacionpage">
@@ -86,7 +108,10 @@ export const Verificacion = () => {
           </div>
           <div className="formverif">
             <h1>Verificar</h1>
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <form
+              onSubmit={handleSubmit(onSubmit)}
+              encType="multipart/form-data"
+            >
               <div className="slot">
                 <p>Nombre completo</p>
                 <input
@@ -157,15 +182,18 @@ export const Verificacion = () => {
                   })}
                 />
               </div>
-              <div className="slot" id="select">
+              {/* <div className="slot" id="select">
                 <p>Expediente de identificación/pasaporte o fotografía</p>
                 <input
                   type="file"
+                  name="identification_file"
+                  accept=".jpg,.jpeg,.png,.pdf"
+                  onChange={handleFileChange}
                   {...register("identification_file", {
                     required: "Por favor ingresa una imagen",
                   })}
                 />
-              </div>
+              </div> */}
               <div className="slot" id="checkb">
                 <input type="checkbox" />{" "}
                 <p>
