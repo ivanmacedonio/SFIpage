@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import chicablog from "../assets/afiliarse.webp";
 import { HeaderNormal } from "../components/Header-normal";
-import { BASE_URL } from '../hooks/fetch';
+import { BASE_URL } from "../hooks/fetch";
 import "../styles/Register.css";
 export const Register = () => {
   useEffect(() => {
@@ -12,30 +12,29 @@ export const Register = () => {
   }, []);
   const navigate = useNavigate();
 
-
   const { register, handleSubmit } = useForm({
     shouldUseNativeValidation: true,
   });
-  const [error, setError] = useState('')
+  const [error, setError] = useState("");
   const [errorRegisterStyle, setErrorRegisterStyle] = useState({
-    display: 'none'
-  })
+    display: "none",
+  });
   const onSubmit = async (data) => {
     if (data.password == data.password2) {
       try {
-        const res = await axios.post(
-          `${BASE_URL}register/`,
-          data
-        );
+        const res = await axios.post(`${BASE_URL}register/`, data);
         navigate("/login");
       } catch (error) {
-        setError('Ya existe un usuario registrado con estos datos')
+        setError("Ya existe un usuario registrado con estos datos");
         setErrorRegisterStyle({
-          display: 'block'
-        })
+          display: "block",
+        });
       }
     } else {
-      alert("Las contraseñas no coinciden");
+      setError("Las contraseñas no coinciden");
+      setErrorRegisterStyle({
+        display: "block",
+      });
     }
   };
   return (

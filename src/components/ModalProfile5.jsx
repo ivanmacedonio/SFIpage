@@ -49,9 +49,10 @@ export default function BasicModal5({
           const res1 = await axios.get(`http://127.0.0.1:9000/api/kyc/`, {
             headers,
           });
-          setKycdata(res1.data[0]);
-          setId(res1.data[0].identification);
-          setUsername(res1.data[0].user_name);
+          console.log(res1.data);
+          setKycdata(res1.data.KYC_Detail);
+          setId(res1.data.KYC_Detail.identification);
+          setUsername(res1.data.KYC_Detail.user_name);
           setDatapurchase({
             amount: membershipData.precio,
             currency: "USDT",
@@ -87,19 +88,32 @@ export default function BasicModal5({
               headers: headers,
             }
           );
-          updatePurchaseData({
+          const dataP = {
             amount: membershipData.precio,
-            id: membershipData.id,
-            code: res.data.detalleRespuesta.code,
+            currency: 'USDT',
+            membership: membershipData.id,
+            charge_coinbase_commerce: res.data.detalleRespuesta.code,
             wallet: wallet,
-            full_name: aditionalBeneficiaty[0].full_name,
-            identification: aditionalBeneficiaty[0].identification,
-            email: aditionalBeneficiaty[0].email,
-            phone: aditionalBeneficiaty[0].phone,
-            percentage: percentage,
-          });
-          //window.location.href = `${res.data.detalleRespuesta.url}`;
-          nav('/checkout?canceled=false')
+            beneficiaries: [
+              {
+                full_name: aditionalBeneficiaty[0].full_name,
+                identification: aditionalBeneficiaty[0].identification,
+                email: aditionalBeneficiaty[0].email,
+                phone: aditionalBeneficiaty[0].phone,
+                percentage: percentage,
+              },
+            ],
+          };
+          const res2 = await axios.post(
+            "http://127.0.0.1:9000/api/store_user_selections/",
+            dataP,
+            {
+              headers: headers,
+            }
+          );
+          console.log(res2);
+          window.location.href = `${res.data.detalleRespuesta.url}`;
+          // nav('/checkout?canceled=false')
         } else {
           console.log("not check");
         }

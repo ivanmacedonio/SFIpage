@@ -47,8 +47,6 @@ export default function BasicModal4({ membershipData, wallet }) {
     setPercent(percentage - per);
   }
 
-
-
   function onSubmit(data) {
     setShow(true);
     setReadonly(true);

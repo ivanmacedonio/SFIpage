@@ -1,66 +1,54 @@
 import axios from "axios";
-import React from "react";
+import React, { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { usePurchaseContext } from "../context/PurchaseContext";
 import { BASE_URL } from "../hooks/fetch";
 import "../styles/Checkout.css";
 export const Checkout = () => {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const canceled = queryParams.get("canceled");
-  const { purchaseData } = usePurchaseContext();
-  const { amount, id, code, wallet, full_name, identification, email, phone, percentage } = purchaseData;
-  
 
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     nav("/");
-  //   }, 3500);
-  //   return () => clearTimeout(timer);
-  // }, []);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      nav("/");
+    }, 3500);
+    return () => clearTimeout(timer);
+  }, []);
 
-  async function Purchase(datos) {
+  async function Purchase() {
     const token = localStorage.getItem("access");
     if (token) {
       const headers = {
         Authorization: `Bearer ${token}`,
       };
       try {
-        const res = await axios.post(`${BASE_URL}purchase/`, datos, {
+        const res2 = await axios.get(
+          "http://127.0.0.1:9000/api/get_user_selections/",
+          {
+            headers: headers,
+          }
+        );
+        console.log(res2.data);
+        const res = await axios.post(`${BASE_URL}purchase/`, res2.data, {
           headers: headers,
         });
         console.log(res);
-        localStorage.clear();
       } catch (error) {
-        localStorage.clear();
+        // nav('/')
+        console.log("error 1");
       }
+    } else {
+      // nav('/login')
+      console.log("error2");
     }
   }
-
-  const datos = {
-    charge_coinbase_commerce: localStorage.getItem("code"),
-    amount: amount,
-    wallet: wallet,
-    membership: id,
-    currency: "USDT",
-    beneficiaries: [
-      {
-        full_name: full_name,
-        identification: identification,
-        email: email,
-        phone: phone,
-        percentage: percentage,
-      },
-    ],
-  };
 
   const nav = useNavigate();
 
   if (canceled === "true") {
     console.log("canceled");
   } else {
-     console.log(datos);
-     Purchase(datos);
+    Purchase();
   }
 
   return (

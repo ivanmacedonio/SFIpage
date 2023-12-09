@@ -101,12 +101,11 @@
 }
 
 .formverif input {
-    padding: 1rem;
+    padding: 0rem 1rem;
     padding-top: 1.3rem;
     padding-bottom: 1.3rem;
     border-radius: 1rem;
     width: 13rem;
-    font-size: 1.4rem;
 }
 
 
@@ -160,7 +159,7 @@
     font-size: 3.5rem;
     border-radius: 1rem;
     width: 20rem;
-    margin-top: 3rem;
+    margin-top: 1rem;
     margin-left: 7rem;
     border-style: none;
 }
@@ -169,7 +168,7 @@
     cursor: pointer;
 }
 
-@media(max-width: 768px) {
+@media(max-width: 767px) {
 
     .alertaverif h1 {
         margin-left: 0;
@@ -178,7 +177,7 @@
     }
 
     .formverif input{
-        width: 80%;
+        width: 100%;
     }
 
     .alertaverif p {
@@ -238,14 +237,12 @@
     }
 
     #enviar {
-        margin-top: 2rem;
+        margin-top: 0rem;
         margin-left: 4.5rem;
     }
 
-   
-
     .formverif form {
-        max-width: fit-content;
+        width: 100%;
     }
 }
 
@@ -378,7 +375,6 @@
         margin-left: 12rem;
         margin-top: 4rem;
         width: 40rem;
-        height: 90rem;
     }
 
     #direccion input {
@@ -414,7 +410,8 @@
 
 @media only screen and (min-width: 1200px) and (max-width: 1700px) {
     .verificacioncontainer {
-        width: 100%
+        width: 100%;
+        background-image: none;
     }
 
     .textverif {
@@ -454,7 +451,9 @@
 
     #enviar button {
         margin: 0;
-        width: 32rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        width: 31rem;
     }
 
     #enviar {
