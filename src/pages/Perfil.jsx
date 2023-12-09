@@ -26,14 +26,13 @@ export const Perfil = () => {
           const res = await axios.get(`http://127.0.0.1:9000/api/kyc/`, {
             headers,
           });
-          if (res.data && res.data.length > 0) {
-            setProfile(res.data[0]);
+          if (res.data.KYC_Detail.state != "") {
+            setProfile(res.data.KYC_Detail);
           } else {
             setEmpty(true);
           }
         } catch (error) {
-          nav("/login");
-          localStorage.removeItem("access");
+          setEmpty(true);
         }
       } else {
         nav("/login");
@@ -42,7 +41,6 @@ export const Perfil = () => {
     getUser();
     window.scrollTo(0, 0);
   }, []);
-
 
   const [active, setActive] = useState(false);
   const [estilo, setEstilo] = useState({ display: "none" });
@@ -64,7 +62,10 @@ export const Perfil = () => {
           <h1 id="perfilh11">Perfil</h1>
           {empty ? (
             <div className="alert1">
-              <h5>Actualmente tu usuario se encuentra en revision. Una vez verifiquemos el KYC, tendras acceso a nuestros planes.</h5>
+              <h5>
+                Actualmente tu usuario se encuentra en revision. Una vez
+                verifiquemos el KYC, tendras acceso a nuestros planes.
+              </h5>
             </div>
           ) : (
             <div className="form1">
