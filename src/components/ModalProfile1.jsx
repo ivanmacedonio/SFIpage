@@ -98,6 +98,7 @@ export default function BasicModal() {
     setShow(true);
   }
 
+
   return (
     <div>
       <Button onClick={handleOpen} id="botonadquirirmodal">

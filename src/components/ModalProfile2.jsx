@@ -18,15 +18,15 @@ const style = {
 
 export default function BasicModal2({ membershipData }) {
   const [number, setNumber] = React.useState();
+  console.log(membershipData);
 
   React.useEffect(() => {
     function formatearNumero() {
+      let numero =
+        (membershipData.percentage_bonus * membershipData.precio) / 100;
 
-      let numero = (membershipData.percentage_bonus * membershipData.precio) / 100
 
-      let numeroRedondeado = Math.round(numero);
-
-      let cadenaNumero = numeroRedondeado.toString();
+      let cadenaNumero = numero.toString();
 
       let resultadoFormateado = cadenaNumero.replace(
         /\B(?=(\d{3})+(?!\d))/g,
@@ -35,8 +35,7 @@ export default function BasicModal2({ membershipData }) {
 
       setNumber(resultadoFormateado);
     }
-    formatearNumero()
-
+    formatearNumero();
   }, []);
 
   const [open, setOpen] = React.useState(false);
@@ -56,7 +55,14 @@ export default function BasicModal2({ membershipData }) {
       >
         <Box sx={style}>
           <div className="modal2">
-            <h3 id="x" onClick={() => {handleClose()}}>X</h3>
+            <h3
+              id="x"
+              onClick={() => {
+                handleClose();
+              }}
+            >
+              X
+            </h3>
             <h1>Seleccion de bono redimible</h1>
             <p>
               Este bono representa un porcentaje de la totalidad de USDT que ha
