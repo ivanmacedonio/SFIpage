@@ -69,6 +69,7 @@ export default function BasicModal3({ membershipData }) {
               onClick={() => {
                 handleClose();
               }}
+              id="x"
             >
               x
             </h3>

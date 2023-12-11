@@ -63,7 +63,19 @@
     font-weight: 700;
 }
 
+#x{
+    font-size: 1.4rem;
+    font-family: 'Lato', sans-serif;
+}
+
 @media (max-width : 767px){
+    #scrolleable4{
+        padding-left: 1rem;
+    }
+
+    #x{
+        font-size: 2rem;
+    }
     .caja4{
         flex: 0;
         width: 100%;

@@ -41,17 +41,18 @@ export const Verificacion = () => {
   }, []);
 
   const [archivo, setArchivo] = useState(null);
+  const [isFile, setIsFile] = useState(false);
 
   function handleFileChange(e) {
     if (e.target.type === "file") {
       setArchivo(e.target.files[0]);
-      console.log(e);
+      setIsFile(true);
     } else {
       setFormulario({
         ...formulario,
         [e.target.name]: e.target.value,
       });
-      console.log("no file");
+      setIsFile(false);
     }
   }
 
@@ -72,15 +73,16 @@ export const Verificacion = () => {
       formData.append("gender", data.gender);
       formData.append("identification_file", archivo);
       try {
-        const res = await axios.post(`${BASE_URL}kyc/`, formData, {
-          headers: headers,
-        });
-        nav('/')
+        // const res = await axios.post(`${BASE_URL}kyc/`, formData, {
+        //   headers: headers,
+        // });
+        // nav("/");
+        console.log(data);
       } catch (error) {
         console.log(error);
       }
     } else {
-      nav('/login')
+      nav("/login");
     }
   }
 
@@ -133,13 +135,17 @@ export const Verificacion = () => {
               </div>
               <div className="slot">
                 <p>Genero</p>
-                <input
-                  type="text"
-                  placeholder="Ingresa tu Genero"
+                <select
                   {...register("gender", {
                     required: "Por favor ingresa un genero",
                   })}
-                />
+                >
+                  <option value=""  disabled>
+                    Selecciona un género
+                  </option>
+                  <option value="Masculino">Masculino</option>
+                  <option value="Femenino">Femenino</option>
+                </select>
               </div>
               <div className="slot">
                 <p>Telefono</p>
@@ -184,12 +190,15 @@ export const Verificacion = () => {
               </div>
               <div className="slot" id="select">
                 <p>Expediente de identificación/pasaporte o fotografía</p>
-                <input
-                  type="file"
-                  name="archivo"
-                  onChange={handleFileChange}
-                />
+                <input type="file" name="archivo" onChange={handleFileChange} />
               </div>
+              {isFile ? (
+                <div className="slot" id="selectImage">
+                  Archivo seleccionado correctamente
+                </div>
+              ) : (
+                ""
+              )}
               <div className="slot" id="checkb">
                 <input type="checkbox" />{" "}
                 <p>

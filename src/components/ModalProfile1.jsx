@@ -170,7 +170,7 @@ export default function BasicModal() {
               )}
             </div>
           ) : (
-            <ul>
+            <ul id="listaMembership1">
               {membership.map((member) => (
                 <li className="listaMembership" style={estiloLista}>
                   <h1 onClick={() => handleData(member)}>{member.name}</h1>

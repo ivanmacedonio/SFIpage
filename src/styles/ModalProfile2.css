@@ -10,6 +10,11 @@
     font-weight: 900;
 }
 
+#x{
+    color: white;
+    cursor: pointer;
+}
+
 .modal2 p {
     color: white;
     width: 90%;
@@ -47,6 +52,13 @@
     .modal2 h2{
         font-size: 1.3rem;
     }
+    .modal2{
+        padding: 0;
+    }
+    .css-1x9pxnu{
+        width: 80% !important;
+    }
+
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {

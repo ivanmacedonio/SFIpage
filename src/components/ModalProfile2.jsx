@@ -56,6 +56,7 @@ export default function BasicModal2({ membershipData }) {
       >
         <Box sx={style}>
           <div className="modal2">
+            <h3 id="x" onClick={() => {handleClose()}}>X</h3>
             <h1>Seleccion de bono redimible</h1>
             <p>
               Este bono representa un porcentaje de la totalidad de USDT que ha

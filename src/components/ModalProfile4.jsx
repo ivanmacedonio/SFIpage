@@ -80,11 +80,12 @@ export default function BasicModal4({ membershipData, wallet }) {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={style}>
+        <Box sx={style} id="scrolleable4">
           <h4
             onClick={() => {
               handleClose();
             }}
+            id="x"
           >
             x
           </h4>

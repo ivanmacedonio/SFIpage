@@ -18,6 +18,8 @@
     text-align: center;
 }
 
+
+
 .membresiaModal1 h2 {
     background-color: white;
     padding: 1rem;
@@ -71,9 +73,15 @@
 }
 
 .membresiaModal1 h4 {
-    font-size: 2rem;
+    font-size: 1.5rem;
+    color: white;
+    background: none;
     margin-top: 0;
     cursor: pointer;
+}
+
+#listaMembership1{
+    padding: 0;
 }
 
 
@@ -106,15 +114,7 @@
     }
 
 
-    .membresiaModal1 h4 {
-        margin-top: 2rem;
-        margin-bottom: 1rem;
-        background-color: white;
-        width: fit-content;
-        color: black;
-        border-radius: 5rem;
-        padding: 0 1rem 0 1rem;
-    }
+   
 
     .membresiaModal1 h1 {
         padding-top: 0;
