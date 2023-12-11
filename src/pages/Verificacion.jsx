@@ -37,11 +37,18 @@ export const Verificacion = () => {
         nav("/login");
       }
     }
+
+    async function getCountries() {
+      const resC = await axios.get("https://restcountries.com/v2/all");
+      setCountries(resC.data)
+    }
     getUser();
+    getCountries()
   }, []);
 
   const [archivo, setArchivo] = useState(null);
   const [isFile, setIsFile] = useState(false);
+  const [countries, setCountries] = useState([])
 
   function handleFileChange(e) {
     if (e.target.type === "file") {
@@ -123,15 +130,22 @@ export const Verificacion = () => {
                   })}
                 />
               </div>
-              <div className="slot">
+              <div className="slot" id="marg">
                 <p>Nacionalidad</p>
-                <input
+                {/* <input
                   type="text"
                   placeholder="Ingresa tu Nacionalidad"
                   {...register("nationality", {
                     required: "Por favor ingresa una nacionalidad valida",
                   })}
-                />
+                /> */}
+                <select {...register('nationality', {
+                  required: 'Por favor selecciona una nacionalidad valida'
+                })}>
+                  {countries.map((country) => (
+                    <option value={country.name}> {country.name}</option>
+                  ))}
+                </select>
               </div>
               <div className="slot">
                 <p>Genero</p>
@@ -140,7 +154,7 @@ export const Verificacion = () => {
                     required: "Por favor ingresa un genero",
                   })}
                 >
-                  <option value=""  disabled>
+                  <option value="" disabled>
                     Selecciona un género
                   </option>
                   <option value="Masculino">Masculino</option>
