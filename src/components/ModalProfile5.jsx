@@ -154,7 +154,7 @@ export default function BasicModal5({
             </div>
             <div className="t">
               <p>Monto de cuota mensual en USDT:</p>
-              <h3>{membershipData.base_monthly_benefit_amount} USDT</h3>
+              <h3>{membershipData.monthly_membership_cost * (membershipData.precio / 10000)} USDT</h3>
             </div>
             <div className="t">
               <p>Maduracion de membresia activa:</p>
@@ -168,7 +168,7 @@ export default function BasicModal5({
             <div className="t">
               <p>Monto redimible en USDT:</p>
               <h3>
-                {membershipData.percentage_bonus * membershipData.precio} USDT
+                {(membershipData.percentage_bonus * membershipData.precio) / 100} USDT
               </h3>
             </div>
             <div className="t">
