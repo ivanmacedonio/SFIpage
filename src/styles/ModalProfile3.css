@@ -35,11 +35,11 @@
 }
 
 .montos2 h1{
-    background-color: white;
+    background-color: rgb(98, 98, 98);
     width: fit-content;
     border-radius: 1rem;
-    color: rgb(0, 68, 145);
-    padding: 0 1rem 0 1rem;
+    color: rgb(255, 255, 255);
+    padding: 0.5rem 1rem;
     font-weight: 700;
     width: 80%;
 }

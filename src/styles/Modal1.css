@@ -21,9 +21,9 @@
 
 
 .membresiaModal1 h2 {
-    background-color: white;
+    background-color: rgb(113, 113, 113);
     padding: 1rem;
-    color: rgb(0, 81, 128);
+    color: rgb(255, 255, 255);
     font-weight: 700;
     border-radius: 1rem;
 }

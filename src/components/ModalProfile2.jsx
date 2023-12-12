@@ -18,13 +18,11 @@ const style = {
 
 export default function BasicModal2({ membershipData }) {
   const [number, setNumber] = React.useState();
-  console.log(membershipData);
 
   React.useEffect(() => {
     function formatearNumero() {
       let numero =
         (membershipData.percentage_bonus * membershipData.precio) / 100;
-
 
       let cadenaNumero = numero.toString();
 
@@ -36,9 +34,13 @@ export default function BasicModal2({ membershipData }) {
       setNumber(resultadoFormateado);
     }
     formatearNumero();
-  }, []);
+  }, [membershipData]);
+
+  console.log(membershipData)
+
 
   const [open, setOpen] = React.useState(false);
+  const [activated, setIsActivated] = React.useState(true);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
@@ -75,15 +77,29 @@ export default function BasicModal2({ membershipData }) {
             <div className="montos">
               <div className="caja2">
                 <h2>Porcentaje redimible</h2>
-                <h1>{Math.floor(membershipData.percentage_bonus)}%</h1>
+                {activated ? (
+                  <h1>{Math.floor(membershipData.percentage_bonus)}%</h1>
+                ) : (
+                  <h1 style={{ color: "gray" }}>0</h1>
+                )}
                 <label>
-                  <input type="checkbox" />
+                  <input
+                    type="checkbox"
+                    onClick={() => {
+                      setIsActivated(!activated);
+                    }}
+                    checked={activated}
+                  />
                   Activar
                 </label>
               </div>
               <div className="caja2">
                 <h2>Monto redimible en USDT</h2>
-                <h1>{number}</h1>
+                {activated ? (
+                  <h1>{number}</h1>
+                ) : (
+                  <h1 style={{ color: "gray" }}>0</h1>
+                )}
               </div>
             </div>
             <BasicModal3

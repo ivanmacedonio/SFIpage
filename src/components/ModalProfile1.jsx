@@ -27,11 +27,12 @@ export default function BasicModal() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const [precio, setPrecio] = useState(50000); // Valor inicial
+  const [precio, setPrecio] = useState(10000); // Valor inicial
   const [membership, setMembership] = useState([]);
   const [list, setList] = useState(true);
-  const [data, setData] = useState([]);
+  const [costoMenual, setCostoMensual] = useState(0);
   const [show, setShow] = useState(false);
+  const [setted, setSetted] = useState(false)
   const [membershipData, setMembershipData] = useState({
     name: "Elige tu membresía",
   });
@@ -39,6 +40,20 @@ export default function BasicModal() {
   const handlePrecioChange = (event) => {
     setPrecio(parseInt(event.target.value, 10));
   };
+
+  useEffect(() => {
+    setCostoMensual(membershipData.minimum);
+  }, [membershipData]);
+
+  useEffect(() => {
+    setPrecio(membershipData.minimum);
+  }, [setted]);
+
+  useEffect(() => {
+    setCostoMensual(
+      (precio / membershipData.chunk) * membershipData.monthly_membership_cost
+    );
+  }, [precio]);
   const nav = useNavigate();
   const estiloLista = {
     background: "linear-gradient(to right, rgb(3, 180, 211), rgb(2, 80, 116))",
@@ -80,6 +95,7 @@ export default function BasicModal() {
   }, []);
 
   function handleData(member) {
+    setSetted(!setted)
     setMembershipData({
       id: member.id,
       name: member.name,
@@ -97,7 +113,6 @@ export default function BasicModal() {
     setList(!list);
     setShow(true);
   }
-
 
   return (
     <div>
@@ -142,14 +157,18 @@ export default function BasicModal() {
                         onChange={handlePrecioChange}
                       />
                       <output htmlFor="rangoPrecio">
-                        Valor: {precio.toLocaleString()} USDT
+                        Valor: {precio} USDT
                       </output>
                     </div>
 
                     <p>Acumulacion para membresía activa</p>
                     <h2>{membershipData.savings_duration_in_months} </h2>
                     <p>Monto de cuota mensual en USDT</p>
-                    <h2>{membershipData.monthly_membership_cost}</h2>
+                    {costoMenual ? (
+                      <h2>{costoMenual}</h2>
+                    ) : (
+                      <h2> {membershipData.monthly_membership_cost}</h2>
+                    )}
                     <p>Maduracion de membresía activa</p>
                     <h2>{membershipData.maturity_period_in_months}</h2>
                   </div>

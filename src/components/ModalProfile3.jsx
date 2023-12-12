@@ -52,6 +52,8 @@ export default function BasicModal3({ membershipData }) {
     }
   }
 
+
+
   return (
     <div>
       <Button onClick={handleOpen} id="continuar">
@@ -77,7 +79,7 @@ export default function BasicModal3({ membershipData }) {
             <div className="montos2">
               <div className="caja3">
                 <p>Monto de cuota mensual en USDT</p>
-                <h1>{membershipData.base_monthly_benefit_amount}USDT</h1>
+                <h1>{membershipData.monthly_membership_cost}</h1>
               </div>
               <div className="caja3">
                 <p>Cantidad de cuotas mensuales</p>

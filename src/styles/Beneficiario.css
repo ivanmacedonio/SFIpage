@@ -1,6 +1,60 @@
-#beneficiario{
+#beneficiario {
     font-size: 1rem;
     color: white;
     margin-top: 2rem;
     font-weight: 700;
+}
+
+@media (min-width: 1200px) {
+    .modal6 input {
+        width: 150%;
+    }
+
+    .modal6 {
+        font-family: 'Lato', sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+    }
+
+    .continuar6 {
+        margin-left: 2.5rem;
+    }
+
+    .continuar6 button {
+        background: none;
+        border: none;
+    }
+}
+
+@media (max-width: 768px){
+    .continuar6 button {
+        background: none;
+        border: none;
+    }
+    .modal6 {
+        font-family: 'Lato', sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+    }
+    .continuar6 {
+        margin-left: 0;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1100px){
+    .continuar6 button {
+        background: none;
+        border: none;
+    }
+    .modal6 {
+        font-family: 'Lato', sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+    }
+    .continuar6 {
+        margin-left: 2.5rem;
+    }
 }

@@ -39,6 +39,8 @@ export default function BasicModal4({ membershipData, wallet }) {
     shouldUseNativeValidation: true,
   });
 
+  console.log(membershipData)
+
   function recibirBeneficiario(data, maxPercent, per) {
     setAditionalBeneficiaty((prevData) => {
       const newArray = Array.isArray(prevData) ? [...prevData, data] : [data];

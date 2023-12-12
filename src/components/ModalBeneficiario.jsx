@@ -57,7 +57,7 @@ export default function BasicModal6({ onEnviarDatos }) {
         <Box sx={style}>
           <h2 id="db">Datos de beneficiario adicional</h2>
           <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="modal4">
+            <div className="modal6">
               <div className="caja4">
                 <p>Nombre completo</p>
                 <input
@@ -110,7 +110,7 @@ export default function BasicModal6({ onEnviarDatos }) {
                 />
               </div>
             </div>
-            <div className="continuar5">
+            <div className="continuar6">
               <button type="submit">
                 <div className="check2">
                   <h2>Continuar</h2>
