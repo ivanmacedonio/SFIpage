@@ -38,7 +38,6 @@ export default function BasicModal5({
   const nav = useNavigate();
 
   const { updatePurchaseData } = usePurchaseContext();
-  console.log(aditionalBeneficiaty);
 
   React.useEffect(() => {
     async function getUser() {

@@ -39,13 +39,12 @@ export default function BasicModal4({ membershipData, wallet, activated }) {
     shouldUseNativeValidation: true,
   });
 
-
   function recibirBeneficiario(data, maxPercent, per) {
     setAditionalBeneficiaty((prevData) => {
       const newArray = Array.isArray(prevData) ? [...prevData, data] : [data];
       return newArray;
     });
-    setPercent(percentage - per)
+    setPercent(percentage - per);
   }
 
   function onSubmit(data) {
@@ -57,7 +56,6 @@ export default function BasicModal4({ membershipData, wallet, activated }) {
 
   function handleClick() {
     const newData = { ...data, percentage };
-    console.log(percentage)
     if (setted === false) {
       setAditionalBeneficiaty((prevData) => {
         const newArray = Array.isArray(prevData)
@@ -69,6 +67,14 @@ export default function BasicModal4({ membershipData, wallet, activated }) {
     } else {
       console.log("pass");
     }
+  }
+
+  function handleDeleteBenef(beneficiario){
+    let name = beneficiario.full_name
+    let number = parseFloat(beneficiario.percentage)
+    const newBenef = aditionalBeneficiaty.filter(persona => persona.full_name != name)
+    setAditionalBeneficiaty(newBenef)
+    setPercent(percentage +  number)
   }
 
   return (
@@ -91,6 +97,17 @@ export default function BasicModal4({ membershipData, wallet, activated }) {
           >
             x
           </h4>
+          <div className="listaBeneficiarios">
+            {aditionalBeneficiaty.map((beneficiario) => (
+              <div className="box">
+                <label>
+                <h3>{beneficiario.full_name}</h3>
+                <h5>{beneficiario.percentage}%</h5>
+                </label>
+                <h3 id="cruz" onClick={()=> {handleDeleteBenef(beneficiario)}}>X</h3>
+              </div>
+            ))}
+          </div>
           <h2 id="db">Datos de beneficiario</h2>
 
           <form onSubmit={handleSubmit(onSubmit)}>
@@ -161,8 +178,8 @@ export default function BasicModal4({ membershipData, wallet, activated }) {
                     membershipData={updatemembership}
                     wallet={wallet}
                     aditionalBeneficiaty={aditionalBeneficiaty}
-                    percentage = {percentage}
-                    activated = {activated}
+                    percentage={percentage}
+                    activated={activated}
                   ></BasicModal5>
                 </div>
               )}
