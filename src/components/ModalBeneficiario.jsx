@@ -28,6 +28,7 @@ export default function BasicModal6({ onEnviarDatos }) {
     register,
     handleSubmit,
     formState: { errors },
+    reset
   } = useForm({
     shouldUseNativeValidation: true,
   });
@@ -38,6 +39,8 @@ export default function BasicModal6({ onEnviarDatos }) {
       const per = data.percentage
       onEnviarDatos(data, maxPercent, per);
       handleClose();
+      reset()
+
     } else {
       alert('Debes elegir un porcentaje menor')
     }
