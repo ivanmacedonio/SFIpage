@@ -20,7 +20,7 @@ const style = {
   p: 4,
 };
 
-export default function BasicModal3({ membershipData }) {
+export default function BasicModal3({ membershipData, activated }) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -130,6 +130,7 @@ export default function BasicModal3({ membershipData }) {
                     <BasicModal4
                       membershipData={membershipData}
                       wallet={walletData}
+                      activated = {activated}
                     ></BasicModal4>
                   ) : (
                     ""

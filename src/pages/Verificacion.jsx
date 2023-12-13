@@ -80,10 +80,10 @@ export const Verificacion = () => {
       formData.append("gender", data.gender);
       formData.append("identification_file", archivo);
       try {
-        // const res = await axios.post(`${BASE_URL}kyc/`, formData, {
-        //   headers: headers,
-        // });
-        // nav("/");
+        const res = await axios.post(`${BASE_URL}kyc/`, formData, {
+          headers: headers,
+        });
+        nav("/");
         console.log(data);
       } catch (error) {
         console.log(error);

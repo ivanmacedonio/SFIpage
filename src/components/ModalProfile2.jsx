@@ -104,6 +104,7 @@ export default function BasicModal2({ membershipData }) {
             <BasicModal3
               id="continuar"
               membershipData={membershipData}
+              activated = {activated}
             ></BasicModal3>
           </div>
         </Box>

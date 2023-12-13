@@ -41,7 +41,6 @@
     font-weight: 900;
     margin-bottom: 0;
     font-size: 5rem;
-    font-style: italic;
     background: linear-gradient(to right, rgb(3, 180, 211), rgb(2, 80, 116));
     background-clip: text;
     -webkit-background-clip: text;
@@ -62,13 +61,10 @@
 }
 
 #btn-adicional {
-    font-size: 2rem;
     color: white;
-    background: linear-gradient(to right, rgb(185, 83, 190), rgb(180, 16, 201));
     border-radius: 1rem;
-    width: fit-content;
-    padding: 0 2rem 0 2rem;
-    margin-top: 2rem;
+    width: 80%;
+    margin-top: 1rem;
     margin-bottom: 5rem;
 }
 
@@ -166,7 +162,7 @@
 }
 
 #cuotas {
-    width: 8rem;
+    width: 75%;
 }
 
 #maduracion {
@@ -178,15 +174,15 @@
 }
 
 #quinquenio {
-    font-size: 1.8rem;
-    margin-top: 2.5rem;
+    font-size: 1.5rem;
     margin-left: 1rem;
-    background-color: rgb(2, 80, 116);
+    background-color: rgb(115, 115, 115);
     height: fit-content;
     border-radius: 1rem;
     padding-left: 1rem;
     font-family: 'Lato', sans-serif;
     padding: 1rem 2rem;
+    margin-top: 1.5rem;
 }
 
 #descargar {
@@ -195,26 +191,26 @@
     color: rgb(255, 255, 255);
     background: linear-gradient(to right, rgb(3, 180, 211), rgb(2, 80, 116));
     border-radius: 1rem;
-    padding: .8rem 1rem;
+    padding: 0rem 1rem;
     font-weight: 900;
     margin-bottom: 0;
-    margin-top: 2.5rem;
+    margin-top: 1rem;
 }
 
 #estadocuota {
-    margin-top: 2rem;
+    margin-top: 0rem;
     margin-left: 1rem;
 }
 
 #datosmem {
-    font-size: 3rem;
+    font-size: 2rem;
     background: none;
     color: white;
     font-style: normal;
     font-weight: 700;
     background: linear-gradient(to right, rgb(3, 180, 211), rgb(2, 80, 116));
     margin: 2rem 0rem 2rem 4.5rem;
-    padding: 1rem 2rem;
+    padding: 0.5rem 2rem;
     border-radius: 1rem;
     width: 80%;
     text-align: center;
@@ -1501,6 +1497,14 @@
 
     .formprofile1{
         margin-right: 5rem;
+    }
+
+    #descargar{
+        margin-top: 3rem;
+    }
+
+    #datosmem{
+        margin-left: 2.3rem;
     }
 }
 

@@ -25,6 +25,7 @@ export default function BasicModal5({
   wallet,
   aditionalBeneficiaty,
   percentage,
+  activated,
 }) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
@@ -49,17 +50,16 @@ export default function BasicModal5({
           const res1 = await axios.get(`${BASE_URL}kyc/`, {
             headers,
           });
-          console.log(res1.data);
           setKycdata(res1.data.KYC_Detail);
           setId(res1.data.KYC_Detail.identification);
           setUsername(res1.data.KYC_Detail.user_name);
           setDatapurchase({
             amount: membershipData.precio,
-            currency: "USDT",
             membership: membershipData.id,
-            user_id: userid,
-            user_name: username,
-            membership_name: membershipData.name,
+            // currency: "USD",
+            // user_id: userid,
+            // user_name: username,
+            // membership_name: membershipData.name,
           });
         } catch (error) {
           console.log(error);
@@ -70,8 +70,6 @@ export default function BasicModal5({
     }
     getUser();
   }, []);
-
-  console.log(percentage);
 
   async function handleTransfer() {
     try {
@@ -90,10 +88,11 @@ export default function BasicModal5({
           );
           const dataP = {
             amount: membershipData.precio,
-            currency: 'USDT',
+            currency: "USDT",
             membership: membershipData.id,
             charge_coinbase_commerce: res.data.detalleRespuesta.code,
             wallet: wallet,
+            ind_bonus_will_be_redeemed: activated,
             beneficiaries: [
               {
                 full_name: aditionalBeneficiaty[0].full_name,
@@ -111,7 +110,6 @@ export default function BasicModal5({
               headers: headers,
             }
           );
-          console.log(res2);
           window.location.href = `${res.data.detalleRespuesta.url}`;
           // nav('/checkout?canceled=false')
         } else {
@@ -125,7 +123,6 @@ export default function BasicModal5({
       console.log(error);
     }
   }
-  console.log(aditionalBeneficiaty)
 
   return (
     <div>
@@ -155,7 +152,11 @@ export default function BasicModal5({
             </div>
             <div className="t">
               <p>Monto de cuota mensual en USDT:</p>
-              <h3>{membershipData.monthly_membership_cost * (membershipData.precio / 10000)} USDT</h3>
+              <h3>
+                {membershipData.monthly_membership_cost *
+                  (membershipData.precio / 10000)}{" "}
+                USDT
+              </h3>
             </div>
             <div className="t">
               <p>Maduracion de membresia activa:</p>
@@ -169,7 +170,9 @@ export default function BasicModal5({
             <div className="t">
               <p>Monto redimible en USDT:</p>
               <h3>
-                {(membershipData.percentage_bonus * membershipData.precio) / 100} USDT
+                {(membershipData.percentage_bonus * membershipData.precio) /
+                  100}{" "}
+                USDT
               </h3>
             </div>
             <div className="t">

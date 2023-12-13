@@ -17,10 +17,10 @@ export const Perfil = () => {
   const [empty, setEmpty] = useState(false);
   const [active, setActive] = useState(false);
   const [estilo, setEstilo] = useState({ display: "none" });
-  const [isMember, setIsMember] = useState(true);
+  const [isMember, setIsMember] = useState(false);
   const [isVerificated, setIsVerificated] = useState(true);
   const [denegado, setDenegado] = useState(false);
-  const [memberDetail, setMemberDetail] = useState([])
+  const [memberDetail, setMemberDetail] = useState([]);
 
   useEffect(() => {
     async function getUser() {
@@ -58,7 +58,7 @@ export const Perfil = () => {
           }
         } catch (error) {
           setEmpty(true);
-          nav('/login')
+          nav("/login");
         }
       } else {
         nav("/login");
@@ -73,7 +73,12 @@ export const Perfil = () => {
       const resMember = await axios.get(`${BASE_URL}purchase/`, {
         headers: headers,
       });
-      setMemberDetail(resMember.data[0].purchase_Detail)
+      setMemberDetail(resMember.data);
+      if (resMember.data) {
+        setIsMember(true);
+      } else {
+        setIsMember(false);
+      }
     }
     getUser();
     getMember();
@@ -143,7 +148,9 @@ export const Perfil = () => {
                     </div>
                     <div className="caja">
                       <p>Cuota mensual</p>
-                      <h2 id="maduracion">{memberDetail.monthly_membership_cost}</h2>
+                      <h2 id="maduracion">
+                        {memberDetail.monthly_membership_cost}
+                      </h2>
                     </div>
                     <div className="caja">
                       <p>Fecha de inicio</p>
@@ -266,7 +273,9 @@ export const Perfil = () => {
                 al finalizar el primer quinquenio de maduración.
               </p>
             </div>
-            <h1 id="btn-adicional">+ Membresía adicional</h1>
+            <h1 id="btn-adicional">
+              <BasicModal></BasicModal>
+            </h1>
           </div>
         )}
       </div>
