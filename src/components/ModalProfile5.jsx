@@ -38,6 +38,7 @@ export default function BasicModal5({
   const nav = useNavigate();
 
   const { updatePurchaseData } = usePurchaseContext();
+  console.log(aditionalBeneficiaty);
 
   React.useEffect(() => {
     async function getUser() {
@@ -86,6 +87,15 @@ export default function BasicModal5({
               headers: headers,
             }
           );
+          const aditionalBeneficiaries = aditionalBeneficiaty.map(
+            (beneficiario) => ({
+              full_name: beneficiario.full_name,
+              identification: beneficiario.identification,
+              email: beneficiario.email,
+              phone: beneficiario.phone,
+              percentage: beneficiario.percentage,
+            })
+          );
           const dataP = {
             amount: membershipData.precio,
             currency: "USDT",
@@ -93,16 +103,9 @@ export default function BasicModal5({
             charge_coinbase_commerce: res.data.detalleRespuesta.code,
             wallet: wallet,
             ind_bonus_will_be_redeemed: activated,
-            beneficiaries: [
-              {
-                full_name: aditionalBeneficiaty[0].full_name,
-                identification: aditionalBeneficiaty[0].identification,
-                email: aditionalBeneficiaty[0].email,
-                phone: aditionalBeneficiaty[0].phone,
-                percentage: percentage,
-              },
-            ],
+            beneficiaries: aditionalBeneficiaries,
           };
+          
           const res2 = await axios.post(
             `${BASE_URL}store_user_selections/`,
             dataP,

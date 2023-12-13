@@ -767,7 +767,9 @@
     #cajafecha{
         width: 100%;
     }
-
+    #botonadquirirmodal{
+        margin-top: 2rem;
+    }
     
 }
 
@@ -1364,6 +1366,10 @@
 
 
 @media only screen and (min-width: 1200px) and (max-width: 1599px) {
+
+    #botonadquirirmodal{
+        margin-top: 2rem;
+    }
 
     .texxt p {
         max-width: 30rem;

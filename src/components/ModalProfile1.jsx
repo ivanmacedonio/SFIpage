@@ -32,7 +32,7 @@ export default function BasicModal() {
   const [list, setList] = useState(true);
   const [costoMenual, setCostoMensual] = useState(0);
   const [show, setShow] = useState(false);
-  const [setted, setSetted] = useState(false)
+  const [setted, setSetted] = useState(false);
   const [membershipData, setMembershipData] = useState({
     name: "Elige tu membresía",
   });
@@ -50,10 +50,14 @@ export default function BasicModal() {
   }, [setted]);
 
   useEffect(() => {
-    setCostoMensual(
-      (precio / membershipData.chunk) * membershipData.monthly_membership_cost
-    );
-  }, [precio]);
+    const costoMensualCalculado =
+      (precio / membershipData.chunk) * membershipData.monthly_membership_cost;
+
+    const costoMensualRedondeado = Math.round(costoMensualCalculado);
+
+    setCostoMensual(costoMensualRedondeado);
+  }, [precio, membershipData.chunk, membershipData.monthly_membership_cost]);
+
   const nav = useNavigate();
   const estiloLista = {
     background: "linear-gradient(to right, rgb(3, 180, 211), rgb(2, 80, 116))",
@@ -95,7 +99,7 @@ export default function BasicModal() {
   }, []);
 
   function handleData(member) {
-    setSetted(!setted)
+    setSetted(!setted);
     setMembershipData({
       id: member.id,
       name: member.name,

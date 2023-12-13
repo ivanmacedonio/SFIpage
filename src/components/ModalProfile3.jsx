@@ -28,7 +28,7 @@ export default function BasicModal3({ membershipData, activated }) {
   const [walletData, setWalletData] = React.useState("");
   const [errorsData, setErrorsData] = React.useState("");
   const [error, setError] = React.useState(false);
-  const [readOnly, setReadonly] = React.useState(false)
+  const [readOnly, setReadonly] = React.useState(false);
   const { register, handleSubmit } = useForm({
     shouldUseNativeValidation: true,
   });
@@ -37,22 +37,20 @@ export default function BasicModal3({ membershipData, activated }) {
     const errors = validateFormData(data.wallet1);
     console.log(errors);
     if (errors === "") {
-      if (data.wallet1.slice(-4) === data.wallet2){
+      if (data.wallet1.slice(-4) === data.wallet2) {
         setShow(true);
         setWalletData(data.wallet1);
         setError(false);
-        setReadonly(!readOnly)
+        setReadonly(!readOnly);
       } else {
         setErrorsData("Debes ingresar los ultimos 4 digitos de tu wallet");
-        setError(true)
+        setError(true);
       }
     } else {
       setError(true);
       setErrorsData(errors);
     }
   }
-
-
 
   return (
     <div>
@@ -79,8 +77,14 @@ export default function BasicModal3({ membershipData, activated }) {
             <div className="montos2">
               <div className="caja3">
                 <p>Monto de cuota mensual en USDT</p>
-                <h1>{membershipData.monthly_membership_cost * (membershipData.precio / 10000)}</h1>
+                <h1>
+                  {Math.round(
+                    membershipData.monthly_membership_cost *
+                      (membershipData.precio / 10000)
+                  )}
+                </h1>
               </div>
+
               <div className="caja3">
                 <p>Cantidad de cuotas mensuales</p>
                 <h1>{membershipData.maturity_period_in_months} </h1>
@@ -90,7 +94,7 @@ export default function BasicModal3({ membershipData, activated }) {
               <p>Ingresa tu wallet (debe ser de la red Ethereum)</p>
               <input
                 type="text"
-                readOnly = {readOnly}
+                readOnly={readOnly}
                 placeholder="Ingresa tu Wallet"
                 {...register("wallet1", {
                   required: "Ingresa una wallet valida",
@@ -99,7 +103,7 @@ export default function BasicModal3({ membershipData, activated }) {
               <p>Confirma tu wallet (últimos 4 digitos)</p>
               <input
                 type="text"
-                readOnly = {readOnly}
+                readOnly={readOnly}
                 placeholder="Confirma tu Wallet"
                 {...register("wallet2", {
                   required: "Ingresa los ultimos cuatro digitos",
@@ -130,7 +134,7 @@ export default function BasicModal3({ membershipData, activated }) {
                     <BasicModal4
                       membershipData={membershipData}
                       wallet={walletData}
-                      activated = {activated}
+                      activated={activated}
                     ></BasicModal4>
                   ) : (
                     ""
