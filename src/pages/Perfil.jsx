@@ -17,9 +17,10 @@ export const Perfil = () => {
   const [empty, setEmpty] = useState(false);
   const [active, setActive] = useState(false);
   const [estilo, setEstilo] = useState({ display: "none" });
-  const [isMember, setIsMember] = useState(false);
+  const [isMember, setIsMember] = useState(true);
   const [isVerificated, setIsVerificated] = useState(true);
   const [denegado, setDenegado] = useState(false);
+  const [memberDetail, setMemberDetail] = useState([])
 
   useEffect(() => {
     async function getUser() {
@@ -32,12 +33,6 @@ export const Perfil = () => {
           const res = await axios.get(`${BASE_URL}kyc/`, {
             headers,
           });
-          // if (res.data.KYC_Detail.state != "") {
-          //   setProfile(res.data.KYC_Detail);
-          // } else {
-          //   setEmpty(true);
-          // }
-          console.log(res.data.KYC_Detail);
           if (res.data.KYC_Detail) {
             switch (res.data.KYC_Detail.state) {
               case "":
@@ -63,12 +58,25 @@ export const Perfil = () => {
           }
         } catch (error) {
           setEmpty(true);
+          nav('/login')
         }
       } else {
         nav("/login");
       }
     }
+
+    async function getMember() {
+      const token = localStorage.getItem("access");
+      const headers = {
+        Authorization: `Bearer ${token}`,
+      };
+      const resMember = await axios.get(`${BASE_URL}purchase/`, {
+        headers: headers,
+      });
+      setMemberDetail(resMember.data[0].purchase_Detail)
+    }
     getUser();
+    getMember();
     window.scrollTo(0, 0);
   }, []);
 
@@ -127,7 +135,7 @@ export const Perfil = () => {
                     <h1 id="datosmem">Datos de membresía</h1>
                     <div className="caja">
                       <p>Tipo de membresía</p>
-                      <h2>Educativo a corto plazo</h2>
+                      <h2>{memberDetail.membership_name}</h2>
                     </div>
                     <div className="caja">
                       <p>Cuotas</p>
@@ -135,11 +143,11 @@ export const Perfil = () => {
                     </div>
                     <div className="caja">
                       <p>Cuota mensual</p>
-                      <h2 id="maduracion">416.68 USDT</h2>
+                      <h2 id="maduracion">{memberDetail.monthly_membership_cost}</h2>
                     </div>
                     <div className="caja">
                       <p>Fecha de inicio</p>
-                      <h2 id="fecha">1/2/3</h2>
+                      <h2 id="fecha">{memberDetail.created_date}</h2>
                     </div>
                     <div className="caja">
                       <h3 id="descargar">Descargar contrato</h3>
@@ -153,13 +161,13 @@ export const Perfil = () => {
                     </div>
                     <h1 id="bonificacionh1">Bonificacion proyectada</h1>
                     <div className="containerfechas">
-                      <div className="caja">
+                      <div className="caja" id="cajafecha">
                         <p>Fecha de inicio</p>
-                        <h2>1/12/15</h2>
+                        <h2>{memberDetail.created_date}</h2>
                       </div>
                       <div className="caja">
                         <p>Fecha de vencimiento</p>
-                        <h2>1/12/25</h2>
+                        <h2>-</h2>
                       </div>
                       <div className="caja">
                         <p>Cantidad de bonos</p>
@@ -167,15 +175,15 @@ export const Perfil = () => {
                       </div>
                       <div className="caja">
                         <p>Monto de cuota mensual en USDT</p>
-                        <h2>1.000 USDT</h2>
+                        <h2>{memberDetail.monthly_membership_cost}</h2>
                       </div>
-                      <div className="caja">
+                      <div className="caja" id="wallet2">
                         <p>Wallet</p>
-                        <h2>XXXXXXXX</h2>
+                        <h2 id="wallet">{memberDetail.wallet}</h2>
                       </div>
                       <div className="caja" id="full">
                         <p>Tiempo de maduracion</p>
-                        <h2>10 años</h2>
+                        <h2>{memberDetail.maturity_period_in_months} meses</h2>
                       </div>
                     </div>
                     <div className="texxt">

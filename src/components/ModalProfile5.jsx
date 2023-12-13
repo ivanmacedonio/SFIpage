@@ -125,6 +125,7 @@ export default function BasicModal5({
       console.log(error);
     }
   }
+  console.log(aditionalBeneficiaty)
 
   return (
     <div>

@@ -2,8 +2,12 @@
     margin-top: 3rem;
     border-radius: 1rem;
     display: flex;
+    width: 100%;
 }
 
+.formprofile2{
+    width: 50%;
+}
 .alert1{
     background-color: rgb(52, 52, 52);
     color: white;
@@ -44,6 +48,7 @@
     color: transparent;
     margin-left: 2rem;
     margin-top: 0;
+    width: fit-content
 }
 
 .formprofile1 {
@@ -63,7 +68,6 @@
     border-radius: 1rem;
     width: fit-content;
     padding: 0 2rem 0 2rem;
-    margin-left: auto;
     margin-top: 2rem;
     margin-bottom: 5rem;
 }
@@ -136,7 +140,7 @@
     background-color: rgb(52, 52, 52);
     border-radius: 3rem;
     padding: 1rem;
-    width: 42rem;
+    width: 100%;
 }
 
 .caja {
@@ -144,6 +148,8 @@
     flex: 1;
     color: white;
 }
+
+
 
 
 .form2 h2 {
@@ -167,37 +173,36 @@
     width: 10rem;
 }
 
-#fecha {
-    width: 7rem;
+#cajafecha{
+    width: 50%;
 }
 
 #quinquenio {
+    font-size: 1.8rem;
     margin-top: 2.5rem;
-    font-size: 1.2rem;
     margin-left: 1rem;
     background-color: rgb(2, 80, 116);
     height: fit-content;
     border-radius: 1rem;
     padding-left: 1rem;
     font-family: 'Lato', sans-serif;
-    padding-top: .3rem;
-    padding-bottom: .3rem;
+    padding: 1rem 2rem;
 }
 
 #descargar {
     font-family: 'Lato', sans-serif;
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: rgb(255, 255, 255);
     background: linear-gradient(to right, rgb(3, 180, 211), rgb(2, 80, 116));
     border-radius: 1rem;
-    padding-left: 1rem;
+    padding: .8rem 1rem;
     font-weight: 900;
     margin-bottom: 0;
     margin-top: 2.5rem;
 }
 
 #estadocuota {
-    margin-top: 2.5rem;
+    margin-top: 2rem;
     margin-left: 1rem;
 }
 
@@ -209,21 +214,24 @@
     font-weight: 700;
     background: linear-gradient(to right, rgb(3, 180, 211), rgb(2, 80, 116));
     margin: 2rem 0rem 2rem 4.5rem;
-    padding: 0 2rem 0 2rem;
+    padding: 1rem 2rem;
     border-radius: 1rem;
+    width: 80%;
+    text-align: center;
 }
 
 #bonificacionh1 {
-    font-size: 3rem;
+    font-size: 2rem;
     background: none;
     color: white;
     font-style: normal;
     font-weight: 700;
     margin: 2rem 0rem 2rem 1.5rem;
     background: linear-gradient(to right, rgb(3, 180, 211), rgb(2, 80, 116));
-    padding: 0rem 2rem 0rem 2rem;
+    padding: 0.5rem 2rem;
     border-radius: 1rem;
-
+    width: 100%;
+    text-align: center;
 }
 
 
@@ -241,7 +249,7 @@
 
 .containerfechas .caja h2 {
     width: 90%;
-    background: linear-gradient(to right, rgb(3, 180, 211), rgb(2, 80, 116));
+    background-color: rgb(107, 107, 107);
     color: white;
 }
 
@@ -311,6 +319,8 @@
     margin-top: 0;
     margin-bottom: 0;
 }
+
+
 
 .form2b h2 {
     width: 90%;
@@ -395,10 +405,11 @@
     color: white;
     margin-left: 3rem;
     margin-bottom: 2rem;
+    width: 100%;
 }
 
 .texxt p {
-    max-width: 35%;
+    max-width: 85%;
 }
 
 .form1 h2{
@@ -419,6 +430,10 @@
         background-color: rgb(2, 80, 116);
     }
 }
+
+
+
+
 
 @media only screen and (max-width: 767px) {
 
@@ -507,7 +522,7 @@
     }
 
     #wallet {
-        width: 100%;
+        width: 90%;
         margin-left: 0rem;
     }
 
@@ -606,6 +621,8 @@
         width: 22rem;
     }
 
+
+
     #datos {
         margin-left: 1rem;
         width: min-content;
@@ -636,7 +653,11 @@
         flex-direction: column;
         flex-wrap: nowrap;
         flex: 0;
-        width: 86%;
+        width: 100%;
+    }
+
+    .containerperfil2{
+        width: 100%;
     }
 
     #descargar {
@@ -675,6 +696,11 @@
         flex-direction: column;
     }
 
+    
+    .containerfechas .caja{
+        width: 100%;
+    }
+
     .containerfechas .caja h2 {
         width: 70%;
         margin-left: 1rem;
@@ -684,12 +710,13 @@
 
     #estadocuota {
         margin-left: 0;
+        margin-top: 2rem;
     }
 
     #full {
-        margin-right: 0;
         width: 100%;
         margin-top: 1rem;
+        margin-left: 0;
     }
 
     .texxt {
@@ -716,6 +743,16 @@
     .formprofile1{
         margin-left: 0;
     }
+
+    .formprofile2{
+        width: 85%;
+    }
+
+    #cajafecha{
+        width: 100%;
+    }
+
+    
 }
 
 @media (width: 430px) {
@@ -741,7 +778,7 @@
     }
 
     #full h2 {
-        width: 87%;
+        width: 70%;
     }
 
     .form2b {
@@ -932,7 +969,7 @@
         flex-direction: column;
         flex-wrap: nowrap;
         flex: 0;
-        width: 80%;
+        width: 100%;
     }
 
     #descargar {
@@ -975,13 +1012,17 @@
         flex-direction: column;
     }
 
+
     .containerfechas .caja h2 {
-        width: 100%;
+        width: 80%;
         margin-left: 0;
+        overflow-y: scroll;
     }
 
     #estadocuota {
-        margin-left: 0;
+        margin-left: 3rem;
+        margin-top: 2rem;
+        width: 80%;
     }
 
     #perfilh11 {
@@ -994,11 +1035,32 @@
     .alerta {
         margin-left: 2rem;
     }
+
+    .containerperfil2{
+        width: 100%;
+    }
+
+    .formprofile2{
+        width: 75%;
+    }
+
+    #cajafecha{
+        width: 75%;
+    }
 }
 
 
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+    
+    .containerperfil2{
+        width: 100%;
+    }
+
+    .formprofile2{
+        width: 75%;
+    }
 
     .texxt p {
         max-width: 30rem;
@@ -1214,8 +1276,10 @@
     }
 
     #cuotas {
-        width: 85%;
+        width: 100%;
     }
+
+   
 
     #quinquenio {
         font-size: 1.5rem;
@@ -1248,12 +1312,13 @@
     }
 
     .containerfechas .caja h2 {
-        width: 100%;
         margin-left: 0;
     }
 
     #estadocuota {
-        margin-left: 0;
+        margin-left: 5rem;
+        margin-top: 2rem;
+        width: 70%;
     }
 
     #perfilh11 {
@@ -1271,6 +1336,11 @@
         width: 30rem;
         margin-bottom: 40rem;
     }
+
+    #full{
+        width: 95%;
+    }
+
 }
 
 
@@ -1366,7 +1436,8 @@
     }
 
     #wallet {
-        width: 100%;
+        width: 94%;
+        overflow-y: scroll;
         margin-left: 0rem;
     }
 
@@ -1427,9 +1498,13 @@
     .alert1{
         width: 100%;
     }
+
+    .formprofile1{
+        margin-right: 5rem;
+    }
 }
 
-@media (min-width: 1600px) and (max-width: 1900px) {
+@media (min-width: 1599px) and (max-width: 1800px) {
     .texxt p {
         max-width: 30rem;
     }
@@ -1445,4 +1520,9 @@
     #btn-adicional {
         margin-left: 0;
     }
+    #estadocuota{
+        margin-left: 10rem;
+    }
+
+    
 }

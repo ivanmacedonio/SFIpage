@@ -36,7 +36,6 @@ export default function BasicModal2({ membershipData }) {
     formatearNumero();
   }, [membershipData]);
 
-  console.log(membershipData)
 
 
   const [open, setOpen] = React.useState(false);

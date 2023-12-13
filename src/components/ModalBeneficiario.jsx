@@ -34,7 +34,7 @@ export default function BasicModal6({ onEnviarDatos }) {
 
   function onSubmit(data) {
     if (data.percentage <= maxPercent) {
-      //setMaxPercent(maxPercent - data.percentage);
+      setMaxPercent(maxPercent - data.percentage);
       const per = data.percentage
       onEnviarDatos(data, maxPercent, per);
       handleClose();

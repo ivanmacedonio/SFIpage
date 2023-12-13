@@ -39,14 +39,13 @@ export default function BasicModal4({ membershipData, wallet }) {
     shouldUseNativeValidation: true,
   });
 
-  console.log(membershipData)
 
   function recibirBeneficiario(data, maxPercent, per) {
     setAditionalBeneficiaty((prevData) => {
       const newArray = Array.isArray(prevData) ? [...prevData, data] : [data];
       return newArray;
     });
-    setPercent(percentage - per);
+    setPercent(percentage - per)
   }
 
   function onSubmit(data) {
@@ -58,6 +57,7 @@ export default function BasicModal4({ membershipData, wallet }) {
 
   function handleClick() {
     const newData = { ...data, percentage };
+    console.log(percentage)
     if (setted === false) {
       setAditionalBeneficiaty((prevData) => {
         const newArray = Array.isArray(prevData)
