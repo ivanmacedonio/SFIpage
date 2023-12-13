@@ -19,6 +19,25 @@
     border-radius: 1rem;
 }
 
+.accor{
+    margin-top: 2rem;
+}
+
+#panel1a-header{
+    font-size: 2rem;
+    border-radius: 1rem;
+    margin-left: 2rem;
+}
+
+.css-1elwnq4-MuiPaper-root-MuiAccordion-root{
+    box-shadow: none !important;
+}
+
+.css-15v22id-MuiAccordionDetails-root{
+    padding: 1rem 0rem !important;
+}
+
+
 .alert1 h5{
     padding: 1rem 0;
 }
@@ -64,9 +83,10 @@
     color: white;
     border-radius: 1rem;
     width: 80%;
-    margin-top: 1rem;
+    margin-top: 0rem;
     margin-bottom: 5rem;
 }
+
 
 .alerta {
     max-width: 70%;
@@ -1496,7 +1516,7 @@
     }
 
     .formprofile1{
-        margin-right: 5rem;
+        margin-right: 3.5rem;
     }
 
     #descargar{
