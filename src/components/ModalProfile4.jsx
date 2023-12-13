@@ -31,6 +31,7 @@ export default function BasicModal4({ membershipData, wallet, activated }) {
   const [updatemembership, setUpdatemembership] = React.useState([]);
   const [aditionalBeneficiaty, setAditionalBeneficiaty] = React.useState([]);
   const [readOnly, setReadonly] = React.useState(false);
+  const [namefilter, setNamefilter] = React.useState('')
   const {
     register,
     handleSubmit,
@@ -56,6 +57,7 @@ export default function BasicModal4({ membershipData, wallet, activated }) {
 
   function handleClick() {
     const newData = { ...data, percentage };
+    setNamefilter(data.full_name)
     if (setted === false) {
       setAditionalBeneficiaty((prevData) => {
         const newArray = Array.isArray(prevData)
@@ -76,6 +78,11 @@ export default function BasicModal4({ membershipData, wallet, activated }) {
     setAditionalBeneficiaty(newBenef)
     setPercent(percentage +  number)
   }
+
+  React.useEffect(() => {
+    const newData = aditionalBeneficiaty.filter(persona => persona.full_name != namefilter)
+    setAditionalBeneficiaty(newData)
+  }, [aditionalBeneficiaty])
 
   return (
     <div>
