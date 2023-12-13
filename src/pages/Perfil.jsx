@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import estado from "../assets/Asset 26.png";
+import pendiente from '../assets/pendiente.png';
 import { HeaderNormal } from "../components/Header-normal";
 import BasicModal from "../components/ModalProfile1";
 import { BASE_URL } from "../hooks/fetch";
@@ -21,6 +22,7 @@ export const Perfil = () => {
   const [isVerificated, setIsVerificated] = useState(true);
   const [denegado, setDenegado] = useState(false);
   const [memberDetail, setMemberDetail] = useState([]);
+  const [image, setImage] = useState("");
 
   useEffect(() => {
     async function getUser() {
@@ -130,130 +132,165 @@ export const Perfil = () => {
         {empty ? (
           ""
         ) : (
+        
           <div className="formprofile2">
             <h1 id="deletemem">Membresía</h1>
 
             {isMember ? (
-              <div className="containerperfil2">
-                {isVerificated ? (
-                  <div className="form2">
-                    <h1 id="datosmem">Datos de membresía</h1>
-                    <div className="caja">
-                      <p>Tipo de membresía</p>
-                      <h2>{memberDetail.membership_name}</h2>
-                    </div>
-                    <div className="caja">
-                      <p>Cuotas</p>
-                      <h2 id="cuotas">24/24</h2>
-                    </div>
-                    <div className="caja">
-                      <p>Cuota mensual</p>
-                      <h2 id="maduracion">
-                        {memberDetail.monthly_membership_cost}
-                      </h2>
-                    </div>
-                    <div className="caja">
-                      <p>Fecha de inicio</p>
-                      <h2 id="fecha">{memberDetail.created_date}</h2>
-                    </div>
-                    <div className="caja">
-                      <h3 id="descargar">Descargar contrato</h3>
-                    </div>
-                    <div className="caja" id="quinquenio">
-                      <input type="checkbox" onClick={handleQuinquenio} />{" "}
-                      Retiro de quinquenio
-                    </div>
-                    <div className="caja" id="estadocuota">
-                      <img src={estado} alt="" />
-                    </div>
-                    <h1 id="bonificacionh1">Bonificacion proyectada</h1>
-                    <div className="containerfechas">
-                      <div className="caja" id="cajafecha">
-                        <p>Fecha de inicio</p>
-                        <h2>{memberDetail.created_date}</h2>
+              <div className="cont">
+                {memberDetail.map((membresia) => (
+                  <div className="containerperfil2">
+                    {isVerificated ? (
+                      <div className="form2">
+                        <h1 id="datosmem">Datos de membresía</h1>
+                        <div className="caja">
+                          <p>Tipo de membresía</p>
+                          <h2>{membresia.purchase_Detail.membership_name}</h2>
+                        </div>
+                        <div className="caja">
+                          <p>Cuotas</p>
+                          <h2 id="cuotas">24/24</h2>
+                        </div>
+                        <div className="caja">
+                          <p>Cuota mensual</p>
+                          <h2 id="maduracion">
+                            {membresia.purchase_Detail.monthly_membership_cost}
+                          </h2>
+                        </div>
+                        <div className="caja">
+                          <p>Fecha de inicio</p>
+                          <h2 id="fecha">
+                            {membresia.purchase_Detail.created_date}
+                          </h2>
+                        </div>
+                        <div className="caja">
+                          <h3 id="descargar">Descargar contrato</h3>
+                        </div>
+                        <div className="caja" id="quinquenio">
+                          <input type="checkbox" onClick={handleQuinquenio} />{" "}
+                          Retiro de quinquenio
+                        </div>
+                        <div className="caja" id="estadocuota">
+                          {membresia.purchase_Detail.contract_state ===
+                          "Activo" ? (
+                            <img src={estado} alt="" />
+                          ) : (
+                            <img src={pendiente} alt="" />
+                          )}
+                        </div>
+                        <h1 id="bonificacionh1">Bonificacion proyectada</h1>
+                        <div className="containerfechas">
+                          <div className="caja" id="cajafecha">
+                            <p>Fecha de inicio</p>
+                            <h2>{membresia.purchase_Detail.created_date}</h2>
+                          </div>
+                          <div className="caja">
+                            <p>Fecha de vencimiento</p>
+                            <h2>-</h2>
+                          </div>
+                          <div className="caja">
+                            <p>Cantidad de bonos</p>
+                            <h2>0/60</h2>
+                          </div>
+                          <div className="caja">
+                            <p>Monto de cuota mensual en USDT</p>
+                            <h2>
+                              {
+                                membresia.purchase_Detail
+                                  .monthly_membership_cost
+                              }
+                            </h2>
+                          </div>
+                          <div className="caja" id="wallet2">
+                            <p>Wallet</p>
+                            <h2 id="wallet">
+                              {membresia.purchase_Detail.wallet}
+                            </h2>
+                          </div>
+                          <div className="caja" id="full">
+                            <p>Tiempo de maduracion</p>
+                            <h2>
+                              {
+                                membresia.purchase_Detail
+                                  .maturity_period_in_months
+                              }{" "}
+                              meses
+                            </h2>
+                          </div>
+                        </div>
+                        <div className="texxt">
+                          <p>
+                            {" "}
+                            La maduracion de tu plan iniciara el proceso de
+                            maduracion por 10 años, una vez hayas alcanzado el
+                            estatus de "membresia activa" y cumplido con la
+                            cantidad de cuotas mensuales de tu membresia
+                          </p>
+                        </div>
                       </div>
-                      <div className="caja">
-                        <p>Fecha de vencimiento</p>
-                        <h2>-</h2>
+                    ) : (
+                      <div className="form2b">
+                        <h1 id="datosmemb">Datos de membresía</h1>
+                        <div className="caja" id="expand">
+                          <p>Tipo de membresía</p>
+                          <h2>{membresia.purchase_Detail.membership_name}</h2>
+                        </div>
+                        <div className="caja">
+                          <p>Cuotas</p>
+                          <h2>0/24</h2>
+                        </div>
+                        <div className="caja">
+                          <p>Tiempo de maduracion</p>
+                          <h2>
+                            {
+                              membresia.purchase_Detail
+                                .maturity_period_in_months
+                            }
+                          </h2>
+                        </div>
+                        <div className="caja">
+                          <p>Fecha de inicio</p>
+                          <h2>{membresia.purchase_Detail.created_date}</h2>
+                        </div>
+                        <div className="caja">
+                          <h3 id="pending">Pendiente de firmar</h3>
+                        </div>
+                        <div className="caja" id="quinqueniob">
+                          <input type="checkbox" onClick={handleQuinquenio} />{" "}
+                          Retiro de quinquenio
+                        </div>
+                        <h1 id="bonificacionh1b">Bonificacion proyectada</h1>
+                        <div className="containerfechasb">
+                          <div className="caja">
+                            <p>Fecha de inicio</p>
+                            <h2>{membresia.purchase_Detail.created_date}</h2>
+                          </div>
+                          <div className="caja">
+                            <p>Fecha de vencimiento</p>
+                            <h2>-</h2>
+                          </div>
+                          <div className="caja">
+                            <p>Cantidad de bonos</p>
+                            <h2>0/240</h2>
+                          </div>
+                          <div className="caja" id="paddi">
+                            <p>Monto de cuota mensual en USDT</p>
+                            <h2>
+                              {
+                                membresia.purchase_Detail
+                                  .monthly_membership_cost
+                              }
+                            </h2>
+                          </div>
+                          <div className="caja" id="wallet">
+                            <p>Wallet</p>
+                            <h2>{membresia.purchase_Detail.wallet}</h2>
+                          </div>
+                        </div>
                       </div>
-                      <div className="caja">
-                        <p>Cantidad de bonos</p>
-                        <h2>0/60</h2>
-                      </div>
-                      <div className="caja">
-                        <p>Monto de cuota mensual en USDT</p>
-                        <h2>{memberDetail.monthly_membership_cost}</h2>
-                      </div>
-                      <div className="caja" id="wallet2">
-                        <p>Wallet</p>
-                        <h2 id="wallet">{memberDetail.wallet}</h2>
-                      </div>
-                      <div className="caja" id="full">
-                        <p>Tiempo de maduracion</p>
-                        <h2>{memberDetail.maturity_period_in_months} meses</h2>
-                      </div>
-                    </div>
-                    <div className="texxt">
-                      <p>
-                        {" "}
-                        La maduracion de tu plan iniciara el proceso de
-                        maduracion por 10 años, una vez hayas alcanzado el
-                        estatus de "membresia activa" y cumplido con la cantidad
-                        de cuotas mensuales de tu membresia
-                      </p>
-                    </div>
+                    )}
                   </div>
-                ) : (
-                  <div className="form2b">
-                    <h1 id="datosmemb">Datos de membresía</h1>
-                    <div className="caja" id="expand">
-                      <p>Tipo de membresía</p>
-                      <h2>Educativo a corto plazo</h2>
-                    </div>
-                    <div className="caja">
-                      <p>Cuotas</p>
-                      <h2>24/24</h2>
-                    </div>
-                    <div className="caja">
-                      <p>Tiempo de maduracion</p>
-                      <h2>2 meses</h2>
-                    </div>
-                    <div className="caja">
-                      <p>Fecha de inicio</p>
-                      <h2>1/2/3</h2>
-                    </div>
-                    <div className="caja">
-                      <h3 id="pending">Pendiente de firmar</h3>
-                    </div>
-                    <div className="caja" id="quinqueniob">
-                      <input type="checkbox" onClick={handleQuinquenio} />{" "}
-                      Retiro de quinquenio
-                    </div>
-                    <h1 id="bonificacionh1b">Bonificacion proyectada</h1>
-                    <div className="containerfechasb">
-                      <div className="caja">
-                        <p>Fecha de inicio</p>
-                        <h2>1/12/15</h2>
-                      </div>
-                      <div className="caja">
-                        <p>Fecha de vencimiento</p>
-                        <h2>1/12/25</h2>
-                      </div>
-                      <div className="caja">
-                        <p>Cantidad de bonos</p>
-                        <h2>0/240</h2>
-                      </div>
-                      <div className="caja" id="paddi">
-                        <p>Monto de cuota mensual en USDT</p>
-                        <h2>1000 USDT</h2>
-                      </div>
-                      <div className="caja" id="wallet">
-                        <p>Wallet</p>
-                        <h2>XXXX</h2>
-                      </div>
-                    </div>
-                  </div>
-                )}
+                ))}
               </div>
             ) : (
               <div className="noMember">
