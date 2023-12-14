@@ -31,7 +31,7 @@ export default function BasicModal4({ membershipData, wallet, activated }) {
   const [updatemembership, setUpdatemembership] = React.useState([]);
   const [aditionalBeneficiaty, setAditionalBeneficiaty] = React.useState([]);
   const [readOnly, setReadonly] = React.useState(false);
-  const [namefilter, setNamefilter] = React.useState('')
+  const [namefilter, setNamefilter] = React.useState("");
   const {
     register,
     handleSubmit,
@@ -57,7 +57,7 @@ export default function BasicModal4({ membershipData, wallet, activated }) {
 
   function handleClick() {
     const newData = { ...data, percentage };
-    setNamefilter(data.full_name)
+    setNamefilter(data.full_name);
     if (setted === false) {
       setAditionalBeneficiaty((prevData) => {
         const newArray = Array.isArray(prevData)
@@ -71,18 +71,22 @@ export default function BasicModal4({ membershipData, wallet, activated }) {
     }
   }
 
-  function handleDeleteBenef(beneficiario){
-    let name = beneficiario.full_name
-    let number = parseFloat(beneficiario.percentage)
-    const newBenef = aditionalBeneficiaty.filter(persona => persona.full_name != name)
-    setAditionalBeneficiaty(newBenef)
-    setPercent(percentage +  number)
+  function handleDeleteBenef(beneficiario) {
+    let name = beneficiario.full_name;
+    let number = parseFloat(beneficiario.percentage);
+    const newBenef = aditionalBeneficiaty.filter(
+      (persona) => persona.full_name != name
+    );
+    setAditionalBeneficiaty(newBenef);
+    setPercent(percentage + number);
   }
 
   React.useEffect(() => {
-    const newData = aditionalBeneficiaty.filter(persona => persona.full_name != namefilter)
-    setAditionalBeneficiaty(newData)
-  }, [aditionalBeneficiaty])
+    const newData = aditionalBeneficiaty.filter(
+      (persona) => persona.full_name != namefilter
+    );
+    setAditionalBeneficiaty(newData);
+  }, [aditionalBeneficiaty]);
 
   return (
     <div>
@@ -108,10 +112,17 @@ export default function BasicModal4({ membershipData, wallet, activated }) {
             {aditionalBeneficiaty.map((beneficiario) => (
               <div className="box">
                 <label>
-                <h3>{beneficiario.full_name}</h3>
-                <h5>{beneficiario.percentage}%</h5>
+                  <h3>{beneficiario.full_name}</h3>
+                  <h5>{beneficiario.percentage}%</h5>
                 </label>
-                <h3 id="cruz" onClick={()=> {handleDeleteBenef(beneficiario)}}>X</h3>
+                <h3
+                  id="cruz"
+                  onClick={() => {
+                    handleDeleteBenef(beneficiario);
+                  }}
+                >
+                  X
+                </h3>
               </div>
             ))}
           </div>
