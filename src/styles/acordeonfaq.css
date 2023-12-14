@@ -7,9 +7,16 @@
 #panel1a-header, #panel2a-header{
     background-color: rgba(59, 50, 163, 0.938);
     color: white;
+    margin-left: 0 !important;
+    border-radius: 1rem;
+    margin-top: 1rem;
 }
 
 #panel1a-header p::before, #panel2a-header p::before{
     content: '+';
     margin-right: 1rem;
+}
+
+.acordeon p{
+    margin-left: 1rem;;
 }
