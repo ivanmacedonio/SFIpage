@@ -23,20 +23,20 @@ function App() {
       <BrowserRouter>
         <PurchaseProvider>
           <Routes>
-            <Route path="/" element={<Page1 />} />
-            <Route path="/nosotros" element={<Page2 />} />
-            <Route path="/afiliacion" element={<Page3 />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/membresia" element={<Membresia />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/faq" element={<FAQ />} />
-            <Route path="/contacto" element={<Contacto />} />
-            <Route path="/inicio" element={<Inicio />} />
-            <Route path="/perfil" element={<Perfil />} />
-            <Route path="/verificacion" element={<Verificacion />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/checkout" element={<Checkout />} />
-            <Route path="/404" element={<Error404 />} />
+            <Route exact path="/" element={<Page1 />} />
+            <Route exact path="/nosotros" element={<Page2 />} />
+            <Route exact path="/afiliacion" element={<Page3 />} />
+            <Route exact path="/register" element={<Register />} />
+            <Route exact path="/membresia" element={<Membresia />} />
+            <Route exact path="/blog" element={<Blog />} />
+            <Route exact path="/faq" element={<FAQ />} />
+            <Route exact path="/contacto" element={<Contacto />} />
+            <Route exact path="/inicio" element={<Inicio />} />
+            <Route exact path="/perfil" element={<Perfil />} />
+            <Route exact path="/verificacion" element={<Verificacion />} />
+            <Route exact path="/login" element={<Login />} />
+            <Route exact path="/checkout" element={<Checkout />} />
+            <Route path="*" element={<Error404 />} />
           </Routes>
         </PurchaseProvider>
       </BrowserRouter>
