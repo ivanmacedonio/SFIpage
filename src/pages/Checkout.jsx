@@ -13,13 +13,35 @@ export const Checkout = () => {
       nav("/");
     }, 3500);
     if (canceled === "true") {
-      console.log("canceled");
+      Reset()
     } else {
       Purchase();
     }
 
     return () => clearTimeout(timer);
   }, []);
+
+  async function Reset() {
+    const token = localStorage.getItem("access");
+    if (token) {
+      const headers = {
+        Authorization: `Bearer ${token}`,
+      };
+      const params = {
+        _cacheBuster: new Date().getTime(),
+      };
+      try {
+        const res2 = await axios.get(`${BASE_URL}get_user_selections/`, {
+          headers: headers,
+          params: params,
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    } else {
+      console.log("err");
+    }
+  }
 
   async function Purchase() {
     const token = localStorage.getItem("access");
@@ -33,12 +55,12 @@ export const Checkout = () => {
       try {
         const res2 = await axios.get(`${BASE_URL}get_user_selections/`, {
           headers: headers,
-          params: params
+          params: params,
         });
         console.log(res2.data);
         const res = await axios.post(`${BASE_URL}purchase/`, res2.data, {
           headers: headers,
-          params: params
+          params: params,
         });
         console.log(res);
       } catch (error) {
