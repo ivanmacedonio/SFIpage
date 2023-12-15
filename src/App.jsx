@@ -1,21 +1,21 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import './src/App.css';
-import { PurchaseProvider } from "./src/context/PurchaseContext";
-import { Blog } from "./src/pages/Blog";
-import { Checkout } from "./src/pages/Checkout";
-import { Contacto } from "./src/pages/Contacto";
-import { Error404 } from "./src/pages/Error404";
-import { FAQ } from "./src/pages/FAQ";
-import { Inicio } from "./src/pages/Inicio";
-import { Login } from "./src/pages/Login";
-import { Membresia } from "./src/pages/Membresia";
-import { Page1 } from "./src/pages/Page1";
-import { Page2 } from "./src/pages/Page2";
-import { Page3 } from "./src/pages/Page3";
-import { Perfil } from "./src/pages/Perfil";
-import { Register } from "./src/pages/Register";
-import { Verificacion } from "./src/pages/Verificacion";
+import './App.css';
+import { PurchaseProvider } from "./context/PurchaseContext";
+import { Blog } from "./pages/Blog";
+import { Checkout } from "./pages/Checkout";
+import { Contacto } from "./pages/Contacto";
+import { Error404 } from "./pages/Error404";
+import { FAQ } from "./pages/FAQ";
+import { Inicio } from "./pages/Inicio";
+import { Login } from "./pages/Login";
+import { Membresia } from "./pages/Membresia";
+import { Page1 } from "./pages/Page1";
+import { Page2 } from "./pages/Page2";
+import { Page3 } from "./pages/Page3";
+import { Perfil } from "./pages/Perfil";
+import { Register } from "./pages/Register";
+import { Verificacion } from "./pages/Verificacion";
 function App() {
   return (
     <>
