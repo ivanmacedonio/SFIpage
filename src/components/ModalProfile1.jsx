@@ -81,9 +81,13 @@ export default function BasicModal() {
         const headers = {
           Authorization: `Bearer ${token}`,
         };
+        const params = {
+          _cacheBuster: new Date().getTime(),
+        };
         try {
           const res = await axios.get(`${BASE_URL}membership/`, {
             headers,
+            params: params
           });
           setMembership(res.data);
         } catch (error) {

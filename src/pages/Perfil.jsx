@@ -35,9 +35,14 @@ export const Perfil = () => {
         const headers = {
           Authorization: `Bearer ${token}`,
         };
+        const params = {
+          _cacheBuster: new Date().getTime(),
+        };
         try {
           const res = await axios.get(`${BASE_URL}kyc/`, {
             headers,
+            params: params
+
           });
           if (res.data.KYC_Detail) {
             switch (res.data.KYC_Detail.state) {
@@ -76,8 +81,12 @@ export const Perfil = () => {
       const headers = {
         Authorization: `Bearer ${token}`,
       };
+      const params = {
+        _cacheBuster: new Date().getTime(),
+      };
       const resMember = await axios.get(`${BASE_URL}purchase/`, {
         headers: headers,
+        params: params
       });
       setMemberDetail(resMember.data);
       if (resMember.data) {

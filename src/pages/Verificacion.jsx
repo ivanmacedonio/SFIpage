@@ -19,10 +19,14 @@ export const Verificacion = () => {
       const headers = {
         Authorization: `Bearer ${token}`,
       };
+      const params = {
+        _cacheBuster: new Date().getTime(),
+      };
       if (token) {
         try {
           const res = await axios.get(`${BASE_URL}kyc/`, {
             headers: headers,
+            params: params
           });
 
           if (res.data.KYC_Detail.state != "") {
@@ -69,6 +73,9 @@ export const Verificacion = () => {
       const headers = {
         Authorization: `Bearer ${token}`,
       };
+      const params = {
+        _cacheBuster: new Date().getTime(),
+      };
       const formData = new FormData();
       formData.append("full_name", data.full_name);
       formData.append("nationality", data.nationality);
@@ -82,6 +89,7 @@ export const Verificacion = () => {
       try {
         const res = await axios.post(`${BASE_URL}kyc/`, formData, {
           headers: headers,
+          params: params
         });
         nav("/");
         console.log(data);

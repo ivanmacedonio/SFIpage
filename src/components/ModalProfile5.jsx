@@ -45,10 +45,14 @@ export default function BasicModal5({
       const headers = {
         Authorization: `Bearer ${token}`,
       };
+      const params = {
+        _cacheBuster: new Date().getTime(),
+      };
       if (token) {
         try {
           const res1 = await axios.get(`${BASE_URL}kyc/`, {
             headers,
+            params: params
           });
           setKycdata(res1.data.KYC_Detail);
           setId(res1.data.KYC_Detail.identification);
@@ -77,6 +81,9 @@ export default function BasicModal5({
       const headers = {
         Authorization: `Bearer ${token}`,
       };
+      const params = {
+        _cacheBuster: new Date().getTime(),
+      };
       if (token) {
         if (check === true) {
           const res = await axios.post(
@@ -84,6 +91,7 @@ export default function BasicModal5({
             datapurchase,
             {
               headers: headers,
+              params: params
             }
           );
           const aditionalBeneficiaries = aditionalBeneficiaty.map(
@@ -110,6 +118,7 @@ export default function BasicModal5({
             dataP,
             {
               headers: headers,
+              params: params
             }
           );
           window.location.href = `${res.data.detalleRespuesta.url}`;

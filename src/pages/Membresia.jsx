@@ -54,11 +54,15 @@ export const Membresia = () => {
         const headers = {
           Authorization: `Bearer ${token}`,
         };
+        const params = {
+          _cacheBuster: new Date().getTime(),
+        };
         try {
           const res = await axios.get(
             `${BASE_URL}membership/`,
             {
-              headers: headers
+              headers: headers,
+              params: params
             }
           );
           setIsLogin(true);

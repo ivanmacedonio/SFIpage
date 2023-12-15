@@ -27,13 +27,18 @@ export const Checkout = () => {
       const headers = {
         Authorization: `Bearer ${token}`,
       };
+      const params = {
+        _cacheBuster: new Date().getTime(),
+      };
       try {
         const res2 = await axios.get(`${BASE_URL}get_user_selections/`, {
           headers: headers,
+          params: params
         });
         console.log(res2.data);
         const res = await axios.post(`${BASE_URL}purchase/`, res2.data, {
           headers: headers,
+          params: params
         });
         console.log(res);
       } catch (error) {
