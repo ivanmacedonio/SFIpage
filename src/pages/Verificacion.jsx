@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { HeaderNormal } from "../components/Header-normal";
@@ -12,6 +12,14 @@ export const Verificacion = () => {
     shouldUseNativeValidation: true,
   });
   const [verificado, setVerificado] = useState(true);
+  const [checked, setChecked] = useState(false);
+  const [error, setError] = useState("");
+  const [estiloError, setEstiloError] = useState({
+    display: "none",
+  });
+  const divRef = useRef(null);
+  const nodoDiv = divRef.current;
+
   useEffect(() => {
     window.scrollTo(0, 0);
     async function getUser() {
@@ -86,15 +94,20 @@ export const Verificacion = () => {
       formData.append("address", data.address);
       formData.append("gender", data.gender);
       formData.append("identification_file", archivo);
-      try {
+
+      if (isFile === false || checked === false) {
+        setError("Para continuar debes completar todos los campos");
+        setEstiloError({
+          display: "block",
+        });
+        nodoDiv.scrollIntoView({ behavior: "smooth" });
+      } else {
         const res = await axios.post(`${BASE_URL}kyc/`, formData, {
           headers: headers,
           params: params,
         });
         nav("/");
         console.log(data);
-      } catch (error) {
-        console.log(error);
       }
     } else {
       nav("/login");
@@ -226,7 +239,12 @@ export const Verificacion = () => {
                 ""
               )}
               <div className="slot" id="checkb">
-                <input type="checkbox" />{" "}
+                <input
+                  type="checkbox"
+                  onClick={() => {
+                    setChecked(!checked);
+                  }}
+                />{" "}
                 <p>
                   Al hacer clic aquí, confirma que ha leído y acepta los
                   <a href="https://www.smartfutureincome.com/media/terminos.pdf">
@@ -239,6 +257,9 @@ export const Verificacion = () => {
               </div>
               <div className="slot" id="enviar">
                 <button type="submit">Enviar</button>
+              </div>
+              <div className="error" style={estiloError} ref={divRef}>
+                <h3>{error}</h3>
               </div>
             </form>
           </div>
