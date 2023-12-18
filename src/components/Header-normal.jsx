@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import baricon from "../assets/header-icon.svg";
 import logo from "../assets/logoSPI.png";
+import { BASE_URL } from '../hooks/fetch';
 import "../styles/headerNormal.css";
 
 export const HeaderNormal = () => {
@@ -29,7 +30,7 @@ export const HeaderNormal = () => {
       const headers = {
         Authorization: `Bearer ${token}`,
       };
-      const res = await axios.get("http://localhost:9000/api/verify/", {
+      const res = await axios.get(`${BASE_URL}verify/`, {
         headers: headers,
       });
       console.log(res.status);
