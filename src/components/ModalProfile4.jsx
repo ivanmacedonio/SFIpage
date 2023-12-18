@@ -142,7 +142,7 @@ export default function BasicModal4({ membershipData, wallet, activated }) {
                 />
               </div>
               <div className="caja4">
-                <p>Identificacion</p>
+                <p>Identificación</p>
                 <input
                   type="text"
                   readOnly={readOnly}
@@ -153,7 +153,7 @@ export default function BasicModal4({ membershipData, wallet, activated }) {
                 />
               </div>
               <div className="caja4">
-                <p>Telefono</p>
+                <p>Teléfono</p>
                 <input
                   type="text"
                   readOnly={readOnly}
@@ -169,7 +169,7 @@ export default function BasicModal4({ membershipData, wallet, activated }) {
                 </div>
               </div>
               <div className="caja4">
-                <p>Correo electronico</p>
+                <p>Correo electrónico</p>
                 <input
                   type="email"
                   readOnly={readOnly}

@@ -3,6 +3,8 @@
     display: flex;
 }
 
+
+
 .textverif h1 {
     font-family: 'Lato', sans-serif;
     font-weight: 900;
@@ -10,6 +12,20 @@
     font-size: 5rem;
     width: 45rem;
 }
+
+.no-spinner {
+    /* Oculta las flechas de aumento y decremento en el input de tipo number */
+    -moz-appearance: textfield;
+    appearance: textfield;
+  }
+  
+  .no-spinner::-webkit-inner-spin-button,
+  .no-spinner::-webkit-outer-spin-button {
+    /* Oculta las flechas en navegadores WebKit (como Chrome y Safari) */
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
 
 .alertaverif {
     background-color: rgb(52, 52, 52);

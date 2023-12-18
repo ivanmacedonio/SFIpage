@@ -169,7 +169,7 @@ export default function BasicModal() {
                       </output>
                     </div>
 
-                    <p>Acumulacion para membresía activa</p>
+                    <p>Acumulación para membresía activa</p>
                     <h2>{membershipData.savings_duration_in_months} </h2>
                     <p>Monto de cuota mensual en USDT</p>
                     {costoMenual ? (
@@ -177,7 +177,7 @@ export default function BasicModal() {
                     ) : (
                       <h2> {membershipData.monthly_membership_cost}</h2>
                     )}
-                    <p>Maduracion de membresía activa</p>
+                    <p>Maduración de membresía activa</p>
                     <h2>{membershipData.maturity_period_in_months}</h2>
                   </div>
 

@@ -26,7 +26,7 @@ export const Verificacion = () => {
         try {
           const res = await axios.get(`${BASE_URL}kyc/`, {
             headers: headers,
-            params: params
+            params: params,
           });
 
           if (res.data.KYC_Detail.state != "") {
@@ -44,15 +44,15 @@ export const Verificacion = () => {
 
     async function getCountries() {
       const resC = await axios.get("https://restcountries.com/v2/all");
-      setCountries(resC.data)
+      setCountries(resC.data);
     }
     getUser();
-    getCountries()
+    getCountries();
   }, []);
 
   const [archivo, setArchivo] = useState(null);
   const [isFile, setIsFile] = useState(false);
-  const [countries, setCountries] = useState([])
+  const [countries, setCountries] = useState([]);
 
   function handleFileChange(e) {
     if (e.target.type === "file") {
@@ -89,7 +89,7 @@ export const Verificacion = () => {
       try {
         const res = await axios.post(`${BASE_URL}kyc/`, formData, {
           headers: headers,
-          params: params
+          params: params,
         });
         nav("/");
         console.log(data);
@@ -147,9 +147,11 @@ export const Verificacion = () => {
                     required: "Por favor ingresa una nacionalidad valida",
                   })}
                 /> */}
-                <select {...register('nationality', {
-                  required: 'Por favor selecciona una nacionalidad valida'
-                })}>
+                <select
+                  {...register("nationality", {
+                    required: "Por favor selecciona una nacionalidad valida",
+                  })}
+                >
                   {countries.map((country) => (
                     <option value={country.name}> {country.name}</option>
                   ))}
@@ -172,11 +174,13 @@ export const Verificacion = () => {
               <div className="slot">
                 <p>Telefono</p>
                 <input
+                  id="phone"
                   type="number"
                   placeholder="Ingresa tu Telefono"
                   {...register("phone", {
                     required: "Por favor ingresa un telefono valido",
                   })}
+                  className="no-spinner"
                 />
               </div>
               <div className="slot">
@@ -225,7 +229,7 @@ export const Verificacion = () => {
                 <input type="checkbox" />{" "}
                 <p>
                   Al hacer clic aquí, confirma que ha leído y acepta los
-                  <a href="https://smartprofitinvestments-my.sharepoint.com/personal/transformacion_spiglobal_net/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Ftransformacion%5Fspiglobal%5Fnet%2FDocuments%2FMicrosoft%20Teams%20Chat%20Files%2FT%C3%89RMINOS%20DE%20USO%20DE%20BENEFICIO%20SFI%2Epdf&parent=%2Fpersonal%2Ftransformacion%5Fspiglobal%5Fnet%2FDocuments%2FMicrosoft%20Teams%20Chat%20Files&ga=1">
+                  <a href="https://www.smartfutureincome.com/media/terminos.pdf">
                     {" "}
                     términos de uso
                   </a>

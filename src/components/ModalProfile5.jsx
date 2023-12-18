@@ -52,7 +52,7 @@ export default function BasicModal5({
         try {
           const res1 = await axios.get(`${BASE_URL}kyc/`, {
             headers,
-            params: params
+            params: params,
           });
           setKycdata(res1.data.KYC_Detail);
           setId(res1.data.KYC_Detail.identification);
@@ -91,7 +91,7 @@ export default function BasicModal5({
             datapurchase,
             {
               headers: headers,
-              params: params
+              params: params,
             }
           );
           const aditionalBeneficiaries = aditionalBeneficiaty.map(
@@ -112,13 +112,13 @@ export default function BasicModal5({
             ind_bonus_will_be_redeemed: activated,
             beneficiaries: aditionalBeneficiaries,
           };
-          
+
           const res2 = await axios.post(
             `${BASE_URL}store_user_selections/`,
             dataP,
             {
               headers: headers,
-              params: params
+              params: params,
             }
           );
           window.location.href = `${res.data.detalleRespuesta.url}`;
@@ -148,9 +148,9 @@ export default function BasicModal5({
       >
         <Box sx={style}>
           <div className="modal5" id="scrolleableTransfer">
-            <h1 id="res">Resumen de tu membresia</h1>
+            <h1 id="res">Resumen de tu membresía</h1>
             <div className="t">
-              <p>Membresia:</p>
+              <p>Membresía:</p>
               <h3>{membershipData.name}</h3>
             </div>
             <div className="t">
@@ -158,7 +158,7 @@ export default function BasicModal5({
               <h3>{membershipData.precio} USDT</h3>
             </div>
             <div className="t">
-              <p>Acumulacion para membresia activa:</p>
+              <p>Acumulación para membresía activa:</p>
               <h3>{membershipData.savings_duration_in_months} meses</h3>
             </div>
             <div className="t">
@@ -170,7 +170,7 @@ export default function BasicModal5({
               </h3>
             </div>
             <div className="t">
-              <p>Maduracion de membresia activa:</p>
+              <p>Maduración de membresía activa:</p>
               <h3>{membershipData.maturity_period_in_months} Meses</h3>
             </div>
             <h1>Seleccion de bono redimible:</h1>
@@ -209,15 +209,15 @@ export default function BasicModal5({
               <h3>{username}</h3>
             </div>
             <div className="t">
-              <p>Identificacion:</p>
+              <p>Identificación:</p>
               <h3>{kycdata.identification}</h3>
             </div>
             <div className="t">
-              <p>Correo electronico:</p>
+              <p>Correo electrónico:</p>
               <h3>{kycdata.email}</h3>
             </div>
             <div className="t">
-              <p>Telefono:</p>
+              <p>Teléfono:</p>
               <h3>{kycdata.phone}</h3>
             </div>
 
@@ -228,8 +228,8 @@ export default function BasicModal5({
                   setCheck(!check);
                 }}
               />
-              Al hacer click aqui, acepto los terminos de uso, la Politica de
-              privacidad y acepta que sus datos seran enviados a SFI
+              Al hacer clic aquí, acepto los términos de uso, la política de
+              privacidad y acepto que sus datos serán enviados a SFI
             </label>
           </div>
           {check ? (

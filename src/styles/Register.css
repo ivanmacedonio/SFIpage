@@ -11,6 +11,22 @@ img {
     max-width: 100%;
     display: flex;
 }
+
+.passcontainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.passcontainer img{
+    width:2rem;
+    background-color: white;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+    cursor: pointer;
+}
+
 .errorRegister{
     color: white;
     font-family: 'Lato', sans-serif;

@@ -1,5 +1,6 @@
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import baricon from "../assets/header-icon.svg";
@@ -8,7 +9,7 @@ import "../styles/headerNormal.css";
 
 export const HeaderNormal = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
-  const [isLogin, setIsLogin] = useState();
+  const [isLogin, setIsLogin] = useState(false);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -18,19 +19,39 @@ export const HeaderNormal = () => {
   };
 
   const [menuAbierto, setMenuAbierto] = useState(false);
-
   function toggleMenu() {
     setMenuAbierto(!menuAbierto);
   }
 
+  async function getVerify() {
+    try {
+      const token = localStorage.getItem("access");
+      const headers = {
+        Authorization: `Bearer ${token}`,
+      };
+      const res = await axios.get("http://localhost:9000/api/verify/", {
+        headers: headers,
+      });
+      console.log(res.status);
+      if (res.status === 200) {
+        setIsLogin(true);
+      } else {
+        setIsLogin(false)
+      }
+    } catch (error) {
+      setIsLogin(false);
+    }
+  }
+
   useEffect(() => {
     const token = localStorage.getItem("access");
+
     if (token) {
-      setIsLogin(true);
+      getVerify();
     } else {
-      setIsLogin(false)
+      setIsLogin(false);
     }
-  });
+  }, []);
 
   const nav = useNavigate();
 
@@ -100,10 +121,10 @@ export const HeaderNormal = () => {
         ) : (
           <Link to={"/login"}>
             {" "}
-            <h2 id="session">Iniciar sesion</h2>{" "}
+            <h2 id="session">Iniciar sesión</h2>{" "}
           </Link>
         )}
-        {isLogin ? <h2 onClick={handleOnClick}>Cerrar sesion</h2> : ""}
+        {isLogin ? <h2 onClick={handleOnClick}>Cerrar sesión</h2> : ""}
       </div>
       {menuAbierto && (
         <div className="hamburguesa">
@@ -114,7 +135,7 @@ export const HeaderNormal = () => {
             <h2>Nosotros</h2>
           </Link>
           <Link to={"/afiliacion"}>
-            <h2>Afiliacion</h2>
+            <h2>Afiliación</h2>
           </Link>
 
           <h2
@@ -157,10 +178,10 @@ export const HeaderNormal = () => {
           ) : (
             <Link to={"/login"}>
               {" "}
-              <h2 id="session">Iniciar sesion</h2>{" "}
+              <h2 id="session">Iniciar sesión</h2>{" "}
             </Link>
           )}
-          {isLogin ? <h2 onClick={handleOnClick}>Cerrar sesion</h2> : ""}
+          {isLogin ? <h2 onClick={handleOnClick}>Cerrar sesión</h2> : ""}
         </div>
       )}
     </div>

@@ -36,8 +36,6 @@ export default function BasicModal2({ membershipData }) {
     formatearNumero();
   }, [membershipData]);
 
-
-
   const [open, setOpen] = React.useState(false);
   const [activated, setIsActivated] = React.useState(true);
   const handleOpen = () => setOpen(true);
@@ -64,7 +62,7 @@ export default function BasicModal2({ membershipData }) {
             >
               X
             </h3>
-            <h1>Seleccion de bono redimible</h1>
+            <h1>Selección de bono redimible</h1>
             <p>
               Este bono representa un porcentaje de la totalidad de USDT que ha
               contribuido al valor de su membresía. Puede ser redimido al
@@ -104,7 +102,7 @@ export default function BasicModal2({ membershipData }) {
             <BasicModal3
               id="continuar"
               membershipData={membershipData}
-              activated = {activated}
+              activated={activated}
             ></BasicModal3>
           </div>
         </Box>

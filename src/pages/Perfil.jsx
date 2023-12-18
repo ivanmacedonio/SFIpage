@@ -41,8 +41,7 @@ export const Perfil = () => {
         try {
           const res = await axios.get(`${BASE_URL}kyc/`, {
             headers,
-            params: params
-
+            params: params,
           });
           if (res.data.KYC_Detail) {
             switch (res.data.KYC_Detail.state) {
@@ -86,7 +85,7 @@ export const Perfil = () => {
       };
       const resMember = await axios.get(`${BASE_URL}purchase/`, {
         headers: headers,
-        params: params
+        params: params,
       });
       setMemberDetail(resMember.data);
       if (resMember.data) {
@@ -158,7 +157,9 @@ export const Perfil = () => {
                         aria-controls="panel1a-content"
                         id="panel1a-header"
                       >
-                        <Typography style={{fontSize: '2rem'}}>{membresia.purchase_Detail.membership_name}</Typography>
+                        <Typography style={{ fontSize: "2rem" }}>
+                          {membresia.purchase_Detail.membership_name}
+                        </Typography>
                       </AccordionSummary>
                       <AccordionDetails>
                         <div className="containerperfil2">
@@ -209,7 +210,7 @@ export const Perfil = () => {
                                 )}
                               </div>
                               <h1 id="bonificacionh1">
-                                Bonificacion proyectada
+                                Bonificación proyectada
                               </h1>
                               <div className="containerfechas">
                                 <div className="caja" id="cajafecha">
@@ -242,7 +243,7 @@ export const Perfil = () => {
                                   </h2>
                                 </div>
                                 <div className="caja" id="full">
-                                  <p>Tiempo de maduracion</p>
+                                  <p>Tiempo de maduración</p>
                                   <h2>
                                     {
                                       membresia.purchase_Detail
@@ -255,11 +256,11 @@ export const Perfil = () => {
                               <div className="texxt">
                                 <p>
                                   {" "}
-                                  La maduracion de tu plan iniciara el proceso
-                                  de maduracion por 10 años, una vez hayas
-                                  alcanzado el estatus de "membresia activa" y
+                                  La maduración de tu plan iniciará el proceso
+                                  de maduración por 10 años, una vez hayas
+                                  alcanzado el estatus de "membresía activa" y
                                   cumplido con la cantidad de cuotas mensuales
-                                  de tu membresia
+                                  de tu membresía.
                                 </p>
                               </div>
                             </div>

@@ -68,11 +68,11 @@ export const Contacto = () => {
                 <a
                   onClick={() => {
                     window.location.assign(
-                      "https://smartprofitinvestments-my.sharepoint.com/personal/transformacion_spiglobal_net/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Ftransformacion%5Fspiglobal%5Fnet%2FDocuments%2FMicrosoft%20Teams%20Chat%20Files%2FT%C3%89RMINOS%20DE%20USO%20DE%20BENEFICIO%20SFI%2Epdf&parent=%2Fpersonal%2Ftransformacion%5Fspiglobal%5Fnet%2FDocuments%2FMicrosoft%20Teams%20Chat%20Files&ga=1"
+                      "https://www.smartfutureincome.com/media/terminos.pdf"
                     );
                   }}
                 >
-                  Terminos y condiciones
+                  Términos y condiciones
                 </a>
               </label>
               <label>
@@ -83,7 +83,7 @@ export const Contacto = () => {
                     setChecked(!checked);
                   }}
                 />
-                Acepto que se me envie a mi correo notificaciones y promociones.
+                Acepto que se me envíe a mi correo notificaciones y promociones
               </label>
             </div>
 

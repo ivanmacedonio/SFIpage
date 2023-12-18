@@ -72,7 +72,7 @@ export default function BasicModal6({ onEnviarDatos }) {
                 />
               </div>
               <div className="caja4">
-                <p>Identificacion</p>
+                <p>Identificación</p>
                 <input
                   type="text"
                   placeholder="identification"
@@ -82,7 +82,7 @@ export default function BasicModal6({ onEnviarDatos }) {
                 />
               </div>
               <div className="caja4">
-                <p>Telefono</p>
+                <p>Teléfono</p>
                 <input
                   type="number"
                   placeholder="Telefono"
@@ -92,7 +92,7 @@ export default function BasicModal6({ onEnviarDatos }) {
                 />
               </div>
               <div className="caja4">
-                <p>Correo electronico</p>
+                <p>Correo electrónico</p>
                 <input
                   type="email"
                   placeholder="Email"
