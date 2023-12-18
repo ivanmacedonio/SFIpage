@@ -32,6 +32,7 @@ export default function BasicModal5({
   const handleClose = () => setOpen(false);
   const [datapurchase, setDatapurchase] = React.useState({});
   const [userid, setId] = React.useState("");
+  const [obtain, setObtain] = React.useState(false);
   const [username, setUsername] = React.useState("");
   const [kycdata, setKycdata] = React.useState([]);
   const [check, setCheck] = React.useState(false);
@@ -65,6 +66,7 @@ export default function BasicModal5({
             // user_name: username,
             // membership_name: membershipData.name,
           });
+          setObtain(true);
         } catch (error) {
           console.log(error);
         }
@@ -135,6 +137,8 @@ export default function BasicModal5({
     }
   }
 
+  console.log(aditionalBeneficiaty);
+
   return (
     <div>
       <Button onClick={handleOpen} id="continuar">
@@ -146,7 +150,7 @@ export default function BasicModal5({
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={style} id = 'modal55'>
+        <Box sx={style} id="modal55">
           <div className="modal5" id="scrolleableTransfer">
             <div className="sec1">
               <h1 id="res">Resumen de tu membresía</h1>
@@ -177,7 +181,7 @@ export default function BasicModal5({
             </div>
 
             <div className="sec2">
-              <h1>Selección  de bono redimible:</h1>
+              <h1>Selección de bono redimible:</h1>
               <div className="t">
                 <p>Porcentaje redimible:</p>
                 <h3>{membershipData.percentage_bonus} %</h3>
@@ -209,28 +213,34 @@ export default function BasicModal5({
                 <h3>{membershipData.savings_duration_in_months}</h3>
               </div>
               <div className="t">
-                <p>Wallet(ERC-20):</p>
+                <p>Wallet:</p>
                 <h3>{wallet} </h3>
               </div>
             </div>
             <div className="sec4">
-              <h1>Datos beneficiario</h1>
-              <div className="t">
-                <p>Nombre completo:</p>
-                <h3>{username}</h3>
-              </div>
-              <div className="t">
-                <p>Identificación:</p>
-                <h3>{kycdata.identification}</h3>
-              </div>
-              <div className="t">
-                <p>Correo electrónico:</p>
-                <h3>{kycdata.email}</h3>
-              </div>
-              <div className="t">
-                <p>Teléfono:</p>
-                <h3>{kycdata.phone}</h3>
-              </div>
+              <h1>Datos beneficiarios</h1>
+
+              {aditionalBeneficiaty.map((beneficiario) => (
+                <div className="cont21">
+                  <h2>{beneficiario.full_name}</h2>
+                  <div className="t">
+                    <p>Identificación:</p>
+                    <h3>{beneficiario.identification}</h3>
+                  </div>
+                  <div className="t">
+                    <p>Email:</p>
+                    <h3>{beneficiario.email}</h3>
+                  </div>
+                  <div className="t">
+                    <p>Teléfono:</p>
+                    <h3>{beneficiario.phone}</h3>
+                  </div>
+                  <div className="t">
+                    <p>Porcentaje</p>
+                    <h3>{beneficiario.percentage}</h3>
+                  </div>
+                </div>
+              ))}
             </div>
 
             <label>

@@ -81,12 +81,12 @@ export default function BasicModal4({ membershipData, wallet, activated }) {
     setPercent(percentage + number);
   }
 
-  React.useEffect(() => {
-    const newData = aditionalBeneficiaty.filter(
-      (persona) => persona.full_name != namefilter
-    );
-    setAditionalBeneficiaty(newData);
-  }, [aditionalBeneficiaty]);
+  // React.useEffect(() => {
+  //   const newData = aditionalBeneficiaty.filter(
+  //     (persona) => persona.full_name != namefilter
+  //   );
+  //   setAditionalBeneficiaty(newData);
+  // }, [aditionalBeneficiaty]);
 
   return (
     <div>
