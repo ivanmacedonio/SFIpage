@@ -28,7 +28,7 @@ export default function BasicModal2({ membershipData }) {
 
       let resultadoFormateado = cadenaNumero.replace(
         /\B(?=(\d{3})+(?!\d))/g,
-        ","
+        "."
       );
 
       setNumber(resultadoFormateado);

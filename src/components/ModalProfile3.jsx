@@ -81,7 +81,7 @@ export default function BasicModal3({ membershipData, activated }) {
                   {Math.round(
                     membershipData.monthly_membership_cost *
                       (membershipData.precio / 10000)
-                  )}
+                  )} USDT
                 </h1>
               </div>
 

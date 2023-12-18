@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import './App.css';
+import "./App.css";
 import { PurchaseProvider } from "./context/PurchaseContext";
 import { Blog } from "./pages/Blog";
 import { Checkout } from "./pages/Checkout";
@@ -17,6 +17,17 @@ import { Perfil } from "./pages/Perfil";
 import { Register } from "./pages/Register";
 import { Verificacion } from "./pages/Verificacion";
 function App() {
+  useEffect(() => {
+    const handleBeforeUnload = () => {
+      localStorage.removeItem("access");
+    };
+
+    window.addEventListener("beforeunload", handleBeforeUnload);
+
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+    };
+  }, []);
   return (
     <>
       <BrowserRouter>

@@ -50,12 +50,14 @@ export default function BasicModal() {
   }, [setted]);
 
   useEffect(() => {
-    const costoMensualCalculado =
-      (precio / membershipData.chunk) * membershipData.monthly_membership_cost;
+    const costoMensualCalculado = (
+      (precio / membershipData.chunk) *
+      membershipData.monthly_membership_cost
+    ).toFixed(2);
 
-    const costoMensualRedondeado = Math.round(costoMensualCalculado);
+    const costoMensualCalculadoNumerico = Number(costoMensualCalculado);
 
-    setCostoMensual(costoMensualRedondeado);
+    setCostoMensual(costoMensualCalculadoNumerico);
   }, [precio, membershipData.chunk, membershipData.monthly_membership_cost]);
 
   const nav = useNavigate();
@@ -87,7 +89,7 @@ export default function BasicModal() {
         try {
           const res = await axios.get(`${BASE_URL}membership/`, {
             headers,
-            params: params
+            params: params,
           });
           setMembership(res.data);
         } catch (error) {
@@ -165,7 +167,13 @@ export default function BasicModal() {
                         onChange={handlePrecioChange}
                       />
                       <output htmlFor="rangoPrecio">
-                        Valor: {precio} USDT
+                        Valor:{" "}
+                        {precio !== undefined && precio !== null
+                          ? precio.toLocaleString("es", {
+                              minimumFractionDigits: 0,
+                            })
+                          : "N/A"}{" "}
+                        USDT
                       </output>
                     </div>
 
