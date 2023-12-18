@@ -28,22 +28,15 @@ export default function BasicModal6({ onEnviarDatos }) {
     register,
     handleSubmit,
     formState: { errors },
-    reset
+    reset,
   } = useForm({
     shouldUseNativeValidation: true,
   });
 
   function onSubmit(data) {
-    if (data.percentage <= maxPercent) {
-      setMaxPercent(maxPercent - data.percentage);
-      const per = data.percentage
-      onEnviarDatos(data, maxPercent, per);
-      handleClose();
-      reset()
-
-    } else {
-      alert('Debes elegir un porcentaje menor')
-    }
+    onEnviarDatos(data);
+    handleClose();
+    reset();
   }
 
   return (

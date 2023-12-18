@@ -361,7 +361,7 @@ export const Perfil = () => {
               </p>
             </div>
             <h1 id="btn-adicional">
-              <BasicModal></BasicModal>
+              {isMember ? <BasicModal></BasicModal> : ''}
             </h1>
           </div>
         )}

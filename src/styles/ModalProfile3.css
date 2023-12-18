@@ -51,14 +51,10 @@
     font-size: 1.3rem;
     padding-left: 1rem;
 }
-
-
-.continuar4{
-    margin-left: 1.5rem;
-}
-
 .continue{
-    margin-left: 5.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .continuar4 button{
@@ -95,9 +91,6 @@
 
 @media(max-width: 767px){
 
-    .continue{
-        margin-left: 0rem;
-    }
 
     .check1{
         margin-left: 1rem;
@@ -120,10 +113,6 @@
     .caja3 p{
         width: 10rem;
     }
-    .continuar4{
-        position: relative;
-        right: 3rem;
-    }
 
     #scrolleable3{
         padding-left: 1.5rem;
@@ -137,25 +126,18 @@
     #scrolleable3{
         width: 70%;
     }
-    .continue{
-        margin-left: 5rem;
-    }
+ 
 
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 1600px){
-    .continuar4{
-        margin-bottom: 2rem;
-    }
-
+   
     #scrolleable3{
         height: 80%;
         overflow-y: auto;
         width: 50%;
     }
 
-    .continue{
-        margin-left: 9rem;
-    }
+  
     
 }

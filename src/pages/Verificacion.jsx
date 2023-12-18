@@ -96,11 +96,11 @@ export const Verificacion = () => {
       formData.append("identification_file", archivo);
 
       if (isFile === false || checked === false) {
+        nodoDiv.scrollIntoView({ behavior: "smooth" });
         setError("Para continuar debes completar todos los campos");
         setEstiloError({
           display: "block",
         });
-        nodoDiv.scrollIntoView({ behavior: "smooth" });
       } else {
         const res = await axios.post(`${BASE_URL}kyc/`, formData, {
           headers: headers,

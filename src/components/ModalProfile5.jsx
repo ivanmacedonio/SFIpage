@@ -24,7 +24,6 @@ export default function BasicModal5({
   membershipData,
   wallet,
   aditionalBeneficiaty,
-  percentage,
   activated,
 }) {
   const [open, setOpen] = React.useState(false);
@@ -123,7 +122,9 @@ export default function BasicModal5({
               params: params,
             }
           );
-          window.location.href = `${res.data.detalleRespuesta.url}`;
+        
+          window.open(`${res.data.detalleRespuesta.url}`, '_blank');
+
           // nav('/checkout?canceled=false')
         } else {
           console.log("not check");
@@ -137,7 +138,6 @@ export default function BasicModal5({
     }
   }
 
-  console.log(aditionalBeneficiaty);
 
   return (
     <div>

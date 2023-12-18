@@ -4,6 +4,12 @@
     width: 100%;
 }
 
+.btn-continue{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 .modal2 h1 {
     color: white;

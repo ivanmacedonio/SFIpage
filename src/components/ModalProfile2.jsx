@@ -99,11 +99,13 @@ export default function BasicModal2({ membershipData }) {
                 )}
               </div>
             </div>
-            <BasicModal3
-              id="continuar"
-              membershipData={membershipData}
-              activated={activated}
-            ></BasicModal3>
+            <div className="btn-continue">
+              <BasicModal3
+                id="continuar"
+                membershipData={membershipData}
+                activated={activated}
+              ></BasicModal3>
+            </div>
           </div>
         </Box>
       </Modal>

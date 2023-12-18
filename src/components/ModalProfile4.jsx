@@ -2,6 +2,7 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Modal from "@mui/material/Modal";
 import * as React from "react";
+import { useRef } from "react";
 import { useForm } from "react-hook-form";
 import "../styles/ModalProfile4.css";
 import BasicModal6 from "./ModalBeneficiario";
@@ -25,13 +26,11 @@ export default function BasicModal4({ membershipData, wallet, activated }) {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const [data, setData] = React.useState({});
+  const [maxPer, setMaxPer] = React.useState(100);
   const [show, setShow] = React.useState(false);
-  const [setted, setSetted] = React.useState(false);
-  const [percentage, setPercent] = React.useState(100);
   const [updatemembership, setUpdatemembership] = React.useState([]);
   const [aditionalBeneficiaty, setAditionalBeneficiaty] = React.useState([]);
-  const [readOnly, setReadonly] = React.useState(false);
-  const [namefilter, setNamefilter] = React.useState("");
+  const [error, setError] = React.useState("");
   const {
     register,
     handleSubmit,
@@ -39,54 +38,51 @@ export default function BasicModal4({ membershipData, wallet, activated }) {
   } = useForm({
     shouldUseNativeValidation: true,
   });
+  const miRef = useRef(null);
+  const nodoDiv = miRef.current;
 
-  function recibirBeneficiario(data, maxPercent, per) {
+  function recibirBeneficiario(data) {
     setAditionalBeneficiaty((prevData) => {
       const newArray = Array.isArray(prevData) ? [...prevData, data] : [data];
       return newArray;
     });
-    setPercent(percentage - per);
+    setMaxPer(maxPer - data.percentage);
   }
 
   function onSubmit(data) {
-    setShow(true);
-    setReadonly(true);
     setUpdatemembership({ ...membershipData, data });
     setData(data);
   }
 
-  function handleClick() {
-    const newData = { ...data, percentage };
-    setNamefilter(data.full_name);
-    if (setted === false) {
-      setAditionalBeneficiaty((prevData) => {
-        const newArray = Array.isArray(prevData)
-          ? [...prevData, newData]
-          : [newData];
-        return newArray;
-      });
-      setSetted(true);
+  React.useEffect(() => {
+    if (aditionalBeneficiaty.length === 0 || maxPer != 0) {
+      setShow(false);
+      if (maxPer != 0) {
+        setError("El porcentaje total de los beneficiarios debe ser del 100%");
+        
+      }
+      if (aditionalBeneficiaty.length === 0) {
+        setError(
+          "La lista de beneficiarios debe contar con al menos un miembro"
+        );
+        
+      }
     } else {
-      console.log("pass");
+      setShow(true);
     }
-  }
+  }, [aditionalBeneficiaty]);
 
   function handleDeleteBenef(beneficiario) {
     let name = beneficiario.full_name;
-    let number = parseFloat(beneficiario.percentage);
     const newBenef = aditionalBeneficiaty.filter(
       (persona) => persona.full_name != name
     );
     setAditionalBeneficiaty(newBenef);
-    setPercent(percentage + number);
+    const num = parseFloat(beneficiario.percentage);
+    setMaxPer(maxPer + num);
   }
 
-  // React.useEffect(() => {
-  //   const newData = aditionalBeneficiaty.filter(
-  //     (persona) => persona.full_name != namefilter
-  //   );
-  //   setAditionalBeneficiaty(newData);
-  // }, [aditionalBeneficiaty]);
+
 
   return (
     <div>
@@ -108,6 +104,8 @@ export default function BasicModal4({ membershipData, wallet, activated }) {
           >
             x
           </h4>
+          <h2 id="db">Datos de beneficiario</h2>
+
           <div className="listaBeneficiarios">
             {aditionalBeneficiaty.map((beneficiario) => (
               <div className="box">
@@ -126,81 +124,31 @@ export default function BasicModal4({ membershipData, wallet, activated }) {
               </div>
             ))}
           </div>
-          <h2 id="db">Datos de beneficiario</h2>
 
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="modal4">
-              <div className="caja4">
-                <p>Nombre completo</p>
-                <input
-                  type="text"
-                  readOnly={readOnly}
-                  placeholder="Nombre"
-                  {...register("full_name", {
-                    required: "Ingresa un nombre valido",
-                  })}
-                />
+              <div className="hide">
+                <BasicModal6 onEnviarDatos={recibirBeneficiario}></BasicModal6>
               </div>
-              <div className="caja4">
-                <p>Identificación</p>
-                <input
-                  type="text"
-                  readOnly={readOnly}
-                  placeholder="Identificacion"
-                  {...register("identification", {
-                    required: "Ingresa una identificacion valida",
-                  })}
-                />
-              </div>
-              <div className="caja4">
-                <p>Teléfono</p>
-                <input
-                  type="text"
-                  readOnly={readOnly}
-                  placeholder="Telefono"
-                  {...register("phone", {
-                    required: "Ingresa un telefono valido",
-                  })}
-                />
-                <div className="hide">
-                  <BasicModal6
-                    onEnviarDatos={recibirBeneficiario}
-                  ></BasicModal6>
-                </div>
-              </div>
-              <div className="caja4">
-                <p>Correo electrónico</p>
-                <input
-                  type="email"
-                  readOnly={readOnly}
-                  placeholder="Email"
-                  {...register("email", {
-                    required: "Ingresa un email valido",
-                  })}
-                />
-              </div>
-            </div>
-            <div className="continuar5">
-              {show ? (
-                ""
-              ) : (
-                <button type="submit">
-                  <div className="check2">
-                    <h2>Check data</h2>
+              <div className="continuar5">
+                {show ? (
+                  ""
+                ) : (
+                  <div className="errorbenef" ref={miRef}>
+                    <h2>{error}</h2>
                   </div>
-                </button>
-              )}
-              {show && (
-                <div className="tes" onClick={handleClick}>
-                  <BasicModal5
-                    membershipData={updatemembership}
-                    wallet={wallet}
-                    aditionalBeneficiaty={aditionalBeneficiaty}
-                    percentage={percentage}
-                    activated={activated}
-                  ></BasicModal5>
-                </div>
-              )}
+                )}
+                {show && (
+                  <div className="tes">
+                    <BasicModal5
+                      membershipData={updatemembership}
+                      wallet={wallet}
+                      aditionalBeneficiaty={aditionalBeneficiaty}
+                      activated={activated}
+                    ></BasicModal5>
+                  </div>
+                )}
+              </div>
             </div>
           </form>
         </Box>
