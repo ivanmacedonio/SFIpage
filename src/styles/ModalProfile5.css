@@ -5,6 +5,15 @@
     font-family: 'Lato', sans-serif
 }
 
+.t p{
+    width: fit-content;
+}
+
+.modal5 h1{
+    font-weight: 900;
+    color: #e5e5e5;
+}
+
 .t {
     display: flex;
     margin-bottom: .5rem;
@@ -12,7 +21,7 @@
 }
 
 .t h3 {
-    margin-left: 1rem;
+    margin-left: 5px;
     font-weight: 900;
 }
 
@@ -53,7 +62,46 @@
     }
 }
 
+#modal55 {
+    height: 45rem;
+    overflow-y: auto;
+}
+
+#modal55::-webkit-scrollbar {
+    width: 5px;
+}
+
+#modal55::-webkit-scrollbar-thumb {
+    background-color: #3498db;
+    border-radius: 5px;
+}
+
+#modal55::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+
+#modal55::-webkit-scrollbar-button {
+    display: none;
+}
+
+
+.sec1,
+.sec2,
+.sec3,
+.sec4 {
+    background-color: rgb(95, 95, 95);
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+}
+
+
 @media (max-width: 767px) {
+
+    .t{
+        flex-direction: column;
+        align-items: normal;
+    }
 
     #scrolleableTransfer {
         width: 100%;
@@ -61,24 +109,24 @@
     }
 
     .modal5 h1 {
-        font-size: 1.3rem;
-        background-color: white;
+        font-size: 2rem;
         border-radius: 1rem;
-        color: rgb(2, 80, 116);
-        padding-left: 1rem;
     }
 
     .t h3 {
-        font-size: .7rem;
+        font-size: 1.5rem;
         width: max-content;
         margin-top: .2rem;
-        margin-left: 0.5rem;
+        margin-left: 0rem;
     }
-    .t p{
+
+    .t p, .t h3 {
         width: max-content;
-        font-size: 0.9rem;
+        font-size: 1.3rem;
+        width: 100%;
     }
-    .t{
+
+    .t {
         margin-bottom: 1rem;
     }
 
@@ -86,6 +134,7 @@
         font-size: 1.4rem;
         padding: 1rem;
     }
+
 
 }
 
@@ -98,7 +147,7 @@
 }
 
 @media (min-width: 1200px) and (max-width: 1600px) {
-    .css-1llu0g7 {
+    #modal55 {
         height: 35rem;
         overflow-y: auto;
     }

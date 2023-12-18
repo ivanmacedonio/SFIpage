@@ -5,6 +5,7 @@ import axios from "axios";
 import * as React from "react";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import flecha from "../assets/flecha1.svg";
 import { BASE_URL } from "../hooks/fetch";
 import "../styles/Modal1.css";
 import BasicModal2 from "./ModalProfile2";
@@ -139,6 +140,7 @@ export default function BasicModal() {
           <div className="membresiaModal1">
             <h4 onClick={handleClose}>X</h4>
             <h3>Tipo de membresía</h3>
+
             <h1
               onClick={() => {
                 setList(!list);
@@ -146,6 +148,7 @@ export default function BasicModal() {
               style={hov}
             >
               {membershipData.name}
+              <img src={flecha} alt="" />
             </h1>
           </div>
 

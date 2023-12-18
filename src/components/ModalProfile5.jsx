@@ -146,81 +146,91 @@ export default function BasicModal5({
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={style}>
+        <Box sx={style} id = 'modal55'>
           <div className="modal5" id="scrolleableTransfer">
-            <h1 id="res">Resumen de tu membresía</h1>
-            <div className="t">
-              <p>Membresía:</p>
-              <h3>{membershipData.name}</h3>
+            <div className="sec1">
+              <h1 id="res">Resumen de tu membresía</h1>
+              <div className="t">
+                <p>Membresía:</p>
+                <h3>{membershipData.name}</h3>
+              </div>
+              <div className="t">
+                <p>Monto:</p>
+                <h3>{membershipData.precio.toLocaleString("es")} USDT</h3>
+              </div>
+              <div className="t">
+                <p>Acumulación para membresía activa:</p>
+                <h3>{membershipData.savings_duration_in_months} meses</h3>
+              </div>
+              <div className="t">
+                <p>Monto de cuota mensual en USDT:</p>
+                <h3>
+                  {membershipData.monthly_membership_cost *
+                    (membershipData.precio / 10000)}{" "}
+                  USDT
+                </h3>
+              </div>
+              <div className="t">
+                <p>Maduración de membresía activa:</p>
+                <h3>{membershipData.maturity_period_in_months} Meses</h3>
+              </div>
             </div>
-            <div className="t">
-              <p>Monto:</p>
-              <h3>{membershipData.precio.toLocaleString("es")} USDT</h3>
+
+            <div className="sec2">
+              <h1>Selección  de bono redimible:</h1>
+              <div className="t">
+                <p>Porcentaje redimible:</p>
+                <h3>{membershipData.percentage_bonus} %</h3>
+              </div>
+              <div className="t">
+                <p>Monto redimible en USDT:</p>
+                <h3>
+                  {(
+                    (membershipData.percentage_bonus * membershipData.precio) /
+                    100
+                  ).toLocaleString("es")}{" "}
+                  USDT
+                </h3>
+              </div>
+              <div className="t">
+                <p>Estado:</p>
+                <h3>Desactivado</h3>
+              </div>
             </div>
-            <div className="t">
-              <p>Acumulación para membresía activa:</p>
-              <h3>{membershipData.savings_duration_in_months} meses</h3>
+
+            <div className="sec3">
+              <h1>Beneficio a percibir</h1>
+              <div className="t">
+                <p>Monto de cuota mensual en USDT:</p>
+                <h3>{membershipData.monthly_membership_cost} USDT</h3>
+              </div>
+              <div className="t">
+                <p>Cantidad de cuotas mensuales:</p>
+                <h3>{membershipData.savings_duration_in_months}</h3>
+              </div>
+              <div className="t">
+                <p>Wallet(ERC-20):</p>
+                <h3>{wallet} </h3>
+              </div>
             </div>
-            <div className="t">
-              <p>Monto de cuota mensual en USDT:</p>
-              <h3>
-                {membershipData.monthly_membership_cost *
-                  (membershipData.precio / 10000)}{" "}
-                USDT
-              </h3>
-            </div>
-            <div className="t">
-              <p>Maduración de membresía activa:</p>
-              <h3>{membershipData.maturity_period_in_months} Meses</h3>
-            </div>
-            <h1>Seleccion de bono redimible:</h1>
-            <div className="t">
-              <p>Porcentaje redimible:</p>
-              <h3>{membershipData.percentage_bonus} %</h3>
-            </div>
-            <div className="t">
-              <p>Monto redimible en USDT:</p>
-              <h3>
-                {(
-                  (membershipData.percentage_bonus * membershipData.precio) /
-                  100
-                ).toLocaleString("es")}{" "}
-                USDT
-              </h3>
-            </div>
-            <div className="t">
-              <p>Estado:</p>
-              <h3>Desactivado</h3>
-            </div>
-            <h1>Beneficio a percibir</h1>
-            <div className="t">
-              <p>Monto de cuota mensual en USDT:</p>
-              <h3>{membershipData.monthly_membership_cost} USDT</h3>
-            </div>
-            <div className="t">
-              <p>Cantidad de cuotas mensuales:</p>
-              <h3>{membershipData.savings_duration_in_months}</h3>
-            </div>
-            <div className="t">
-              <p>Wallet(ERC-20):</p>
-              <h3>{wallet} </h3>
-            </div>
-            <h1>Datos beneficiario</h1>
-            <div className="t">
-              <p>Nombre completo:</p>
-              <h3>{username}</h3>
-            </div>
-            <div className="t">
-              <p>Identificación:</p>
-              <h3>{kycdata.identification}</h3>
-            </div>
-            <div className="t">
-              <p>Correo electrónico:</p>
-              <h3>{kycdata.email}</h3>
-            </div>
-            <div className="t">
-              <p>Teléfono:</p>
-              <h3>{kycdata.phone}</h3>
+            <div className="sec4">
+              <h1>Datos beneficiario</h1>
+              <div className="t">
+                <p>Nombre completo:</p>
+                <h3>{username}</h3>
+              </div>
+              <div className="t">
+                <p>Identificación:</p>
+                <h3>{kycdata.identification}</h3>
+              </div>
+              <div className="t">
+                <p>Correo electrónico:</p>
+                <h3>{kycdata.email}</h3>
+              </div>
+              <div className="t">
+                <p>Teléfono:</p>
+                <h3>{kycdata.phone}</h3>
+              </div>
             </div>
 
             <label>

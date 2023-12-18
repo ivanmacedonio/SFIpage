@@ -4,8 +4,11 @@
     padding: 2rem;
     border-radius: 1rem;
     color: rgb(0, 81, 128);
-    font-size: 2.4rem;
+    font-size: 2rem;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #scrolleable {
@@ -16,6 +19,15 @@
     font-size: 2rem;
     font-weight: 900;
     text-align: center;
+}
+
+.membresiaModal1 h1 img {
+    width: 2.5rem;
+    margin-left: 1rem;
+}
+
+.membresiaModal1 h1 {
+    display: flex;
 }
 
 
@@ -80,46 +92,43 @@
     cursor: pointer;
 }
 
-#listaMembership1{
+#listaMembership1 {
     padding: 0;
 }
 
 
 @media (max-width: 767px) {
 
-    .listaMembership ul{
+    .listaMembership ul {
         font-size: 1rem;
     }
-   
 
-    #scrolleable{
+
+    #scrolleable {
         height: 70%;
         width: 70% !important;
     }
+
     #botonadquirirmodal {
         font-size: 2rem;
     }
 
-    .slide2{
+    .slide2 {
         display: flex;
         flex-direction: column;
     }
 
-    .slide2 input{
+    .slide2 input {
         margin-bottom: 2rem;
     }
 
-    .slide2 output{
+    .slide2 output {
         margin-left: 0;
     }
 
 
-   
 
-    .membresiaModal1 h1 {
-        padding-top: 0;
-        padding-bottom: 0;
-    }
+
 
     .membresiaModal1 h3 {
         margin-top: 0;
@@ -129,7 +138,7 @@
         width: 80%;
     }
 
-    
+
 
     .membresiaModal1 label {
         margin-left: 2rem;
@@ -150,14 +159,14 @@
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-    #scrolleable{
+    #scrolleable {
         height: 40rem;
-        top:30%;
+        top: 30%;
     }
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 1600px) {
-    #scrolleable{
-        height:30rem;
+    #scrolleable {
+        height: 30rem;
     }
 }
