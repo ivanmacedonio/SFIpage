@@ -65,11 +65,11 @@ export const Checkout = () => {
         console.log(res);
       } catch (error) {
         // nav('/')
-        console.log("error 1");
+        console.log(error);
       }
     } else {
       // nav('/login')
-      console.log("error2");
+      console.log('error');
     }
   }
 

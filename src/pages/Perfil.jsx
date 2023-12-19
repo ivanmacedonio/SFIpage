@@ -97,13 +97,41 @@ export const Perfil = () => {
     getMember();
     window.scrollTo(0, 0);
   }, []);
+  console.log(memberDetail);
 
   function handleQuinquenio() {
     setActive(!active);
     setEstilo({ display: active ? "none" : "block" });
   }
 
-  console.log(memberDetail);
+  async function handlePurchaseMonth(monto, membresia, compraid) {
+    const token = localStorage.getItem("access");
+    const headers = {
+      Authorization: `Bearer ${token}`,
+    };
+    const params = {
+      _cacheBuster: new Date().getTime(),
+    };
+    const datamonth = {
+      amount: monto,
+      purchase: compraid,
+      membership: membresia,
+      type: "M",
+    };
+    try {
+      const resmonth = await axios.post(
+        `${BASE_URL}create_charge/`,
+        datamonth,
+        {
+          headers: headers,
+          params: params,
+        }
+      );
+      window.open(`${resmonth.data.detalleRespuesta.url}`, "_blank");
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   return (
     <div className="perfilpage">
@@ -176,7 +204,13 @@ export const Perfil = () => {
                               </div>
                               <div className="cajaform">
                                 <p>Cuotas</p>
-                                <h2>0/24</h2>
+                                <h2>
+                                  {membresia.purchase_Detail.payment_quantity} /
+                                  {
+                                    membresia.purchase_Detail
+                                      .savings_duration_in_months
+                                  }
+                                </h2>
                               </div>
                               <div className="cajaform">
                                 <p>Cuota mensual</p>
@@ -206,6 +240,19 @@ export const Perfil = () => {
                               </div>
                               <div className="cajaform">
                                 <h4>Descargar contrato</h4>
+                              </div>
+                              <div
+                                className="pagarMensualidad"
+                                onClick={() => {
+                                  handlePurchaseMonth(
+                                    membresia.purchase_Detail
+                                      .monthly_membership_cost,
+                                    membresia.purchase_Detail.membership_id,
+                                    membresia.purchase_Detail.purchase_id
+                                  );
+                                }}
+                              >
+                                <h5>Pagar cuota mensual</h5>
                               </div>
                               <h5 id="titleForm2">Datos de beneficio</h5>
                               <div className="cajaform">

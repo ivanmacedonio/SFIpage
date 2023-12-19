@@ -4,6 +4,7 @@ import "./App.css";
 import { PurchaseProvider } from "./context/PurchaseContext";
 import { Blog } from "./pages/Blog";
 import { Checkout } from "./pages/Checkout";
+import { CheckoutMonth } from "./pages/CheckoutMonth";
 import { Contacto } from "./pages/Contacto";
 import { Error404 } from "./pages/Error404";
 import { FAQ } from "./pages/FAQ";
@@ -46,6 +47,8 @@ function App() {
             <Route exact path="/verificacion" element={<Verificacion />} />
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/checkout" element={<Checkout />} />
+            <Route exact path="/checkoutMonth" element={<CheckoutMonth />} />
+
             <Route path="*" element={<Error404 />} />
           </Routes>
         </PurchaseProvider>
