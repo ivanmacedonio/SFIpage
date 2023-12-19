@@ -60,6 +60,7 @@ export default function BasicModal5({
           setDatapurchase({
             amount: membershipData.precio,
             membership: membershipData.id,
+            type: 'P'
             // currency: "USD",
             // user_id: userid,
             // user_name: username,

@@ -49,7 +49,6 @@ export const Membresia = () => {
   useEffect(() => {
     async function getData() {
       const token = localStorage.getItem("access");
-      const refresh = localStorage.getItem("refresh");
       if (token) {
         const headers = {
           Authorization: `Bearer ${token}`,
