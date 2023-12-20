@@ -69,17 +69,19 @@ export default function BasicModal3({ membershipData, activated }) {
               onClick={() => {
                 handleClose();
               }}
-              id="x"
+              id="x1"
+              
             >
               x
             </h3>
             <h2>Beneficio a percibir</h2>
+            <hr />
             <div className="montos2">
               <div className="caja3">
                 <p>Monto de cuota mensual en USDT</p>
                 <h1>
                   {(membershipData.monthly_membership_cost *
-                    (membershipData.precio / 10000)).toLocaleString("es")}{" "}
+                    (membershipData.precio / 10000)).toLocaleString("en")}{" "}
                   USDT
                 </h1>
               </div>

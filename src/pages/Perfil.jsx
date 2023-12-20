@@ -132,7 +132,7 @@ export const Perfil = () => {
       console.log(error);
     }
   }
-
+  // console.log(memberDetail)
   return (
     <div className="perfilpage">
       <div className="header">
@@ -187,7 +187,7 @@ export const Perfil = () => {
                         id="panel1a-header"
                       >
                         <Typography style={{ fontSize: "2rem" }}>
-                          {membresia.purchase_Detail.membership_name}
+                          {`${membresia.purchase_Detail.membership_name} Nro. ${membresia.purchase_Detail.number}`}
                         </Typography>
                       </AccordionSummary>
                       <AccordionDetails>
@@ -221,6 +221,10 @@ export const Perfil = () => {
                                   }{" "}
                                   USDT
                                 </h2>
+                              </div>
+                              <div className="cajaform">
+                                <p>Monto total</p>
+                                <h2>{(membresia.purchase_Detail.amount).toLocaleString('en')} USDT</h2>
                               </div>
                               <div className="cajaform">
                                 <p>Fecha de inicio</p>
@@ -273,8 +277,10 @@ export const Perfil = () => {
                                 <h2>-</h2>
                               </div>
                               <div className="cajaform">
-                                <p>Cantidad de bonos</p>
-                                <h2>1/60</h2>
+                                <p>Cantidad de beneficios</p>
+                                <h2>
+                                  1/{membresia.purchase_Detail.months_of_profit}
+                                </h2>
                               </div>
                               <div className="cajaform">
                                 <p>Monto de cuota mensual</p>

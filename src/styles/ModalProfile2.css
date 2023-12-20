@@ -35,6 +35,7 @@
 #x{
     color: white;
     cursor: pointer;
+    font-size: 1.5rem !important;
 }
 
 .modal2 p {

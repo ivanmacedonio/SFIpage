@@ -140,6 +140,7 @@ export default function BasicModal() {
           <div className="membresiaModal1">
             <h4 onClick={handleClose}>X</h4>
             <h3>Tipo de membresía</h3>
+            <hr/>
 
             <h1
               onClick={() => {
@@ -172,7 +173,7 @@ export default function BasicModal() {
                       <output htmlFor="rangoPrecio">
                         Valor:{" "}
                         {precio !== undefined && precio !== null
-                          ? precio.toLocaleString("es", {
+                          ? precio.toLocaleString("en", {
                               minimumFractionDigits: 0,
                             })
                           : "N/A"}{" "}
@@ -184,7 +185,7 @@ export default function BasicModal() {
                     <h2>{membershipData.savings_duration_in_months} </h2>
                     <p>Monto de cuota mensual en USDT</p>
                     {costoMenual ? (
-                      <h2>{costoMenual.toLocaleString('es-ES')}</h2>
+                      <h2>{costoMenual.toLocaleString("en")}</h2>
                     ) : (
                       <h2> {membershipData.monthly_membership_cost}</h2>
                     )}

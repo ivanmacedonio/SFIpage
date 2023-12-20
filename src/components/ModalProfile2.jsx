@@ -28,7 +28,7 @@ export default function BasicModal2({ membershipData }) {
 
       let resultadoFormateado = cadenaNumero.replace(
         /\B(?=(\d{3})+(?!\d))/g,
-        "."
+        ","
       );
 
       setNumber(resultadoFormateado);
@@ -59,10 +59,12 @@ export default function BasicModal2({ membershipData }) {
               onClick={() => {
                 handleClose();
               }}
+              style={{fontWeight: '500'}}
             >
               X
             </h3>
             <h1>Selección de bono redimible</h1>
+            <hr />
             <p>
               Este bono representa un porcentaje de la totalidad de USDT que ha
               contribuido al valor de su membresía. Puede ser redimido al

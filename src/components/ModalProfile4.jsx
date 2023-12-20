@@ -101,6 +101,7 @@ export default function BasicModal4({ membershipData, wallet, activated }) {
               handleClose();
             }}
             id="x"
+            style={{fontSize: '2rem'}}
           >
             x
           </h4>

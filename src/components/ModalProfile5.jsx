@@ -169,7 +169,7 @@ export default function BasicModal5({
               </div>
               <div className="t">
                 <p>Monto:</p>
-                <h3>{membershipData.precio.toLocaleString("es")} USDT</h3>
+                <h3>{membershipData.precio.toLocaleString("en")} USDT</h3>
               </div>
               <div className="t">
                 <p>Acumulación para membresía activa:</p>
@@ -201,7 +201,7 @@ export default function BasicModal5({
                   {(
                     (membershipData.percentage_bonus * membershipData.precio) /
                     100
-                  ).toLocaleString("es")}{" "}
+                  ).toLocaleString("en")}{" "}
                   USDT
                 </h3>
               </div>

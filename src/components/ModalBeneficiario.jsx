@@ -60,6 +60,7 @@ export default function BasicModal6({ onEnviarDatos }) {
             X
           </h2>
           <h2 id="db">Datos de beneficiario adicional</h2>
+          <hr />
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="modal6">
               <div className="caja4">

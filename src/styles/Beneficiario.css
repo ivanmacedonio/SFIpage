@@ -9,7 +9,11 @@
     height: 70%;
     overflow-y: auto;
     padding-left: 2rem;
+    
 }
+
+
+
 
 @media (min-width: 1200px) {
     .modal6 input {

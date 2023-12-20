@@ -4,7 +4,8 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import chica from "../assets/afiliarse.webp";
 import { HeaderNormal } from "../components/Header-normal";
-import { BASE_URL } from "../hooks/fetch";
+import { BASE_URL, BASE_URL_LOGIN } from "../hooks/fetch";
+
 import "../styles/Login.css";
 export const Login = () => {
   const [password, setPassword] = useState(false);
@@ -22,7 +23,8 @@ export const Login = () => {
 
   const onSubmit = async (data) => {
     try {
-      const res = await axios.post(`${BASE_URL}login/`, data);
+      // const res = await axios.post(`${BASE_URL_LOGIN}token/`, data);
+      const res = await axios.post(`${BASE_URL_LOGIN}token/`, data);
       localStorage.setItem("access", res.data.access);
       localStorage.setItem("refresh", res.data.refresh);
 
