@@ -50,7 +50,15 @@ export default function BasicModal6({ onEnviarDatos }) {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={style}>
+        <Box sx={style} id='scrollbenef'>
+          <h2
+            onClick={() => {
+              handleClose();
+            }}
+            style={{ fontFamily: "Lato", cursor: 'pointer' }}
+          >
+            X
+          </h2>
           <h2 id="db">Datos de beneficiario adicional</h2>
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="modal6">

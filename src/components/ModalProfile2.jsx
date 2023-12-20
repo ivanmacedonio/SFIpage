@@ -52,7 +52,7 @@ export default function BasicModal2({ membershipData }) {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={style}>
+        <Box sx={style} id = 'scrol'>
           <div className="modal2">
             <h3
               id="x"

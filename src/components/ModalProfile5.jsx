@@ -152,6 +152,7 @@ export default function BasicModal5({
         aria-describedby="modal-modal-description"
       >
         <Box sx={style} id="modal55">
+          <h2 onClick={() => {handleClose()}} style={{fontFamily: 'Lato', cursor: 'pointer'}}>X</h2>
           <div className="modal5" id="scrolleableTransfer">
             <div className="sec1">
               <h1 id="res">Resumen de tu membresía</h1>

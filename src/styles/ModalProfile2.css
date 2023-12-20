@@ -11,6 +11,11 @@
 }
 
 
+#scrol{
+    overflow-y: auto;
+}
+
+
 .modal2 h1 {
     color: white;
     font-weight: 900;
@@ -64,6 +69,7 @@
     .css-1x9pxnu{
         width: 80% !important;
     }
+
 
 }
 

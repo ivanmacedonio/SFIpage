@@ -5,6 +5,12 @@
     font-weight: 700;
 }
 
+#scrollbenef {
+    height: 70%;
+    overflow-y: auto;
+    padding-left: 2rem;
+}
+
 @media (min-width: 1200px) {
     .modal6 input {
         width: 150%;
@@ -27,33 +33,42 @@
     }
 }
 
-@media (max-width: 768px){
+@media (max-width: 768px) {
     .continuar6 button {
         background: none;
         border: none;
     }
+
     .modal6 {
         font-family: 'Lato', sans-serif;
         display: flex;
         flex-direction: column;
         justify-content: left;
     }
+
     .continuar6 {
         margin-left: 0;
     }
+
+    #scrollbenef {
+
+        padding-left: 1rem;
+    }
 }
 
-@media (min-width: 769px) and (max-width: 1100px){
+@media (min-width: 769px) and (max-width: 1100px) {
     .continuar6 button {
         background: none;
         border: none;
     }
+
     .modal6 {
         font-family: 'Lato', sans-serif;
         display: flex;
         flex-direction: column;
         justify-content: left;
     }
+
     .continuar6 {
         margin-left: 2.5rem;
     }

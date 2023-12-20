@@ -164,7 +164,7 @@
 
 @media (max-width : 767px) {
     #scrolleable4 {
-        padding-left: 1rem;
+        padding-left: 2rem;
         overflow-y: scroll;
     }
 
