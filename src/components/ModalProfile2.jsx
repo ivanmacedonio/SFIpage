@@ -18,7 +18,7 @@ const style = {
 
 export default function BasicModal2({ membershipData }) {
   const [number, setNumber] = React.useState();
-
+  const [error, setError] = React.useState(false);
   React.useEffect(() => {
     function formatearNumero() {
       let numero =
@@ -52,7 +52,7 @@ export default function BasicModal2({ membershipData }) {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={style} id = 'scrol'>
+        <Box sx={style} id="scrol">
           <div className="modal2">
             <h3
               id="x"
@@ -99,6 +99,7 @@ export default function BasicModal2({ membershipData }) {
                 )}
               </div>
             </div>
+
             <div className="btn-continue">
               <BasicModal3
                 id="continuar"

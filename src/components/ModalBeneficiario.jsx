@@ -90,6 +90,7 @@ export default function BasicModal6({ onEnviarDatos }) {
                   {...register("phone", {
                     required: "Ingresa un telefono valido",
                   })}
+                  className="no-spinner"
                 />
               </div>
               <div className="caja4">

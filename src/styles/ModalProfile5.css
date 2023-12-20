@@ -5,6 +5,15 @@
     font-family: 'Lato', sans-serif
 }
 
+.errortransfer{
+    font-family: 'Lato';
+    font-size: 1.2rem;
+    background-color: orange;
+    padding: 0rem 1rem;
+    border-radius: 1rem;
+    font-weight: 700;
+}
+
 .t p{
     width: fit-content;
 }

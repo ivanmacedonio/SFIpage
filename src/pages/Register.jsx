@@ -19,8 +19,8 @@ export const Register = () => {
   const [errorRegisterStyle, setErrorRegisterStyle] = useState({
     display: "none",
   });
-  const [eye, setEye] = useState(false)
-  const [eye1, setEye1] = useState(false)
+  const [eye, setEye] = useState(false);
+  const [eye1, setEye1] = useState(false);
   const onSubmit = async (data) => {
     if (data.password == data.password2) {
       try {
@@ -71,6 +71,7 @@ export const Register = () => {
               {...register("phone_number", {
                 required: "Por favor ingresa tu numero",
               })}
+              className="no-spinner"
             />
             <div className="passcontainer">
               <input
@@ -80,7 +81,6 @@ export const Register = () => {
                   required: "Por favor ingresa tu contraseña",
                 })}
               />
-
             </div>
 
             <div className="passcontainer">

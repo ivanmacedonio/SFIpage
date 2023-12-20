@@ -184,7 +184,7 @@ export default function BasicModal() {
                     <h2>{membershipData.savings_duration_in_months} </h2>
                     <p>Monto de cuota mensual en USDT</p>
                     {costoMenual ? (
-                      <h2>{costoMenual}</h2>
+                      <h2>{costoMenual.toLocaleString('es-ES')}</h2>
                     ) : (
                       <h2> {membershipData.monthly_membership_cost}</h2>
                     )}

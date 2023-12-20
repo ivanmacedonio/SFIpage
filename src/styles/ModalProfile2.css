@@ -4,6 +4,16 @@
     width: 100%;
 }
 
+#montoerror{
+    font-size: 2rem;
+    color: white;
+    font-weight: 700;
+    text-align: center;
+    background-color: orange;
+    border-radius: 1rem;
+    padding: 1rem 0;
+}
+
 .btn-continue{
     display: flex;
     justify-content: center;
@@ -13,6 +23,7 @@
 
 #scrol{
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 

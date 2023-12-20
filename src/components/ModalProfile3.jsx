@@ -78,10 +78,8 @@ export default function BasicModal3({ membershipData, activated }) {
               <div className="caja3">
                 <p>Monto de cuota mensual en USDT</p>
                 <h1>
-                  {Math.round(
-                    membershipData.monthly_membership_cost *
-                      (membershipData.precio / 10000)
-                  ).toLocaleString("es", { maximumFractionDigits: 2 })}{" "}
+                  {(membershipData.monthly_membership_cost *
+                    (membershipData.precio / 10000)).toLocaleString("es")}{" "}
                   USDT
                 </h1>
               </div>

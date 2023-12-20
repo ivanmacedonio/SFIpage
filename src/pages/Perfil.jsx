@@ -238,7 +238,14 @@ export const Perfil = () => {
                                   Retiro de quinquenio
                                 </label>
                               </div>
-                              <div className="cajaform">
+                              <div
+                                className="cajaform"
+                                // onClick={() => {
+                                //   window.location.assign(
+                                //     `${BASE_URL}${membresia.purchase_Detail.contract_file}`
+                                //   );
+                                // }}
+                              >
                                 <h4>Descargar contrato</h4>
                               </div>
                               <div

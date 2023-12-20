@@ -36,6 +36,7 @@ export default function BasicModal5({
   const [kycdata, setKycdata] = React.useState([]);
   const [check, setCheck] = React.useState(false);
   const nav = useNavigate();
+  const [error, setError] = React.useState("");
 
   const { updatePurchaseData } = usePurchaseContext();
 
@@ -60,7 +61,7 @@ export default function BasicModal5({
           setDatapurchase({
             amount: membershipData.precio,
             membership: membershipData.id,
-            type: 'P'
+            type: "P",
             // currency: "USD",
             // user_id: userid,
             // user_name: username,
@@ -123,8 +124,8 @@ export default function BasicModal5({
               params: params,
             }
           );
-        
-          window.open(`${res.data.detalleRespuesta.url}`, '_blank');
+
+          window.open(`${res.data.detalleRespuesta.url}`, "_blank");
 
           // nav('/checkout?canceled=false')
         } else {
@@ -135,10 +136,9 @@ export default function BasicModal5({
         nav("/login");
       }
     } catch (error) {
-      console.log(error);
+      setError(error.response.data.respuestaServicio.detalle_tecnico);
     }
   }
-
 
   return (
     <div>
@@ -152,7 +152,14 @@ export default function BasicModal5({
         aria-describedby="modal-modal-description"
       >
         <Box sx={style} id="modal55">
-          <h2 onClick={() => {handleClose()}} style={{fontFamily: 'Lato', cursor: 'pointer'}}>X</h2>
+          <h2
+            onClick={() => {
+              handleClose();
+            }}
+            style={{ fontFamily: "Lato", cursor: "pointer" }}
+          >
+            X
+          </h2>
           <div className="modal5" id="scrolleableTransfer">
             <div className="sec1">
               <h1 id="res">Resumen de tu membresía</h1>
@@ -263,6 +270,7 @@ export default function BasicModal5({
           ) : (
             ""
           )}
+          {error !== "" ? <div className="errortransfer">{error}</div> : ""}
         </Box>
       </Modal>
     </div>
