@@ -11,6 +11,20 @@
     justify-content: center;
 }
 
+#listaMembership1 h1{
+    padding: 1.5rem;
+    font-size: 1.5rem;
+    padding-left: 1rem  ;
+}
+
+.listaMembership{
+    transition: 1s ease;
+}
+.listaMembership:hover{
+    border: 1px solid white;
+    height: 150%;
+}
+
 #scrolleable {
     overflow-y: auto;
 }
@@ -95,7 +109,6 @@
 #listaMembership1 {
     padding: 0;
 }
-
 
 @media (max-width: 767px) {
 
