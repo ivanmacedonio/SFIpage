@@ -11,27 +11,37 @@ export const Login = () => {
   const { register, handleSubmit } = useForm({
     shouldUseNativeValidation: true,
   });
-  const [error, setError] = useState('')
+  const [error, setError] = useState("");
   const [display1, setDisplay1] = useState({
-    display: 'none'
-  })
+    display: "none",
+  });
   const handleShow = () => {
     setPassword(!password);
   };
-  const nav = useNavigate()
- 
+  const nav = useNavigate();
 
   const onSubmit = async (data) => {
     try {
       const res = await axios.post(`${BASE_URL}login/`, data);
-      localStorage.setItem('access', res.data.access)     
-      localStorage.setItem('refresh', res.data.refresh)
-      nav('/verificacion') 
+      localStorage.setItem("access", res.data.access);
+      localStorage.setItem("refresh", res.data.refresh);
+
+      const headers = {
+        Authorization: `Bearer ${res.data.access}`,
+      };
+      const res2 = await axios.get(`${BASE_URL}kyc/`, {
+        headers: headers,
+      });
+      if (res2.data.KYC_Detail) {
+        nav("/");
+      } else {
+        nav("/verificacion");
+      }
     } catch (error) {
-      setError('El usuario o la contraseña son invalidos');
+      setError("El usuario o la contraseña son invalidos");
       setDisplay1({
-        display: 'block'
-      })
+        display: "block",
+      });
     }
   };
   return (

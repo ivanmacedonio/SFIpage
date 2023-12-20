@@ -12,6 +12,9 @@
 
 #scrolleable3{
     width: 30%;
+    height: 80%;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .modal3{
@@ -93,8 +96,8 @@
 
 
     .check1{
-        margin-left: 1rem;
-        width: 100%;
+        margin-left: 0;
+        width: 90%;
         text-align: center;
     }
 

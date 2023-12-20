@@ -145,14 +145,14 @@ export const Perfil = () => {
             <div className="alert1">
               {denegado ? (
                 <h5>
-                  Decidimos denegar tu acceso a la plataforma. Para mas
-                  informacion acerca de los estados de KYC contactese con
-                  nosotros
+                  Decidimos denegar tu acceso a la plataforma. Para más
+                  información acerca de los estados de KYC, contáctese con
+                  nosotros.
                 </h5>
               ) : (
                 <h5>
-                  Actualmente tu usuario se encuentra en revision. Una vez
-                  verifiquemos el KYC, tendras acceso a nuestros planes.
+                  Actualmente tu usuario se encuentra en revisión. Una vez
+                  verifiquemos el KYC, tendrás acceso a nuestros planes.
                 </h5>
               )}
             </div>
@@ -160,7 +160,7 @@ export const Perfil = () => {
             <div className="form1">
               <p>Nombre</p>
               <h2>{profile.user_name}</h2>
-              <p>Identificacion</p>
+              <p>Identificación</p>
               <h2>{profile.identification}</h2>
               <p>Correo</p>
               <h2>{profile.email}</h2>

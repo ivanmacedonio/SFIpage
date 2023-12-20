@@ -31,7 +31,7 @@ export const Footer = () => {
             <h3>Nosotros</h3>
           </Link>
           <Link to={"/afiliacion"}>
-            <h3>Afiliacion</h3>
+            <h3>Afiliación</h3>
           </Link>
           <Link to={"/blog"}>
             <h3>Blog</h3>

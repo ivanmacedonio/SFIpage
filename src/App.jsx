@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import { PurchaseProvider } from "./context/PurchaseContext";
@@ -18,17 +18,17 @@ import { Perfil } from "./pages/Perfil";
 import { Register } from "./pages/Register";
 import { Verificacion } from "./pages/Verificacion";
 function App() {
-  useEffect(() => {
-    const handleBeforeUnload = () => {
-      localStorage.removeItem("access");
-    };
+  // useEffect(() => {
+  //   const handleBeforeUnload = () => {
+  //     localStorage.removeItem("access");
+  //   };
 
-    window.addEventListener("beforeunload", handleBeforeUnload);
+  //   window.addEventListener("beforeunload", handleBeforeUnload);
 
-    return () => {
-      window.removeEventListener("beforeunload", handleBeforeUnload);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener("beforeunload", handleBeforeUnload);
+  //   };
+  // }, []);
   return (
     <>
       <BrowserRouter>
