@@ -1,6 +1,8 @@
-import axios from "axios";
+import axios from 'axios';
 import React, { useEffect, useState } from "react";
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 import { Link, useNavigate } from "react-router-dom";
 import chicablog from "../assets/afiliarse.webp";
 import { HeaderNormal } from "../components/Header-normal";
@@ -12,25 +14,32 @@ export const Register = () => {
   }, []);
   const navigate = useNavigate();
 
-  const { register, handleSubmit } = useForm({
+  const { register, handleSubmit, control } = useForm({
     shouldUseNativeValidation: true,
   });
   const [error, setError] = useState("");
   const [errorRegisterStyle, setErrorRegisterStyle] = useState({
     display: "none",
   });
-  const [eye, setEye] = useState(false);
-  const [eye1, setEye1] = useState(false);
+
   const onSubmit = async (data) => {
     if (data.password == data.password2) {
       try {
-        const res = await axios.post(`${BASE_URL}register/`, data);
-        navigate("/login");
+        if (data.phone_number && data.phone_number.length > 6) {
+          const res = await axios.post(`${BASE_URL}register/`, data);
+          navigate("/login");
+        } else {
+          setError("Número telefonico no valido");
+          setErrorRegisterStyle({
+            display: "block",
+          });
+        }
       } catch (error) {
-        setError("Ya existe un usuario registrado con estos datos");
+        setError(`${""}Usuario ya registrado`);
         setErrorRegisterStyle({
           display: "block",
         });
+        console.log(error);
       }
     } else {
       setError("Las contraseñas no coinciden");
@@ -65,13 +74,22 @@ export const Register = () => {
                 required: "Por favor ingresa tu email",
               })}
             />
-            <input
-              type="number"
-              placeholder="Ingresa tu numero de celular"
-              {...register("phone_number", {
-                required: "Por favor ingresa tu numero",
-              })}
-              className="no-spinner"
+
+            <Controller
+              name="phone_number"
+              control={control}
+              rules={{ required: "Por favor ingresa tu numero" }}
+              render={({ field }) => (
+                <PhoneInput
+                  inputStyle={{ fontSize: "1.2rem", width: "100%" }}
+                  containerStyle={{ marginBottom: "1rem" }}
+                  type="number"
+                  placeholder="Ingresa tu numero de celular"
+                  value={field.value} // Important: Set the value from React Hook Form
+                  onChange={(value) => field.onChange(value)} // Important: Set the onChange from React Hook Form
+                  className="no-spinner"
+                />
+              )}
             />
             <div className="passcontainer">
               <input

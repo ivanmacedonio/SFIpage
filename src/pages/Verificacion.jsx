@@ -1,6 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 import { useNavigate } from "react-router-dom";
 import { HeaderNormal } from "../components/Header-normal";
 import { BASE_URL } from "../hooks/fetch";
@@ -8,12 +10,13 @@ import "../styles/Verificacion.css";
 
 export const Verificacion = () => {
   const nav = useNavigate();
-  const { register, handleSubmit } = useForm({
+  const { register, handleSubmit, control } = useForm({
     shouldUseNativeValidation: true,
   });
   const [verificado, setVerificado] = useState(true);
   const [checked, setChecked] = useState(false);
   const [error, setError] = useState("");
+
   const [estiloError, setEstiloError] = useState({
     display: "none",
   });
@@ -90,7 +93,7 @@ export const Verificacion = () => {
       formData.append("identification", data.identification);
       formData.append("date_of_birth", data.date_of_birth);
       formData.append("email", data.email);
-      formData.append("phone", data.phone);
+      formData.append("phone", data.phone_number);
       formData.append("address", data.address);
       formData.append("gender", data.gender);
       formData.append("identification_file", archivo);
@@ -102,12 +105,19 @@ export const Verificacion = () => {
           display: "block",
         });
       } else {
-        const res = await axios.post(`${BASE_URL}kyc/`, formData, {
-          headers: headers,
-          params: params,
-        });
-        nav("/");
-        console.log(data);
+        if (data.phone_number && data.phone_number.length > 6) {
+          const res = await axios.post(`${BASE_URL}kyc/`, formData, {
+            headers: headers,
+            params: params,
+          });
+          nav("/");
+        } else {
+          setEstiloError({
+            display: "block",
+          });
+          setError("Número telefonico no valido");
+          console.log("error");
+        }
       }
     } else {
       nav("/login");
@@ -186,14 +196,22 @@ export const Verificacion = () => {
               </div>
               <div className="slot">
                 <p>Telefono</p>
-                <input
-                  id="phone"
-                  type="number"
-                  placeholder="Ingresa tu Telefono"
-                  {...register("phone", {
-                    required: "Por favor ingresa un telefono valido",
-                  })}
-                  className="no-spinner"
+                <Controller
+                  name="phone_number"
+                  control={control}
+                  rules={{ required: "Por favor ingresa tu numero" }}
+                  render={({ field }) => (
+                    <PhoneInput
+                      inputStyle={{ fontSize: "1.2rem", width: "100%" }}
+                      containerStyle={{ marginBottom: "1rem" }}
+                      type="number"
+                      placeholder="Número de celular"
+                      value={field.value}
+                      onChange={(value) => field.onChange(value)}
+                      className="no-spinner"
+                      country={"cr"}
+                    />
+                  )}
                 />
               </div>
               <div className="slot">

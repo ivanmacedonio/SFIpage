@@ -8,8 +8,9 @@ import { useNavigate } from "react-router-dom";
 import membresiaimg from "../assets/Asset 26.png";
 import { HeaderNormal } from "../components/Header-normal";
 import BasicModal from "../components/ModalProfile1";
-import { BASE_URL } from "../hooks/fetch";
+import { BASE_URL, BASE_URL_LOGIN } from "../hooks/fetch";
 import "../styles/perfil.css";
+
 
 export const Perfil = () => {
   useEffect(() => {
@@ -224,7 +225,12 @@ export const Perfil = () => {
                               </div>
                               <div className="cajaform">
                                 <p>Monto total</p>
-                                <h2>{(membresia.purchase_Detail.amount).toLocaleString('en')} USDT</h2>
+                                <h2>
+                                  {membresia.purchase_Detail.amount.toLocaleString(
+                                    "en"
+                                  )}{" "}
+                                  USDT
+                                </h2>
                               </div>
                               <div className="cajaform">
                                 <p>Fecha de inicio</p>
@@ -250,7 +256,20 @@ export const Perfil = () => {
                                 //   );
                                 // }}
                               >
-                                <h4>Descargar contrato</h4>
+                                {membresia.purchase_Detail.contract_file ===
+                                null ? (
+                                  <h4 style={{backgroundColor: 'red'}}>Aún no hay contrato activo</h4>
+                                ) : (
+                                  <h4
+                                    onClick={() => {
+                                      window.location.assign(
+                                        `${BASE_URL_LOGIN}${membresia.purchase_Detail.contract_file}`
+                                      );
+                                    }}
+                                  >
+                                    Descargar contrato
+                                  </h4>
+                                )}
                               </div>
                               <div
                                 className="pagarMensualidad"
@@ -288,8 +307,8 @@ export const Perfil = () => {
                                   {
                                     membresia.purchase_Detail
                                       .monthly_membership_cost
-                                  }
-                                  USDT
+                                  } {''}
+                                   USDT
                                 </h2>
                               </div>
                               {/* <div className="cajaform">
@@ -297,7 +316,7 @@ export const Perfil = () => {
                                 <h2 id="walleth2">{membresia.purchase_Detail.wallet}</h2>
                               </div> */}
                               <div className="cajaform">
-                                <p>Tiempo de maduracion</p>
+                                <p>Tiempo de maduración </p>
                                 <h2>
                                   {
                                     membresia.purchase_Detail

@@ -2,7 +2,9 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Modal from "@mui/material/Modal";
 import * as React from "react";
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 import "../styles/Beneficiario.css";
 
 const style = {
@@ -21,6 +23,10 @@ const style = {
 export default function BasicModal6({ onEnviarDatos }) {
   const [open, setOpen] = React.useState(false);
   const [datosBeneficiario, setDatosbeneficiario] = React.useState({});
+  const [error, setError] = React.useState("");
+  const [estiloError, setEstiloError] = React.useState({
+    display: "none",
+  });
   const [maxPercent, setMaxPercent] = React.useState(100);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -29,14 +35,31 @@ export default function BasicModal6({ onEnviarDatos }) {
     handleSubmit,
     formState: { errors },
     reset,
+    control,
   } = useForm({
     shouldUseNativeValidation: true,
   });
 
   function onSubmit(data) {
-    onEnviarDatos(data);
-    handleClose();
-    reset();
+    if (data.phone && data.phone.length > 6) {
+      setEstiloError({
+        display: "none",
+        marginTop: '1.5rem'
+
+      });
+      onEnviarDatos(data);
+      handleClose();
+      reset();
+    } else {
+      console.log("error");
+      setEstiloError({
+        display: "block",
+        fontFamily: "Lato",
+        marginTop: '1.5rem'
+
+      });
+      setError("Número telefonico no valido");
+    }
   }
 
   return (
@@ -50,12 +73,12 @@ export default function BasicModal6({ onEnviarDatos }) {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={style} id='scrollbenef'>
+        <Box sx={style} id="scrollbenef">
           <h2
             onClick={() => {
               handleClose();
             }}
-            style={{ fontFamily: "Lato", cursor: 'pointer' }}
+            style={{ fontFamily: "Lato", cursor: "pointer" }}
           >
             X
           </h2>
@@ -85,13 +108,22 @@ export default function BasicModal6({ onEnviarDatos }) {
               </div>
               <div className="caja4">
                 <p>Teléfono</p>
-                <input
-                  type="number"
-                  placeholder="Telefono"
-                  {...register("phone", {
-                    required: "Ingresa un telefono valido",
-                  })}
-                  className="no-spinner"
+                <Controller
+                  name="phone"
+                  control={control}
+                  rules={{ required: "Por favor ingresa tu numero" }}
+                  render={({ field }) => (
+                    <PhoneInput
+                      inputStyle={{ fontSize: "1.2rem", width: "100%" }}
+                      containerStyle={{ marginBottom: "1rem" }}
+                      type="number"
+                      placeholder="Número de celular"
+                      value={field.value}
+                      onChange={(value) => field.onChange(value)}
+                      className="no-spinner"
+                      country={"cr"}
+                    />
+                  )}
                 />
               </div>
               <div className="caja4">
@@ -115,6 +147,9 @@ export default function BasicModal6({ onEnviarDatos }) {
                   })}
                 />
               </div>
+            </div>
+            <div className="errorbenef" style={estiloError}>
+              {error}
             </div>
             <div className="continuar6">
               <button type="submit">
