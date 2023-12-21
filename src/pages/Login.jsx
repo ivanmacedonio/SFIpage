@@ -46,6 +46,7 @@ export const Login = () => {
         }, 3000);
       }
     } catch (error) {
+      setIsLoading(false)
       setError("El usuario o la contraseña son invalidos");
       setDisplay1({
         display: "block",

@@ -1,258 +1,137 @@
-img {
-    max-width: 100%;
-}
-
-.contentp4 {
-    margin-top: 3rem;
-    border-radius: 1rem;
-    background-image: url('../assets/fondoblanco.webp');
-    background-repeat: no-repeat;
-    background-size: cover;
-    max-width: 100%;
+.containergeneralRegister {
     display: flex;
-}
-
-.passcontainer{
-    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 15vh;
+    font-family: 'Lato';
 }
 
-.passcontainer img{
-    width:2rem;
-    background-color: white;
-    border-radius: 1rem;
-    margin-bottom: 1rem;
-    margin-left: 1rem;
-    cursor: pointer;
+.registercontainer {
+    font-size: 1.3rem;
+    box-sizing: border-box;
+    flex-direction: column;
+    border: solid 2px;
+    padding: 4rem;
+    border-radius: 0.5rem;
+    border-color: rgb(223, 223, 223);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    padding-bottom: 0;
 }
 
-.errorRegister{
-    color: white;
-    font-family: 'Lato', sans-serif;
-    background-color: rgb(255, 81, 0);
-    border-radius: 1rem;
-    padding: 1px;
-    margin-top: 1rem;
+.registercontainer h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 5px;
 }
 
-.imageblog img {
-    width: 50rem;
+.registercontainer p {
+    font-size: 1.2rem;
+    margin-top: 0;
+    color: rgb(112, 112, 112);
+    margin-bottom: 2rem;
+
 }
 
-
-
-.imageblog {
-    margin-left: 5rem;
-}
-
-.formp4 {
-    margin-left: 10rem;
-    margin-top: 2rem;
-    background-color: rgb(54, 54, 54);
-    padding-left: 4rem;
-    padding-right: 4rem;
-    padding-bottom: 3rem;
-    height: max-content;
-    border-radius: 2rem;
-}
-
-.formp4 form {
+.formregister form {
     display: flex;
     flex-direction: column;
 }
 
-.formp4 input {
-    font-size: 1.3rem;
-    border-radius: .9rem;
-    width: 24rem;
-    padding-left: 2rem;
-    height: 1rem;
+.formregister input {
+    font-size: 1.2rem;
+    outline: none;
+    padding: 0.8rem 0.5rem;
+    width: 100%;
     margin-bottom: 1rem;
-    font-family: 'Monserrat', sans-serif;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    border-radius: 10px;
+    border: solid 1px rgb(232, 232, 232);
+    background-color: rgba(255, 255, 255, 0.597);
+    color: rgb(112, 112, 112);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
-.formp4 h1 {
-    font-family: 'Monserrat', sans-serif;
-    font-weight: 700;
-    font-size: 4rem;
+.formregister input::placeholder {
+    color: rgb(185, 185, 185);
+
+}
+
+.formregister button {
+    border: none;
+    background-color: rgb(66, 66, 252);
     color: white;
-    text-align: center;
-}
-
-#afiliarsebutton {
+    font-size: 1rem;
+    padding: 0.8rem 0;
+    border-radius: 0.4rem;
+    margin-top: 1rem;
     cursor: pointer;
+    width: 100%;
+}
 
-    font-family: 'Monserrat', sans-serif;
-    font-weight: 700;
-    font-size: 2rem;
-    color: white;
-    text-align: center;
-    background: linear-gradient(to right, rgb(26, 191, 219), rgb(2, 80, 116));
-    border-radius: .6rem;
-    border-style: none;
+
+.formregister label {
+    font-size: 1rem;
+    color: rgb(135, 135, 135);
+}
+
+.formregister input[type="checkbox"] {
+    width: fit-content;
 }
 
 .option {
-    background-color: white;
-    border-radius: 1rem;
-    text-align: center;
-}
-
-.option p {
-    font-family: 'Monserrat', sans-serif;
-    padding-top: 1rem;
-    padding-bottom: .5rem;
-}
-
-.option button {
-    margin-right: 1rem;
-    font-family: 'Monserrat', sans-serif;
     font-size: 1rem;
-    border-style: none;
-    border-radius: .5rem;
-    width: 10rem;
-    height: 2rem;
+    color: blue;
+    margin-top: 2rem;
 }
 
-#phoneinput{
-    font-size: 2rem;
+.spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    margin-left: 45%;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
 }
 
-
-
-@media only screen and (max-width: 767px) {
-    .imageblog {
-        display: none;
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
     }
 
-    #afiliarsebutton{
-        font-size: 3rem;
-        margin-bottom: 1rem;
-    }
-
-
-    .formp4 {
-        border-radius: 0%;
-        margin: 0;
-        padding-left: 1rem;
-        padding-right: 1rem;
-        margin-bottom: 10rem;
-    }
-    .formp4 button{
-        margin-bottom: 5rem;
-
-
-    }
-    .buttonslogin button{
-        margin-bottom: 0;
-    }
-
-    .formp4 input {
-        font-size: 1.3rem;
-        border-radius: .9rem;
-        width: 20rem;
-        padding-left: 2rem;
-        height: 4rem;
-        margin-bottom: 1.5rem;
-        font-family: 'Monserrat', sans-serif;
-        padding-top: 0;
-        padding-bottom: 0;
-    }
-
-    .formp4 input::placeholder {
-        font-size: 1.3rem;
+    100% {
+        transform: rotate(360deg);
     }
 }
 
-@media (width: 430px){
-    .formp4{
-        border-radius: 1rem;
-        margin-left: 1.4rem;
-    }    
-
+.errorRegister {
+    font-size: 0.8rem;
+    background-color: orange;
+    color: white;
+    border-radius: 0.5rem;
+    padding: 0.2rem;
+    text-align: center;
+    font-weight: 700;
+    margin-top: 1rem;
 }
 
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-    .formp4 {
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
-        margin-left: 5rem;
-    }
-
-    .imageblog {
-        display: none;
-    }
-
-    .formp4 input {
-        font-size: 1rem;
-        border-radius: .9rem;
-        width: 30rem;
-        padding-left: 2rem;
-        height: 8rem;
-        margin-bottom: 1rem;
-        font-family: 'Monserrat', sans-serif;
-    }
-
-    .option button {
-        height: 5rem;
-    }
-
-    .option p {
-        font-size: 1.5rem;
-    }
+#loguear{
+    color:blue;
+    font-size: 1rem;
 }
 
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
-    .contentp4{
-        height: 100rem;
-        margin-bottom: 10rem;
-        background-image: none;
-    }
-    
-    .formp4 {
-        margin-left: 12.5rem;
-    }
-
-    .imageblog {
-        display: none;
-    }
-
-    .formp4 input {
-        font-size: 1rem;
-        border-radius: .9rem;
-        width: 30rem;
-        padding-left: 2rem;
-        padding-top: 0;
-        padding-bottom: 0;
-        height: 5rem;
-        margin-bottom: 3rem;
-        font-family: 'Monserrat', sans-serif;
-    }
-
-    .formp4 input::placeholder{
-        font-size: 1.3rem;
-    }
-
-    .option button {
-        height: 5rem;
-    }
-
-    .option p {
-        font-size: 1.5rem;
-    }   
-}
-
-@media only screen and (min-width: 1200px) and (max-width: 1700px) {
-    .formp4{
-        margin-left: 2rem;
-        margin-right: 5rem;
+@media(max-width: 766px){
+    .containergeneralRegister{
         margin-top: 2rem;
     }
-    .imageblog {
-        width: 90rem;
-        margin-top: 5.4rem;
+    .registercontainer{
+        box-shadow: none;
+        border: none;
     }
-  }
+}
+
+@media (min-width: 1200px) and (max-width: 1700px){
+    .containergeneralRegister{
+        margin-top: 2rem;
+    }
+}
