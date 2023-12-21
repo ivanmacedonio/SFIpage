@@ -78,6 +78,22 @@ export const Verificacion = () => {
     }
   }
 
+  const calculateAge = (birthdate) => {
+    const today = new Date();
+    const birthDate = new Date(birthdate);
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const monthDiff = today.getMonth() - birthDate.getMonth();
+
+    if (
+      monthDiff < 0 ||
+      (monthDiff === 0 && today.getDate() < birthDate.getDate())
+    ) {
+      age--;
+    }
+
+    return age;
+  };
+
   async function onSubmit(data) {
     const token = localStorage.getItem("access");
     if (token) {
@@ -98,6 +114,8 @@ export const Verificacion = () => {
       formData.append("gender", data.gender);
       formData.append("identification_file", archivo);
 
+      const age = calculateAge(data.date_of_birth);
+
       if (isFile === false || checked === false) {
         nodoDiv.scrollIntoView({ behavior: "smooth" });
         setError("Para continuar debes completar todos los campos");
@@ -106,11 +124,18 @@ export const Verificacion = () => {
         });
       } else {
         if (data.phone_number && data.phone_number.length > 6) {
-          const res = await axios.post(`${BASE_URL}kyc/`, formData, {
-            headers: headers,
-            params: params,
-          });
-          nav("/");
+          if (age < 18) {
+            setEstiloError({
+              display: "block",
+            });
+            setError("Debes ser mayor de edad");
+          } else {
+            const res = await axios.post(`${BASE_URL}kyc/`, formData, {
+              headers: headers,
+              params: params,
+            });
+            nav("/");
+          }
         } else {
           setEstiloError({
             display: "block",
@@ -273,11 +298,11 @@ export const Verificacion = () => {
                   enviados a Smart Furute Income.
                 </p>
               </div>
-              <div className="slot" id="enviar">
-                <button type="submit">Enviar</button>
-              </div>
               <div className="error" style={estiloError} ref={divRef}>
                 <h3>{error}</h3>
+              </div>
+              <div className="slot" id="enviar">
+                <button type="submit">Enviar</button>
               </div>
             </form>
           </div>
