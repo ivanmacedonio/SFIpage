@@ -244,7 +244,13 @@ export const Perfil = () => {
                               <div className="cajaform">
                                 <div class="cl-toggle-switch">
                                   <label class="cl-switch">
-                                    <input type="checkbox" />
+                                    {membresia.purchase_Detail
+                                      .ind_bonus_will_be_redeemed === true ? (
+                                      <input type="checkbox" checked disabled />
+                                    ) : (
+                                      <input type="checkbox" disabled />
+                                    )}
+
                                     <span id="retiro">
                                       Retiro de quinquenio
                                     </span>
