@@ -1,0 +1,84 @@
+.containerresetgenerall {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15vh;
+    font-family: 'Lato';
+}
+
+.containerresetgenerall h1 {
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.containerresetgenerall h3 {
+    font-size: 1.2rem;
+    color: rgb(104, 104, 104);
+}
+
+.containerresetgenerall form {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.containerresetgenerall p{
+    color: rgb(104, 104, 104);
+    
+}
+
+.containerresetgenerall input {
+    font-size: 1.2rem;
+    outline: none;
+    padding: 0.7rem 0.5rem;
+    width: 50%;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    border: solid 1px rgb(232, 232, 232);
+    background-color: rgba(255, 255, 255, 0.597);
+    color: rgb(112, 112, 112);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.containerresetgenerall button {
+    border: none;
+    background-color: rgb(66, 66, 252);
+    color: white;
+    font-size: 1rem;
+    padding: 0.8rem 0;
+    border-radius: 0.4rem;
+    margin-top: 2rem;
+    cursor: pointer;
+    width: 30%;
+}
+
+#error{
+    background-color: orange;
+    width: 80%;
+    color: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+@media(max-width: 768px){
+    .containerresetgenerall h3{
+        width: 60%;
+    }
+    .containerresetgenerall h1{
+        font-size: 2.5rem;
+    }
+    .containerresetgenerall{
+        padding-left: 2rem;
+    }
+    .containerresetgenerall form{
+        margin: 0;
+    }
+    .containerresetgenerall input{
+        width: 80%;
+    }
+    .containerresetgenerall button{
+        width: 70%;
+    }
+}

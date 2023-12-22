@@ -46,7 +46,7 @@ export const Login = () => {
         }, 3000);
       }
     } catch (error) {
-      setIsLoading(false)
+      setIsLoading(false);
       setError("El usuario o la contraseña son invalidos");
       setDisplay1({
         display: "block",
@@ -94,8 +94,9 @@ export const Login = () => {
                 <h3>{error}</h3>
               </div>
               <a href="" id="forgot">
-                Olvide mi contraseña
+                <Link to={"/forgot"}>Olvide mi contraseña</Link>
               </a>
+
               <Link to={"/register"}>
                 <div className="afiliar">¿No estas afiliado? Afiliate aquí</div>
               </Link>

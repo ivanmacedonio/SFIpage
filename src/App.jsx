@@ -8,6 +8,7 @@ import { CheckoutMonth } from "./pages/CheckoutMonth";
 import { Contacto } from "./pages/Contacto";
 import { Error404 } from "./pages/Error404";
 import { FAQ } from "./pages/FAQ";
+import { Forgot } from "./pages/Forgot";
 import { Inicio } from "./pages/Inicio";
 import { Login } from "./pages/Login";
 import { Membresia } from "./pages/Membresia";
@@ -16,6 +17,7 @@ import { Page2 } from "./pages/Page2";
 import { Page3 } from "./pages/Page3";
 import { Perfil } from "./pages/Perfil";
 import { Register } from "./pages/Register";
+import { Reset } from "./pages/Reset";
 import { Verificacion } from "./pages/Verificacion";
 function App() {
   // useEffect(() => {
@@ -48,6 +50,8 @@ function App() {
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/checkout" element={<Checkout />} />
             <Route exact path="/checkoutMonth" element={<CheckoutMonth />} />
+            <Route exact path="/forgot" element={<Forgot />} />
+            <Route exact path="/reset" element={<Reset />} />
 
             <Route path="*" element={<Error404 />} />
           </Routes>
