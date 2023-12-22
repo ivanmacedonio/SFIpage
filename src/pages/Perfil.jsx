@@ -11,7 +11,6 @@ import BasicModal from "../components/ModalProfile1";
 import { BASE_URL, BASE_URL_LOGIN } from "../hooks/fetch";
 import "../styles/perfil.css";
 
-
 export const Perfil = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -243,10 +242,14 @@ export const Perfil = () => {
                               </div>
 
                               <div className="cajaform">
-                                <label>
-                                  <input type="checkbox" />
-                                  Retiro de quinquenio
-                                </label>
+                                <div class="cl-toggle-switch">
+                                  <label class="cl-switch">
+                                    <input type="checkbox" />
+                                    <span id="retiro">
+                                      Retiro de quinquenio
+                                    </span>
+                                  </label>
+                                </div>
                               </div>
                               <div
                                 className="cajaform"
@@ -258,7 +261,9 @@ export const Perfil = () => {
                               >
                                 {membresia.purchase_Detail.contract_file ===
                                 null ? (
-                                  <h4 style={{backgroundColor: 'red'}}>Aún no hay contrato activo</h4>
+                                  <h4 style={{ backgroundColor: "red" }}>
+                                    Aún no hay contrato activo
+                                  </h4>
                                 ) : (
                                   <h4
                                     onClick={() => {
@@ -307,8 +312,9 @@ export const Perfil = () => {
                                   {
                                     membresia.purchase_Detail
                                       .monthly_membership_cost
-                                  } {''}
-                                   USDT
+                                  }{" "}
+                                  {""}
+                                  USDT
                                 </h2>
                               </div>
                               {/* <div className="cajaform">
