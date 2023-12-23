@@ -4,14 +4,16 @@
     background-repeat: no-repeat;
     height: 80vh;
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .logo img {
-    width: 30rem;
+    width: 20rem;
 }
 
 .icons img {
-    width: 3rem;
+    width: 2.5rem;
     margin-left: 1rem;
     margin-top: 2rem;
 }
@@ -22,12 +24,13 @@
 
 
 .logo {
-    margin-bottom: 10rem;
+    /* margin-bottom: 10rem;
     margin-left: 20rem;
-    margin-right: 15rem;
-    margin-top: 5rem;
+    
+    margin-top: 5rem; */
     max-width: 30rem;
     display: flex;
+    margin-right: 9rem;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -35,7 +38,6 @@
 }
 
 .parent {
-    margin-top: 17rem;
     max-width: fit-content;
     display: flex;
 }
@@ -53,13 +55,13 @@
 }
 
 .footer h2 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 700;
     transition: .3s ease;
 }
 
 .footer h3 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     transition: .3s ease;
 }
 
@@ -88,7 +90,7 @@
     .logo {
         margin-top: 0rem;
         margin-right: 0;
-        margin-left: 7vw;
+        margin-left: 0;
         margin-bottom: 5rem;
         width: 20rem;
     }
@@ -108,11 +110,7 @@
     }
 }
 
-@media (width: 430px) {
-    .logo {
-        margin-left: 11vw;
-    }
-}
+
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
     .parent {
@@ -138,7 +136,6 @@
     .logo {
         margin-top: 10rem;
         margin-bottom: 3rem;
-        margin-left: 17vw;
         margin-right: 0;
     }
 
@@ -174,7 +171,6 @@
     .logo {
         margin-top: 0;
         margin-bottom: 7rem;
-        margin-left: 25vw;
         margin-right: 0;
     }
 

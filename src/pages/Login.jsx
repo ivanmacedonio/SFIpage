@@ -59,6 +59,7 @@ export const Login = () => {
       <div className="containergeneral">
         <div className="logincontainer">
           <h1 id="slogan">Smart Future Income</h1>
+
           <h1>Inicia sesión en tu cuenta </h1>
           <p>¡Nos alegramos de volver a verte!</p>
           {/* <div className="tokens">
