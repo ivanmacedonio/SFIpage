@@ -1,6 +1,8 @@
+import axios from "axios";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import candado from "../assets/shield.jpg";
+import { BASE_URL } from "../hooks/fetch";
 import "../styles/Forgot.css";
 
 export const Forgot = () => {
@@ -11,13 +13,15 @@ export const Forgot = () => {
     shouldUseNativeValidation: true,
   });
 
-  function onSubmit(data) {
+  async function onSubmit(data) {
     setIsLoading(true);
     setTimeout(() => {
       setIsLoading(false);
       setChange(true);
       setText("Enviado con éxito");
     }, 3000);
+    const res = await axios.post(`${BASE_URL}password-reset/`, data);
+    console.log(res.data)
   }
   return (
     <div className="containrgeneral">
@@ -38,7 +42,7 @@ export const Forgot = () => {
                 required: "Ingresa un email valido",
               })}
             />
-            <button type="submit" id={change ? "change" : ""}>
+            <button type="submit" id={change ? "change" : ""} disabled= {change ? true : false}>
               {" "}
               {isLoading ? <div class="spinner"></div> : `${text}`}
             </button>
@@ -48,9 +52,9 @@ export const Forgot = () => {
       <div className="candado">
         <img src={candado} alt="" />
         <h2>
-          Te enviaremos un formulario al correo electronico indicado donde
-          podras restablecer tu contraseña. Ante cualquier problema no dudes en
-          contactarte con nosotros
+          Te enviaremos un formulario al correo electrónico indicado, donde
+          podrás restablecer tu contraseña. Ante cualquier problema, no dudes en
+          contactarte con nosotros.
         </h2>
       </div>
     </div>
