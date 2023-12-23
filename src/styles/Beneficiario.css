@@ -9,7 +9,18 @@
     height: 70%;
     overflow-y: auto;
     padding-left: 2rem;
-    
+}
+#scrollbenef::-webkit-scrollbar {
+    width: 5px; 
+}
+
+#scrollbenef::-webkit-scrollbar-thumb {
+    background-color: #008d97; 
+    border-radius: 6px;
+}
+
+#scrollbenef::-webkit-scrollbar-track {
+    background-color: #f1f1f1; 
 }
 
 
