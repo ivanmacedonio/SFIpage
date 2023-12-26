@@ -16,7 +16,6 @@
     font-family: 'Lato', sans-serif;
     margin-top: 2rem;
     margin-bottom: 5rem;
-    background-color: rgb(2, 80, 116);
     border-radius: 1rem;
     height: fit-content;
     padding: 2rem;
@@ -31,7 +30,7 @@
 
 .formulariocontacto h1 {
     font-weight: 900;
-    color: rgb(255, 255, 255);
+    color: rgb(104, 104, 104);
     font-size: 5rem;
     margin-top: .5;
 }
@@ -40,9 +39,10 @@
     display: flex;
     flex-direction: column;
     color: white;
-    background-color: rgb(0, 104, 194);
+    background-color: rgb(35, 108, 171);
     padding: 1rem;
     border-radius: 1rem;
+    gap: 1rem;
 }
 
 
@@ -56,7 +56,7 @@
 .formulariocontacto input {
     border: none;
     font-size: 1.4rem;
-    border-radius: .9rem;
+    border-radius: .5rem;
     max-width: 95%;
     padding-left: 2rem;
     height: 2.5rem;
@@ -64,6 +64,7 @@
     font-family: 'Monserrat', sans-serif;
     padding-top: .5rem;
     padding-bottom: .5rem;
+    background-color: rgb(222, 222, 222);
 }
 
 .formulariocontacto input:focus {
@@ -76,6 +77,7 @@
 }
 
 #mensaje {
+    background-color: rgb(222, 222, 222);
     text-align: left;
     overflow-wrap: break-word;
     margin-bottom: 2rem;
@@ -101,22 +103,23 @@
 
 .formulariocontacto label {
     font-size: 1.2rem;
-    margin-bottom: 1rem;
 }
 
 
 .formulariocontacto button {
     font-family: 'Monserrat', sans-serif;
     font-weight: 700;
-    font-size: 3rem;
+    font-size: 2rem;
     color: white;
     text-align: center;
     background: linear-gradient(to right, rgb(26, 191, 219), rgb(2, 80, 116));
     border-radius: .6rem;
     border-style: none;
     margin-bottom: 2rem;
-    width: 90%;
+    width: 70%;
     margin-top: 2rem;
+    padding: .5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .formulariocontacto button:hover {
@@ -152,7 +155,6 @@
     .formulariocontacto input {
         width: 90%;
         border: none;
-        background-color: rgb(255, 255, 255);
     }
 
     .formulariocontacto input::placeholder {
@@ -179,13 +181,11 @@
 
     .formulariocontacto label {
         font-size: 1.4rem;
-        margin-bottom: 1rem;
     }
 
     .formulariocontacto button {
         margin-top: 2rem;
-        max-width: 80%;
-        margin-left: 10%;
+        width: 100%;
     }
 
 }
@@ -308,7 +308,7 @@
 
 @media only screen and (min-width: 1200px) and (max-width: 1700px) {
     .imagencontacto {
-        width: 100%;
+        width: 29%;
         margin-left: 0rem;
         position: relative;
         left: 5rem;

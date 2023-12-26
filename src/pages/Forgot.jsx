@@ -8,6 +8,7 @@ import "../styles/Forgot.css";
 export const Forgot = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [change, setChange] = useState(false);
+  const [error, setError] = useState("");
   const [text, setText] = useState("Enviar");
   const { register, handleSubmit } = useForm({
     shouldUseNativeValidation: true,
@@ -17,11 +18,18 @@ export const Forgot = () => {
     setIsLoading(true);
     setTimeout(() => {
       setIsLoading(false);
-      setChange(true);
-      setText("Enviado con éxito");
     }, 3000);
-    const res = await axios.post(`${BASE_URL}password-reset/`, data);
-    console.log(res.data)
+
+    try {
+      const res = await axios.post(`${BASE_URL}password-reset/`, data);
+      setText("Enviado correctamente");
+      setChange(true);
+      setError('')
+      console.log(res)
+    } catch (error) {
+      setError(error.response.data.email);
+      setChange(false);
+    }
   }
   return (
     <div className="containrgeneral">
@@ -42,11 +50,16 @@ export const Forgot = () => {
                 required: "Ingresa un email valido",
               })}
             />
-            <button type="submit" id={change ? "change" : ""} disabled= {change ? true : false}>
+            <button
+              type="submit"
+              id={change ? "change" : ""}
+              disabled={change ? true : false}
+            >
               {" "}
               {isLoading ? <div class="spinner"></div> : `${text}`}
             </button>
           </form>
+          {error !== "" ? <div className="errorForgot">{error}</div> : ""}
         </div>
       </div>
       <div className="candado">

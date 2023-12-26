@@ -14,7 +14,7 @@ a {
 .header img {
     width: 18rem;
     margin-top: 3rem;
-    margin-left: 5rem;
+    margin-left: 13rem;
 }
 
 .links {
@@ -245,6 +245,7 @@ a {
 @media only screen and (min-width: 1300px) and (max-width: 1700px) {
     .imagenlogo img {
         width: 25rem;
+        margin-left: 1rem;
     }
 
     .links {

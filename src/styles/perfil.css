@@ -1,5 +1,10 @@
 /* Formulario 2 */
 
+#botonadquirirmodal {
+    margin-top: 2rem;
+    font-size: 2rem;
+}
+
 .formulario2 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -27,7 +32,7 @@
 .formulario2 p {
     color: white;
     font-family: 'Lato', sans-serif;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     font-weight: 700;
     margin-bottom: 0;
 }
@@ -45,7 +50,7 @@
 }
 
 .formulario2 h2 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-family: 'Lato', sans-serif;
     background-color: rgb(85, 85, 85);
     width: 70%;
@@ -84,7 +89,7 @@
 
 #titleForm2{
     grid-column: span 3;
-    font-size: 3rem;
+    font-size: 2rem;
     width: 100%;
     margin: 2rem 0;
     text-align: center;
@@ -109,6 +114,8 @@
 
 
 @media(max-width: 768px){
+
+   
     .formulario2{
         display: flex;
         flex-direction: column;
@@ -313,11 +320,8 @@
     font-family: 'Monserrat', sans-serif;
     font-weight: 900;
     margin-bottom: 0;
-    font-size: 5rem;
-    background: linear-gradient(to right, rgb(3, 180, 211), rgb(2, 80, 116));
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
+    font-size: 3.5rem;
+    color: gray;
     margin-left: 2rem;
     margin-top: 0;
     width: fit-content
@@ -367,7 +371,7 @@
 
 .form1 p {
     color: white;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 400;
     margin-left: 3rem;
     margin-bottom: 1rem;
@@ -383,7 +387,7 @@
     width: 23rem;
     margin-left: 3rem;
     margin-top: 0;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     padding-left: 1rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -854,7 +858,7 @@
 
     .formprofile2 {
         max-width: max-content;
-        margin-left: 1rem;
+        margin-left: 2rem;
     }
 
     .formprofile1 h1 {

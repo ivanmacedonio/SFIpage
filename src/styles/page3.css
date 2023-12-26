@@ -102,6 +102,7 @@ img {
     width: min-content;
     margin-bottom: 0;
     margin-top: 3rem;
+    font-size: 10rem;
 }
 
 .planesp3 p {
@@ -118,13 +119,10 @@ img {
 .razones2 ul {
     background-color: rgb(236, 236, 236);
     border-radius: 1rem;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    padding-left: 4rem;
-    padding-right: 4rem;
+    padding: 2rem 4rem;
     margin-left: 10rem;
     list-style: disc;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 200;
     font-family: 'Monserrat', sans-serif;
     color: rgb(12, 109, 154);

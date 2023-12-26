@@ -309,7 +309,8 @@ export const Perfil = () => {
                               <div className="cajaform">
                                 <p>Cantidad de beneficios</p>
                                 <h2>
-                                  1/{membresia.purchase_Detail.months_of_profit}
+                                  1/
+                                  {membresia.purchase_Detail.months_of_profit}
                                 </h2>
                               </div>
                               <div className="cajaform">

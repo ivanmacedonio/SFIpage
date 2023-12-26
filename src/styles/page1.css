@@ -9,7 +9,6 @@ img {
 .footer {
     z-index: 4;
     width: 100%;
-    margin-top: 9rem;
 }
 
 
@@ -19,9 +18,9 @@ img {
     background-repeat: no-repeat;
     background-position: bottom;
     width: 100%;
-    height: 60rem;
+    height: 45rem;
     position: relative;
-    top: 5rem;
+    top: 7rem;
     z-index: 1;
     border-radius: 1rem;
 }
@@ -48,7 +47,8 @@ img {
     position: absolute;
     z-index: 1;
     left: 64rem;
-    top: 13rem;
+    bottom: 20rem;
+    width: 50rem;
 }
 
 .textfamilia2 {
@@ -90,13 +90,13 @@ img {
 }
 
 .textp1 h2 {
-    font-size: 5rem;
+    font-size: 2.5rem;
     margin: 0;
 }
 
 .textp1 h1 {
     margin: 0;
-    font-size: 6rem;
+    font-size: 5rem;
     width: 100%;
     font-weight: 700;
 }
@@ -104,9 +104,8 @@ img {
 #big {
     font-family: 'Montserrat', sans-serif;
     margin-top: 2rem;
-    margin-left: 2rem;
     width: 50rem;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
 }
 
 @media (width: 430px) {
@@ -147,6 +146,7 @@ img {
     .imgfamilia {
         left: 0;
         top: 60rem;
+        width: 25rem;
     }
 
     .textp1 h2 {
@@ -236,6 +236,8 @@ img {
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
+
+  
     .welcome {
         background-position: right;
         height: 72rem;
@@ -254,6 +256,7 @@ img {
     #imgfamilia2,
     .textfamilia2,
     #h2delete,
+    .imgfamilia,
     #big {
         display: none;
     }
@@ -361,17 +364,15 @@ img {
         display: none;
     }
 
-    .footer{
-        margin-top: 6rem;
-    }
+
 }
 
 @media only screen and (min-width: 1300px) and (max-width: 1599px) {
     .imgfamilia {
-        left: 43rem;
-        top: 0;
-        bottom: 5rem;
+        left: 50rem;
+        top: 15rem;
         z-index: 1;
+        width: 30rem;
     }
 
     .imgfamilia img {
@@ -380,7 +381,6 @@ img {
 
     .welcome {
         background-position: right;
-        height: 55rem;
     }
 
     #big {
@@ -397,7 +397,6 @@ img {
     .footer {
         position: relative;
         z-index: 4;
-        margin-top: 10rem;
     }
 
     .imgfamilia2 {
@@ -438,5 +437,8 @@ img {
 
     .textfamilia2 {
         left: 75rem;
+    }
+    .imgfamilia{
+        width: 35rem;
     }
 }
