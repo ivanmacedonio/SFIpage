@@ -43,7 +43,8 @@
     font-size: 1.5rem;
     text-align: center;
     background-color: rgb(15, 98, 0);
-    padding: 1rem 0;
+    padding: 1rem 0rem;
+    width: 80%;
     border-radius: 1rem;
     cursor: pointer;
     font-weight: 700;
@@ -91,12 +92,13 @@
     grid-column: span 3;
     font-size: 2rem;
     width: 100%;
-    margin: 2rem 0;
     text-align: center;
     font-family: 'Lato', sans-serif;
     font-weight: 700;
     color: white;
     background-color: rgb(57, 57, 57);
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
 }
 
 .cajaformIMG{
@@ -104,6 +106,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.cajaformIMG img{
+    width: 17rem;
 }
 
 #retiro{
@@ -131,11 +137,18 @@
         padding: 1rem 0;
         width: 90%;
     }
+   .pagarMensualidad {
+    padding-left: 2rem;
+    width: 100%;
+   }
 }
 
 @media (min-width: 1200px) and (max-width: 1600px){
     .cajaform{
         padding-left: 1rem;
+    }
+    .formulario2 h5{
+        width: 98%;
     }
 }
 

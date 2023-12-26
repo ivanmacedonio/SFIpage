@@ -139,10 +139,12 @@
   
   .nav-item {
     font-family: 'Montserrat', sans-serif;
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    background-color: rgb(4, 39, 115);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    background-color: rgb(54, 95, 184);
     color: #fff;
     border-radius: 1rem;
     text-align: center;
@@ -150,7 +152,7 @@
     cursor: pointer;
     margin-right: 20px;
     margin-top: 20px;
-    font-size: 1rem;
-    cursor: pointer;
+    font-size: 1.2rem;
+
   }
   

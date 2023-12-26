@@ -112,7 +112,7 @@ img {
 .valorestitle h1 {
     font-family: 'Lato', sans-serif;
     font-weight: 900;
-    font-size: 5rem;
+    font-size: 3rem;
     border-radius: 3rem;
     background: rgb(130, 94, 246);
     color: white;
@@ -127,7 +127,7 @@ img {
 }
 
 .lista li {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-family: 'Montserrat', sans-serif;
     color: rgb(2, 80, 116);
     font-weight: 400;
@@ -425,6 +425,9 @@ img {
     .confianza{
         margin-left: 5rem;
     }
+    .lista{
+        margin-right: 2rem;
+    }
 }
 
 @media only screen and (min-width: 1300px) and (max-width: 1600px) {
@@ -461,19 +464,22 @@ img {
 
     .lista {
         margin: 0;
-        background-color: rgb(0, 103, 150, 0.8);
         border-radius: 1rem;
     }
 
     .lista li {
         color: rgb(255, 255, 255);
-        background-color: rgb(0, 103, 150);
+        background-color: rgb(128, 128, 128);
     }
 
     .confianza {
         margin: 0;
         margin-top: 10rem;
         width: 88%
+    }
+
+    .listvalores{
+        margin-right: 1rem;
     }
 
   

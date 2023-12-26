@@ -186,7 +186,7 @@ export const Perfil = () => {
                         aria-controls="panel1a-content"
                         id="panel1a-header"
                       >
-                        <Typography style={{ fontSize: "2rem" }}>
+                        <Typography style={{ fontSize: "1.5rem" }}>
                           {`${membresia.purchase_Detail.membership_name} Nro. ${membresia.purchase_Detail.number}`}
                         </Typography>
                       </AccordionSummary>
