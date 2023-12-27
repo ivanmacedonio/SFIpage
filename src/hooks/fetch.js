@@ -1,5 +1,9 @@
+///PRODUCCION
+
 const BASE_URL_LOGIN =  'https://www.smartfutureincome.com/'
 const BASE_URL =  'https://www.smartfutureincome.com/api/'
+
+///DESARROLLO
 
 // const BASE_URL =  'http://localhost:9000/api/'
 // const BASE_URL_LOGIN = 'http://localhost:9000/'

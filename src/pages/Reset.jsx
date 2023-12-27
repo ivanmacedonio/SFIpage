@@ -18,34 +18,30 @@ export const Reset = () => {
   const [error, setError] = useState();
   const [passType, setPassType] = useState(false);
   const [success, setSuccess] = useState("");
-  function onSubmit(data) {
-    if (data.pass1 !== data.pass2) {
-      setError("Las contraseñas no coinciden");
-    } else {
-      try {
-        async function ResetPassword() {
-          const dataReset = {
-            new_password: data.pass1,
-            uidb64: uidb64,
-            token: token,
-          };
-
-          const res = await axios.post(
-            `${BASE_URL}password-reset-confirm/`,
-            dataReset
-          );
-          setSuccess("Contraseña modificada correctamente");
-          setTimeout(() => {
-            nav("/login");
-          }, 2000);
-        }
-        ResetPassword();
-      } catch (error) {
-        console.log("aaaaaaaaaaaaaaa");
+  async function onSubmit(data) {
+    try {
+      if (data.pass1 !== data.pass2) {
+        setError("Las contraseñas no coinciden");
+      } else {
+        const dataReset = {
+          new_password: data.pass1,
+          uidb64: uidb64,
+          token: token,
+        };
+  
+        const res = await axios.post(`${BASE_URL}password-reset-confirm/`, dataReset);
+        
+        setSuccess("Contraseña modificada correctamente");
+        setTimeout(() => {
+          nav("/login");
+        }, 2000);
       }
-      setError("");
+    } catch (error) {
+      console.error("Error al intentar restablecer la contraseña:", error);
+      setError("Ocurrió un error al intentar restablecer la contraseña");
     }
   }
+  
 
   function handleShow() {
     setPassType(!passType);
@@ -60,6 +56,7 @@ export const Reset = () => {
           Como medida de seguridad, la contraseña debe ser diferente a las
           usadas anteriormente
         </h3>
+        <hr  style={{marginTop: '2rem'}}/>
         <form onSubmit={handleSubmit(onSubmit)}>
           <p>Contraseña</p>
           <input
