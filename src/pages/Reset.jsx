@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useLocation, useNavigate } from "react-router-dom";
+import { MicroNav } from "../components/MicroNav";
 import { BASE_URL } from "../hooks/fetch";
 import "../styles/Reset.css";
 
@@ -35,8 +36,8 @@ export const Reset = () => {
           );
           setSuccess("Contraseña modificada correctamente");
           setTimeout(() => {
-            nav('/login')
-          },2000)
+            nav("/login");
+          }, 2000);
         }
         ResetPassword();
       } catch (error) {
@@ -89,6 +90,7 @@ export const Reset = () => {
           <button type="submit">Restablecer</button>
         </form>
       </div>
+      <MicroNav state={'change'}></MicroNav>
     </div>
   );
 };

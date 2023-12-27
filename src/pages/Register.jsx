@@ -4,7 +4,9 @@ import { Controller, useForm } from "react-hook-form";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { Link, useNavigate } from "react-router-dom";
+import { MicroNav } from "../components/MicroNav";
 import { BASE_URL } from "../hooks/fetch";
+
 import "../styles/Register.css";
 export const Register = () => {
   useEffect(() => {
@@ -144,6 +146,7 @@ export const Register = () => {
           </div>
         </div>
       </div>
+      <MicroNav state={'register'}></MicroNav>
     </div>
   );
 };

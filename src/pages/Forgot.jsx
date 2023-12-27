@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import candado from "../assets/shield.jpg";
+import { MicroNav } from "../components/MicroNav";
 import { BASE_URL } from "../hooks/fetch";
 import "../styles/Forgot.css";
 
@@ -70,6 +71,7 @@ export const Forgot = () => {
           contactarte con nosotros.
         </h2>
       </div>
+      <MicroNav state={'change'}></MicroNav>
     </div>
   );
 };

@@ -2,8 +2,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     margin-top: 15vh;
     font-family: 'Lato';
+    
 }
 
 .successChange{
@@ -59,9 +61,8 @@
     font-size: 1rem;
     padding: 0.8rem 0;
     border-radius: 0.4rem;
-    margin-top: 2rem;
     cursor: pointer;
-    width: 30%;
+    width: 40%;
 }
 
 #error{
@@ -74,6 +75,15 @@
     font-weight: 700;
 }
 
+.resetcontainer{
+    border-radius: 10px;
+    border: solid 1px rgb(232, 232, 232);
+    background-color: rgba(255, 255, 255, 0.597);
+    color: rgb(112, 112, 112);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+}
+
 @media(max-width: 768px){
     .containerresetgenerall h3{
         width: 60%;
@@ -81,9 +91,7 @@
     .containerresetgenerall h1{
         font-size: 2.5rem;
     }
-    .containerresetgenerall{
-        padding-left: 2rem;
-    }
+
     .containerresetgenerall form{
         margin: 0;
     }
@@ -91,6 +99,6 @@
         width: 80%;
     }
     .containerresetgenerall button{
-        width: 70%;
+        width: 85%;
     }
 }
