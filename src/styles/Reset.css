@@ -6,6 +6,11 @@
     font-family: 'Lato';
 }
 
+.successChange{
+    color: rgb(0, 190, 0);
+    font-size: 0.9rem;
+}
+
 .containerresetgenerall h1 {
     font-weight: 700;
     font-size: 2rem;
@@ -38,6 +43,13 @@
     background-color: rgba(255, 255, 255, 0.597);
     color: rgb(112, 112, 112);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.containerresetgenerall label input{
+    width: fit-content;
+}
+.containerresetgenerall label{
+    margin-top: 1rem;
 }
 
 .containerresetgenerall button {

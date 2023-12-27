@@ -1,4 +1,4 @@
-#continuar{
+#continuar {
     background: linear-gradient(to right, rgb(3, 180, 211), rgb(2, 80, 116));
     width: fit-content;
     padding: 0 2rem 0 2rem;
@@ -10,34 +10,47 @@
     margin-top: 2rem;
 }
 
-#scrolleable3{
+.labelbuttons {
+    display: flex;
+}
+
+.labelbuttons button {
+    background-color: rgb(0, 117, 156);
+    border: 1px solid;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    border-radius: 0.5rem;
+}
+
+
+#scrolleable3 {
     width: 30%;
     height: 80%;
     overflow-y: auto;
     overflow-x: hidden;
 }
 
-.modal3{
+.modal3 {
     font-family: 'Lato', sans-serif;
 }
 
-.modal3 h2{
+.modal3 h2 {
     font-size: 2rem;
     font-weight: 700;
 }
 
-.montos2{
+.montos2 {
     display: flex;
 }
 
-.montos2 p{
+.montos2 p {
     width: 70%;
     margin-bottom: 0;
     font-size: 1rem;
     margin-left: .5rem;
 }
 
-.montos2 h1{
+.montos2 h1 {
     background-color: rgb(98, 98, 98);
     width: fit-content;
     border-radius: 1rem;
@@ -47,105 +60,111 @@
     width: 80%;
 }
 
-.modal3 input{
+.modal3 input {
     width: 100%;
     padding: .5rem 0 .5rem 0;
     border-radius: .5rem;
     font-size: 1.3rem;
     padding-left: 1rem;
 }
-.continue{
+
+.continue {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.continuar4 button{
+.continuar4 button {
     background: none;
     border: none;
 }
-.check1{
+
+.check1 {
     width: 80%;
     background: linear-gradient(to right, rgb(3, 180, 211), rgb(2, 80, 116));
     border-radius: 1rem;
     padding: 1rem;
     margin-left: 2rem;
-    
+
 }
 
-#check1{
+#check1 {
     color: white;
     font-size: 1.3rem;
     width: 100%;
     cursor: pointer;
 }
 
-.errors{
+.errors {
     background-color: orangered;
     border-radius: 1rem;
     padding: .2rem;
     margin-top: 2rem;
 }
 
-.errors h2{
+.errors h2 {
     font-size: 1rem;
     text-align: center;
 }
 
-#x1{
+#x1 {
     font-size: 2rem;
     width: min-content;
+    cursor: pointer;
 }
 
-@media(max-width: 767px){
+@media(max-width: 767px) {
 
 
-    .check1{
+    .check1 {
         margin-left: 0;
         width: 90%;
         text-align: center;
     }
 
-    #check1{
+    #check1 {
         margin-left: 0;
         width: 100%;
     }
-    .css-1llu0g7{
+
+    .css-1llu0g7 {
         width: 300px !important;
     }
-    .caja3 h1{
+
+    .caja3 h1 {
         font-size: 1.4rem;
         width: fit-content;
     }
 
-    .caja3 p{
+    .caja3 p {
         width: 10rem;
     }
 
-    #scrolleable3{
+    #scrolleable3 {
         padding-left: 1.5rem;
     }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1199px) {
-  .css-1llu0g7{
-    top: 35%;
+    .css-1llu0g7 {
+        top: 35%;
     }
-    #scrolleable3{
+
+    #scrolleable3 {
         width: 70%;
     }
- 
+
 
 }
 
-@media only screen and (min-width: 1200px) and (max-width: 1600px){
-   
-    #scrolleable3{
+@media only screen and (min-width: 1200px) and (max-width: 1600px) {
+
+    #scrolleable3 {
         height: 80%;
         overflow-y: auto;
         width: 50%;
     }
 
-  
-    
+
+
 }

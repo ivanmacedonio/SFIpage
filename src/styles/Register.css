@@ -7,6 +7,11 @@
     font-family: 'Lato';
 }
 
+.successRegister{
+    color: rgb(0, 190, 0);
+    font-size: 0.9rem;
+}
+
 .registercontainer {
     font-size: 1.3rem;
     box-sizing: border-box;

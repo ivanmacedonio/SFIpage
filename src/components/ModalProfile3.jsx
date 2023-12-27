@@ -70,7 +70,6 @@ export default function BasicModal3({ membershipData, activated }) {
                 handleClose();
               }}
               id="x1"
-              
             >
               x
             </h3>
@@ -80,8 +79,10 @@ export default function BasicModal3({ membershipData, activated }) {
               <div className="caja3">
                 <p>Monto de cuota mensual en USDT</p>
                 <h1>
-                  {(membershipData.monthly_membership_cost *
-                    (membershipData.precio / 10000)).toLocaleString("en")}{" "}
+                  {(
+                    membershipData.monthly_membership_cost *
+                    (membershipData.precio / 10000)
+                  ).toLocaleString("en")}{" "}
                   USDT
                 </h1>
               </div>
@@ -93,18 +94,22 @@ export default function BasicModal3({ membershipData, activated }) {
             </div>
             <form onSubmit={handleSubmit(onSubmit)}>
               <p>Ingresa tu wallet (debe ser de la red Ethereum)</p>
-              <input
-                type="text"
-                readOnly={readOnly}
-                placeholder="Ingresa tu Wallet"
-                {...register("wallet1", {
-                  required: "Ingresa una wallet valida",
-                })}
-              />
+              <div className="labelbuttons">
+                <input
+                  type="text"
+                  readOnly={readOnly}
+                  placeholder="Ingresa tu Wallet"
+                  maxLength={45}
+                  {...register("wallet1", {
+                    required: "Ingresa una wallet válida",
+                  })}
+                />
+              </div>
               <p>Confirma tu wallet (últimos 4 digitos)</p>
               <input
                 type="text"
                 readOnly={readOnly}
+                maxLength={4}
                 placeholder="Confirma tu Wallet"
                 {...register("wallet2", {
                   required: "Ingresa los ultimos cuatro digitos",

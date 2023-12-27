@@ -15,6 +15,7 @@ export const Register = () => {
   const { register, handleSubmit, control } = useForm({
     shouldUseNativeValidation: true,
   });
+  const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
   const [loading, setIsLoading] = useState(false);
   const [errorRegisterStyle, setErrorRegisterStyle] = useState({
@@ -29,6 +30,7 @@ export const Register = () => {
       try {
         if (data.phone_number && data.phone_number.length > 6) {
           const res = await axios.post(`${BASE_URL}register/`, data);
+          setSuccess("Usuario creado correctamente");
           setTimeout(() => {
             setIsLoading(false);
             navigate("/login");
@@ -122,6 +124,9 @@ export const Register = () => {
               />
               Mostrar contraseña
             </label>
+            <div className="successRegister">
+              <h2>{success}</h2>
+            </div>
 
             <button type="submit">
               {loading ? <div class="spinner"></div> : "Registrarse"}
@@ -131,6 +136,7 @@ export const Register = () => {
           <div className="errorRegister" style={errorRegisterStyle}>
             <h2>{error}</h2>
           </div>
+
           <div className="option">
             <Link to={"/login"}>
               <p id="loguear">¿Ya tienes una cuenta? Ingresa aquí</p>

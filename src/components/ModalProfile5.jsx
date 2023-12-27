@@ -137,6 +137,7 @@ export default function BasicModal5({
       }
     } catch (error) {
       setError(error.response.data.respuestaServicio.detalle_tecnico);
+      console.log(error)
     }
   }
 

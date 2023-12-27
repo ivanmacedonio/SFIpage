@@ -51,7 +51,7 @@ function App() {
             <Route exact path="/checkout" element={<Checkout />} />
             <Route exact path="/checkoutMonth" element={<CheckoutMonth />} />
             <Route exact path="/forgot" element={<Forgot />} />
-            <Route exact path="/reset" element={<Reset />} />
+            <Route exact path="/changepassword" element={<Reset />} />
 
             <Route path="*" element={<Error404 />} />
           </Routes>
