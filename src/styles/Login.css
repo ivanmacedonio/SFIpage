@@ -9,6 +9,18 @@
     margin-bottom: 1rem;
 }
 
+.containericono{
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.containericono img{
+    width: 4rem;
+    height: auto;
+}
+
 
 .containergeneral {
     display: flex;
@@ -111,13 +123,16 @@
     font-weight: 700;
 }
 
+.containericono h1{
+    margin-top: 0 !important;
+}
+
 
 
 #slogan {
     font-weight: 900;
     font-size: 1.3rem;
     color: rgb(8, 0, 255);
-    margin-bottom: 3rem;
 }
 
 #forgot {
@@ -155,9 +170,7 @@
         font-size: 2.5rem;
     }
 
-    #slogan {
-        margin-bottom: 1rem;
-    }
+  
 }
 
 @media(min-width: 1200px) {

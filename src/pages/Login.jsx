@@ -3,6 +3,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
+import icono from "../assets/icono.png";
 import { MicroNav } from "../components/MicroNav";
 import { BASE_URL } from "../hooks/fetch";
 import "../styles/Login.css";
@@ -80,7 +81,11 @@ export const Login = () => {
     <div>
       <div className="containergeneral">
         <div className="logincontainer">
-          <h1 id="slogan">Smart Future Income</h1>
+          <div className="containericono">
+            <img src={icono} alt="" />
+            <h1 id="slogan">Smart Future Income</h1>
+          </div>
+
           <div className="separador">
             <h1>Inicia sesión en tu cuenta </h1>
             <p>¡Nos alegramos de volver a verte!</p>

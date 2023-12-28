@@ -8,6 +8,7 @@
     cursor: pointer;
     color: white;
     margin-top: 2rem;
+    text-transform: capitalize;
 }
 
 .labelbuttons {
