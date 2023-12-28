@@ -31,12 +31,17 @@ export const Register = () => {
     if (data.password == data.password2) {
       try {
         if (data.phone_number && data.phone_number.length > 6) {
-          const res = await axios.post(`${BASE_URL}register/`, data);
-          setSuccess("Usuario creado correctamente");
-          setTimeout(() => {
-            setIsLoading(false);
-            navigate("/login");
-          }, 3000);
+          try {
+            const res = await axios.post(`${BASE_URL}register/`, data);
+            setSuccess("Usuario creado correctamente");
+            setTimeout(() => {
+              setIsLoading(false);
+              navigate("/login");
+            }, 3000);
+          } catch (error) {
+            setIsLoading(false)
+            console.log(error);
+          }
         } else {
           setIsLoading(false);
           setError("Número telefonico no valido");
@@ -53,6 +58,7 @@ export const Register = () => {
         console.log(error);
       }
     } else {
+      setIsLoading(false);
       setError("Las contraseñas no coinciden");
       setErrorRegisterStyle({
         display: "block",
@@ -146,7 +152,7 @@ export const Register = () => {
           </div>
         </div>
       </div>
-      <MicroNav state={'register'}></MicroNav>
+      <MicroNav state={"register"}></MicroNav>
     </div>
   );
 };
