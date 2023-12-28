@@ -1,3 +1,4 @@
+import { GoogleLogin } from "@react-oauth/google";
 import axios from "axios";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -24,8 +25,8 @@ export const Login = () => {
   const onSubmit = async (data) => {
     setIsLoading(true);
     try {
-      const res = await axios.post(`${BASE_URL_LOGIN}token/`, data);
-      // const res = await axios.post(`${BASE_URL}login/`, data);
+      // const res = await axios.post(`${BASE_URL_LOGIN}token/`, data);
+      const res = await axios.post(`${BASE_URL}login/`, data);
       localStorage.setItem("access", res.data.access);
       localStorage.setItem("refresh", res.data.refresh);
 
@@ -55,6 +56,26 @@ export const Login = () => {
     }
   };
 
+  function createGoogleToken(response) {
+    const googleToken = response.credential;
+    axios
+      .post(`${BASE_URL}validate-google/`, { credential: googleToken })
+      .then((response) => {
+        localStorage.setItem("access", response.data.access);
+        nav("/");
+        console.log(response);
+      })
+      .catch((error) => {
+        setDisplay1({
+          display: "block",
+        });
+        setError(error.response.data.message);
+        setTimeout(() => {
+          nav("/register");
+        }, 3000);
+      });
+  }
+
   return (
     <div>
       <div className="containergeneral">
@@ -65,12 +86,19 @@ export const Login = () => {
             <p>¡Nos alegramos de volver a verte!</p>
             <hr />
           </div>
+          <GoogleLogin
+            onSuccess={(response) => {
+              createGoogleToken(response);
+            }}
+            onError={(response) => {
+              setError(`Error en la autenticacion con Google: ${response}`);
+            }}
+          />
 
           {/* <div className="tokens">
             <button>Google</button>
             <button>Facebook</button>
           </div> */}
-
           <div className="formlogin">
             <form onSubmit={handleSubmit(onSubmit)}>
               <input
@@ -108,7 +136,7 @@ export const Login = () => {
             </form>
           </div>
         </div>
-        <MicroNav state={'login'}></MicroNav>
+        <MicroNav state={"login"}></MicroNav>
       </div>
     </div>
   );
