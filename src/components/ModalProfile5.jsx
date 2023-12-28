@@ -4,7 +4,6 @@ import Modal from "@mui/material/Modal";
 import axios from "axios";
 import * as React from "react";
 import { useNavigate } from "react-router-dom";
-import { usePurchaseContext } from "../context/PurchaseContext";
 import { BASE_URL } from "../hooks/fetch";
 import "../styles/ModalProfile5.css";
 const style = {
@@ -38,7 +37,6 @@ export default function BasicModal5({
   const nav = useNavigate();
   const [error, setError] = React.useState("");
 
-  const { updatePurchaseData } = usePurchaseContext();
 
   React.useEffect(() => {
     async function getUser() {
