@@ -64,16 +64,10 @@ export const Login = () => {
       .then((response) => {
         localStorage.setItem("access", response.data.access);
         nav("/");
-        console.log(response);
       })
       .catch((error) => {
-        setDisplay1({
-          display: "block",
-        });
-        setError(error.response.data.message);
-        setTimeout(() => {
-          nav("/register");
-        }, 3000);
+        console.log(error);
+        nav("/register");
       });
   }
 

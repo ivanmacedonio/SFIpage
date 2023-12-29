@@ -180,7 +180,6 @@ export const Perfil = () => {
             </div>
           )}
           {selected ? (
-            <div className="generalc">
               <div className="membresia-data-container">
                 <div
                   className="close"
@@ -250,6 +249,7 @@ export const Perfil = () => {
                 <div className="box-grid">
                   <label>
                     <h3>Retiro de quinquenio</h3>
+                    <input type="checkbox" id="check" />
                   </label>
                 </div>
                 <div className="box-grid">
@@ -331,7 +331,6 @@ export const Perfil = () => {
                   </label>
                 </div>
               </div>
-            </div>
           ) : (
             <div className="membresia-container">
               <div className="box-grid" id="add-member">
