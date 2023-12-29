@@ -323,6 +323,12 @@ export const Perfil = () => {
                     </h4>
                   </label>
                 </div>
+                <div className="box-grid">
+                  <label>
+                    <h3>Wallet:</h3>
+                    <h4> {tempMember.purchase_Detail.wallet} </h4>
+                  </label>
+                </div>
               </div>
             </div>
           ) : (
@@ -381,6 +387,26 @@ export const Perfil = () => {
                     </h3>
                   </div>
                 </React.Fragment>
+              ))}
+            </div>
+          )}
+          {selected ? (
+            ""
+          ) : (
+            <div className="member-simple">
+              <h1>Mis membresías</h1>
+              {memberDetail.map((membresia) => (
+                <div className="box-flex">
+                  <label
+                    onClick={() => {
+                      setSelected(true);
+                      setTempMember(membresia);
+                    }}
+                  >
+                    <h2>{membresia.purchase_Detail.membership_name}</h2>
+                    <img src={iconoflecha} alt="" />
+                  </label>
+                </div>
               ))}
             </div>
           )}

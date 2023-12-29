@@ -9,6 +9,10 @@
     display: none;
 }
 
+.member-simple {
+    display: none;
+}
+
 /* 
 PROFILE
 */
@@ -102,6 +106,7 @@ MEMBRESIA
 
 .membresia-data-container-general {
     font-family: 'lato';
+    width: 70%;
 }
 
 #info {
@@ -164,8 +169,6 @@ MEMBRESIA
     width: min-content;
     padding: 0.3rem 1rem;
 }
-
-
 
 #box-img {
     cursor: pointer;
@@ -233,14 +236,26 @@ MEMBRESIA
     }
 
     .profile-box h2 {
-        font-size: 1.2rem;
+        font-size: 1rem;
+    }
 
+    .profile-box p {
+        font-size: 1rem;
+        margin-top: 0.8rem;
+    }
+
+    .img-profile img {
+        width: 50%;
+        border-radius: 1rem;
     }
 
     .containers-data {
         flex-direction: column;
     }
 
+    .membresia-data-container-general{
+        width: 100%;
+    }
     .profile-box {
         box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
         border-radius: 0;
@@ -259,14 +274,50 @@ MEMBRESIA
         margin-bottom: 3rem;
     }
 
-    .membresia-data-container{
+    .membresia-data-container-general h4 {
+        word-wrap: break-word;
+        max-width: 80%;
+    }
+
+    .membresia-data-container {
         position: static;
         display: flex;
         flex-direction: column;
         box-shadow: none;
     }
 
-    .close{
+    .close {
         font-size: 1.3rem;
+    }
+
+    .member-simple {
+        display: block;
+    }
+
+    .box-flex label {
+        display: flex;
+        width: 80%;
+        justify-content: space-between;
+        margin: 0 auto;
+        font-family: 'lato';text-align: center;
+        align-items: center;
+        background-color: rgb(201, 201, 201);
+        margin-bottom: 1rem;
+        padding: 0 1rem;
+        border-radius: 0.5rem;
+    }
+
+    .box-flex img {
+        max-width: 2rem;
+        max-height: 2rem;
+    }
+
+    .member-simple h1{
+        text-align: center;
+        font-family: 'lato';
+        background-color: rgb(0, 108, 108);
+        padding: 1rem;
+        color: white;
+        font-size: 1.5rem;
     }
 }
