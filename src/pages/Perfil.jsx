@@ -144,152 +144,185 @@ export const Perfil = () => {
         </div>
       ) : (
         <div className="containers-data">
-          <div className="profile-container">
-            <div className="profile-box">
-              <div className="img-profile">
-                <img src={foto} alt="" />
-              </div>
-              <label>
-                <h2>Nombre:</h2>
-                <p>{profile.user_name}</p>
-              </label>
-              <label>
-                <h2>Nacionalidad:</h2>
-                <p>{profile.nationality}</p>
-              </label>
-              <label>
-                <h2>Email:</h2>
-                <p>{profile.email}</p>
-              </label>
-              <label>
-                <h2>Identificación:</h2>
-                <p>{profile.identification}</p>
-              </label>
-              <label>
-                <h2>Teléfono:</h2>
-                <p>{profile.phone}</p>
-              </label>
-              <label>
-                <h2>Dirección:</h2>
-                <p>{profile.address}</p>
-              </label>
-            </div>
-          </div>
           {selected ? (
-            <div className="membresia-data-container">
-              <div className="close" onClick={() => {setSelected(false); setTempMember([])}}>
-                X
-              </div>
-              <div className="box-grid">
+            ""
+          ) : (
+            <div className="profile-container">
+              <div className="profile-box">
+                <div className="img-profile">
+                  <img src={foto} alt="" />
+                </div>
                 <label>
-                  <h3>Descripción:</h3>
-                  <h4> {tempMember.purchase_Detail.membership_name}</h4>
+                  <h2>Nombre:</h2>
+                  <p>{profile.user_name}</p>
+                </label>
+                <label>
+                  <h2>Nacionalidad:</h2>
+                  <p>{profile.nationality}</p>
+                </label>
+                <label>
+                  <h2>Email:</h2>
+                  <p>{profile.email}</p>
+                </label>
+                <label>
+                  <h2>Identificación:</h2>
+                  <p>{profile.identification}</p>
+                </label>
+                <label>
+                  <h2>Teléfono:</h2>
+                  <p>{profile.phone}</p>
+                </label>
+                <label>
+                  <h2>Dirección:</h2>
+                  <p>{profile.address}</p>
                 </label>
               </div>
-              <div className="box-grid">
-                <label>
-                  <h3>Cuotas:</h3>
-                  <h4>
-                    {" "}
-                    {tempMember.purchase_Detail.payment_quantity} /
-                    {tempMember.purchase_Detail.savings_duration_in_months}
-                  </h4>
-                </label>
-              </div>
-              <div className="box-grid">
-                <label>
-                  <h3>Total:</h3>
-                  <h4>
-                    {" "}
-                    {tempMember.purchase_Detail.amount.toLocaleString(
-                      "en"
-                    )}{" "}
-                    USDT
-                  </h4>
-                </label>
-              </div>
-              <div className="box-grid">
-                <label>
-                  <h3>Producto:</h3>
-                  <h4> {tempMember.purchase_Detail.contract_number}</h4>
-                </label>
-              </div>
-              <div className="box-grid">
-                <label>
-                  <h3>Cuota mensual:</h3>
-                  <h4>
-                    {" "}
-                    {tempMember.purchase_Detail.monthly_membership_cost} USDT
-                  </h4>
-                </label>
-              </div>
-              <div className="box-grid">
-                <label>
-                  <h3>Fecha de Inicio:</h3>
-                  <h4> {tempMember.purchase_Detail.created_date}</h4>
-                </label>
-              </div>
-              <div className="box-grid">
-                <h3>Estado actual</h3>
-                <h4>Activa</h4>
-              </div>
-              <div className="box-grid">
-                <h3>Retiro de quinquenio</h3>
-              </div>
-              <div className="box-grid">
-                {tempMember.purchase_Detail.contract_file === null ? (
-                  <h4 style={{ backgroundColor: "red" }}>
-                    Aún no hay contrato activo
-                  </h4>
-                ) : (
-                  <h4
-                    onClick={() => {
-                      window.location.assign(
-                        `${BASE_URL_LOGIN}${tempMember.purchase_Detail.contract_file}`
-                      );
-                    }}
-                  >
-                    Descargar contrato
-                  </h4>
-                )}
-              </div>
-              <div className="box-grid">
-                <h3>Información de beneficio</h3>
-              </div>
-              <div className="box-grid">
-                <label>
-                  <h3>Fecha de Inicio:</h3>
-                  <h4> {tempMember.purchase_Detail.created_date}</h4>
-                </label>
-              </div>
-              <div className="box-grid">
-                <label>
-                  <h3>Fecha de Vencimiento:</h3>
-                  <h4>-</h4>
-                </label>
-              </div>
-              <div className="box-grid">
-                <h3>Cantidad de beneficios:</h3>
-                <h4>
-                  {" "}
-                  1/
-                  {tempMember.purchase_Detail.months_of_profit}
-                </h4>
-              </div>
-              <div className="box-grid">
-                <h3>Monto de cuota mensual:</h3>
-                <h4>
-                  {" "}
-                  {tempMember.purchase_Detail.monthly_membership_cost} {""}
-                  USDT
-                </h4>
-              </div>
-              <div className="box-grid">
-                <h3>Tiempo de maduración:</h3>
-                <h4>
-                  {" "}
-                  {tempMember.purchase_Detail.maturity_period_in_months} Meses
-                </h4>
+            </div>
+          )}
+          {selected ? (
+            <div className="membresia-data-container-general">
+              <div className="membresia-data-container">
+                <div
+                  className="close"
+                  onClick={() => {
+                    setSelected(false);
+                    setTempMember([]);
+                  }}
+                >
+                  Volver
+                </div>
+                <div className="box-grid">
+                  <label>
+                    <h3>Descripción:</h3>
+                    <h4> {tempMember.purchase_Detail.membership_name}</h4>
+                  </label>
+                </div>
+                <div className="box-grid">
+                  <label>
+                    <h3>Cuotas:</h3>
+                    <h4>
+                      {" "}
+                      {tempMember.purchase_Detail.payment_quantity} /
+                      {tempMember.purchase_Detail.savings_duration_in_months}
+                    </h4>
+                  </label>
+                </div>
+                <div className="box-grid">
+                  <label>
+                    <h3>Total:</h3>
+                    <h4>
+                      {" "}
+                      {tempMember.purchase_Detail.amount.toLocaleString(
+                        "en"
+                      )}{" "}
+                      USDT
+                    </h4>
+                  </label>
+                </div>
+                <div className="box-grid">
+                  <label>
+                    <h3>Producto:</h3>
+                    <h4> {tempMember.purchase_Detail.contract_number}</h4>
+                  </label>
+                </div>
+                <div className="box-grid">
+                  <label>
+                    <h3>Cuota mensual:</h3>
+                    <h4>
+                      {" "}
+                      {tempMember.purchase_Detail.monthly_membership_cost} USDT
+                    </h4>
+                  </label>
+                </div>
+                <div className="box-grid">
+                  <label>
+                    <h3>Fecha de Inicio:</h3>
+                    <h4> {tempMember.purchase_Detail.created_date}</h4>
+                  </label>
+                </div>
+                <div className="box-grid">
+                  <label>
+                    <h3>Estado:</h3>
+                    <h4 id="estado">Activa</h4>
+                  </label>
+                </div>
+                <div className="box-grid">
+                  <label>
+                    <h3>Retiro de quinquenio</h3>
+                  </label>
+                </div>
+                <div className="box-grid">
+                  {tempMember.purchase_Detail.contract_file === null ? (
+                    <label>
+                      <h4 id="no-contract">Aún no hay contrato activo</h4>
+                    </label>
+                  ) : (
+                    <h4
+                      id="contract"
+                      onClick={() => {
+                        window.location.assign(
+                          `${BASE_URL_LOGIN}${tempMember.purchase_Detail.contract_file}`
+                        );
+                      }}
+                    >
+                      <label
+                        htmlFor="
+                      "
+                      >
+                        Descargar contrato
+                      </label>
+                    </h4>
+                  )}
+                </div>
+                <div className="box-grid" id="info">
+                  <label>
+                    <h3>Información de beneficio</h3>
+                  </label>
+                </div>
+                <div className="box-grid">
+                  <label>
+                    <h3>Fecha de Inicio:</h3>
+                    <h4> {tempMember.purchase_Detail.created_date}</h4>
+                  </label>
+                </div>
+                <div className="box-grid">
+                  <label>
+                    <h3>Fecha de Vencimiento:</h3>
+                    <h4>-</h4>
+                  </label>
+                </div>
+                <div className="box-grid">
+                  <label>
+                    <h3>Cantidad de beneficios:</h3>
+                    <h4>
+                      {" "}
+                      1/
+                      {tempMember.purchase_Detail.months_of_profit}
+                    </h4>
+                  </label>
+                </div>
+                <div className="box-grid">
+                  <label>
+                    <h3>Monto de cuota mensual:</h3>
+                    <h4>
+                      {" "}
+                      {tempMember.purchase_Detail.monthly_membership_cost} {""}
+                      USDT
+                    </h4>
+                  </label>
+                </div>
+                <div className="box-grid">
+                  <label>
+                    <h3>Tiempo de maduración:</h3>
+                    <h4>
+                      {" "}
+                      {
+                        tempMember.purchase_Detail.maturity_period_in_months
+                      }{" "}
+                      Meses
+                    </h4>
+                  </label>
+                </div>
               </div>
             </div>
           ) : (
@@ -351,9 +384,6 @@ export const Perfil = () => {
               ))}
             </div>
           )}
-          <div className="mis-membresias">
-            <h3>Ver mis membresías</h3>
-          </div>
         </div>
       )}
     </div>

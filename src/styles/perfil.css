@@ -5,7 +5,7 @@
     justify-content: space-around;
 }
 
-.mis-membresias{
+.mis-membresias {
     display: none;
 }
 
@@ -100,8 +100,69 @@ MEMBRESIA
     bottom: 5rem;
 }
 
-.membresia-data-container{
-    
+.membresia-data-container-general {
+    font-family: 'lato';
+}
+
+#info {
+    grid-column: span 4;
+    text-align: center;
+    background-color: rgb(156, 156, 156);
+    border-radius: 0.5rem;
+    color: rgb(255, 255, 255);
+    padding: 0.5rem 0;
+}
+
+.membresia-data-container-general h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.membresia-data-container-general h4 {
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+#estado {
+    color: rgb(0, 192, 0);
+    font-weight: 700;
+}
+
+
+
+
+
+.membresia-data-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    background-color: rgb(255, 255, 255);
+    border: 2px solid rgb(255, 255, 255);
+    box-shadow: 0 0 5rem rgba(0, 0, 0, 0.3);
+    padding: 2rem;
+    position: relative;
+    bottom: 10rem;
+    border-radius: 0.5rem;
+}
+
+.membresia-data-container label {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.close {
+    color: rgb(0, 0, 0);
+    grid-column: span 4;
+    font-weight: 700;
+    color: blue;
+    cursor: pointer;
+    border-radius: 1rem;
+    border: 2px solid blue;
+    width: min-content;
+    padding: 0.3rem 1rem;
 }
 
 
@@ -116,7 +177,7 @@ MEMBRESIA
 }
 
 #box-img:hover {
-    transform: scale(1.2); 
+    transform: scale(1.2);
 }
 
 
@@ -136,10 +197,25 @@ MEMBRESIA
     cursor: pointer;
 }
 
-.empty{
+.empty {
     text-align: center;
     font-family: 'lato';
     font-weight: 700;
+}
+
+#no-contract {
+    background-color: rgb(255, 80, 80);
+    color: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+#contract {
+    background-color: rgb(0, 150, 25);
+    color: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
 }
 
 @media(max-width: 768px) {
@@ -155,7 +231,8 @@ MEMBRESIA
         position: static;
         margin-bottom: 2rem;
     }
-    .profile-box h2{
+
+    .profile-box h2 {
         font-size: 1.2rem;
 
     }
@@ -169,7 +246,8 @@ MEMBRESIA
         border-radius: 0;
 
     }
-    .mis-membresias{
+
+    .mis-membresias {
         font-family: 'lato';
         font-size: 1.3rem;
         background-color: rgb(0, 119, 142);
@@ -179,5 +257,16 @@ MEMBRESIA
         padding: 0 1rem;
         border-radius: 0.5rem;
         margin-bottom: 3rem;
+    }
+
+    .membresia-data-container{
+        position: static;
+        display: flex;
+        flex-direction: column;
+        box-shadow: none;
+    }
+
+    .close{
+        font-size: 1.3rem;
     }
 }
