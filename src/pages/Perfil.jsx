@@ -20,6 +20,8 @@ export const Perfil = () => {
   const [isMember, setIsMember] = useState(false);
   const [denegado, setDenegado] = useState(false);
   const [memberDetail, setMemberDetail] = useState([]);
+  const [selected, setSelected] = useState(false);
+  const [tempMember, setTempMember] = useState();
   useEffect(() => {
     async function getUser() {
       const token = localStorage.getItem("access");
@@ -120,7 +122,7 @@ export const Perfil = () => {
       console.log(error);
     }
   }
-  console.log(memberDetail);
+  console.log(tempMember);
   return (
     <div className="general-container">
       <div className="header-container">
@@ -131,8 +133,9 @@ export const Perfil = () => {
         <div className="empty">
           {denegado ? (
             <h2>
-            Decidimos denegar tu acceso a la plataforma, si crees que estamos en un error no dudes en contactarnos.
-          </h2>
+              Decidimos denegar tu acceso a la plataforma, si crees que estamos
+              en un error no dudes en contactarnos.
+            </h2>
           ) : (
             <h2>
               Necesitas tener un KYC verificado para poder acceder a tu perfil.
@@ -172,56 +175,182 @@ export const Perfil = () => {
               </label>
             </div>
           </div>
-          <div className="membresia-container">
-            <div className="box-grid" id="title-table">
-              <h3>Descripción</h3>
-            </div>
-            <div className="box-grid" id="title-table">
-              <h3>Producto</h3>
-            </div>
-            <div className="box-grid" id="title-table">
-              <h3>Mensualidad</h3>
-            </div>
-            <div className="box-grid" id="title-table">
-              <h3>Ver</h3>
-            </div>
-            <div className="box-grid" id="title-table">
-              <h3>Pagar</h3>
-            </div>
-            {memberDetail.map((membresia) => (
-              <React.Fragment>
-                <div className="box-grid">
-                  <h3>{membresia.purchase_Detail.membership_name}</h3>
-                </div>
-
-                <div className="box-grid">
-                  <h3>{membresia.purchase_Detail.contract_number}</h3>
-                </div>
-
-                <div className="box-grid">
-                  <h3>
-                    {membresia.purchase_Detail.monthly_membership_cost} USDT
-                  </h3>
-                </div>
-                <div className="box-grid" id="box-img">
-                  <img src={iconoflecha} alt="" />
-                </div>
-                <div className="box-grid" id="pagar-btn">
-                  <h3
+          {selected ? (
+            <div className="membresia-data-container">
+              <div className="close" onClick={() => {setSelected(false); setTempMember([])}}>
+                X
+              </div>
+              <div className="box-grid">
+                <label>
+                  <h3>Descripción:</h3>
+                  <h4> {tempMember.purchase_Detail.membership_name}</h4>
+                </label>
+              </div>
+              <div className="box-grid">
+                <label>
+                  <h3>Cuotas:</h3>
+                  <h4>
+                    {" "}
+                    {tempMember.purchase_Detail.payment_quantity} /
+                    {tempMember.purchase_Detail.savings_duration_in_months}
+                  </h4>
+                </label>
+              </div>
+              <div className="box-grid">
+                <label>
+                  <h3>Total:</h3>
+                  <h4>
+                    {" "}
+                    {tempMember.purchase_Detail.amount.toLocaleString(
+                      "en"
+                    )}{" "}
+                    USDT
+                  </h4>
+                </label>
+              </div>
+              <div className="box-grid">
+                <label>
+                  <h3>Producto:</h3>
+                  <h4> {tempMember.purchase_Detail.contract_number}</h4>
+                </label>
+              </div>
+              <div className="box-grid">
+                <label>
+                  <h3>Cuota mensual:</h3>
+                  <h4>
+                    {" "}
+                    {tempMember.purchase_Detail.monthly_membership_cost} USDT
+                  </h4>
+                </label>
+              </div>
+              <div className="box-grid">
+                <label>
+                  <h3>Fecha de Inicio:</h3>
+                  <h4> {tempMember.purchase_Detail.created_date}</h4>
+                </label>
+              </div>
+              <div className="box-grid">
+                <h3>Estado actual</h3>
+                <h4>Activa</h4>
+              </div>
+              <div className="box-grid">
+                <h3>Retiro de quinquenio</h3>
+              </div>
+              <div className="box-grid">
+                {tempMember.purchase_Detail.contract_file === null ? (
+                  <h4 style={{ backgroundColor: "red" }}>
+                    Aún no hay contrato activo
+                  </h4>
+                ) : (
+                  <h4
                     onClick={() => {
-                      handlePurchaseMonth(
-                        membresia.purchase_Detail.monthly_membership_cost,
-                        membresia.purchase_Detail.membership_id,
-                        membresia.purchase_Detail.purchase_id
+                      window.location.assign(
+                        `${BASE_URL_LOGIN}${tempMember.purchase_Detail.contract_file}`
                       );
                     }}
                   >
-                    PAGAR
-                  </h3>
-                </div>
-              </React.Fragment>
-            ))}
-          </div>
+                    Descargar contrato
+                  </h4>
+                )}
+              </div>
+              <div className="box-grid">
+                <h3>Información de beneficio</h3>
+              </div>
+              <div className="box-grid">
+                <label>
+                  <h3>Fecha de Inicio:</h3>
+                  <h4> {tempMember.purchase_Detail.created_date}</h4>
+                </label>
+              </div>
+              <div className="box-grid">
+                <label>
+                  <h3>Fecha de Vencimiento:</h3>
+                  <h4>-</h4>
+                </label>
+              </div>
+              <div className="box-grid">
+                <h3>Cantidad de beneficios:</h3>
+                <h4>
+                  {" "}
+                  1/
+                  {tempMember.purchase_Detail.months_of_profit}
+                </h4>
+              </div>
+              <div className="box-grid">
+                <h3>Monto de cuota mensual:</h3>
+                <h4>
+                  {" "}
+                  {tempMember.purchase_Detail.monthly_membership_cost} {""}
+                  USDT
+                </h4>
+              </div>
+              <div className="box-grid">
+                <h3>Tiempo de maduración:</h3>
+                <h4>
+                  {" "}
+                  {tempMember.purchase_Detail.maturity_period_in_months} Meses
+                </h4>
+              </div>
+            </div>
+          ) : (
+            <div className="membresia-container">
+              <div className="box-grid" id="title-table">
+                <h3>Descripción</h3>
+              </div>
+              <div className="box-grid" id="title-table">
+                <h3>Producto</h3>
+              </div>
+              <div className="box-grid" id="title-table">
+                <h3>Mensualidad</h3>
+              </div>
+              <div className="box-grid" id="title-table">
+                <h3>Ver</h3>
+              </div>
+              <div className="box-grid" id="title-table">
+                <h3>Pagar</h3>
+              </div>
+              {memberDetail.map((membresia) => (
+                <React.Fragment>
+                  <div className="box-grid">
+                    <h3>{membresia.purchase_Detail.membership_name}</h3>
+                  </div>
+
+                  <div className="box-grid">
+                    <h3>{membresia.purchase_Detail.contract_number}</h3>
+                  </div>
+
+                  <div className="box-grid">
+                    <h3>
+                      {membresia.purchase_Detail.monthly_membership_cost} USDT
+                    </h3>
+                  </div>
+                  <div
+                    className="box-grid"
+                    id="box-img"
+                    onClick={() => {
+                      setSelected(true);
+                      setTempMember(membresia);
+                    }}
+                  >
+                    <img src={iconoflecha} alt="" />
+                  </div>
+                  <div className="box-grid" id="pagar-btn">
+                    <h3
+                      onClick={() => {
+                        handlePurchaseMonth(
+                          membresia.purchase_Detail.monthly_membership_cost,
+                          membresia.purchase_Detail.membership_id,
+                          membresia.purchase_Detail.purchase_id
+                        );
+                      }}
+                    >
+                      PAGAR
+                    </h3>
+                  </div>
+                </React.Fragment>
+              ))}
+            </div>
+          )}
           <div className="mis-membresias">
             <h3>Ver mis membresías</h3>
           </div>
