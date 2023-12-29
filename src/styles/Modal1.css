@@ -88,15 +88,13 @@
 }
 
 #botonadquirirmodal {
-    font-size: 3rem;
-    background: linear-gradient(to right, rgb(3, 180, 211), rgb(2, 80, 116));
-    color: white;
+    font-size: 1rem;
     border-radius: 1rem;
-    padding-left: 1rem;
-    padding-right: 2rem;
-    font-weight: 900;
-    font-style: italic;
+    font-weight: 700;
+
 }
+
+
 
 .membresiaModal1 h4 {
     font-size: 1.5rem;
@@ -123,7 +121,7 @@
     }
 
     #botonadquirirmodal {
-        font-size: 2rem;
+        font-size: 1.3rem;
     }
 
     .slide2 {

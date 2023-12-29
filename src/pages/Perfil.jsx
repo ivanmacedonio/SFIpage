@@ -4,9 +4,9 @@ import { useNavigate } from "react-router-dom";
 import foto from "../assets/anon.png";
 import iconoflecha from "../assets/flechaprofile.png";
 import { HeaderNormal } from "../components/Header-normal";
+import BasicModal from "../components/ModalProfile1";
 import { BASE_URL } from "../hooks/fetch";
 import "../styles/perfil.css";
-
 export const Perfil = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -180,7 +180,7 @@ export const Perfil = () => {
             </div>
           )}
           {selected ? (
-            <div className="membresia-data-container-general">
+            <div className="generalc">
               <div className="membresia-data-container">
                 <div
                   className="close"
@@ -191,6 +191,7 @@ export const Perfil = () => {
                 >
                   Volver
                 </div>
+
                 <div className="box-grid">
                   <label>
                     <h3>Descripción:</h3>
@@ -274,7 +275,7 @@ export const Perfil = () => {
                     </h4>
                   )}
                 </div>
-                <div className="box-grid" id="info">
+                <div className="box-grid1" id="info">
                   <label>
                     <h3>Información de beneficio</h3>
                   </label>
@@ -323,7 +324,7 @@ export const Perfil = () => {
                     </h4>
                   </label>
                 </div>
-                <div className="box-grid">
+                <div className="box-grid" id="walletprof">
                   <label>
                     <h3>Wallet:</h3>
                     <h4> {tempMember.purchase_Detail.wallet} </h4>
@@ -333,6 +334,9 @@ export const Perfil = () => {
             </div>
           ) : (
             <div className="membresia-container">
+              <div className="box-grid" id="add-member">
+                <BasicModal></BasicModal>
+              </div>
               <div className="box-grid" id="title-table">
                 <h3>Descripción</h3>
               </div>
@@ -408,6 +412,9 @@ export const Perfil = () => {
                   </label>
                 </div>
               ))}
+              <div className="modal">
+                <BasicModal></BasicModal>
+              </div>
             </div>
           )}
         </div>

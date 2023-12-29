@@ -79,12 +79,26 @@ PROFILE
     width: 70%;
     border-radius: 1rem;
 }
+.modal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem 0;
+}
+
 
 
 /* 
 MEMBRESIA
  */
 
+
+ #add-member{
+    color: blue;
+    cursor: pointer;
+    grid-column: span 5;
+
+ }
 
 
 .membresia-container {
@@ -104,10 +118,7 @@ MEMBRESIA
     bottom: 5rem;
 }
 
-.membresia-data-container-general {
-    font-family: 'lato';
-    width: 70%;
-}
+
 
 #info {
     grid-column: span 4;
@@ -115,18 +126,20 @@ MEMBRESIA
     background-color: rgb(156, 156, 156);
     border-radius: 0.5rem;
     color: rgb(255, 255, 255);
-    padding: 0.5rem 0;
 }
 
-.membresia-data-container-general h3 {
-    font-size: 1.2rem;
+.membresia-data-container h3 {
+    font-size: 1.3rem;
     font-weight: 700;
-    margin: 0;
+    max-width: 100%;
+    word-wrap: break-word;
+
 }
 
-.membresia-data-container-general h4 {
+.membresia-data-container h4 {
     font-size: 1.1rem;
-    margin: 0;
+    max-width: 100%;
+    word-wrap: break-word;
 }
 
 #estado {
@@ -134,14 +147,11 @@ MEMBRESIA
     font-weight: 700;
 }
 
-
-
-
-
 .membresia-data-container {
+    font-family: 'lato';
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 1rem;
     background-color: rgb(255, 255, 255);
     border: 2px solid rgb(255, 255, 255);
     box-shadow: 0 0 5rem rgba(0, 0, 0, 0.3);
@@ -149,6 +159,27 @@ MEMBRESIA
     position: relative;
     bottom: 10rem;
     border-radius: 0.5rem;
+    width: 100%;
+}
+
+
+
+.box-grid{
+    max-width: 25rem;
+}
+
+
+#info {
+    grid-column: span 4;
+    text-align: center;
+    background-color: rgb(156, 156, 156);
+    border-radius: 0.5rem;
+    color: rgb(255, 255, 255);
+    width: 100%;
+}
+
+.generalc{
+    max-width: 80%;
 }
 
 .membresia-data-container label {
@@ -253,9 +284,6 @@ MEMBRESIA
         flex-direction: column;
     }
 
-    .membresia-data-container-general{
-        width: 100%;
-    }
     .profile-box {
         box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
         border-radius: 0;
@@ -274,12 +302,10 @@ MEMBRESIA
         margin-bottom: 3rem;
     }
 
-    .membresia-data-container-general h4 {
-        word-wrap: break-word;
-        max-width: 80%;
-    }
 
     .membresia-data-container {
+        word-wrap: break-word;
+        max-width: 80%;
         position: static;
         display: flex;
         flex-direction: column;
@@ -319,5 +345,10 @@ MEMBRESIA
         padding: 1rem;
         color: white;
         font-size: 1.5rem;
+    }
+
+    .generalc{
+        max-width: 100%;
+       
     }
 }
