@@ -5,12 +5,13 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import baricon from "../assets/header-icon.svg";
 import logo from "../assets/logoSPI.png";
-import { BASE_URL } from '../hooks/fetch';
+import { BASE_URL } from "../hooks/fetch";
 import "../styles/headerNormal.css";
 
 export const HeaderNormal = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [isLogin, setIsLogin] = useState(false);
+  const [isKycState, setIsKyc] = useState();
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -37,10 +38,34 @@ export const HeaderNormal = () => {
       if (res.status === 200) {
         setIsLogin(true);
       } else {
-        setIsLogin(false)
+        setIsLogin(false);
       }
     } catch (error) {
       setIsLogin(false);
+    }
+  }
+
+  async function isKYC() {
+    const token = localStorage.getItem("access");
+    const headers = {
+      Authorization: `Bearer ${token}`,
+    };
+    const params = {
+      _cacheBuster: new Date().getTime(),
+    };
+    try {
+      const res = await axios.get(`${BASE_URL}kyc/`, {
+        headers,
+        params: params,
+      });
+
+      if (res.data === "") {
+        setIsKyc(false);
+      } else {
+        setIsKyc(true);
+      }
+    } catch (error) {
+      console.log(error);
     }
   }
 
@@ -48,6 +73,7 @@ export const HeaderNormal = () => {
     const token = localStorage.getItem("access");
 
     if (token) {
+      isKYC();
       getVerify();
     } else {
       setIsLogin(false);
@@ -61,6 +87,8 @@ export const HeaderNormal = () => {
     localStorage.removeItem("refresh");
     nav("/login");
   }
+
+  console.log(isKycState)
 
   return (
     <div className="header">
@@ -115,7 +143,7 @@ export const HeaderNormal = () => {
         </Link>
 
         {isLogin ? (
-          <Link to={"/perfil"}>
+          <Link to={isKycState ? "/perfil" : "/verificacion"}>
             {" "}
             <h2 id="session">Mi cuenta</h2>{" "}
           </Link>
@@ -172,7 +200,7 @@ export const HeaderNormal = () => {
           </Link>
 
           {isLogin ? (
-            <Link to={"/perfil"}>
+            <Link to={isKycState ? "/perfil" : "/verificacion"}>
               {" "}
               <h2 id="session">Mi cuenta</h2>{" "}
             </Link>

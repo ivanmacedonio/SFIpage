@@ -55,7 +55,7 @@ export const Perfil = () => {
                 break;
             }
           } else {
-            nav("/verificacion");
+            console.log('no kyc')
           }
         } catch (error) {
           console.log(error)
