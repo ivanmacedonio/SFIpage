@@ -5,7 +5,7 @@
     font-family: 'Lato', sans-serif
 }
 
-.errortransfer{
+.errortransfer {
     font-family: 'Lato';
     font-size: 1.2rem;
     background-color: orange;
@@ -14,11 +14,11 @@
     font-weight: 700;
 }
 
-.t p{
+.t p {
     width: fit-content;
 }
 
-.modal5 h1{
+.modal5 h1 {
     font-weight: 900;
     color: #e5e5e5;
 }
@@ -104,10 +104,10 @@
     margin-bottom: 2rem;
 }
 
-.cont21 h2{
+.cont21 h2 {
     font-family: 'Lato', sans-serif;
-    font-weight:900;
-    font-size:2rem;
+    font-weight: 900;
+    font-size: 2rem;
     padding: 0;
     margin: 0;
     margin-bottom: 1rem;
@@ -115,7 +115,7 @@
     color: white;
 }
 
-.cont21{
+.cont21 {
     background-color: rgb(129, 129, 129);
     padding: 1rem;
     margin-bottom: 1rem;
@@ -125,7 +125,7 @@
 
 @media (max-width: 767px) {
 
-    .t{
+    .t {
         flex-direction: column;
         align-items: normal;
     }
@@ -147,7 +147,8 @@
         margin-left: 0rem;
     }
 
-    .t p, .t h3 {
+    .t p,
+    .t h3 {
         width: max-content;
         font-size: 1.3rem;
         width: 100%;
@@ -160,10 +161,8 @@
     #transferir1 {
         font-size: 1.4rem;
         padding: 1rem;
-        margin-bottom: 2rem;
+        margin-bottom: 7rem;
     }
-
-
 }
 
 
@@ -172,6 +171,8 @@
     .css-1llu0g7 {
         top: 35% !important;
     }
+
+
 }
 
 @media (min-width: 1200px) and (max-width: 1600px) {
@@ -179,5 +180,7 @@
         height: 35rem;
         overflow-y: auto;
     }
+
+   
 
 }

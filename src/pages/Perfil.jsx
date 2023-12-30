@@ -50,15 +50,16 @@ export const Perfil = () => {
                 setProfile(res.data.KYC_Detail);
                 break;
               case "Denegado":
-                setEmpty(true)
+                setEmpty(false);
+                setProfile(res.data.KYC_Detail);
                 setDenegado(true);
                 break;
             }
           } else {
-            console.log('no kyc')
+            console.log("no kyc");
           }
         } catch (error) {
-          console.log(error)
+          console.log(error);
           setEmpty(true);
           nav("/login");
         }
@@ -133,16 +134,9 @@ export const Perfil = () => {
       <div className="background-profile"></div>
       {empty ? (
         <div className="empty">
-          {denegado ? (
-            <h2>
-              Decidimos denegar tu acceso a la plataforma, si crees que estamos
-              en un error no dudes en contactarnos.
-            </h2>
-          ) : (
-            <h2>
-              Necesitas tener un KYC verificado para poder acceder a tu perfil.
-            </h2>
-          )}
+          <h2>
+            Necesitas tener un KYC verificado para poder acceder a tu perfil.
+          </h2>
         </div>
       ) : (
         <div className="containers-data">
@@ -332,9 +326,15 @@ export const Perfil = () => {
             </div>
           ) : (
             <div className="membresia-container">
-              <div className="box-grid" id="add-member">
-                <BasicModal></BasicModal>
-              </div>
+              {denegado ? (
+                <h2 style={{ gridColumn: "span 5", color: "red" }}>
+                  Tu cuenta tiene restricción para adquirir membresías
+                </h2>
+              ) : (
+                <div className="box-grid" id="add-member">
+                  <BasicModal></BasicModal>
+                </div>
+              )}
 
               {isMember ? (
                 <React.Fragment>
@@ -425,7 +425,11 @@ export const Perfil = () => {
                 ""
               )}
               <div className="modal">
-                <BasicModal></BasicModal>
+                {denegado ? (
+                  <h2 style={{fontFamily: 'lato', color: 'red', textAlign: 'center'}}>Tu cuenta tiene restricción para adquirir membresías</h2>
+                ) : (
+                  <BasicModal></BasicModal>
+                )}
               </div>
             </div>
           )}

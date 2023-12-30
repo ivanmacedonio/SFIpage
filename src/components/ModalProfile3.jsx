@@ -2,7 +2,6 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Modal from "@mui/material/Modal";
 import * as React from "react";
-import { useState } from "react";
 import { useForm } from "react-hook-form";
 import validateFormData from "../hooks/Validation";
 import "../styles/ModalProfile3.css";
@@ -34,6 +33,7 @@ export default function BasicModal3({ membershipData, activated }) {
     shouldUseNativeValidation: true,
   });
 
+  ///0x742d35Cc6634C0532925a3b844Bc454e4438f44e
   function onSubmit(data) {
     const errors = validateFormData(data.wallet1);
     console.log(errors);
@@ -53,17 +53,16 @@ export default function BasicModal3({ membershipData, activated }) {
     }
   }
 
-  const [clipboardContent, setClipboardContent] = useState('');
+  // const [clipboardContent, setClipboardContent] = useState("");
 
-  const handleClipboardClick = async () => {
-    try {
-      const text = await navigator.clipboard.readText();
-      setClipboardContent(text);
-    } catch (error) {
-      console.error('Error al obtener el contenido del portapapeles:', error);
-    }
-  };
-
+  // const handleClipboardClick = async () => {
+  //   try {
+  //     const text = await navigator.clipboard.readText();
+  //     setClipboardContent(text);
+  //   } catch (error) {
+  //     console.error("Error al obtener el contenido del portapapeles:", error);
+  //   }
+  // };
   return (
     <div>
       <Button onClick={handleOpen} id="continuar">
@@ -109,13 +108,13 @@ export default function BasicModal3({ membershipData, activated }) {
               <div className="labelbuttons">
                 <input
                   type="text"
-                  defaultValue={clipboardContent}
-                  readOnly={true}
+                  id="scroll-inpt"
+                  readOnly={readOnly}
                   placeholder="Ingresa tu Wallet"
                   maxLength={45}
                   {...register("wallet1")}
                 />
-                <button onClick={handleClipboardClick}>Pegar</button>
+                {/* <button type="button" onClick={handleClipboardClick}>Pegar</button> */}
               </div>
               <p>Confirma tu wallet (últimos 4 digitos)</p>
               <input

@@ -233,20 +233,8 @@ export default function BasicModal4({ membershipData, wallet, activated }) {
 
               <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="modal4">
-                  <div className="hide">
-                    <BasicModal6
-                      onEnviarDatos={recibirBeneficiario}
-                    ></BasicModal6>
-                  </div>
                   <div className="continuar5">
                     {show ? (
-                      ""
-                    ) : (
-                      <div className="errorbenef" ref={miRef}>
-                        <h2>{error}</h2>
-                      </div>
-                    )}
-                    {show && (
                       <div className="tes">
                         <BasicModal5
                           membershipData={updatemembership}
@@ -255,6 +243,17 @@ export default function BasicModal4({ membershipData, wallet, activated }) {
                           activated={activated}
                         ></BasicModal5>
                       </div>
+                    ) : (
+                      <React.Fragment>
+                        <div className="hide">
+                          <BasicModal6
+                            onEnviarDatos={recibirBeneficiario}
+                          ></BasicModal6>
+                        </div>
+                        <div className="errorbenef" ref={miRef}>
+                          <h2>{error}</h2>
+                        </div>
+                      </React.Fragment>
                     )}
                   </div>
                 </div>

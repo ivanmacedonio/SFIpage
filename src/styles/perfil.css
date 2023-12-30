@@ -264,13 +264,19 @@ MEMBRESIA
     .membresia-data-container{
         display: flex;
         flex-direction: column;
+        gap: 0;
     }
+    .membresia-data-container .box-grid{
+        text-align: left;
+    }
+
+   
     .membresia-container {
         display: none;
     }
 
     .background-profile {
-        display: none;
+        height: 10rem;
     }
 
     .profile-container {
@@ -339,6 +345,12 @@ MEMBRESIA
         border-radius: 0.5rem;
     }
 
+    .box-grid label{
+        min-width: 100%;
+        justify-content: left;
+    }
+
+
     .box-flex img {
         max-width: 2rem;
         max-height: 2rem;
@@ -353,5 +365,8 @@ MEMBRESIA
         font-size: 1.5rem;
     }
 
+    #walletprof{
+        padding: 0;
+    }
 
 }

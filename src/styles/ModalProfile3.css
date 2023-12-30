@@ -11,6 +11,10 @@
     text-transform: capitalize;
 }
 
+#scroll-inpt {
+    overflow-x: scroll;
+}
+
 .labelbuttons {
     display: flex;
 }
