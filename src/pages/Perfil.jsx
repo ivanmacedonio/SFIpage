@@ -58,6 +58,7 @@ export const Perfil = () => {
             nav("/verificacion");
           }
         } catch (error) {
+          console.log(error)
           setEmpty(true);
           nav("/login");
         }

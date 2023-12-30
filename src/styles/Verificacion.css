@@ -1,526 +1,135 @@
 .verificacioncontainer {
-    margin-top: 5rem;
     display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    font-family: 'lato';
 }
 
-.error{
-    padding: 1rem;
-    background-color: rgb(254, 83, 83);
-    color: white;
-    font-family: 'Lato', sans-serif;
-    font-weight: 700;
-    font-size: 1rem;
-    width: 100%;
-    text-align: center;
+.formverif {
+    max-width: 50%;
+
 }
 
 
 
 .textverif h1 {
-    font-family: 'Lato', sans-serif;
-    font-weight: 900;
-    color: rgb(2, 80, 116);
-    font-size: 5rem;
-    width: 45rem;
-}
-
-.no-spinner {
-    /* Oculta las flechas de aumento y decremento en el input de tipo number */
-    -moz-appearance: textfield;
-    appearance: textfield;
-  }
-  
-  .no-spinner::-webkit-inner-spin-button,
-  .no-spinner::-webkit-outer-spin-button {
-    /* Oculta las flechas en navegadores WebKit (como Chrome y Safari) */
-    -webkit-appearance: none;
-    margin: 0;
-  }
-
-
-.alertaverif {
-    background-color: rgb(52, 52, 52);
-    border-radius: 1rem;
-    width: 100%;
-    color: white;
-    font-family: 'Lato', sans-serif;
-    height: 25rem;
-    margin-top: 10rem;
-}
-
-.slot a{
-    color: rgb(78, 78, 196);
-}
-
-.alertaverif h1 {
-    font-size: 3rem;
-    font-weight: 900;
-    border-radius: 1rem;
-    background: linear-gradient(to right, rgb(26, 191, 219), rgb(2, 80, 116));
-    width: max-content;
-    padding: 1rem;
-    margin-left: 35%;
-}
-
-.alertaverif p {
-    font-size: 1.7rem;
-    width: 35rem;
-    margin-left: 45rem;
-}
-
-.content {
-    padding-top: 2rem;
+    font-weight: 700;
+    font-size: 2.5rem;
 }
 
 .textverif h2 {
-    font-family: 'Lato', sans-serif;
-    color: rgb(1, 104, 151);
-    font-size: 2rem;
-    width: 50rem;
-    margin-left: 1.5rem;
+    max-width: 70%;
+    color: gray;
+    margin: 0;
 }
 
-.textverif {
-    margin-left: 12rem;
-    margin-top: 10rem;
-}
-
-.slot {
-    margin-left: 3rem;
+.formverif h1 {
+    font-weight: 900;
+    color: rgb(79, 79, 248);
 }
 
 .formverif form {
-    display: flex;
-    flex-wrap: wrap;
+    margin-right: 5rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-radius: 0.5rem;
+    background-color: rgb(242, 242, 242);
+    padding: 2rem;
 }
 
-.formverif {
-    background-color: rgb(52, 52, 52);
-    width: 40rem;
-    border-radius: 3rem;
-    margin-left: 10rem;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    height: fit-content;
+.textverif {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
-.formverif h1 {
-    font-family: 'Lato', sans-serif;
-    color: white;
-    font-weight: 700;
-    font-size: 4rem;
-    text-align: center;
-    margin-bottom: 1rem;
+
+.slot p {
+    color: rgb(111, 111, 111);
 }
 
-#direccion input {
-    width: 31rem;
-}
-
-.formverif p {
-    font-family: 'Lato', sans-serif;
-    color: rgba(255, 255, 255, 0.772);
-    font-size: 1.1rem;
-    margin-bottom: .5rem;
-    margin-left: 1rem;
-}
-
-.formverif input, .formverif select {
-    padding: 0rem 1rem;
-    padding-top: 1.3rem;
-    padding-bottom: 1.3rem;
-    border-radius: 1rem;
-    width: 13rem;
+.slot input,
+.slot select {
+    padding: 0.5rem;
+    font-family: 'lato';
     font-size: 1.3rem;
-}
-
-#marg{
-    margin-right: 2.5rem;
-}
-
-
-.formverif input::placeholder {
-    font-family: 'Lato', sans-serif;
-    font-size: 1.4rem;
-    color: rgba(116, 116, 116, 0.713);
-}
-
-.formverif input:focus {
     outline: none;
+    margin-top: 0;
+    border-radius: 10px;
+    border: solid 2px rgb(173, 173, 173);
+    background-color: rgba(255, 255, 255, 0.597);
+    color: rgb(112, 112, 112);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    transition: .5s ease;
+    width: 80%;
 }
 
-#select input {
-    padding-top: 0;
-    font-size: 1.5rem;
-    border-radius: 1rem;
+.slot input:focus {
+    border-color: rgb(97, 97, 246);
 }
 
-#select {
-    background-color: rgba(21, 123, 171, 0.722);
-    border-radius: 1rem;
-    width: 30rem;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-}
-
-#select input[type="file"] {
-    color: transparent;
-  }
-
-#checkb input {
-    width: fit-content;
-    margin-right: 1rem;
-}
-
-#checkb p {
-    margin: 0;
-    color: rgb(255, 255, 255);
-    font-size: 1.4rem;
-    border-radius: 1rem;
-    padding: .5rem;
-    width: 30rem;
-}
-
-#checkb {
-    display: flex;
-    flex-direction: row;
-}
-
-#enviar button {
-    background: linear-gradient(to right, rgb(26, 191, 219), rgb(2, 80, 116));
+.slot button {
+    font-size: 1.3rem;
+    width: 100%;
+    margin-top: 3rem;
+    background-color: rgb(69, 69, 248);
+    border-radius: 0.5rem;
     color: white;
-    font-family: 'Lato', sans-serif;
-    font-size: 3.5rem;
-    border-radius: 1rem;
-    width: 20rem;
-    margin-top: 4rem;
-    margin-bottom: 10rem;
-    margin-left: 7rem;
-    border-style: none;
-}
-
-#selectImage{
-    color: white;
-    font-family: 'Lato', sans-serif;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    background-color: rgb(85, 197, 85);    
-    padding:1rem;
-    border-radius: 1rem;
-}
-
-.slot button{
+    padding: 1rem 0;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    border: none;
     cursor: pointer;
+    transition: transform 0.3s ease-in-out;
 }
 
-@media(max-width: 767px) {
+.slot button:hover {
+    transform: scale(1.1) translateZ(4px);
+}
 
+.slot label {
+    display: flex;
+    gap: 1rem;
+    max-width: 70%;
+}
 
+.slot label input {
+    width: 3rem;
+    height: auto;
+    box-shadow: none;
+}
 
-    .alertaverif h1 {
-        margin-left: 0;
-        margin-left: 2rem;
-        font-size: 1.5rem;
-    }
+.textverif-cont{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
-    .slot{
-        margin-left: 2rem;
-        width: 70%;
-    }
-
-    .formverif input{
-        width: 100%;
-    }
-
-    .alertaverif p {
-        margin-left: 0;
-        font-size: 1.4rem;
-        width: 20rem;
-        margin-left: 2rem;
-    }
-
-    .verificacioncontainer {
+@media (max-width: 768px){
+    .verificacioncontainer{
         flex-direction: column;
-        width: 100%;
-        background-image: none;
+        justify-content: center;
     }
-
-    .textverif {
-        margin-left: 1rem;
-        margin-top: 0;
-        width: min-content;
-    }
-
-    .textverif h1 {
-        width: 18rem;
-        font-size: 3.5rem;
-    }
-
-    .textverif h2 {
-        width: 20rem;
-        margin-left: 0;
-    }
-
-    .formverif {
-        margin-left: 0rem;
-        width: 100%;
-    }
-    
-    #selectImage{
-        margin-left: 2rem;
-    }
-
-    #direccion input {
-        width: 16rem;
-    }
-
-    #select {
-        margin-left: 2rem;
-        width: 80%;
-
-    }
-
-    #checkb p {
-        width: 80%;
-    }
-
-    #enviar button {
+    .textverif, .formverif, .formverif form{
+        min-width: 90%;
         margin: 0;
-        margin-top: 2rem;
-        margin-bottom: 5rem;
-        width: 15rem;
+    }
+    .formverif button{
+        max-width: 100%;
+        text-align: center;
+    }
+    .formverif h1{
+        display: none;
     }
 
-    #enviar {
-        margin-top: 0rem;
-        margin-left: 4.5rem;
-    }
-
-    .formverif form {
-        width: 100%;
-    }
-}
-
-
-@media (width: 430px){
-    #enviar{
-        margin-left: 6rem;
-    }
-}
-
-
-
-
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-
-    .alertaverif h1 {
-        margin-left: 0;
-        margin-left: 12rem;
-        font-size: 2rem;
-    }
-
-    .alertaverif p {
-        margin-left: 12rem;
-        font-size: 1.5rem;
-        width: 20rem;
-    }
-
-    .verificacioncontainer {
+    .formverif form{
+        display: flex;
         flex-direction: column;
-        width: 100%
+        margin-top: 3rem;
     }
-
-    .textverif {
-        margin-left: 1rem;
-        width: min-content;
-    }
-
-    .textverif h1 {
-        width: 45rem;
-        font-size: 3.5rem;
-    }
-
-    .textverif h2 {
-        width: 30rem;
-        margin-left: 0;
-    }
-
-    .formverif {
-        margin-left: 4rem;
-        margin-top: 4rem;
-        width: 40rem;
-    }
-
-    .formverif input{
-        width: 100%;
-    }
-
-    #direccion input {
-        width: 30rem;
-    }
-
-    #select {
-        margin-left: 3rem;
-        width: 16rem;
-
-    }
-
-    #checkb p {
-        width: 100%;
-    }
-
-    #enviar button {
-        margin: 0;
-        width: 32rem;
-    }
-
-    #enviar {
-        margin-top: 2rem;
-        margin-left: 4rem;
-    }
-
-    .formverif form {
-        max-width: fit-content;
-    }
-}
-
-
-
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
-
-    .alertaverif h1 {
-        margin-left: 0;
-        margin-left: 21rem;
-        font-size: 2rem;
-    }
-
-    .alertaverif p {
-        margin-left: 21rem;
-
-        font-size: 1.5rem;
-        width: 25rem;
-    }
-    .alertaverif{
-        margin-top: 0rem;
-        margin-bottom: 40rem;
-    }
-
-    .verificacioncontainer {
-        width: 100%;
-        flex-direction: column;
-        background-image: none;
-    }
-
-    .textverif {
-        margin-left: 10rem;
-        width: 100%;
-    }
-
-    .textverif h1 {
-        width: 23rem;
-        font-size: 3.5rem;
-    }
-
-    .textverif h2 {
-        width: 23rem;
-        margin-left: 0;
-    }
-
-    .formverif {
-        margin-left: 12rem;
-        margin-top: 4rem;
-        width: 40rem;
-    }
-
-    #direccion input {
-        width: 30rem;
-    }
-
-    #select {
-        margin-left: 3rem;
-        width: 16rem;
-
-    }
-
-    #checkb p {
-        width: 100%;
-    }
-
-    #enviar button {
-        margin: 0;
-        width: 32rem;
-    }
-
-    #enviar {
-        margin-top: 2rem;
-        margin-left: 4rem;
-    }
-
-    .formverif form {
-        max-width: fit-content;
-    }
-}
-
-
-
-@media only screen and (min-width: 1200px) and (max-width: 1700px) {
-    .verificacioncontainer {
-        width: 100%;
-        background-image: none;
-    }
-
-    .textverif {
-        margin-left: 5rem;
-        width: min-content;
-    }
-
-    .textverif h1 {
-        width: 34rem;
-        font-size: 3.5rem;
-    }
-
-    .textverif h2 {
-        width: 33rem;
-        margin-left: 0;
-    }
-
-    .formverif {
-        margin-left: 1rem;
-        margin-top: 4rem;
-        width: 38rem;
-    }
-
-    #direccion input {
-        width: 30rem;
-    }
-
-    #select {
-        margin-left: 4rem;
-        width: 30rem;
-        height: fit-content;
-    }
-
-    #checkb p {
-        width: 20rem;
-    }
-
-    #enviar button {
-        margin: 0;
-        margin-top: 2rem;
-        margin-bottom: 2rem;
-        width: 31rem;
-    }
-
-    #enviar {
-        margin-top: 2rem;
-        margin-left: 4rem;
-    }
-
-    .formverif form {
-        max-width: fit-content;
+    .textverif{
+        max-width: 70%;
+        display: block;
     }
 }

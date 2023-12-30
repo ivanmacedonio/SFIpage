@@ -156,13 +156,16 @@ export const Verificacion = () => {
       </div>
       {verificado ? (
         <div className="verificacioncontainer">
-          <div className="textverif">
-            <h1>Necesitamos verificar tu cuenta.</h1>
-            <h2>
-              Para que pueda convertirse en miembro de Smart Future Income y
-              crear un plan con nosotros, necesitamos verificar su identidad.
-            </h2>
+          <div className="textverif-cont">
+            <div className="textverif">
+              <h1>Necesitamos verificar tu cuenta.</h1>
+              <h2>
+                Para que pueda convertirse en miembro de Smart Future Income y
+                crear un plan con nosotros, necesitamos verificar su identidad.
+              </h2>
+            </div>
           </div>
+
           <div className="formverif">
             <h1>Verificar</h1>
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -228,7 +231,7 @@ export const Verificacion = () => {
                   render={({ field }) => (
                     <PhoneInput
                       inputStyle={{ fontSize: "1.2rem", width: "100%" }}
-                      containerStyle={{ marginBottom: "1rem" }}
+                      containerStyle={{ width: "80%" }}
                       type="number"
                       placeholder="Número de celular"
                       value={field.value}
@@ -282,21 +285,23 @@ export const Verificacion = () => {
                 ""
               )}
               <div className="slot" id="checkb">
-                <input
-                  type="checkbox"
-                  onClick={() => {
-                    setChecked(!checked);
-                  }}
-                />{" "}
-                <p>
-                  Al hacer clic aquí, confirma que ha leído y acepta los
-                  <a href="https://www.smartfutureincome.com/media/terminos.pdf">
-                    {" "}
-                    términos de uso
-                  </a>
-                  , la Política de privacidad y acepta que sus datos serán
-                  enviados a Smart Furute Income.
-                </p>
+                <label>
+                  <input
+                    type="checkbox"
+                    onClick={() => {
+                      setChecked(!checked);
+                    }}
+                  />{" "}
+                  <p>
+                    Al hacer clic aquí, confirma que ha leído y acepta los
+                    <a href="https://www.smartfutureincome.com/media/terminos.pdf">
+                      {" "}
+                      términos de uso
+                    </a>
+                    , la Política de privacidad y acepta que sus datos serán
+                    enviados a Smart Furute Income.
+                  </p>
+                </label>
               </div>
               <div className="error" style={estiloError} ref={divRef}>
                 <h3>{error}</h3>

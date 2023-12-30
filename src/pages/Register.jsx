@@ -39,8 +39,12 @@ export const Register = () => {
               navigate("/login");
             }, 3000);
           } catch (error) {
-            setIsLoading(false)
+            setIsLoading(false);
             console.log(error);
+            setError(`${""}Usuario ya registrado`);
+            setErrorRegisterStyle({
+              display: "block",
+            });
           }
         } else {
           setIsLoading(false);
@@ -101,6 +105,7 @@ export const Register = () => {
                   value={field.value} // Important: Set the value from React Hook Form
                   onChange={(value) => field.onChange(value)} // Important: Set the onChange from React Hook Form
                   className="no-spinner"
+                  country={"cr"}
                 />
               )}
             />
