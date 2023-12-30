@@ -276,14 +276,15 @@ export const Verificacion = () => {
               <div className="slot" id="select">
                 <p>Expediente de identificación/pasaporte o fotografía</p>
                 <input type="file" name="archivo" onChange={handleFileChange} />
+                {isFile ? (
+                  <div className="slot" id="selectImage">
+                    Archivo seleccionado correctamente
+                  </div>
+                ) : (
+                  ""
+                )}
               </div>
-              {isFile ? (
-                <div className="slot" id="selectImage">
-                  Archivo seleccionado correctamente
-                </div>
-              ) : (
-                ""
-              )}
+
               <div className="slot" id="checkb">
                 <label>
                   <input
@@ -303,13 +304,14 @@ export const Verificacion = () => {
                   </p>
                 </label>
               </div>
-              <div className="error" style={estiloError} ref={divRef}>
-                <h3>{error}</h3>
-              </div>
+
               <div className="slot" id="enviar">
                 <button type="submit">Enviar</button>
               </div>
             </form>
+            <div className="error" style={estiloError} ref={divRef}>
+              <h3>{error}</h3>
+            </div>
           </div>
         </div>
       ) : (
