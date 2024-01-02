@@ -2,6 +2,7 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Modal from "@mui/material/Modal";
 import * as React from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import validateFormData from "../hooks/Validation";
 import "../styles/ModalProfile3.css";
@@ -33,14 +34,12 @@ export default function BasicModal3({ membershipData, activated }) {
     shouldUseNativeValidation: true,
   });
 
-  ///0x742d35Cc6634C0532925a3b844Bc454e4438f44e
   function onSubmit(data) {
-    const errors = validateFormData(data.wallet1);
-    console.log(errors);
+    const errors = validateFormData(clipboardContent);
     if (errors === "") {
-      if (data.wallet1.slice(-4) === data.wallet2) {
+      if (clipboardContent.slice(-4) === data.wallet2) {
         setShow(true);
-        setWalletData(data.wallet1);
+        setWalletData(clipboardContent);
         setError(false);
         setReadonly(!readOnly);
       } else {
@@ -53,16 +52,19 @@ export default function BasicModal3({ membershipData, activated }) {
     }
   }
 
-  // const [clipboardContent, setClipboardContent] = useState("");
+  //0x742d35Cc6634C0532925a3b844Bc454e4438f44e
 
-  // const handleClipboardClick = async () => {
-  //   try {
-  //     const text = await navigator.clipboard.readText();
-  //     setClipboardContent(text);
-  //   } catch (error) {
-  //     console.error("Error al obtener el contenido del portapapeles:", error);
-  //   }
-  // };
+  const [clipboardContent, setClipboardContent] = useState("");
+
+  const handleClipboardClick = async () => {
+    try {
+      const text = await navigator.clipboard.readText();
+      setClipboardContent(text);
+      console.log(clipboardContent);
+    } catch (error) {
+      console.error("Error al obtener el contenido del portapapeles:", error);
+    }
+  };
   return (
     <div>
       <Button onClick={handleOpen} id="continuar">
@@ -109,11 +111,13 @@ export default function BasicModal3({ membershipData, activated }) {
                 <input
                   type="text"
                   id="scroll-inpt"
-                  readOnly={readOnly}
+                  readOnly={true}
+                  value={clipboardContent}
                   placeholder="Ingresa tu Wallet"
                   maxLength={45}
                   {...register("wallet1")}
                 />
+                <button onClick={handleClipboardClick}>Pegar</button>
               </div>
               <p>Confirma tu wallet (últimos 4 digitos)</p>
               <input

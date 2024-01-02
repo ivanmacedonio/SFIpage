@@ -17,9 +17,20 @@
 
 .labelbuttons {
     display: flex;
+    gap: 0.5rem;
 }
 
+.labelbuttons button{
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
 
+.labelbuttons button:active,
+.labelbuttons button:focus {
+    transform: scale(0.95);
+    background-color: rgb(123, 123, 123);
+}
 
 #scrolleable3 {
     width: 30%;
