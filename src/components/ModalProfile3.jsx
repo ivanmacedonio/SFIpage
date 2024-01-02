@@ -114,7 +114,6 @@ export default function BasicModal3({ membershipData, activated }) {
                   maxLength={45}
                   {...register("wallet1")}
                 />
-                {/* <button type="button" onClick={handleClipboardClick}>Pegar</button> */}
               </div>
               <p>Confirma tu wallet (últimos 4 digitos)</p>
               <input

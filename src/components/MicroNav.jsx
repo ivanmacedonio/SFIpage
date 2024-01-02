@@ -13,7 +13,14 @@ export const MicroNav = ({ state }) => {
       }}
     >
       {state === "login" && (
-        <ul style={{ display: "flex", gap: "3rem", marginTop: "3rem" }}>
+        <ul
+          style={{
+            display: "flex",
+            gap: "3rem",
+            marginTop: "3rem",
+            fontSize: "1.1rem",
+          }}
+        >
           <li style={{ cursor: "pointer" }}>
             <Link to={"/"}>Inicio</Link>
           </li>
@@ -24,7 +31,14 @@ export const MicroNav = ({ state }) => {
       )}
 
       {state === "register" && (
-        <ul style={{ display: "flex", gap: "3rem", marginTop: "3rem" }}>
+        <ul
+          style={{
+            display: "flex",
+            gap: "3rem",
+            marginTop: "3rem",
+            fontSize: "1.1rem",
+          }}
+        >
           <li style={{ cursor: "pointer" }}>
             <Link to={"/"}>Inicio</Link>
           </li>
@@ -35,7 +49,14 @@ export const MicroNav = ({ state }) => {
       )}
 
       {state === "change" && (
-        <ul style={{ display: "flex", gap: "3rem", marginTop: "3rem" }}>
+        <ul
+          style={{
+            display: "flex",
+            gap: "3rem",
+            marginTop: "3rem",
+            fontSize: "1.1rem",
+          }}
+        >
           <li style={{ cursor: "pointer" }}>
             <Link to={"/"}>Inicio</Link>
           </li>

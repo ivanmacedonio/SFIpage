@@ -19,13 +19,6 @@
     display: flex;
 }
 
-.labelbuttons button {
-    background-color: rgb(0, 117, 156);
-    border: 1px solid;
-    color: rgb(255, 255, 255);
-    cursor: pointer;
-    border-radius: 0.5rem;
-}
 
 
 #scrolleable3 {

@@ -11,16 +11,17 @@
     justify-content: center;
 }
 
-#listaMembership1 h1{
+#listaMembership1 h1 {
     padding: 1.5rem;
     font-size: 1.5rem;
-    padding-left: 1rem  ;
+    padding-left: 1rem;
 }
 
-.listaMembership{
+.listaMembership {
     transition: 1s ease;
 }
-.listaMembership:hover{
+
+.listaMembership:hover {
     border: 1px solid white;
     height: 150%;
 }
@@ -137,16 +138,23 @@
         margin-left: 0;
     }
 
-
-
-
-
     .membresiaModal1 h3 {
         margin-top: 0;
     }
 
+    .membresiaModal1 h1 {
+        font-size: 1.5rem;
+        padding: 1rem 0;
+    }
+
     .membresiaModal1 h2 {
         width: 80%;
+        font-size: 1.4rem;
+    }
+
+    .membresiaModal1 p {
+        font-size: 1.2rem;
+
     }
 
 

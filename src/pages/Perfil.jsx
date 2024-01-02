@@ -272,7 +272,7 @@ export const Perfil = () => {
                 )}
               </div>
               <div className="box-grid1" id="info">
-                <label>
+                <label id="info-benef">
                   <h3>Información de beneficio</h3>
                 </label>
               </div>

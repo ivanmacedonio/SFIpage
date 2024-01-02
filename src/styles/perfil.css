@@ -106,11 +106,20 @@ MEMBRESIA
     gap: 1rem;
 }
 
+.membresia-data-container h3{
+    font-weight: 700;
+    font-size: 1.1rem;
+    overflow-wrap: break-word;
+}
+
+#info-benef{
+    justify-content: center;
+}
+
 
 
 .membresia-data-container label {
     display: flex;
-    justify-content: center;
     align-items: center;
     gap: 0.5rem;
     max-width: 100%;
@@ -119,6 +128,7 @@ MEMBRESIA
 .membresia-data-container h4{
     overflow-wrap: break-word;
     max-width: 80%;
+    font-size: 1.1rem;
     
 }
 
@@ -280,7 +290,7 @@ MEMBRESIA
     }
 
     .profile-container {
-        position: static;
+        bottom: 5rem;
         margin-bottom: 2rem;
     }
 
