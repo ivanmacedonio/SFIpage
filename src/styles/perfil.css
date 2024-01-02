@@ -106,13 +106,13 @@ MEMBRESIA
     gap: 1rem;
 }
 
-.membresia-data-container h3{
+.membresia-data-container h3 {
     font-weight: 700;
     font-size: 1.1rem;
     overflow-wrap: break-word;
 }
 
-#info-benef{
+#info-benef {
     justify-content: center;
 }
 
@@ -125,14 +125,14 @@ MEMBRESIA
     max-width: 100%;
 }
 
-.membresia-data-container h4{
+.membresia-data-container h4 {
     overflow-wrap: break-word;
     max-width: 80%;
     font-size: 1.1rem;
-    
+
 }
 
-#walletprof{
+#walletprof {
     grid-column: span 3;
     text-align: center;
     padding-left: 3rem;
@@ -264,23 +264,61 @@ MEMBRESIA
     cursor: pointer;
 }
 
+.box-grid input[type="checkbox"] {
+    display: none;
+  }
+
+  .slider {
+    width: 60px;
+    height: 34px;
+    background-color: #ccc;
+    border-radius: 34px;
+    position: relative;
+    transition: 0.4s;
+  }
+
+  .slider:before {
+    content: "";
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-color: white;
+    top: 4px;
+    left: 4px;
+    transition: 0.4s;
+  }
+
+  input[type="checkbox"]:checked + .slider {
+    background-color: #2196F3;
+  }
+
+  input[type="checkbox"]:checked + .slider:before {
+    transform: translateX(26px);
+  }
+
 @media(max-width: 768px) {
 
-    .close{
+    #info{
+        margin-top: 2.5rem;
+    }
+
+    .close {
         margin-top: 5rem;
         margin-bottom: 2rem;
     }
 
-    .membresia-data-container{
+    .membresia-data-container {
         display: flex;
         flex-direction: column;
         gap: 0;
     }
-    .membresia-data-container .box-grid{
+
+    .membresia-data-container .box-grid {
         text-align: left;
     }
 
-   
+
     .membresia-container {
         display: none;
     }
@@ -330,9 +368,6 @@ MEMBRESIA
         margin-bottom: 3rem;
     }
 
-
-
-
     .close {
         font-size: 1.3rem;
     }
@@ -344,20 +379,22 @@ MEMBRESIA
     .box-flex label {
         display: flex;
         width: 80%;
-        justify-content: space-between;
-        margin: 0 auto;
         font-family: 'lato';
-        text-align: center;
         align-items: center;
         background-color: rgb(201, 201, 201);
-        margin-bottom: 1rem;
-        padding: 0 1rem;
         border-radius: 0.5rem;
     }
 
-    .box-grid label{
+    .box-grid label h3, .box-grid label h4{
+        margin-bottom: 0;
+    }
+
+    .box-grid label h4{
+        margin-bottom: 5px;
+    }
+
+    .box-grid label {
         min-width: 100%;
-        justify-content: left;
     }
 
 
@@ -375,8 +412,42 @@ MEMBRESIA
         font-size: 1.5rem;
     }
 
-    #walletprof{
+    #walletprof {
         padding: 0;
     }
+    .box-grid input[type="checkbox"] {
+        display: none;
+      }
+    
+      .slider {
+        width: 60px;
+        height: 35px;
+        background-color: #ccc;
+        border-radius: 34px;
+        position: relative;
+        transition: 0.4s;
+        margin-top: 1.5rem;
+      }
+    
+      .slider:before {
+        content: "";
+        position: absolute;
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        background-color: white;
+        top: 4px;
+        left: 4px;
+        transition: 0.4s;
+      }
+    
+      input[type="checkbox"]:checked + .slider {
+        background-color: #2196F3;
+      }
+    
+      input[type="checkbox"]:checked + .slider:before {
+        transform: translateX(26px);
+      }
 
 }
+

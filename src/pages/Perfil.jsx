@@ -242,10 +242,11 @@ export const Perfil = () => {
                   <h4 id="estado">Activa</h4>
                 </label>
               </div>
-              <div className="box-grid">
+              <div class="box-grid">
                 <label>
-                  <h3>Retiro de quinquenio</h3>
-                  <input type="checkbox" id="check" />
+                  <input type="checkbox"  defaultChecked={tempMember.purchase_Detail.ind_bonus_will_be_redeemed} />
+                  <div class="slider"></div>
+                  <h4>Retiro de quinquenio</h4>
                 </label>
               </div>
               <div className="box-grid">
@@ -426,7 +427,15 @@ export const Perfil = () => {
               )}
               <div className="modal">
                 {denegado ? (
-                  <h2 style={{fontFamily: 'lato', color: 'red', textAlign: 'center'}}>Tu cuenta tiene restricción para adquirir membresías</h2>
+                  <h2
+                    style={{
+                      fontFamily: "lato",
+                      color: "red",
+                      textAlign: "center",
+                    }}
+                  >
+                    Tu cuenta tiene restricción para adquirir membresías
+                  </h2>
                 ) : (
                   <BasicModal></BasicModal>
                 )}
