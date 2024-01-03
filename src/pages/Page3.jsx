@@ -112,7 +112,7 @@ export const Page3 = () => {
         </div>
       </div>
 
-      <div className="footer">
+      <div className="footer3">
         <Footer></Footer>
       </div>
     </div>

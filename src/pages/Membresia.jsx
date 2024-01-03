@@ -5,7 +5,7 @@ import { Ac } from "../components/Ac";
 import { Footer } from "../components/Footer";
 import { HeaderNormal } from "../components/Header-normal";
 import TransitionsModal from "../components/Modal";
-import { BASE_URL } from '../hooks/fetch';
+import { BASE_URL } from "../hooks/fetch";
 import "../styles/Membresia.css";
 
 export const Membresia = () => {
@@ -18,13 +18,15 @@ export const Membresia = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [plandata, setPlandata] = useState({
     name: "Selecciona un plan",
-    cost: "Selecciona un plan",
-    months: "Selecciona un plan",
-    cuotes: "Selecciona un plan",
+    cost: "-",
+    months: "-",
+    cuotes: "-",
   });
+  const [read, setRead] = useState(true);
 
   const [isLogin, setIsLogin] = useState(false);
   const [message, setMessage] = useState("");
+  const [precio, setPrecio] = useState();
   const nav = useNavigate();
 
   const handlePlanClick = (plan) => {
@@ -33,7 +35,12 @@ export const Membresia = () => {
       cost: plan.monthly_membership_cost,
       months: plan.maturity_period_in_months,
       cuotes: plan.savings_duration_in_months,
+      min: plan.minimum_amount_threshold,
+      max: plan.maximum_amount_threshold,
+      chunk: plan.chunk_size_amount,
     });
+
+    setRead(false);
     desplegar(); // Aquí llamamos a desplegar para actualizar los estilos al hacer clic en un plan
   };
 
@@ -44,7 +51,6 @@ export const Membresia = () => {
       maxHeight: isOpen ? "0" : "500px",
     }));
   }
-
 
   useEffect(() => {
     async function getData() {
@@ -57,28 +63,31 @@ export const Membresia = () => {
           _cacheBuster: new Date().getTime(),
         };
         try {
-          const res = await axios.get(
-            `${BASE_URL}membership/`,
-            {
-              headers: headers,
-              params: params
-            }
-          );
+          const res = await axios.get(`${BASE_URL}membership/`, {
+            headers: headers,
+            params: params,
+          });
           setIsLogin(true);
           setData(res.data);
-          console.log(res.data)
         } catch (error) {
-          nav('/login')
+          nav("/login");
         }
       } else {
         setMessage("Inicia sesion para acceder a las membresias");
         nav("/login");
-        localStorage.removeItem('access')
+        localStorage.removeItem("access");
       }
     }
     getData();
     window.scrollTo(0, 0);
   }, []);
+
+  const [change, setChange] = useState(false);
+
+  function handlePrecioChange(e) {
+    setPrecio(parseInt(event.target.value, 10));
+    setChange(true);
+  }
 
   return (
     <div className="Membresiapage">
@@ -108,7 +117,37 @@ export const Membresia = () => {
               </ul>
             </div>
             <h2>Membresía Mensual</h2>
-            <p>{plandata.cost} </p>
+            <label>
+              <input
+                type="range"
+                id="rangoPrecio"
+                name="rangoPrecio"
+                min={plandata.min}
+                max={plandata.max}
+                step={plandata.chunk}
+                value={precio}
+                onChange={handlePrecioChange}
+                disabled={read}
+              />
+              <output>
+                Valor:{" "}
+                {precio !== undefined && precio !== null
+                  ? precio.toLocaleString("en", {
+                      minimumFractionDigits: 0,
+                    })
+                  : "-"}{" "}
+                USDT
+              </output>
+            </label>
+
+            <p>
+              {change === false
+                ? plandata.cost.toLocaleString("en-US")
+                : ((precio / plandata.chunk) * plandata.cost).toLocaleString(
+                    "en-US"
+                  )}
+              {''} USDT
+            </p>
             <h2>Plazo de maduración:</h2>
             <p>{plandata.months}</p>
             <h2>Cantidad de cuotas</h2>

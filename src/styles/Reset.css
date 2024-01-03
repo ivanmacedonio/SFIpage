@@ -8,6 +8,18 @@
     
 }
 
+.usedinterface{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5rem;
+}
+
+.usedinterface img{
+    width: 28rem;
+}
+
 .successChange{
     color: rgb(0, 190, 0);
     font-size: 0.9rem;
@@ -85,6 +97,9 @@
 }
 
 @media(max-width: 768px){
+
+    
+
     .containerresetgenerall h3{
         width: 60%;
     }
@@ -101,4 +116,13 @@
     .containerresetgenerall button{
         width: 85%;
     }
+    .usedinterface h1{
+        font-size: 2rem;
+        max-width: 85%;
+        color: rgb(65, 65, 65);
+     }
+     
+     .usedinterface img{
+         width: 15rem;
+     }
 }

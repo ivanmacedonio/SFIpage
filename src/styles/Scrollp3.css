@@ -1,7 +1,6 @@
 #global {
 	height: 500px;
 	width: 95%;
-	overflow-y: scroll ;
 	border-radius: 1rem;
 	scroll-behavior: smooth;
 }
@@ -41,7 +40,6 @@
 	#global {
 		height: 400px;
 		width: 85%;
-		overflow-y: scroll;
 		border-radius: 1rem;
 	}
 
