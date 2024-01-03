@@ -150,13 +150,15 @@ img {
 
 
 @media only screen and (max-width: 767px) {
-
+    .texto {
+        border-radius: 1rem;
+    }
 
     .imagepage3 {
         display: block;
     }
 
-    #slide4{
+    #slide4 {
         margin-left: 1rem;
         margin-right: 2rem;
     }
@@ -227,7 +229,7 @@ img {
         margin-top: 15rem;
     }
 
-    
+
 
 
     .razonescontainer {
@@ -242,15 +244,9 @@ img {
         padding-top: 0;
     }
 
-    .carousel{
+    .carousel {
         margin-left: 2rem;
     }
-
-    .footer3{
-        margin-top: 30rem !important;
-    }
-
-    
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {

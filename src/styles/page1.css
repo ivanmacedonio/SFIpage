@@ -11,6 +11,16 @@ img {
     width: 100%;
 }
 
+.loadingp1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15%;
+}
+
+.loadingp1 img {
+    width: 6rem;
+}
 
 .welcome {
     background-image: url('../assets/fondoazul.webp');
@@ -115,6 +125,11 @@ img {
 }
 
 @media(max-width: 767px) {
+
+    .loadingp1 {
+
+        margin-top: 45%;
+    }
 
     .welcome {
         background-position: right;
@@ -237,7 +252,7 @@ img {
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
 
-  
+
     .welcome {
         background-position: right;
         height: 72rem;
@@ -314,7 +329,8 @@ img {
     .scroll {
         display: none;
     }
-    .textfamilia2{
+
+    .textfamilia2 {
         left: 35rem;
         background-color: rgb(0, 77, 160);
         color: white;
@@ -345,7 +361,7 @@ img {
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 1299px) {
-    .textfamilia2{
+    .textfamilia2 {
         left: 50rem;
         background-color: rgb(0, 89, 111);
         color: white;
@@ -354,13 +370,15 @@ img {
         padding: 1rem;
     }
 
-    .textfamilia2 p{
+    .textfamilia2 p {
         color: white;
     }
-    .textp1{
+
+    .textp1 {
         width: fit-content;
     }
-    .imgfamilia{
+
+    .imgfamilia {
         display: none;
     }
 
@@ -438,7 +456,8 @@ img {
     .textfamilia2 {
         left: 75rem;
     }
-    .imgfamilia{
+
+    .imgfamilia {
         width: 35rem;
     }
 }

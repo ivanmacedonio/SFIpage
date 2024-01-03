@@ -160,10 +160,7 @@ img {
     position: static;
     margin-left: 10rem;
     border-radius: 1.5rem;
-    padding-left: 5rem;
-    padding-right: 5rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding:1rem 5rem ;
     margin-top: 7rem;
 }
 

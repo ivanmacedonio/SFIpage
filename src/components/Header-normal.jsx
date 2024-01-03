@@ -10,6 +10,7 @@ import "../styles/headerNormal.css";
 
 export const HeaderNormal = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const [username, setUsername] = useState("");
   const [isLogin, setIsLogin] = useState(false);
   const [isKycState, setIsKyc] = useState();
   const open = Boolean(anchorEl);
@@ -63,6 +64,7 @@ export const HeaderNormal = () => {
         setIsKyc(false);
       } else {
         setIsKyc(true);
+        setUsername(res.data.KYC_Detail.user_name);
       }
     } catch (error) {
       console.log(error);
@@ -88,7 +90,7 @@ export const HeaderNormal = () => {
     nav("/login");
   }
 
-  console.log(isKycState)
+  console.log(isKycState);
 
   return (
     <div className="header">
@@ -145,7 +147,7 @@ export const HeaderNormal = () => {
         {isLogin ? (
           <Link to={isKycState ? "/perfil" : "/verificacion"}>
             {" "}
-            <h2 id="session">Mi cuenta</h2>{" "}
+            <h2 id="session">{username}</h2>{" "}
           </Link>
         ) : (
           <Link to={"/login"}>
@@ -202,7 +204,7 @@ export const HeaderNormal = () => {
           {isLogin ? (
             <Link to={isKycState ? "/perfil" : "/verificacion"}>
               {" "}
-              <h2 id="session">Mi cuenta</h2>{" "}
+              <h2 id="session">{username}</h2>{" "}
             </Link>
           ) : (
             <Link to={"/login"}>
