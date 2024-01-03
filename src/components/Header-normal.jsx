@@ -96,7 +96,7 @@ export const HeaderNormal = () => {
     <div className="header">
       <div className="chan">
         <div className="imagenlogo">
-          <Link to={"/"}>
+          <Link to={"/hub"}>
             <img src={logo} alt="" />
           </Link>
         </div>
@@ -104,7 +104,7 @@ export const HeaderNormal = () => {
       </div>
 
       <div className="links">
-        <Link to={"/"}>
+        <Link to={"/hub"}>
           <h2>Inicio</h2>
         </Link>
         <Link to={"/nosotros"}>
@@ -159,9 +159,10 @@ export const HeaderNormal = () => {
       </div>
       {menuAbierto && (
         <div className="hamburguesa">
-          <Link to={"/"}>
+          <Link to={"/hub"}>
             <h2>Inicio</h2>
           </Link>
+
           <Link to={"/nosotros"}>
             <h2>Nosotros</h2>
           </Link>

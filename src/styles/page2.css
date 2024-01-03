@@ -129,12 +129,13 @@ img {
 .lista li {
     font-size: 1.5rem;
     font-family: 'Montserrat', sans-serif;
-    color: rgb(2, 80, 116);
+    color: rgb(5, 5, 5);
     font-weight: 400;
-    background-color: gainsboro;
+    background-color: rgb(255, 255, 255);
     border-radius: 1rem;
     margin-bottom: 1rem;
     padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
 }
 
 .listvalores {

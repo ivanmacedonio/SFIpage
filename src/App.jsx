@@ -9,6 +9,7 @@ import { Contacto } from "./pages/Contacto";
 import { Error404 } from "./pages/Error404";
 import { FAQ } from "./pages/FAQ";
 import { Forgot } from "./pages/Forgot";
+import { Hub } from "./pages/Hub";
 import { Inicio } from "./pages/Inicio";
 import { Login } from "./pages/Login";
 import { Membresia } from "./pages/Membresia";
@@ -36,7 +37,8 @@ function App() {
       <BrowserRouter>
         <GoogleOAuthProvider clientId="671123710035-o8jgq4gp7knk7jl1gg64na5jkhstgt6p.apps.googleusercontent.com">
           <Routes>
-            <Route exact path="/" element={<Page1 />} />
+            <Route exact path="/" element={<Hub />} />
+            <Route exact path="/hub" element={<Page1 />} />
             <Route exact path="/nosotros" element={<Page2 />} />
             <Route exact path="/afiliacion" element={<Page3 />} />
             <Route exact path="/register" element={<Register />} />

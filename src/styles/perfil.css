@@ -378,6 +378,7 @@ MEMBRESIA
 
     .box-flex label {
         display: flex;
+        justify-content: center;
         width: 80%;
         font-family: 'lato';
         align-items: center;
@@ -447,6 +448,12 @@ MEMBRESIA
     
       input[type="checkbox"]:checked + .slider:before {
         transform: translateX(26px);
+      }
+
+      .box-flex{
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
 
 }
