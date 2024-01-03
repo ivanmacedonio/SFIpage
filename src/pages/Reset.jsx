@@ -63,6 +63,7 @@ export const Reset = () => {
         }, 2000);
       } catch (error) {
         setError(error.response.data.error);
+        setUsed(true)
       }
     }
   }
