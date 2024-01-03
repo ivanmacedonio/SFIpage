@@ -41,6 +41,7 @@ export const Membresia = () => {
     });
 
     setRead(false);
+    setPrecio(10000)
     desplegar(); // Aquí llamamos a desplegar para actualizar los estilos al hacer clic en un plan
   };
 
