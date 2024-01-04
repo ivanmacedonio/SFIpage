@@ -1,10 +1,11 @@
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import axios from "axios";
+import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import baricon from "../assets/header-icon.svg";
-import logo from "../assets/logoSPI.png";
+import logo from "../assets/newLogo.png";
 import { BASE_URL } from "../hooks/fetch";
 import "../styles/headerNormal.css";
 
@@ -13,6 +14,7 @@ export const HeaderNormal = () => {
   const [username, setUsername] = useState("");
   const [isLogin, setIsLogin] = useState(false);
   const [isKycState, setIsKyc] = useState();
+
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -157,65 +159,72 @@ export const HeaderNormal = () => {
         )}
         {isLogin ? <h2 onClick={handleOnClick}>Cerrar sesión</h2> : ""}
       </div>
-      {menuAbierto && (
-        <div className="hamburguesa">
-          <Link to={"/hub"}>
-            <h2>Inicio</h2>
-          </Link>
-
-          <Link to={"/nosotros"}>
-            <h2>Nosotros</h2>
-          </Link>
-          <Link to={"/afiliacion"}>
-            <h2>Afiliación</h2>
-          </Link>
-
-          <h2
-            id="basic-button"
-            aria-controls={open ? "basic-menu" : undefined}
-            aria-haspopup="true"
-            aria-expanded={open ? "true" : undefined}
-            onClick={handleClick}
-          >
-            Blog
-          </h2>
-
-          <Menu
-            id="basic-menu"
-            anchorEl={anchorEl}
-            open={open}
-            onClose={handleClose}
-            MenuListProps={{
-              "aria-labelledby": "basic-button",
-            }}
-          >
-            <Link to={"/blog"}>
-              <MenuItem onClick={handleClose}>Hub</MenuItem>
-            </Link>
-            <Link to={"/faq"}>
-              <MenuItem onClick={handleClose}>Preguntas Frecuentes</MenuItem>
+      <div className="desplegar">
+        <motion.div
+          initial={{ height: 0, opacity: 0 }}
+          animate={{
+            height: menuAbierto ? "auto" : 0,
+            opacity: menuAbierto ? 1 : 0,
+          }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
+        >
+          <div className="hamburguesa">
+            <Link to={"/hub"}>
+              <h2>Inicio</h2>
             </Link>
 
-            <MenuItem onClick={handleClose}>Foro</MenuItem>
-          </Menu>
-          <Link to={"/contacto"}>
-            <h2>Contacto</h2>
-          </Link>
+            <Link to={"/nosotros"}>
+              <h2>Nosotros</h2>
+            </Link>
+            <Link to={"/afiliacion"}>
+              <h2>Afiliación</h2>
+            </Link>
 
-          {isLogin ? (
-            <Link to={isKycState ? "/perfil" : "/verificacion"}>
-              {" "}
-              <h2 id="session">{username}</h2>{" "}
+            <h2
+              id="basic-button"
+              aria-controls={open ? "basic-menu" : undefined}
+              aria-haspopup="true"
+              aria-expanded={open ? "true" : undefined}
+              onClick={handleClick}
+            >
+              Blog
+            </h2>
+
+            <Menu
+              id="basic-menu"
+              anchorEl={anchorEl}
+              open={open}
+              onClose={handleClose}
+              MenuListProps={{
+                "aria-labelledby": "basic-button",
+              }}
+            >
+              <Link to={"/blog"}>
+                <MenuItem onClick={handleClose}>Hub</MenuItem>
+              </Link>
+              <Link to={"/faq"}>
+                <MenuItem onClick={handleClose}>Preguntas Frecuentes</MenuItem>
+              </Link>
+            </Menu>
+            <Link to={"/contacto"}>
+              <h2>Contacto</h2>
             </Link>
-          ) : (
-            <Link to={"/login"}>
-              {" "}
-              <h2 id="session">Iniciar sesión</h2>{" "}
-            </Link>
-          )}
-          {isLogin ? <h2 onClick={handleOnClick}>Cerrar sesión</h2> : ""}
-        </div>
-      )}
+
+            {isLogin ? (
+              <Link to={isKycState ? "/perfil" : "/verificacion"}>
+                {" "}
+                <h2 id="session">{username}</h2>{" "}
+              </Link>
+            ) : (
+              <Link to={"/login"}>
+                {" "}
+                <h2 id="session">Iniciar sesión</h2>{" "}
+              </Link>
+            )}
+            {isLogin ? <h2 onClick={handleOnClick}>Cerrar sesión</h2> : ""}
+          </div>
+        </motion.div>
+      </div>
     </div>
   );
 };

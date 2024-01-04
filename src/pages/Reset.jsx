@@ -20,7 +20,7 @@ export const Reset = () => {
   const [error, setError] = useState();
   const [passType, setPassType] = useState(false);
   const [success, setSuccess] = useState("");
-  const [used, setUsed] = useState(false);
+  const [used, setUsed] = useState(true);
 
   async function getValidation() {
     try {

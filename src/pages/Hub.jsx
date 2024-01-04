@@ -28,7 +28,7 @@ export const Hub = () => {
             transition: { duration: 1, repeat: Infinity },
           }}
         >
-          <img src={icono} alt="" style={{ width: "10rem" }} />
+          <img src={icono} alt="" style={{ width: "6rem" }} />
         </motion.div>
       </div>
     </div>

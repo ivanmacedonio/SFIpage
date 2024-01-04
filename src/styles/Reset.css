@@ -121,6 +121,10 @@
         max-width: 85%;
         color: rgb(65, 65, 65);
      }
+
+     .containerresetgenerall{
+        margin-top: 5rem;
+     }
      
      .usedinterface img{
          width: 15rem;

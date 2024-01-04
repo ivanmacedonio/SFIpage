@@ -17,7 +17,7 @@ export const MicroNav = ({ state }) => {
           style={{
             display: "flex",
             gap: "3rem",
-            marginTop: "3rem",
+            
             fontSize: "1.1rem",
           }}
         >
