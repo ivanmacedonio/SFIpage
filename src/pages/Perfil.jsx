@@ -133,6 +133,8 @@ export const Perfil = () => {
     }
   }
 
+  console.log(memberDetail);
+
   return (
     <div className="general-container">
       <div className="header-container">
@@ -220,6 +222,7 @@ export const Perfil = () => {
                     >
                       Volver
                     </div>
+                    <div className="payment">Lista de pagos</div>
 
                     <div className="box-grid">
                       <label>
@@ -318,6 +321,7 @@ export const Perfil = () => {
                         </h4>
                       )}
                     </div>
+
                     <div className="box-grid1" id="info">
                       <label id="info-benef">
                         <h3>Información de beneficio</h3>

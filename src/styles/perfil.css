@@ -202,7 +202,6 @@ MEMBRESIA
 
 
 .close {
-    color: rgb(0, 0, 0);
     grid-column: span 4;
     font-weight: 700;
     color: blue;
@@ -211,6 +210,18 @@ MEMBRESIA
     border: 2px solid blue;
     width: min-content;
     padding: 0.3rem 1rem;
+}
+
+.payment {
+    grid-column: span 4;
+    font-weight: 700;
+    color: rgb(0, 159, 53);
+    cursor: pointer;
+    border-radius: 1rem;
+    border: 2px solid rgb(0, 159, 53);
+    width: min-content;
+    padding: 0.3rem 1rem;
+    min-width: max-content;
 }
 
 #box-img {
@@ -266,18 +277,18 @@ MEMBRESIA
 
 .box-grid input[type="checkbox"] {
     display: none;
-  }
+}
 
-  .slider {
+.slider {
     width: 60px;
     height: 34px;
     background-color: #ccc;
     border-radius: 34px;
     position: relative;
     transition: 0.4s;
-  }
+}
 
-  .slider:before {
+.slider:before {
     content: "";
     position: absolute;
     width: 26px;
@@ -287,19 +298,21 @@ MEMBRESIA
     top: 4px;
     left: 4px;
     transition: 0.4s;
-  }
+}
 
-  input[type="checkbox"]:checked + .slider {
+input[type="checkbox"]:checked+.slider {
     background-color: #2196F3;
-  }
+}
 
-  input[type="checkbox"]:checked + .slider:before {
+input[type="checkbox"]:checked+.slider:before {
     transform: translateX(26px);
-  }
+}
+
+
 
 @media(max-width: 768px) {
 
-    #info{
+    #info {
         margin-top: 2.5rem;
     }
 
@@ -386,11 +399,12 @@ MEMBRESIA
         border-radius: 0.5rem;
     }
 
-    .box-grid label h3, .box-grid label h4{
+    .box-grid label h3,
+    .box-grid label h4 {
         margin-bottom: 0;
     }
 
-    .box-grid label h4{
+    .box-grid label h4 {
         margin-bottom: 5px;
     }
 
@@ -416,11 +430,12 @@ MEMBRESIA
     #walletprof {
         padding: 0;
     }
+
     .box-grid input[type="checkbox"] {
         display: none;
-      }
-    
-      .slider {
+    }
+
+    .slider {
         width: 60px;
         height: 35px;
         background-color: #ccc;
@@ -428,9 +443,9 @@ MEMBRESIA
         position: relative;
         transition: 0.4s;
         margin-top: 1.5rem;
-      }
-    
-      .slider:before {
+    }
+
+    .slider:before {
         content: "";
         position: absolute;
         width: 26px;
@@ -440,21 +455,20 @@ MEMBRESIA
         top: 4px;
         left: 4px;
         transition: 0.4s;
-      }
-    
-      input[type="checkbox"]:checked + .slider {
-        background-color: #2196F3;
-      }
-    
-      input[type="checkbox"]:checked + .slider:before {
-        transform: translateX(26px);
-      }
+    }
 
-      .box-flex{
+    input[type="checkbox"]:checked+.slider {
+        background-color: #2196F3;
+    }
+
+    input[type="checkbox"]:checked+.slider:before {
+        transform: translateX(26px);
+    }
+
+    .box-flex {
         display: flex;
         align-items: center;
         justify-content: center;
-      }
+    }
 
 }
-
