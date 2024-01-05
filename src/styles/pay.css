@@ -1,0 +1,90 @@
+.grid-payment {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    font-family: 'lato';
+}
+
+#x1{
+    font-family: 'lato';
+    font-size: 2rem;
+}
+
+.grid-payment h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.grid-payment h2 {
+    margin-bottom: 1rem;
+    color: rgb(106, 106, 106);
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+.mobilelabel {
+    display: none;
+}
+
+#modal-modal-title {
+    margin-bottom: 2rem;
+    font-style: italic;
+    background-color: rgb(210, 241, 255);
+    width: fit-content;
+    padding: 0 1rem;
+    border-radius: 0.5rem;
+}
+#modalpagos{
+    max-height: 60%;
+    top: 20%;
+}
+.boxpay{
+    max-height:100%;
+    overflow: auto;
+}
+
+@media (max-width: 768px) {
+    #modalpagos{
+        min-height: 100%;
+        position:absolute ;
+    }
+    .mobilelabel {
+        display: block;
+        margin-bottom: 1rem;
+    }
+
+    .grid-payment {
+        display: none;
+    }
+
+    .mobilelabel label {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        font-family: 'lato';
+    }
+
+    .boxpay {
+        width: 80% !important;
+    }
+
+    .mobilelabel h2 {
+        font-size: 1.1rem;
+        margin-bottom: 5px;
+    }
+
+    .mobilelabel h3 {
+        font-weight: 700;
+        margin-bottom: 5px;
+    }
+
+    .labelspayment {
+        background-color: rgb(234, 234, 234);
+        padding: 1rem;
+        border-radius: 0.5rem;
+        margin-bottom: 2rem;
+    }
+
+   
+}

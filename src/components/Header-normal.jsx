@@ -85,14 +85,13 @@ export const HeaderNormal = () => {
   }, []);
 
   const nav = useNavigate();
+  const [disp, setDisp] = useState(true);
 
   function handleOnClick() {
     localStorage.removeItem("access");
     localStorage.removeItem("refresh");
     nav("/login");
   }
-
-  console.log(isKycState);
 
   return (
     <div className="header">
@@ -149,7 +148,11 @@ export const HeaderNormal = () => {
         {isLogin ? (
           <Link to={isKycState ? "/perfil" : "/verificacion"}>
             {" "}
-            <h2 id="session">{username}</h2>{" "}
+            {username !== "" ? (
+              <h2 id="session">{username}</h2>
+            ) : (
+              <h2 id="session">Mi cuenta</h2>
+            )}
           </Link>
         ) : (
           <Link to={"/login"}>
@@ -167,6 +170,7 @@ export const HeaderNormal = () => {
             opacity: menuAbierto ? 1 : 0,
           }}
           transition={{ duration: 0.3, ease: "easeInOut" }}
+          style={{ pointerEvents: menuAbierto ? "auto" : "none" }}
         >
           <div className="hamburguesa">
             <Link to={"/hub"}>
@@ -213,7 +217,11 @@ export const HeaderNormal = () => {
             {isLogin ? (
               <Link to={isKycState ? "/perfil" : "/verificacion"}>
                 {" "}
-                <h2 id="session">{username}</h2>{" "}
+                {username !== "" ? (
+                  <h2 id="session">{username}</h2>
+                ) : (
+                  <h2 id="session">Mi cuenta</h2>
+                )}
               </Link>
             ) : (
               <Link to={"/login"}>

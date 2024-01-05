@@ -198,9 +198,6 @@ MEMBRESIA
 }
 
 
-
-
-
 .close {
     grid-column: span 4;
     font-weight: 700;
@@ -218,9 +215,7 @@ MEMBRESIA
     color: rgb(0, 159, 53);
     cursor: pointer;
     border-radius: 1rem;
-    border: 2px solid rgb(0, 159, 53);
     width: min-content;
-    padding: 0.3rem 1rem;
     min-width: max-content;
 }
 
@@ -261,10 +256,11 @@ MEMBRESIA
 }
 
 #no-contract {
-    background-color: rgb(255, 80, 80);
+    background: linear-gradient(to bottom, rgb(255, 80, 80), rgb(250, 60, 60));
     color: white;
     padding: 1rem;
     border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 #contract {
@@ -273,6 +269,7 @@ MEMBRESIA
     padding: 1rem;
     border-radius: 0.5rem;
     cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .box-grid input[type="checkbox"] {
@@ -314,6 +311,14 @@ input[type="checkbox"]:checked+.slider:before {
 
     #info {
         margin-top: 2.5rem;
+        border-radius: 0;
+        background: none;
+        color: gray;
+    }
+
+    #info h3{
+        font-size: 2rem;
+        font-weight: 900;
     }
 
     .close {
@@ -395,8 +400,12 @@ input[type="checkbox"]:checked+.slider:before {
         width: 80%;
         font-family: 'lato';
         align-items: center;
-        background-color: rgb(201, 201, 201);
         border-radius: 0.5rem;
+        border: solid 1px rgb(232, 232, 232);
+        background-color: rgba(255, 255, 255, 0.597);
+        color: rgb(112, 112, 112);
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        gap: 1.5rem;
     }
 
     .box-grid label h3,
@@ -469,6 +478,20 @@ input[type="checkbox"]:checked+.slider:before {
         display: flex;
         align-items: center;
         justify-content: center;
+        flex-direction: column;
+        gap: 0.6rem;
+        margin-bottom: 2rem;
+
+    }
+    .box-flex button{
+        background-color: rgb(78, 174, 78);
+        color: white;
+        padding: 0.5rem 3rem;
+        border-radius: 0.5rem;
+        border: none;
+        outline: none;
+        font-size: 1.2rem;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
     }
 
 }

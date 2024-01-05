@@ -1,13 +1,13 @@
 import axios from "axios";
 import { motion } from "framer-motion";
-import icono from "../assets/icono.png";
-
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import foto from "../assets/anon.png";
 import iconoflecha from "../assets/flechaprofile.png";
+import icono from "../assets/icono.png";
 import { HeaderNormal } from "../components/Header-normal";
 import BasicModal from "../components/ModalProfile1";
+import BasicModalPagos from "../components/modalPagos";
 import { BASE_URL } from "../hooks/fetch";
 import "../styles/perfil.css";
 export const Perfil = () => {
@@ -133,8 +133,6 @@ export const Perfil = () => {
     }
   }
 
-  console.log(memberDetail);
-
   return (
     <div className="general-container">
       <div className="header-container">
@@ -222,7 +220,11 @@ export const Perfil = () => {
                     >
                       Volver
                     </div>
-                    <div className="payment">Lista de pagos</div>
+                    <div className="payment">
+                      <BasicModalPagos
+                        movements={tempMember.purchase_Detail.movements}
+                      ></BasicModalPagos>
+                    </div>
 
                     <div className="box-grid">
                       <label>
@@ -443,20 +445,22 @@ export const Perfil = () => {
                             >
                               <img src={iconoflecha} alt="" />
                             </div>
-                            <div className="box-grid" id="pagar-btn">
-                              <h3
-                                onClick={() => {
-                                  handlePurchaseMonth(
-                                    membresia.purchase_Detail
-                                      .monthly_membership_cost,
-                                    membresia.purchase_Detail.membership_id,
-                                    membresia.purchase_Detail.purchase_id
-                                  );
-                                }}
-                              >
-                                PAGAR
-                              </h3>
-                            </div>
+                            <motion.div whileTap={{scale: 1.2}}>
+                              <div className="box-grid" id="pagar-btn">
+                                <h3
+                                  onClick={() => {
+                                    handlePurchaseMonth(
+                                      membresia.purchase_Detail
+                                        .monthly_membership_cost,
+                                      membresia.purchase_Detail.membership_id,
+                                      membresia.purchase_Detail.purchase_id
+                                    );
+                                  }}
+                                >
+                                  PAGAR
+                                </h3>
+                              </div>
+                            </motion.div>
                           </React.Fragment>
                         ))}
                       </React.Fragment>
@@ -483,8 +487,23 @@ export const Perfil = () => {
                               <h2>
                                 {membresia.purchase_Detail.membership_name}
                               </h2>
+
                               <img src={iconoflecha} alt="" />
                             </label>
+                            <motion.div whileTap={{ scale: 1.2 }}>
+                              <button
+                                onClick={() => {
+                                  handlePurchaseMonth(
+                                    membresia.purchase_Detail
+                                      .monthly_membership_cost,
+                                    membresia.purchase_Detail.membership_id,
+                                    membresia.purchase_Detail.purchase_id
+                                  );
+                                }}
+                              >
+                                Pagar
+                              </button>
+                            </motion.div>
                           </div>
                         ))}
                       </React.Fragment>

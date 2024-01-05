@@ -2,6 +2,7 @@ import { GoogleOAuthProvider } from "@react-oauth/google";
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
+import { Activate } from "./pages/Activate";
 import { Blog } from "./pages/Blog";
 import { Checkout } from "./pages/Checkout";
 import { CheckoutMonth } from "./pages/CheckoutMonth";
@@ -38,6 +39,7 @@ function App() {
         <GoogleOAuthProvider clientId="671123710035-o8jgq4gp7knk7jl1gg64na5jkhstgt6p.apps.googleusercontent.com">
           <Routes>
             <Route exact path="/" element={<Hub />} />
+            <Route exact path="/activate" element={<Activate />} />
             <Route exact path="/hub" element={<Page1 />} />
             <Route exact path="/nosotros" element={<Page2 />} />
             <Route exact path="/afiliacion" element={<Page3 />} />
