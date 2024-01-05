@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
+import toast, { Toaster } from "react-hot-toast";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { Link, useNavigate } from "react-router-dom";
@@ -17,7 +18,7 @@ export const Register = () => {
   const { register, handleSubmit, control } = useForm({
     shouldUseNativeValidation: true,
   });
-  const [success, setSuccess] = useState("");
+
   const [error, setError] = useState("");
   const [loading, setIsLoading] = useState(false);
   const [errorRegisterStyle, setErrorRegisterStyle] = useState({
@@ -33,7 +34,7 @@ export const Register = () => {
         if (data.phone_number && data.phone_number.length > 6) {
           try {
             const res = await axios.post(`${BASE_URL}register/`, data);
-            setSuccess("Usuario creado correctamente");
+            toast.success("Usuario registrado correctamente");
             setTimeout(() => {
               setIsLoading(false);
               navigate("/login");
@@ -41,7 +42,7 @@ export const Register = () => {
           } catch (error) {
             setIsLoading(false);
             console.log(error);
-            setError(`${""}Usuario ya registrado`);
+            setError("Usuario ya registrado");
             setErrorRegisterStyle({
               display: "block",
             });
@@ -72,6 +73,7 @@ export const Register = () => {
   return (
     <div className="containergeneralRegister">
       <div className="registercontainer">
+        <Toaster position="top-center"></Toaster>
         <h1>Crear una cuenta</h1>
         <p>Crea una cuenta en Smart Future Income</p>
 
@@ -137,10 +139,6 @@ export const Register = () => {
               />
               Mostrar contraseña
             </label>
-            <div className="successRegister">
-              <h2>{success}</h2>
-            </div>
-
             <button type="submit">
               {loading ? <div class="spinner"></div> : "Registrarse"}
             </button>

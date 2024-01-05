@@ -6,6 +6,7 @@ import { MicroNav } from "../components/MicroNav";
 import { BASE_URL } from "../hooks/fetch";
 import "../styles/Forgot.css";
 
+
 export const Forgot = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [change, setChange] = useState(false);
@@ -23,11 +24,12 @@ export const Forgot = () => {
 
     try {
       const res = await axios.post(`${BASE_URL}password-reset/`, data);
-      setText("Enviado correctamente");
+      setText('Enviado correctamente')
       setChange(true);
       setError('')
       console.log(res)
     } catch (error) {
+      console.log(error)
       setError(error.response.data.email);
       setChange(false);
     }

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import React, { useEffect } from "react";
+import toast, { Toaster } from "react-hot-toast";
 import { Link } from "react-router-dom";
 import mujeresinicio from "../assets/mujeres_inicio.webp";
 import familia from "../assets/pareja_inicio.webp";
@@ -10,7 +11,27 @@ import "../styles/page1.css";
 export const Page1 = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
+    toast(
+      <React.Fragment>
+        <div className="add-desktop">
+          <h3>
+            {" "}
+            👏 Prueba agregar nuestra{" "}
+            <b style={{ fontWeight: 900 }}>web al escritorio</b>!
+          </h3>
+          <ul>
+            <li>Opciones</li>
+            <li>Agregar a Inicio</li>
+            <li style={{ color: "green" }}>Aceptar</li>
+          </ul>
+        </div>
+      </React.Fragment>,
+      {
+        duration: 6000,
+      }
+    );
   }, []);
+
   return (
     <div className="page1">
       <motion.div
@@ -20,6 +41,9 @@ export const Page1 = () => {
       >
         <div className="header">
           <HeaderNormal></HeaderNormal>
+        </div>
+        <div className="toast">
+          <Toaster position="bottom-center" reverseOrder={false} />
         </div>
 
         <div className="divpage1">

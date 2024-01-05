@@ -2,6 +2,10 @@ img {
     max-width: 100%;
 }
 
+.toast {
+    display: none;
+}
+
 .scroll {
     display: none;
 }
@@ -125,6 +129,16 @@ img {
 }
 
 @media(max-width: 767px) {
+
+    .toast {
+        display: block;
+        font-family: 'lato';
+    }
+
+    .add-desktop ul {
+        list-style: decimal;
+        font-size: 1.2rem;
+    }
 
     .loadingp1 {
 

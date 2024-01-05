@@ -2,10 +2,12 @@ import { GoogleLogin } from "@react-oauth/google";
 import axios from "axios";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import toast, { Toaster } from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import icono from "../assets/icono.png";
 import { MicroNav } from "../components/MicroNav";
 import { BASE_URL, BASE_URL_LOGIN } from "../hooks/fetch";
+
 import "../styles/Login.css";
 export const Login = () => {
   const [password, setPassword] = useState(false);
@@ -51,10 +53,7 @@ export const Login = () => {
     } catch (error) {
       setIsLoading(false);
       console.log(error);
-      setError(error.response.data.detail);
-      setDisplay1({
-        display: "block",
-      });
+      toast.error(error.response.data.detail)
     }
   };
 
@@ -75,6 +74,12 @@ export const Login = () => {
   return (
     <div>
       <div className="containergeneral">
+        <Toaster position="top-center" toastOptions={{
+          style: {
+            fontFamily: 'lato',
+            fontSize: '1.2rem'
+          }
+        }}></Toaster>
         <div className="logincontainer">
           <div className="containericono">
             <img src={icono} alt="" />
