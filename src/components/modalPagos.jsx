@@ -2,7 +2,9 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Modal from "@mui/material/Modal";
 import Typography from "@mui/material/Typography";
+import { motion } from "framer-motion";
 import * as React from "react";
+import { useState } from "react";
 import "../styles/pay.css";
 
 const style = {
@@ -22,6 +24,17 @@ export default function BasicModalPagos({ movements }) {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+  const itemsPerPage = 3;
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = movements.slice(indexOfFirstItem, indexOfLastItem);
+
+  const paginate = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
   return (
     <div>
       <Button
@@ -35,81 +48,92 @@ export default function BasicModalPagos({ movements }) {
       >
         Historial de pagos
       </Button>
-        <Modal
-          open={open}
-          id="modalpagos"
-          style={{ overflow: "auto" }}
-          onClose={handleClose}
-          aria-labelledby="modal-modal-title"
-          aria-describedby="modal-modal-description"
-        >
-          <Box sx={style} className="boxpay">
-            <h2
-              onClick={() => {
-                handleClose();
-              }}
-              id="x1"
-            >
-              x
-            </h2>
-            <Typography id="modal-modal-title" variant="h6" component="h2">
-              Historial de movimientos
-            </Typography>
-            <div className="grid-payment">
-              <h3>Autor</h3>
-              <h3>Código</h3>
-              <h3>Fecha de creación</h3>
-              <h3>Monto</h3>
+      <Modal
+        open={open}
+        id="modalpagos"
+        style={{ overflow: "auto" }}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style} className="boxpay">
+          <h2
+            onClick={() => {
+              handleClose();
+            }}
+            id="x1"
+          >
+            x
+          </h2>
+          <Typography id="modal-modal-title" variant="h6" component="h2">
+            Historial de movimientos
+          </Typography>
+          <div className="grid-payment">
+            <h3>Autor</h3>
+            <h3>Código</h3>
+            <h3>Fecha de creación</h3>
+            <h3>Monto</h3>
+            <h3>Estado</h3>
 
-              {movements.map((movement) => (
-                <React.Fragment>
-                  <h2 key={movement.code}>{movement.created_by_name}</h2>
-                  <h2 key={movement.code}>{movement.code}</h2>
-                  <h2 key={movement.code}>{movement.created_date}</h2>
-                  <h2 key={movement.code}>{movement.amount} USDT</h2>
-                  <h2 key={movement.code}>{movement.created_by_name}</h2>
-                  <h2 key={movement.code}>{movement.code}</h2>
-                  <h2 key={movement.code}>{movement.created_date}</h2>
-                  <h2 key={movement.code}>{movement.amount} USDT</h2>
-                  <h2 key={movement.code}>{movement.created_by_name}</h2>
-                  <h2 key={movement.code}>{movement.code}</h2>
-                  <h2 key={movement.code}>{movement.created_date}</h2>
-                  <h2 key={movement.code}>{movement.amount} USDT</h2>
-                  <h2 key={movement.code}>{movement.created_by_name}</h2>
-                  <h2 key={movement.code}>{movement.code}</h2>
-                  <h2 key={movement.code}>{movement.created_date}</h2>
-                  <h2 key={movement.code}>{movement.amount} USDT</h2>
+            {movements.map((movement) => (
+              <React.Fragment>
+                <h2 key={movement.code}>{movement.created_by_name}</h2>
+                <h2 key={movement.code}>{movement.code}</h2>
+                <h2 key={movement.code}>{movement.created_date}</h2>
+                <h2 key={movement.code}>{movement.amount} USDT</h2>
+                <h2 key={movement.code}>{movement.status}</h2>
+              </React.Fragment>
+            ))}
+          </div>
+          <React.Fragment>
+            <div className="mobilelabel">
+              {currentItems.map((movement) => (
+                <React.Fragment key={movement.code}>
+                  <div className="labelspayment">
+                    <label>
+                      <h3>Autor:</h3>
+                      <h2>{movement.created_by_name}</h2>
+                    </label>
+                    <label>
+                      <h3>Código:</h3>
+                      <h2>{movement.code}</h2>
+                    </label>
+                    <label>
+                      <h3>Fecha de creación:</h3>
+                      <h2>{movement.created_date}</h2>
+                    </label>
+                    <label>
+                      <h3>Monto:</h3>
+                      <h2>{movement.amount} USDT</h2>
+                    </label>
+                    <label>
+                      <h3>Estado:</h3>
+                      <h2>{movement.status}</h2>
+                    </label>
+                  </div>
                 </React.Fragment>
               ))}
-            </div>
-            <React.Fragment>
-              <div className="mobilelabel">
-                {movements.map((movement) => (
-                  <React.Fragment>
-                    <div className="labelspayment">
-                      <label>
-                        <h3>Autor:</h3>
-                        <h2 key={movement.code}>{movement.created_by_name}</h2>
-                      </label>
-                      <label>
-                        <h3>Código:</h3>
-                        <h2 key={movement.code}>{movement.code}</h2>
-                      </label>
-                      <label>
-                        <h3>Fecha de creación:</h3>
-                        <h2 key={movement.code}>{movement.created_date}</h2>
-                      </label>
-                      <label>
-                        <h3>Monto:</h3>
-                        <h2 key={movement.code}>{movement.amount} USDT</h2>
-                      </label>
-                    </div>
-                  </React.Fragment>
-                ))}
+
+              <div className="pagination">
+                {Array.from(
+                  { length: Math.ceil(movements.length / itemsPerPage) },
+                  (_, i) => (
+                    <motion.div whileTap={{scale: 2}}>
+                      <button
+                        key={i + 1}
+                        onClick={() => paginate(i + 1)}
+                        className={currentPage === i + 1 ? "active" : ""}
+                      >
+                        {i + 1}
+                      </button>
+                    </motion.div>
+                  )
+                )}
               </div>
-            </React.Fragment>
-          </Box>
-        </Modal>
+            </div>
+          </React.Fragment>
+        </Box>
+      </Modal>
     </div>
   );
 }

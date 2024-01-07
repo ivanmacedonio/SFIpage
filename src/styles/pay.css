@@ -1,11 +1,11 @@
 .grid-payment {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 1rem;
     font-family: 'lato';
 }
 
-#x1{
+#x1 {
     font-family: 'lato';
     font-size: 2rem;
 }
@@ -29,26 +29,29 @@
 
 #modal-modal-title {
     margin-bottom: 2rem;
-    font-style: italic;
-    background-color: rgb(210, 241, 255);
     width: fit-content;
-    padding: 0 1rem;
+    font-weight: 700;
     border-radius: 0.5rem;
+    font-size: 2.5rem;
+    color: rgb(151, 150, 150);
 }
-#modalpagos{
+
+#modalpagos {
     max-height: 60%;
     top: 20%;
 }
-.boxpay{
-    max-height:100%;
+
+.boxpay {
+    max-height: 100%;
     overflow: auto;
 }
 
 @media (max-width: 768px) {
-    #modalpagos{
+    #modalpagos {
         min-height: 100%;
-        position:absolute ;
+        position: absolute;
     }
+
     .mobilelabel {
         display: block;
         margin-bottom: 1rem;
@@ -61,7 +64,8 @@
     .mobilelabel label {
         display: flex;
         align-items: center;
-        gap: 1rem;
+        gap: 0.5rem;
+        height: 2.5rem;
         font-family: 'lato';
     }
 
@@ -71,7 +75,7 @@
 
     .mobilelabel h2 {
         font-size: 1.1rem;
-        margin-bottom: 5px;
+        margin-bottom: 0px;
     }
 
     .mobilelabel h3 {
@@ -80,11 +84,30 @@
     }
 
     .labelspayment {
-        background-color: rgb(234, 234, 234);
+        background-color: rgb(232, 232, 232);
         padding: 1rem;
         border-radius: 0.5rem;
         margin-bottom: 2rem;
     }
 
-   
+    .pagination button {
+        border-radius: 0.5rem;
+        padding: 0.5rem 0.8rem;
+        font-size: 1rem;
+        border: solid 1px rgb(232, 232, 232);
+        background-color: rgba(255, 255, 255, 0.597);
+        color: rgb(112, 112, 112);
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+
+    }
+
+    .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 3rem;
+    }
+
+
 }

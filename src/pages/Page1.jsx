@@ -2,11 +2,13 @@ import { motion } from "framer-motion";
 import React, { useEffect } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { Link } from "react-router-dom";
+import imagen from "../assets/mic.png";
 import mujeresinicio from "../assets/mujeres_inicio.webp";
 import familia from "../assets/pareja_inicio.webp";
 import { Footer } from "../components/Footer";
 import { HeaderNormal } from "../components/Header-normal";
 import { Scrollpage1 } from "../components/Scrollpage1";
+  
 import "../styles/page1.css";
 export const Page1 = () => {
   useEffect(() => {
@@ -20,7 +22,10 @@ export const Page1 = () => {
             <b style={{ fontWeight: 900 }}>web al escritorio</b>!
           </h3>
           <ul>
-            <li>Opciones</li>
+            <li>
+              En Safari, click en{" "}
+              <img src={imagen} style={{ width: "1.5rem" }} />
+            </li>
             <li>Agregar a Inicio</li>
             <li style={{ color: "green" }}>Aceptar</li>
           </ul>
@@ -33,7 +38,9 @@ export const Page1 = () => {
   }, []);
 
   return (
+   
     <div className="page1">
+      
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

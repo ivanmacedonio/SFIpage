@@ -167,11 +167,14 @@ MEMBRESIA
 
 
 #info {
+    color: gray;
     grid-column: span 4;
     text-align: center;
-    background-color: rgb(156, 156, 156);
     border-radius: 0.5rem;
-    color: rgb(255, 255, 255);
+}
+
+#info h3{
+    font-size: 1.6rem;
 }
 
 
@@ -191,9 +194,8 @@ MEMBRESIA
 #info {
     grid-column: span 4;
     text-align: center;
-    background-color: rgb(156, 156, 156);
+    color: gray;
     border-radius: 0.5rem;
-    color: rgb(255, 255, 255);
     width: 100%;
 }
 
@@ -397,7 +399,7 @@ input[type="checkbox"]:checked+.slider:before {
     .box-flex label {
         display: flex;
         justify-content: center;
-        width: 80%;
+        min-width: 80%;
         font-family: 'lato';
         align-items: center;
         border-radius: 0.5rem;
@@ -481,6 +483,7 @@ input[type="checkbox"]:checked+.slider:before {
         flex-direction: column;
         gap: 0.6rem;
         margin-bottom: 2rem;
+        width: 100%;
 
     }
     .box-flex button{

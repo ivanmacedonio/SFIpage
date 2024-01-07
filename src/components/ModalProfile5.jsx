@@ -37,7 +37,6 @@ export default function BasicModal5({
   const nav = useNavigate();
   const [error, setError] = React.useState("");
 
-
   React.useEffect(() => {
     async function getUser() {
       const token = localStorage.getItem("access");
@@ -135,7 +134,7 @@ export default function BasicModal5({
       }
     } catch (error) {
       setError(error.response.data.respuestaServicio.detalle_tecnico);
-      console.log(error)
+      console.log(error);
     }
   }
 
@@ -177,8 +176,10 @@ export default function BasicModal5({
               <div className="t">
                 <p>Monto de cuota mensual en USDT:</p>
                 <h3>
-                  {membershipData.monthly_membership_cost *
-                    (membershipData.precio / 10000)}{" "}
+                  {(
+                    membershipData.monthly_membership_cost *
+                    (membershipData.precio / 10000)
+                  ).toFixed(2)}{" "}
                   USDT
                 </h3>
               </div>

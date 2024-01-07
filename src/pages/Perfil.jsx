@@ -155,7 +155,7 @@ export const Perfil = () => {
               transition: { duration: 1, repeat: Infinity },
             }}
           >
-            <img src={icono} alt="" style={{ width: "10rem" }} />
+            <img src={icono} alt="" style={{ width: "5rem" }} />
           </motion.div>
         </div>
       ) : (
@@ -328,6 +328,7 @@ export const Perfil = () => {
                       <label id="info-benef">
                         <h3>Información de beneficio</h3>
                       </label>
+                      <hr />
                     </div>
                     <div className="box-grid">
                       <label>
@@ -445,7 +446,7 @@ export const Perfil = () => {
                             >
                               <img src={iconoflecha} alt="" />
                             </div>
-                            <motion.div whileTap={{scale: 1.2}}>
+                            <motion.div whileTap={{ scale: 1.2 }}>
                               <div className="box-grid" id="pagar-btn">
                                 <h3
                                   onClick={() => {
@@ -478,18 +479,18 @@ export const Perfil = () => {
                       <React.Fragment>
                         {memberDetail.map((membresia) => (
                           <div className="box-flex">
-                            <label
-                              onClick={() => {
-                                setSelected(true);
-                                setTempMember(membresia);
-                              }}
-                            >
-                              <h2>
-                                {membresia.purchase_Detail.membership_name}
-                              </h2>
+                              <label
+                                onClick={() => {
+                                  setSelected(true);
+                                  setTempMember(membresia);
+                                }}
+                              >
+                                <h2>
+                                  {membresia.purchase_Detail.membership_name}
+                                </h2>
 
-                              <img src={iconoflecha} alt="" />
-                            </label>
+                                <img src={iconoflecha} alt="" />
+                              </label>
                             <motion.div whileTap={{ scale: 1.2 }}>
                               <button
                                 onClick={() => {
