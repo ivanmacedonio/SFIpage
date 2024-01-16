@@ -1,6 +1,7 @@
 import axios from "axios";
 import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import foto from "../assets/anon.png";
 import iconoflecha from "../assets/flechaprofile.png";
@@ -8,7 +9,7 @@ import icono from "../assets/icono.png";
 import { HeaderNormal } from "../components/Header-normal";
 import BasicModal from "../components/ModalProfile1";
 import BasicModalPagos from "../components/modalPagos";
-import { BASE_URL } from "../hooks/fetch";
+import { BASE_URL, BASE_URL_LOGIN } from "../hooks/fetch";
 import "../styles/perfil.css";
 export const Perfil = () => {
   useEffect(() => {
@@ -44,6 +45,7 @@ export const Perfil = () => {
           setInterval(() => {
             setIsLoading(false);
           }, 2000);
+          console.log(res.data);
           if (res.data.KYC_Detail) {
             switch (res.data.KYC_Detail.state) {
               case "":
@@ -88,6 +90,7 @@ export const Perfil = () => {
         params: params,
       });
       setMemberDetail(resMember.data);
+      console.log(resMember.data);
       if (resMember.data) {
         setIsMember(true);
       } else {
@@ -128,8 +131,9 @@ export const Perfil = () => {
         }
       );
       window.open(`${resmonth.data.detalleRespuesta.url}`, "_blank");
+      window.location.reload();
     } catch (error) {
-      console.log(error);
+      toast.error(error.response.data.respuestaServicio.detalle_tecnico);
     }
   }
 
@@ -138,6 +142,15 @@ export const Perfil = () => {
       <div className="header-container">
         <HeaderNormal></HeaderNormal>
       </div>
+      <Toaster
+        position="top-center"
+        toastOptions={{
+          style: {
+            fontFamily: "lato",
+            fontSize: "1.2rem",
+          },
+        }}
+      ></Toaster>
       <div className="background-profile"></div>
       {loading ? (
         <div
@@ -268,9 +281,9 @@ export const Perfil = () => {
                         <h3>Cuota mensual:</h3>
                         <h4>
                           {" "}
-                          {
-                            tempMember.purchase_Detail.monthly_membership_cost
-                          }{" "}
+                          {tempMember.purchase_Detail.monthly_membership_cost.toLocaleString(
+                            "en"
+                          )}{" "}
                           USDT
                         </h4>
                       </label>
@@ -284,7 +297,12 @@ export const Perfil = () => {
                     <div className="box-grid">
                       <label>
                         <h3>Estado:</h3>
-                        <h4 id="estado">Activa</h4>
+                        {tempMember.purchase_Detail
+                          .ind_bonus_will_be_redeemed ? (
+                          <h4 id="estado">Activa</h4>
+                        ) : (
+                          <h4 id="estadod">Desactivado</h4>
+                        )}
                       </label>
                     </div>
                     <div class="box-grid">
@@ -333,13 +351,16 @@ export const Perfil = () => {
                     <div className="box-grid">
                       <label>
                         <h3>Fecha de Inicio:</h3>
-                        <h4> {tempMember.purchase_Detail.created_date}</h4>
+                        <h4>
+                          {" "}
+                          {tempMember.purchase_Detail.benefit_start_date}
+                        </h4>
                       </label>
                     </div>
                     <div className="box-grid">
                       <label>
                         <h3>Fecha de Vencimiento:</h3>
-                        <h4>-</h4>
+                        <h4> {tempMember.purchase_Detail.benefit_end_date}</h4>
                       </label>
                     </div>
                     <div className="box-grid">
@@ -347,7 +368,7 @@ export const Perfil = () => {
                         <h3>Cantidad de beneficios:</h3>
                         <h4>
                           {" "}
-                          1/
+                          0/
                           {tempMember.purchase_Detail.months_of_profit}
                         </h4>
                       </label>
@@ -356,11 +377,11 @@ export const Perfil = () => {
                       <label>
                         <h3>Monto de cuota mensual:</h3>
                         <h4>
-                          {" "}
-                          {
-                            tempMember.purchase_Detail.monthly_membership_cost
-                          }{" "}
-                          {""}
+                          {(
+                            tempMember.purchase_Detail
+                              .amount_without_five_year_withdrawal *
+                            (tempMember.purchase_Detail.amount / 10000)
+                          ).toLocaleString("en")}
                           USDT
                         </h4>
                       </label>
@@ -368,13 +389,7 @@ export const Perfil = () => {
                     <div className="box-grid">
                       <label>
                         <h3>Tiempo de maduración:</h3>
-                        <h4>
-                          {" "}
-                          {
-                            tempMember.purchase_Detail.maturity_period_in_months
-                          }{" "}
-                          Meses
-                        </h4>
+                        <h4> 240 Meses</h4>
                       </label>
                     </div>
                     <div className="box-grid" id="walletprof">
@@ -451,8 +466,7 @@ export const Perfil = () => {
                                 <h3
                                   onClick={() => {
                                     handlePurchaseMonth(
-                                      membresia.purchase_Detail
-                                        .monthly_membership_cost,
+                                      membresia.purchase_Detail.amount,
                                       membresia.purchase_Detail.membership_id,
                                       membresia.purchase_Detail.purchase_id
                                     );
@@ -479,18 +493,18 @@ export const Perfil = () => {
                       <React.Fragment>
                         {memberDetail.map((membresia) => (
                           <div className="box-flex">
-                              <label
-                                onClick={() => {
-                                  setSelected(true);
-                                  setTempMember(membresia);
-                                }}
-                              >
-                                <h2>
-                                  {membresia.purchase_Detail.membership_name}
-                                </h2>
+                            <label
+                              onClick={() => {
+                                setSelected(true);
+                                setTempMember(membresia);
+                              }}
+                            >
+                              <h2>
+                                {membresia.purchase_Detail.membership_name}
+                              </h2>
 
-                                <img src={iconoflecha} alt="" />
-                              </label>
+                              <img src={iconoflecha} alt="" />
+                            </label>
                             <motion.div whileTap={{ scale: 1.2 }}>
                               <button
                                 onClick={() => {

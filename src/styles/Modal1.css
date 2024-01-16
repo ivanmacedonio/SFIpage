@@ -189,4 +189,21 @@
     #scrolleable {
         height: 30rem;
     }
+
+    .membresiaModal1 h1 {
+        font-size: 1.7rem;
+        padding: 1rem;
+    }
+
+    .membresiaModal1 h2 {
+        font-size: 1.2rem;
+        background-color: rgb(113, 113, 113);
+        color: rgb(255, 255, 255);
+        font-weight: 700;
+        border-radius: 1rem;
+    }
+    .membresiaModal1 p {
+        font-size: 1.2rem;
+    }
+
 }

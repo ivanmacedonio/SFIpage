@@ -173,9 +173,9 @@ img {
     }
 
     .imgfamilia {
-        left: 1rem;
+        left: 0rem;
         top: 60rem;
-        width: 22rem;
+        width:90%;
     }
 
     .textp1 h2 {

@@ -20,6 +20,8 @@ export const Login = () => {
   const [display1, setDisplay1] = useState({
     display: "none",
   });
+
+  const [toastDisplay, setToastDisplay] = useState(false);
   const handleShow = () => {
     setPassword(!password);
   };
@@ -28,6 +30,7 @@ export const Login = () => {
   const onSubmit = async (data) => {
     setIsLoading(true);
     try {
+      setToastDisplay(true);
       const res = await axios.post(`${BASE_URL_LOGIN}token/`, data);
       // const res = await axios.post(`${BASE_URL}login/`, data);
       localStorage.setItem("access", res.data.access);
@@ -53,7 +56,7 @@ export const Login = () => {
     } catch (error) {
       setIsLoading(false);
       console.log(error);
-      toast.error(error.response.data.detail)
+      toast.error(error.response.data.detail);
     }
   };
 
@@ -74,12 +77,19 @@ export const Login = () => {
   return (
     <div>
       <div className="containergeneral">
-        <Toaster position="top-center" toastOptions={{
-          style: {
-            fontFamily: 'lato',
-            fontSize: '1.2rem'
-          }
-        }}></Toaster>
+        {toastDisplay ? (
+          <Toaster
+            position="top-center"
+            toastOptions={{
+              style: {
+                fontFamily: "lato",
+                fontSize: "1.2rem",
+              },
+            }}
+          ></Toaster>
+        ) : (
+          ""
+        )}
         <div className="logincontainer">
           <div className="containericono">
             <img src={icono} alt="" />

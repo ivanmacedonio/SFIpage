@@ -10,6 +10,8 @@ import { BASE_URL } from "../hooks/fetch";
 
 import "../styles/Register.css";
 export const Register = () => {
+  const [toastDisplay, setToastDisplay] = useState(false);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -34,7 +36,9 @@ export const Register = () => {
         if (data.phone_number && data.phone_number.length > 6) {
           try {
             const res = await axios.post(`${BASE_URL}register/`, data);
+
             toast.success("Usuario registrado correctamente");
+            setToastDisplay(true);
             setTimeout(() => {
               setIsLoading(false);
               navigate("/login");
@@ -73,7 +77,8 @@ export const Register = () => {
   return (
     <div className="containergeneralRegister">
       <div className="registercontainer">
-        <Toaster position="top-center"></Toaster>
+        {toastDisplay ? <Toaster position="top-center"></Toaster> : ""}
+
         <h1>Crear una cuenta</h1>
         <p>Crea una cuenta en Smart Future Income</p>
 

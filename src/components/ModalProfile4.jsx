@@ -118,7 +118,7 @@ export default function BasicModal4({ membershipData, wallet, activated }) {
                 edit ? setEdit(!edit) : handleClose();
               }
             }}
-            id="x"
+            id="x1"
             style={{ fontSize: "2rem" }}
           >
             x

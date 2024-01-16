@@ -207,7 +207,7 @@ export default function BasicModal5({
               </div>
               <div className="t">
                 <p>Estado:</p>
-                <h3>Desactivado</h3>
+                <h3>{activated ? 'Activado' : 'Desactivado'}</h3>
               </div>
             </div>
 

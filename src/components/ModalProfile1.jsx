@@ -93,6 +93,7 @@ export default function BasicModal() {
             params: params,
           });
           setMembership(res.data);
+          console.log(res.data);
         } catch (error) {
           nav("/login");
           localStorage.removeItem("access");
@@ -117,9 +118,10 @@ export default function BasicModal() {
       minimum: member.minimum_amount_threshold,
       maximum: member.maximum_amount_threshold,
       chunk: member.chunk_size_amount,
-      percentage_bonus: member.percentage_bonus,
-      base_monthly_benefit_amount: member.base_monthly_benefit_amount,
+      percentage_bonus: member.optional_withdrawal_percentage,
+      base_monthly_benefit_amount: member.amount_without_five_year_withdrawal,
       precio: precio,
+      profit_month: member.amount_without_five_year_withdrawal,
     });
     setList(!list);
     setShow(true);
@@ -140,7 +142,7 @@ export default function BasicModal() {
           <div className="membresiaModal1">
             <h4 onClick={handleClose}>X</h4>
             <h3>Tipo de membresía</h3>
-            <hr/>
+            <hr />
 
             <h1
               onClick={() => {

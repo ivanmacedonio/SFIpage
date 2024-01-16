@@ -65,6 +65,8 @@ export default function BasicModal3({ membershipData, activated }) {
       console.error("Error al obtener el contenido del portapapeles:", error);
     }
   };
+
+  console.log(membershipData)
   return (
     <div>
       <Button onClick={handleOpen} id="continuar">
@@ -93,7 +95,7 @@ export default function BasicModal3({ membershipData, activated }) {
                 <p>Monto de cuota mensual en USDT</p>
                 <h1>
                   {(
-                    membershipData.monthly_membership_cost *
+                    membershipData.profit_month *
                     (membershipData.precio / 10000)
                   ).toLocaleString("en")}{" "}
                   USDT
@@ -102,7 +104,7 @@ export default function BasicModal3({ membershipData, activated }) {
 
               <div className="caja3">
                 <p>Cantidad de cuotas mensuales</p>
-                <h1>{membershipData.maturity_period_in_months} </h1>
+                <h1>240</h1>
               </div>
             </div>
             <form onSubmit={handleSubmit(onSubmit)}>
