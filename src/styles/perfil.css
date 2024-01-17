@@ -133,9 +133,9 @@ MEMBRESIA
 }
 
 #walletprof {
-    grid-column: span 3;
+    grid-column: span 4;
     text-align: center;
-    padding-left: 3rem;
+    margin: 0 auto;
 }
 
 

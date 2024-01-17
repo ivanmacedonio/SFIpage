@@ -305,19 +305,7 @@ export const Perfil = () => {
                         )}
                       </label>
                     </div>
-                    <div class="box-grid">
-                      <label>
-                        <input
-                          type="checkbox"
-                          defaultChecked={
-                            tempMember.purchase_Detail
-                              .ind_bonus_will_be_redeemed
-                          }
-                        />
-                        <div class="slider"></div>
-                        <h4>Retiro de quinquenio</h4>
-                      </label>
-                    </div>
+
                     <div className="box-grid">
                       {tempMember.purchase_Detail.contract_file === null ? (
                         <label>
@@ -340,6 +328,32 @@ export const Perfil = () => {
                           </label>
                         </h4>
                       )}
+                    </div>
+
+                    <div className="box-grid1" id="info">
+                      <label id="info-benef">
+                        <h3>Fase de maduración</h3>
+                      </label>
+                      <hr />
+                    </div>
+                    <div class="box-grid">
+                      <label>
+                        <input
+                          type="checkbox"
+                          defaultChecked={
+                            tempMember.purchase_Detail
+                              .ind_bonus_will_be_redeemed
+                          }
+                        />
+                        <div class="slider"></div>
+                        <h4>Retiro de quinquenio</h4>
+                      </label>
+                    </div>
+                    <div className="box-grid">
+                      <label>
+                        <h3>Tiempo de maduración:</h3>
+                        <h4> 240 Meses</h4>
+                      </label>
                     </div>
 
                     <div className="box-grid1" id="info">
@@ -386,12 +400,7 @@ export const Perfil = () => {
                         </h4>
                       </label>
                     </div>
-                    <div className="box-grid">
-                      <label>
-                        <h3>Tiempo de maduración:</h3>
-                        <h4> 240 Meses</h4>
-                      </label>
-                    </div>
+
                     <div className="box-grid" id="walletprof">
                       <label>
                         <h3>Wallet:</h3>

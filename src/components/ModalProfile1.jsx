@@ -93,7 +93,6 @@ export default function BasicModal() {
             params: params,
           });
           setMembership(res.data);
-          console.log(res.data);
         } catch (error) {
           nav("/login");
           localStorage.removeItem("access");

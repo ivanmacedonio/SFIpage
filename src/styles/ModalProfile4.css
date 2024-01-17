@@ -170,7 +170,7 @@
     cursor: pointer;
 }
 
-.optns{
+.optns {
     display: flex;
     height: auto;
 }
@@ -179,7 +179,7 @@
 
 @media (max-width : 767px) {
 
-    .optns{
+    .optns {
         gap: 1rem;
         justify-content: center;
         align-items: center;
@@ -195,10 +195,6 @@
     #scrolleable4 {
         padding-left: 2rem;
         overflow-y: scroll;
-    }
-
-    #x {
-        font-size: 2rem;
     }
 
     .caja4 {
@@ -321,12 +317,12 @@
         font-weight: 700;
     }
 
-    #beneficiario{
+    #beneficiario {
         font-size: 1rem !important;
         padding: 1rem;
     }
 
-    .errorbenef h2{
+    .errorbenef h2 {
         font-size: 1.2rem;
     }
 

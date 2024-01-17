@@ -17,29 +17,31 @@ const style = {
 };
 
 export default function BasicModal2({ membershipData }) {
-  const [number, setNumber] = React.useState();
-  const [error, setError] = React.useState(false);
-  React.useEffect(() => {
-    function formatearNumero() {
-      let numero =
-        (membershipData.percentage_bonus * membershipData.precio) / 100;
+  // const [number, setNumber] = React.useState();
+  // const [error, setError] = React.useState(false);
+  // React.useEffect(() => {
+  //   function formatearNumero() {
+  //     let numero =
+  //       (membershipData.percentage_bonus * membershipData.precio) / 100;
 
-      let cadenaNumero = numero.toString();
+  //     let cadenaNumero = numero.toString();
 
-      let resultadoFormateado = cadenaNumero.replace(
-        /\B(?=(\d{3})+(?!\d))/g,
-        ","
-      );
+  //     let resultadoFormateado = cadenaNumero.replace(
+  //       /\B(?=(\d{3})+(?!\d))/g,
+  //       ","
+  //     );
 
-      setNumber(resultadoFormateado);
-    }
-    formatearNumero();
-  }, [membershipData]);
+  //     setNumber(resultadoFormateado);
+  //   }
+  //   formatearNumero();
+  // }, [membershipData]);
 
   const [open, setOpen] = React.useState(false);
   const [activated, setIsActivated] = React.useState(true);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+  console.log(membershipData);
 
   return (
     <div>
@@ -59,7 +61,7 @@ export default function BasicModal2({ membershipData }) {
               onClick={() => {
                 handleClose();
               }}
-              style={{fontWeight: '500'}}
+              style={{ fontWeight: "500" }}
             >
               X
             </h3>
@@ -77,7 +79,7 @@ export default function BasicModal2({ membershipData }) {
               <div className="caja2">
                 <h2>Porcentaje redimible</h2>
                 {activated ? (
-                  <h1>{Math.floor(membershipData.percentage_bonus)}%</h1>
+                  <h1>{membershipData.percentage_bonus}%</h1>
                 ) : (
                   <h1 style={{ color: "gray" }}>0</h1>
                 )}
@@ -95,7 +97,13 @@ export default function BasicModal2({ membershipData }) {
               <div className="caja2">
                 <h2>Monto redimible en USDT</h2>
                 {activated ? (
-                  <h1>{number}</h1>
+                  <h1>
+                    {(
+                      (membershipData.percentage_bonus *
+                        membershipData.precio) /
+                      100
+                    ).toLocaleString("en")}
+                  </h1>
                 ) : (
                   <h1 style={{ color: "gray" }}>0</h1>
                 )}

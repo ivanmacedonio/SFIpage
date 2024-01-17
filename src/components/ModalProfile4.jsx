@@ -112,17 +112,16 @@ export default function BasicModal4({ membershipData, wallet, activated }) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style} id="scrollbenef">
-          <h4
+          <h3
             onClick={() => {
               {
                 edit ? setEdit(!edit) : handleClose();
               }
             }}
             id="x1"
-            style={{ fontSize: "2rem" }}
           >
             x
-          </h4>
+          </h3>
           {edit ? (
             <form onSubmit={handleSubmit(onSubmitEdit)}>
               <div className="modal6">

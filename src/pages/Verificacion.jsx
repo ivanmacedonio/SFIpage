@@ -295,8 +295,12 @@ export const Verificacion = () => {
                   />{" "}
                   <p>
                     Al hacer clic aquí, confirma que ha leído y acepta los
-                    <a href="https://www.smartfutureincome.com/media/terminos.pdf">
-                      {" "}
+                    <a
+                      style={{ color: "blue" }}
+                      href="https://www.smartfutureincome.com/media/terminos.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       términos de uso
                     </a>
                     , la Política de privacidad y acepta que sus datos serán

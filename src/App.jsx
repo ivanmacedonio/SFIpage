@@ -35,29 +35,29 @@ function App() {
   }, []);
   const inactivityTimeout = 600000;
   const localStorageKey = "access";
-  
+
   const App = () => {
     const [activityTimer, setActivityTimer] = useState(null);
-  
+
     useEffect(() => {
       const handleActivity = () => {
         if (activityTimer) {
           clearTimeout(activityTimer);
         }
-  
+
         const newTimer = setTimeout(() => {
           localStorage.removeItem(localStorageKey);
           console.log("Objeto eliminado debido a inactividad.");
         }, inactivityTimeout);
-  
+
         setActivityTimer(newTimer);
       };
-  
+
       handleActivity();
-  
+
       window.addEventListener("mousemove", handleActivity);
       window.addEventListener("keydown", handleActivity);
-  
+
       return () => {
         if (activityTimer) {
           clearTimeout(activityTimer);
@@ -66,10 +66,10 @@ function App() {
         window.removeEventListener("keydown", handleActivity);
       };
     }, [inactivityTimeout]);
-  
+
     // Resto del componente...
   };
-  
+
   return (
     <>
       <BrowserRouter>
