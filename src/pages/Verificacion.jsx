@@ -294,7 +294,7 @@ export const Verificacion = () => {
                     }}
                   />{" "}
                   <p>
-                    Al hacer clic aquí, confirma que ha leído y acepta los
+                    Al hacer clic aquí, confirma que ha leído y acepta los {""}
                     <a
                       style={{ color: "blue" }}
                       href="https://www.smartfutureincome.com/media/terminos.pdf"

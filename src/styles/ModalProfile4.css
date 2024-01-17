@@ -13,17 +13,20 @@
 }
 
 .caja4 p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin-bottom: .8rem;
+    padding: 0;
+    margin: 10px;
 }
 
 .caja4 input {
-    font-size: 1.3rem;
+    font-size: 1.1rem !important;
     border-radius: .5rem;
-    width: 20rem;
-    padding: .5rem 0 .5rem 0;
+    width: 17rem !important;
+    padding: 0.5rem 0;
     padding-left: 1rem;
 }
+
 
 #scrolleable4 {
     overflow-y: auto;
@@ -57,7 +60,7 @@
 
 .check2 {
     background: linear-gradient(to right, rgb(3, 180, 211), rgb(2, 80, 116));
-    padding: 0.5rem 1rem;
+    padding: 0.5rem;
     border-radius: 1rem;
     color: white;
     width: 100%;
@@ -83,7 +86,7 @@
 }
 
 #db {
-    font-size: 2rem;
+    font-size: 1.3rem;
     font-family: 'Lato', sans-serif;
     font-weight: 700;
     text-align: center;
@@ -325,6 +328,16 @@
     .errorbenef h2 {
         font-size: 1.2rem;
     }
+
+    .caja4 input {
+        font-size: 1.1rem !important;
+        border-radius: .5rem;
+        width: 20rem;
+        padding:  0.5rem;
+        padding-left: 1rem;
+    }
+    
+    
 
 }
 

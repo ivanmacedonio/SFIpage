@@ -183,10 +183,6 @@ export default function BasicModal5({
                   USDT
                 </h3>
               </div>
-              <div className="t">
-                <p>Maduración de membresía activa:</p>
-                <h3>{membershipData.maturity_period_in_months} Meses</h3>
-              </div>
             </div>
 
             <div className="sec2">
@@ -207,7 +203,11 @@ export default function BasicModal5({
               </div>
               <div className="t">
                 <p>Estado:</p>
-                <h3>{activated ? 'Activado' : 'Desactivado'}</h3>
+                <h3>{activated ? "Activado" : "Desactivado"}</h3>
+              </div>
+              <div className="t">
+                <p>Maduración de membresía activa:</p>
+                <h3>{membershipData.maturity_period_in_months} Meses</h3>
               </div>
             </div>
 
@@ -215,11 +215,17 @@ export default function BasicModal5({
               <h1>Beneficio a percibir</h1>
               <div className="t">
                 <p>Monto de cuota mensual en USDT:</p>
-                <h3>{membershipData.monthly_membership_cost} USDT</h3>
+                <h3>
+                  {(
+                    membershipData.profit_month *
+                    (membershipData.precio / 10000)
+                  ).toLocaleString("en")}{" "}
+                  USDT
+                </h3>
               </div>
               <div className="t">
                 <p>Cantidad de cuotas mensuales:</p>
-                <h3>{membershipData.savings_duration_in_months}</h3>
+                <h3>240</h3>
               </div>
               <div className="t">
                 <p>Wallet:</p>

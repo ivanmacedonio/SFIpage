@@ -5,9 +5,9 @@
     font-weight: 700;
 }
 
+
 #scrollbenef {
-    height: 70%;
-    overflow-y: auto;
+    height: max-content;
     padding-left: 2rem;
 }
 #scrollbenef::-webkit-scrollbar {

@@ -239,6 +239,13 @@ export const Perfil = () => {
                       ></BasicModalPagos>
                     </div>
 
+                    <div className="box-grid1" id="info">
+                      <label id="info-benef">
+                        <h3>Información de membresía</h3>
+                      </label>
+                      <hr />
+                    </div>
+
                     <div className="box-grid">
                       <label>
                         <h3>Descripción:</h3>
@@ -297,12 +304,9 @@ export const Perfil = () => {
                     <div className="box-grid">
                       <label>
                         <h3>Estado:</h3>
-                        {tempMember.purchase_Detail
-                          .ind_bonus_will_be_redeemed ? (
-                          <h4 id="estado">Activa</h4>
-                        ) : (
-                          <h4 id="estadod">Desactivado</h4>
-                        )}
+                        <h4 id="estado">
+                          {tempMember.purchase_Detail.contract_state}
+                        </h4>
                       </label>
                     </div>
 
@@ -315,17 +319,13 @@ export const Perfil = () => {
                         <h4
                           id="contract"
                           onClick={() => {
-                            window.location.assign(
-                              `${BASE_URL_LOGIN}${tempMember.purchase_Detail.contract_file}`
+                            window.open(
+                              `${BASE_URL_LOGIN}${tempMember.purchase_Detail.contract_file}`,
+                              "_blank" // Esto abrirá el enlace en una nueva ventana o pestaña
                             );
                           }}
                         >
-                          <label
-                            htmlFor="
-                      "
-                          >
-                            Descargar contrato
-                          </label>
+                          <label htmlFor="">Descargar contrato</label>
                         </h4>
                       )}
                     </div>
@@ -336,7 +336,7 @@ export const Perfil = () => {
                       </label>
                       <hr />
                     </div>
-                    <div class="box-grid">
+                    <div class="box-grid" id="center1">
                       <label>
                         <input
                           type="checkbox"
@@ -349,7 +349,7 @@ export const Perfil = () => {
                         <h4>Retiro de quinquenio</h4>
                       </label>
                     </div>
-                    <div className="box-grid">
+                    <div className="box-grid" id="center1">
                       <label>
                         <h3>Tiempo de maduración:</h3>
                         <h4> 240 Meses</h4>

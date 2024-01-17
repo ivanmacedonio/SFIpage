@@ -4,7 +4,6 @@ import Modal from "@mui/material/Modal";
 import * as React from "react";
 import { useRef } from "react";
 import { Controller, useForm } from "react-hook-form";
-import PhoneInput from "react-phone-input-2";
 import "../styles/ModalProfile4.css";
 import BasicModal6 from "./ModalBeneficiario";
 import BasicModal5 from "./ModalProfile5";
@@ -153,10 +152,10 @@ export default function BasicModal4({ membershipData, wallet, activated }) {
                     rules={{ required: "Por favor ingresa tu numero" }}
                     render={({ field }) => (
                       <PhoneInput
-                        inputStyle={{ fontSize: "1.2rem", width: "100%" }}
-                        containerStyle={{ marginBottom: "1rem" }}
+                        inputStyle={{ fontSize: "1.2rem"}}
+                        containerStyle={{ marginBottom: "1rem",  width: "120%"  }}
                         type="number"
-                        placeholder="Número de celular"
+                        placeholder="Celular"
                         value={field.value}
                         onChange={(value) => field.onChange(value)}
                         className="no-spinner"
