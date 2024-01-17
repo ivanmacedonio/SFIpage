@@ -160,80 +160,87 @@ export default function BasicModal5({
           </h2>
           <div className="modal5" id="scrolleableTransfer">
             <div className="sec1">
-              <h1 id="res">Resumen de tu membresía</h1>
-              <div className="t">
-                <p>Membresía:</p>
-                <h3>{membershipData.name}</h3>
-              </div>
-              <div className="t">
-                <p>Monto:</p>
-                <h3>{membershipData.precio.toLocaleString("en")} USDT</h3>
-              </div>
-              <div className="t">
-                <p>Acumulación para membresía activa:</p>
-                <h3>{membershipData.savings_duration_in_months} meses</h3>
-              </div>
-              <div className="t">
-                <p>Monto de cuota mensual en USDT:</p>
-                <h3>
-                  {(
-                    membershipData.monthly_membership_cost *
-                    (membershipData.precio / 10000)
-                  ).toFixed(2)}{" "}
-                  USDT
-                </h3>
+              <h1 id="res">Resumen de tu membresía:</h1>
+              <div className="container-sec">
+                <div className="t">
+                  <p>Membresía:</p>
+                  <h3>{membershipData.name}</h3>
+                </div>
+                <div className="t">
+                  <p>Monto:</p>
+                  <h3>{membershipData.precio.toLocaleString("en")} USDT</h3>
+                </div>
+                <div className="t">
+                  <p>Acumulación para membresía activa:</p>
+                  <h3>{membershipData.savings_duration_in_months} meses</h3>
+                </div>
+                <div className="t">
+                  <p>Monto de cuota mensual en USDT:</p>
+                  <h3>
+                    {(
+                      membershipData.monthly_membership_cost *
+                      (membershipData.precio / 10000)
+                    ).toFixed(2)}{" "}
+                    USDT
+                  </h3>
+                </div>
               </div>
             </div>
 
             <div className="sec2">
               <h1>Selección de bono redimible:</h1>
-              <div className="t">
-                <p>Porcentaje redimible:</p>
-                <h3>{membershipData.percentage_bonus} %</h3>
-              </div>
-              <div className="t">
-                <p>Monto redimible en USDT:</p>
-                <h3>
-                  {(
-                    (membershipData.percentage_bonus * membershipData.precio) /
-                    100
-                  ).toLocaleString("en")}{" "}
-                  USDT
-                </h3>
-              </div>
-              <div className="t">
-                <p>Estado:</p>
-                <h3>{activated ? "Activado" : "Desactivado"}</h3>
-              </div>
-              <div className="t">
-                <p>Maduración de membresía activa:</p>
-                <h3>{membershipData.maturity_period_in_months} Meses</h3>
+              <div className="container-sec">
+                <div className="t">
+                  <p>Porcentaje redimible:</p>
+                  <h3>{membershipData.percentage_bonus} %</h3>
+                </div>
+                <div className="t">
+                  <p>Monto redimible en USDT:</p>
+                  <h3>
+                    {(
+                      (membershipData.percentage_bonus *
+                        membershipData.precio) /
+                      100
+                    ).toLocaleString("en")}{" "}
+                    USDT
+                  </h3>
+                </div>
+                <div className="t">
+                  <p>Estado:</p>
+                  <h3>{activated ? "Activado" : "Desactivado"}</h3>
+                </div>
+                <div className="t">
+                  <p>Maduración de membresía activa:</p>
+                  <h3>{membershipData.maturity_period_in_months} Meses</h3>
+                </div>
               </div>
             </div>
 
             <div className="sec3">
-              <h1>Beneficio a percibir</h1>
-              <div className="t">
-                <p>Monto de cuota mensual en USDT:</p>
-                <h3>
-                  {(
-                    membershipData.profit_month *
-                    (membershipData.precio / 10000)
-                  ).toLocaleString("en")}{" "}
-                  USDT
-                </h3>
-              </div>
-              <div className="t">
-                <p>Cantidad de cuotas mensuales:</p>
-                <h3>240</h3>
-              </div>
-              <div className="t">
-                <p>Wallet:</p>
-                <h3>{wallet} </h3>
+              <h1>Beneficio de membresía a percibir:</h1>
+              <div className="container-sec">
+                <div className="t">
+                  <p>Monto de cuota mensual en USDT:</p>
+                  <h3>
+                    {(
+                      membershipData.profit_month *
+                      (membershipData.precio / 10000)
+                    ).toLocaleString("en")}{" "}
+                    USDT
+                  </h3>
+                </div>
+                <div className="t">
+                  <p>Cantidad de cuotas mensuales:</p>
+                  <h3>240</h3>
+                </div>
+                <div className="t">
+                  <p>Wallet:</p>
+                  <h3 id="walletmodal5">{wallet} </h3>
+                </div>
               </div>
             </div>
             <div className="sec4">
-              <h1>Datos beneficiarios</h1>
+              <h1>Datos beneficiarios:</h1>
 
               {aditionalBeneficiaty.map((beneficiario) => (
                 <div className="cont21">
@@ -257,18 +264,18 @@ export default function BasicModal5({
                 </div>
               ))}
             </div>
+          </div>
+          <label>
+            <input
+              type="checkbox"
+              onClick={() => {
+                setCheck(!check);
+              }}
+            />
 
-            <label>
-              <input
-                type="checkbox"
-                onClick={() => {
-                  setCheck(!check);
-                }}
-              />
               Al hacer clic aquí, acepto los términos de uso, la política de
               privacidad y acepto que sus datos serán enviados a SFI
-            </label>
-          </div>
+          </label>
           {check ? (
             <h1 id="transferir1" onClick={handleTransfer}>
               Realizar transferencia

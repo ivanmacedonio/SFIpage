@@ -5,6 +5,7 @@
     font-family: 'Lato', sans-serif
 }
 
+
 .errortransfer {
     font-family: 'Lato';
     font-size: 1.2rem;
@@ -181,7 +182,4 @@
         height: 35rem;
         overflow-y: auto;
     }
-
-   
-
 }
