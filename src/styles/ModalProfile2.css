@@ -99,7 +99,7 @@
 
 @media (min-width: 1200px) and (max-width: 1600px) {
     #scrol{
-        height: 30rem;
+        height: 90%;
     }
     .caja2 h2{
         font-size: 1.3rem;

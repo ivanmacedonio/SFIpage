@@ -423,8 +423,18 @@ img {
     .confianza{
         margin-left: 5rem;
     }
+    .confianza h1{
+        font-size: 3rem;
+    }
+    .confianza p{
+        font-size: 1.4rem;
+    }
     .lista{
         margin-right: 2rem;
+    }
+
+    .lista li::marker{
+        color: rgba(0, 119, 175, 0.8);
     }
 }
 

@@ -89,6 +89,7 @@ img {
     width: max-content;
     padding: 1rem 1rem 1rem 1rem;
     color: white;
+    font-size: 1.5rem;
 }
 
 .textfamilia2:hover {
@@ -374,7 +375,7 @@ img {
     }
 }
 
-@media only screen and (min-width: 1200px) and (max-width: 1299px) {
+@media only screen and (min-width: 1200px) and (max-width: 1400px) {
     .textfamilia2 {
         left: 50rem;
         background-color: rgb(0, 89, 111);
@@ -391,9 +392,16 @@ img {
     .textp1 {
         width: fit-content;
     }
+    .textp1 h1{
+        font-size: 4rem;
+    }
 
     .imgfamilia {
         display: none;
+    }
+
+    #big{
+        font-size: 1.4rem;
     }
 
 

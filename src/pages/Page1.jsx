@@ -8,7 +8,7 @@ import familia from "../assets/pareja_inicio.webp";
 import { Footer } from "../components/Footer";
 import { HeaderNormal } from "../components/Header-normal";
 import { Scrollpage1 } from "../components/Scrollpage1";
-  
+
 import "../styles/page1.css";
 export const Page1 = () => {
   useEffect(() => {
@@ -38,9 +38,7 @@ export const Page1 = () => {
   }, []);
 
   return (
-   
     <div className="page1">
-      
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -89,7 +87,7 @@ export const Page1 = () => {
               <p>este gran apoyo</p>
               <p>para tu futuro</p>
               <Link to={"/membresia"}>
-                <h1>Conoce más...</h1>
+                <h1>Calcula tu membresía</h1>
               </Link>
             </div>
           </React.Fragment>

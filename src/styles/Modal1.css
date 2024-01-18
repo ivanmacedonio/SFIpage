@@ -187,7 +187,7 @@
 
 @media only screen and (min-width: 1200px) and (max-width: 1600px) {
     #scrolleable {
-        height: 30rem;
+        height: 90%;
     }
 
     .membresiaModal1 h1 {

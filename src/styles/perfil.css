@@ -88,10 +88,11 @@ PROFILE
 }
 
 
-#center1{
+#center1 {
     grid-column: span 2;
     margin: 0 auto;
 }
+
 /* 
 MEMBRESIA
  */
@@ -176,7 +177,7 @@ MEMBRESIA
     border-radius: 0.5rem;
 }
 
-#info h3{
+#info h3 {
     font-size: 1.6rem;
 }
 
@@ -326,7 +327,7 @@ input[type="checkbox"]:checked+.slider:before {
         color: gray;
     }
 
-    #info h3{
+    #info h3 {
         font-size: 2rem;
         font-weight: 900;
     }
@@ -494,7 +495,8 @@ input[type="checkbox"]:checked+.slider:before {
         width: 100%;
 
     }
-    .box-flex button{
+
+    .box-flex button {
         background-color: rgb(78, 174, 78);
         color: white;
         padding: 0.5rem 3rem;
@@ -505,4 +507,20 @@ input[type="checkbox"]:checked+.slider:before {
         box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
     }
 
+}
+
+@media (min-width: 1200px) and (max-width: 1600px) {
+    .img-profile img {
+        width: 10rem;
+    }
+
+    .img-profile {
+        margin: 0 auto;
+        margin-bottom: 2rem;
+    }
+
+    .profile-box h2 {
+        font-size: 1.2rem;
+        padding-top: 3px;
+    }
 }

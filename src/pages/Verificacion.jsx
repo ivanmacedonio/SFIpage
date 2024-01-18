@@ -288,6 +288,7 @@ export const Verificacion = () => {
               <div className="slot" id="checkb">
                 <label>
                   <input
+                    id="inputverif"
                     type="checkbox"
                     onClick={() => {
                       setChecked(!checked);

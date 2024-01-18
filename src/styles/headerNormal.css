@@ -60,6 +60,10 @@ a {
     cursor: pointer;
 }
 
+.desplegar{
+    display: none;
+}
+
 @media (max-width: 768px) {
     #iconbar {
         display: block;
@@ -120,6 +124,10 @@ a {
 
     #session {
         margin-left: 0;
+    }
+
+    .desplegar{
+        display: block;
     }
 }
 

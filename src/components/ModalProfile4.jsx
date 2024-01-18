@@ -4,7 +4,7 @@ import Modal from "@mui/material/Modal";
 import * as React from "react";
 import { useRef } from "react";
 import { Controller, useForm } from "react-hook-form";
-import PhoneInput from 'react-phone-input-2';
+import PhoneInput from "react-phone-input-2";
 import "../styles/ModalProfile4.css";
 import BasicModal6 from "./ModalBeneficiario";
 import BasicModal5 from "./ModalProfile5";
@@ -111,7 +111,7 @@ export default function BasicModal4({ membershipData, wallet, activated }) {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={style} id="scrollbenef">
+        <Box sx={style} id="scrollbenef4">
           <h3
             onClick={() => {
               {
@@ -153,8 +153,8 @@ export default function BasicModal4({ membershipData, wallet, activated }) {
                     rules={{ required: "Por favor ingresa tu numero" }}
                     render={({ field }) => (
                       <PhoneInput
-                        inputStyle={{ fontSize: "1.2rem"}}
-                        containerStyle={{ marginBottom: "1rem",  width: "120%"  }}
+                        inputStyle={{ fontSize: "1.2rem" }}
+                        containerStyle={{ marginBottom: "1rem", width: "120%" }}
                         type="number"
                         placeholder="Celular"
                         value={field.value}
@@ -202,29 +202,37 @@ export default function BasicModal4({ membershipData, wallet, activated }) {
               <div className="listaBeneficiarios">
                 {aditionalBeneficiaty.map((beneficiario) => (
                   <div className="box">
-                    <label>
-                      <h3>{beneficiario.full_name}</h3>
-                      <h5>{beneficiario.percentage}%</h5>
-                    </label>
-                    <div className="optns">
-                      <h3
-                        id="cruz"
-                        onClick={() => {
-                          handleDeleteBenef(beneficiario);
-                        }}
-                      >
-                        X
-                      </h3>
-                      <h3
-                        id="btn-editar"
-                        onClick={() => {
-                          setEdit(!edit);
-                          setStorage(beneficiario);
-                          handleDeleteBenef(beneficiario);
-                        }}
-                      >
-                        Editar
-                      </h3>
+                    <div className="secbox">
+                      <label>
+                        <h3>{beneficiario.full_name}</h3>
+                      </label>
+                    </div>
+                    <div className="secbox">
+                      <label>
+                        <h5>{beneficiario.percentage}%</h5>
+                      </label>
+                    </div>
+                    <div className="secbox">
+                      <div className="optns">
+                        <h3
+                          id="cruz"
+                          onClick={() => {
+                            handleDeleteBenef(beneficiario);
+                          }}
+                        >
+                          X
+                        </h3>
+                        <h3
+                          id="btn-editar"
+                          onClick={() => {
+                            setEdit(!edit);
+                            setStorage(beneficiario);
+                            handleDeleteBenef(beneficiario);
+                          }}
+                        >
+                          Editar
+                        </h3>
+                      </div>
                     </div>
                   </div>
                 ))}

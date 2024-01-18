@@ -161,108 +161,120 @@ export default function BasicModal5({
           <div className="modal5" id="scrolleableTransfer">
             <div className="sec1">
               <h1 id="res">Resumen de tu membresía:</h1>
+              <hr style={{ marginBottom: "1rem" }} />
               <div className="container-sec">
                 <div className="t">
-                  <p>Membresía:</p>
-                  <h3>{membershipData.name}</h3>
+                  <p>Membresía: <strong> {membershipData.name}</strong></p>
                 </div>
                 <div className="t">
                   <p>Monto:</p>
                   <h3>{membershipData.precio.toLocaleString("en")} USDT</h3>
                 </div>
                 <div className="t">
-                  <p>Acumulación para membresía activa:</p>
-                  <h3>{membershipData.savings_duration_in_months} meses</h3>
+                  <p>
+                    Acumulación para membresía activa:{" "}
+                    <strong>{membershipData.savings_duration_in_months} meses</strong>
+                  </p>
                 </div>
                 <div className="t">
-                  <p>Monto de cuota mensual en USDT:</p>
-                  <h3>
-                    {(
+                  <p>
+                    Monto de cuota mensual en USDT:{" "}
+                   <strong> {(
                       membershipData.monthly_membership_cost *
                       (membershipData.precio / 10000)
                     ).toFixed(2)}{" "}
-                    USDT
-                  </h3>
+                    USDT</strong>
+                  </p>
                 </div>
               </div>
             </div>
 
             <div className="sec2">
               <h1>Selección de bono redimible:</h1>
+              <hr style={{ marginBottom: "1rem" }} />
               <div className="container-sec">
                 <div className="t">
-                  <p>Porcentaje redimible:</p>
-                  <h3>{membershipData.percentage_bonus} %</h3>
+                  <p>
+                    Porcentaje redimible: <strong> {membershipData.percentage_bonus} %</strong>
+                  </p>
                 </div>
                 <div className="t">
-                  <p>Monto redimible en USDT:</p>
-                  <h3>
-                    {(
+                  <p>
+                    Monto redimible:{" "}
+                   <strong> {(
                       (membershipData.percentage_bonus *
                         membershipData.precio) /
                       100
                     ).toLocaleString("en")}{" "}
-                    USDT
-                  </h3>
+                    USDT</strong>
+                  </p>
                 </div>
                 <div className="t">
                   <p>Estado:</p>
                   <h3>{activated ? "Activado" : "Desactivado"}</h3>
                 </div>
                 <div className="t">
-                  <p>Maduración de membresía activa:</p>
-                  <h3>{membershipData.maturity_period_in_months} Meses</h3>
+                  <p>
+                    Maduración de membresía activa:{" "}
+                    <strong>{membershipData.maturity_period_in_months} Meses</strong>
+                  </p>
                 </div>
               </div>
             </div>
 
             <div className="sec3">
               <h1>Beneficio de membresía a percibir:</h1>
+              <hr style={{ marginBottom: "1rem" }} />
               <div className="container-sec">
                 <div className="t">
-                  <p>Monto de cuota mensual en USDT:</p>
-                  <h3>
-                    {(
-                      membershipData.profit_month *
-                      (membershipData.precio / 10000)
-                    ).toLocaleString("en")}{" "}
-                    USDT
-                  </h3>
+                  <p>
+                    Monto de cuota mensual:{" "}
+                    <strong>
+                      {" "}
+                      {(
+                        membershipData.profit_month *
+                        (membershipData.precio / 10000)
+                      ).toLocaleString("en")}{" "}
+                      USDT
+                    </strong>
+                  </p>
                 </div>
                 <div className="t">
-                  <p>Cantidad de cuotas mensuales:</p>
-                  <h3>240</h3>
+                  <p>
+                    Cantidad de cuotas mensuales: <strong>240</strong>
+                  </p>
                 </div>
-                <div className="t">
+                {/* <div className="t">
                   <p>Wallet:</p>
                   <h3 id="walletmodal5">{wallet} </h3>
-                </div>
+                </div> */}
               </div>
             </div>
             <div className="sec4">
               <h1>Datos beneficiarios:</h1>
-
-              {aditionalBeneficiaty.map((beneficiario) => (
-                <div className="cont21">
-                  <h2>{beneficiario.full_name}</h2>
-                  <div className="t">
-                    <p>Identificación:</p>
-                    <h3>{beneficiario.identification}</h3>
+              <div className="grid2">
+                {aditionalBeneficiaty.map((beneficiario) => (
+                  <div className="cont21">
+                    <h2>{beneficiario.full_name}</h2>
+                    <div className="t">
+                      <p>Identificación:</p>
+                      <h3>{beneficiario.identification}</h3>
+                    </div>
+                    <div className="t">
+                      <p>Email:</p>
+                      <h3>{beneficiario.email}</h3>
+                    </div>
+                    <div className="t">
+                      <p>Teléfono:</p>
+                      <h3>{beneficiario.phone}</h3>
+                    </div>
+                    <div className="t">
+                      <p>Porcentaje</p>
+                      <h3>{beneficiario.percentage} %</h3>
+                    </div>
                   </div>
-                  <div className="t">
-                    <p>Email:</p>
-                    <h3>{beneficiario.email}</h3>
-                  </div>
-                  <div className="t">
-                    <p>Teléfono:</p>
-                    <h3>{beneficiario.phone}</h3>
-                  </div>
-                  <div className="t">
-                    <p>Porcentaje</p>
-                    <h3>{beneficiario.percentage}</h3>
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
           <label>
@@ -272,9 +284,8 @@ export default function BasicModal5({
                 setCheck(!check);
               }}
             />
-
-              Al hacer clic aquí, acepto los términos de uso, la política de
-              privacidad y acepto que sus datos serán enviados a SFI
+            Al hacer clic aquí, acepto los términos de uso, la política de
+            privacidad y acepto que sus datos serán enviados a SFI
           </label>
           {check ? (
             <h1 id="transferir1" onClick={handleTransfer}>

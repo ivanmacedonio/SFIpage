@@ -41,7 +41,7 @@ export const Membresia = () => {
     });
 
     setRead(false);
-    setPrecio(10000)
+    setPrecio(10000);
     desplegar(); // Aquí llamamos a desplegar para actualizar los estilos al hacer clic en un plan
   };
 
@@ -147,12 +147,13 @@ export const Membresia = () => {
                 : ((precio / plandata.chunk) * plandata.cost).toLocaleString(
                     "en-US"
                   )}
-              {''} USDT
+              {""} USDT
             </p>
-            <h2>Plazo de maduración:</h2>
-            <p>{plandata.months}</p>
+
             <h2>Cantidad de cuotas</h2>
             <p>{plandata.cuotes} </p>
+            <h2>Plazo de maduración:</h2>
+            <p>{plandata.months}</p>
           </div>
           <div className="precio">
             <h2>*Bonificación Mensual</h2>

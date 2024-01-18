@@ -124,6 +124,7 @@ export default function BasicModal3({ membershipData, activated }) {
               <p>Confirma tu wallet (últimos 4 digitos)</p>
               <input
                 type="text"
+                id="scroll-inpt"
                 readOnly={readOnly}
                 maxLength={4}
                 placeholder="Confirma tu Wallet"

@@ -111,10 +111,6 @@ export const Page3 = () => {
                 cultivar la maceta de tu futura prosperidad. Recuerda debes
                 regarla periódicamente!
               </li>
-            </ul>
-          </div>
-          <div className="razones2">
-            <ul>
               <li>
                 Obtenga beneficios informativos desde el día 1 en nuestro blog y
                 a partir de los 10 años de maduración de tus membresías para

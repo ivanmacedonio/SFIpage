@@ -316,13 +316,32 @@
 
     .formulariocontacto {
         margin-left: 10rem;
+        margin-top: 0;
     }
     .formulariocontacto input{
         background-color: white;
+        height: 1.5rem;
+        background-color: rgb(216, 216, 216);
+    }
+
+    .formulariocontacto textarea::placeholder{
+        font-size: 1.2rem;
+    }
+
+    .formulariocontacto input::placeholder{
+        font-size: 1.2rem;
     }
 
     .imagencontacto img {
         width: 100%;
+    }
+
+    #h1contacto{
+        font-size: 3rem;
+    }
+
+    .labels a, .labels label{
+        font-size: 1rem;
     }
      
     

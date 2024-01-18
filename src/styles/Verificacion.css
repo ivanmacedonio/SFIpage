@@ -111,7 +111,6 @@
     font-size: 1.2rem;
     margin-top: 1rem;
     font-weight: 700;
-
 }
 
 .error{
@@ -119,6 +118,29 @@
     font-size: 1.2rem;
     font-weight: 700;
 }
+
+#checkb{
+    grid-column: span 2;
+    width: 100%;
+    margin-top: 3rem;
+}
+
+#checkb label{
+    min-width: 100% !important;
+}
+
+#checkb input{
+    width: 20px;
+}
+
+#select{
+    grid-column: span 2;
+
+}
+#select input{
+    width: 90%;
+}
+
 
 @media (max-width: 768px){
     .verificacioncontainer{

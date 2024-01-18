@@ -2,6 +2,7 @@ import axios from "axios";
 import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
+import toast, { Toaster } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import contacto from "../assets/contacto.webp";
 import { BASE_URL } from "../hooks/fetch";
@@ -17,14 +18,25 @@ export const Contacto = () => {
 
   const [checked, setChecked] = useState(false);
   const urlDelPDF = "../assets/terminos.pdf";
-  const { register, handleSubmit } = useForm({
+  const { register, handleSubmit, reset } = useForm({
     shouldUseNativeValidation: true,
   });
 
+
+
   async function onSubmit(data) {
-    const res = await axios.post(`${BASE_URL}contact_form/`, data);
-    window.location.reload();
+    try {
+      const res = await axios.post(`${BASE_URL}contact_form/`, data);
+      toast.success(
+        "Hemos recibido tu mensaje y estamos emocionados de ayudarte. Nuestro equipo de atención al cliente revisará tu solicitud cuidadosamente. Espera recibir respuesta de uno de nuestros representantes en las próximas 48 horas para proporcionarte la asistencia que necesitas."
+      );
+      reset()
+    } catch (error) {
+      toast.error("Ha ocurrido un problema al enviar el correo");
+      console.log(error);
+    }
   }
+
   return (
     <div className="contactopage">
       <div className="header">
@@ -36,6 +48,15 @@ export const Contacto = () => {
         transition={{ duration: 0.4 }}
       >
         <div className="contactocontainer">
+          <Toaster
+            position="top-center"
+            toastOptions={{
+              style: {
+                fontFamily: "lato",
+                fontSize: "1.2rem",
+              },
+            }}
+          ></Toaster>
           <div className="imagencontacto">
             <img src={contacto} alt="" />
           </div>

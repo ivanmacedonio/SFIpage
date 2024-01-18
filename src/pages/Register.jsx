@@ -36,13 +36,14 @@ export const Register = () => {
         if (data.phone_number && data.phone_number.length > 6) {
           try {
             const res = await axios.post(`${BASE_URL}register/`, data);
-
-            toast.success("Usuario registrado correctamente");
             setToastDisplay(true);
+            toast.success(
+              "Usuario registrado correctamente. Revisa tu inbox o carpeta spam y haz clic en el enlace de activación que te enviamos para comenzar a disfrutar de todas las funciones."
+            );
             setTimeout(() => {
               setIsLoading(false);
               navigate("/login");
-            }, 3000);
+            }, 5000);
           } catch (error) {
             setIsLoading(false);
             console.log(error);
@@ -77,7 +78,9 @@ export const Register = () => {
   return (
     <div className="containergeneralRegister">
       <div className="registercontainer">
-        {toastDisplay ? <Toaster position="top-center"></Toaster> : ""}
+        {toastDisplay ? <Toaster position="top-center" toastOptions={{
+          duration: 5000
+        }}></Toaster> : ""}
 
         <h1>Crear una cuenta</h1>
         <p>Crea una cuenta en Smart Future Income</p>
