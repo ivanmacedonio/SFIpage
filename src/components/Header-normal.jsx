@@ -209,6 +209,9 @@ export const HeaderNormal = () => {
               <Link to={"/faq"}>
                 <MenuItem onClick={handleClose}>Preguntas Frecuentes</MenuItem>
               </Link>
+              <Link to={"/foro"}>
+                <MenuItem onClick={handleClose}>Foro</MenuItem>
+              </Link>
             </Menu>
             <Link to={"/contacto"}>
               <h2>Contacto</h2>

@@ -1,0 +1,35 @@
+.optionsForo {
+    display: flex;
+    margin-top: 10rem;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.optionsForo img {
+    max-width: 60%;
+    border: 1px solid rgb(231, 229, 229);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+
+}
+
+.containerOptionsForo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+.containerOptionsForo h2{
+    font-family: 'lato';
+}
+
+@media (max-width: 768px){
+    .optionsForo{
+        flex-direction: column;
+        margin-top: 2rem;
+    }
+}

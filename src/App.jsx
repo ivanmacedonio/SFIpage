@@ -3,13 +3,16 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import { Activate } from "./pages/Activate";
+import { BibliotecaForo } from "./pages/BibliotecaForo";
 import { Blog } from "./pages/Blog";
+import { BlogForo } from "./pages/BlogForo";
 import { Checkout } from "./pages/Checkout";
 import { CheckoutMonth } from "./pages/CheckoutMonth";
 import { Contacto } from "./pages/Contacto";
 import { Error404 } from "./pages/Error404";
 import { FAQ } from "./pages/FAQ";
 import { Forgot } from "./pages/Forgot";
+import { Foro } from "./pages/Foro";
 import { Hub } from "./pages/Hub";
 import { Inicio } from "./pages/Inicio";
 import { Login } from "./pages/Login";
@@ -77,6 +80,9 @@ function App() {
           <Routes>
             <Route exact path="/" element={<Hub />} />
             <Route exact path="/activate" element={<Activate />} />
+            <Route exact path="/biblioteca" element={<BibliotecaForo />} />
+            <Route exact path="/news" element={<BlogForo />} />
+            <Route exact path="/foro" element={<Foro />} />
             <Route exact path="/hub" element={<Page1 />} />
             <Route exact path="/nosotros" element={<Page2 />} />
             <Route exact path="/afiliacion" element={<Page3 />} />
