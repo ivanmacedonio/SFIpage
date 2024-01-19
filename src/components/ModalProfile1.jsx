@@ -139,8 +139,10 @@ export default function BasicModal() {
       >
         <Box sx={style} id="scrolleable">
           <div className="membresiaModal1">
-            <h4 onClick={handleClose}>X</h4>
-            <h3>Tipo de membresía</h3>
+            <div className="join">
+              <h3>Tipo de membresía</h3>
+              <h4 onClick={handleClose} id="x1">x</h4>
+            </div>
             <hr />
 
             <h1

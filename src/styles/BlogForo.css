@@ -1,0 +1,147 @@
+.containerForoBlog {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'lato';
+    margin-top: 3rem;
+}
+.comment h4{
+    word-wrap: break-word;
+}
+.comment{
+    max-width: 80%;
+}
+.postContainer{
+    margin-top: 2rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    max-width: 50%;
+    border: 2px solid rgb(193, 193, 193);
+}
+
+.postContainer h3{
+    font-size: 1.4rem;
+    font-weight: 700;
+    max-width: 100%;
+}
+
+.postContainer button{
+    background: none;
+    border: 2px solid gray;
+    padding: 0.4rem;
+    border-radius: 0.5rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.containerPostsForo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 100%;
+}
+.containerPostsForo form{
+    max-width: 100%;
+}
+.containerPostsForo form input{
+    min-width: 80% ;
+    font-size: 1.3rem;
+}
+
+.postContainer h2{
+    font-weight: 900;
+    max-width: 80%;
+    word-wrap: break-word;
+    font-size: 2.5rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+.postContainer p{
+    font-size: 1.5rem;
+    color: rgb(89, 89, 89);
+    max-width: 100%;
+    word-wrap: break-word;
+}
+
+.commentContainer{
+    font-size: 1.4rem;
+}
+.comment{
+    margin-bottom: 1rem;
+    background-color: rgb(225, 225, 225);
+    width: fit-content;
+    padding: 0 1rem;
+    border-radius: 0.5rem;
+}
+
+.containerForoBlog input{
+    border-radius: 0.5rem;
+    border: 2px gray solid;
+    width: 30%;
+    padding: 0.5rem 0.5rem;
+    font-size: 1rem;
+}
+.containerForoBlog input::placeholder{
+    font-size: 1rem;
+}
+
+.containerForoBlog form{
+    display: flex;
+    align-items: center;
+    width: 50%;
+    gap: 1rem;
+}
+.containerForoBlog form img{
+    width: 1.5rem;
+    height: auto;
+}
+
+.formBuscar{
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formcomments{
+    display: flex;
+    gap: 1rem;
+    min-width: 80%;
+}
+
+.containerBiblioteca strong{
+    font-weight: 900;
+    color: rgb(0, 75, 151);
+}
+
+@media(max-width: 768px){
+    .postContainer{
+        border: none;
+        min-width: 90%;
+    }
+    .postContainer p{
+        font-size: 1.2rem;
+    }
+    .formBuscar form{
+        min-width: 80%;
+    }
+    .containerForoBlog form input{
+        min-width: 80% !important;
+    }
+   .formcomments{
+        display: flex;
+        gap: 1rem;
+   }
+   .formcomments button{
+    font-size: 1rem;
+   }
+   .postContainer h2{
+    word-wrap: break-word;
+   }
+   
+   
+    
+}
+
+

@@ -87,7 +87,7 @@ export const Page1 = () => {
               <p>este gran apoyo</p>
               <p>para tu futuro</p>
               <Link to={"/membresia"}>
-                <h1>Calcula tu membresía</h1>
+                <h1>Calcula tu membresía aquí</h1>
               </Link>
             </div>
           </React.Fragment>

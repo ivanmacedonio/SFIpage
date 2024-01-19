@@ -1,5 +1,5 @@
 import { GoogleOAuthProvider } from "@react-oauth/google";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import { Activate } from "./pages/Activate";
@@ -25,53 +25,53 @@ import { Register } from "./pages/Register";
 import { Reset } from "./pages/Reset";
 import { Verificacion } from "./pages/Verificacion";
 function App() {
-  useEffect(() => {
-    const handleBeforeUnload = () => {
-      localStorage.removeItem("access");
-    };
+  // useEffect(() => {
+  //   const handleBeforeUnload = () => {
+  //     localStorage.removeItem("access");
+  //   };
 
-    window.addEventListener("beforeunload", handleBeforeUnload);
+  //   window.addEventListener("beforeunload", handleBeforeUnload);
 
-    return () => {
-      window.removeEventListener("beforeunload", handleBeforeUnload);
-    };
-  }, []);
-  const inactivityTimeout = 600000;
-  const localStorageKey = "access";
+  //   return () => {
+  //     window.removeEventListener("beforeunload", handleBeforeUnload);
+  //   };
+  // }, []);
+  // const inactivityTimeout = 600000;
+  // const localStorageKey = "access";
 
-  const App = () => {
-    const [activityTimer, setActivityTimer] = useState(null);
+  // const App = () => {
+  //   const [activityTimer, setActivityTimer] = useState(null);
 
-    useEffect(() => {
-      const handleActivity = () => {
-        if (activityTimer) {
-          clearTimeout(activityTimer);
-        }
+  //   useEffect(() => {
+  //     const handleActivity = () => {
+  //       if (activityTimer) {
+  //         clearTimeout(activityTimer);
+  //       }
 
-        const newTimer = setTimeout(() => {
-          localStorage.removeItem(localStorageKey);
-          console.log("Objeto eliminado debido a inactividad.");
-        }, inactivityTimeout);
+  //       const newTimer = setTimeout(() => {
+  //         localStorage.removeItem(localStorageKey);
+  //         console.log("Objeto eliminado debido a inactividad.");
+  //       }, inactivityTimeout);
 
-        setActivityTimer(newTimer);
-      };
+  //       setActivityTimer(newTimer);
+  //     };
 
-      handleActivity();
+  //     handleActivity();
 
-      window.addEventListener("mousemove", handleActivity);
-      window.addEventListener("keydown", handleActivity);
+  //     window.addEventListener("mousemove", handleActivity);
+  //     window.addEventListener("keydown", handleActivity);
 
-      return () => {
-        if (activityTimer) {
-          clearTimeout(activityTimer);
-        }
-        window.removeEventListener("mousemove", handleActivity);
-        window.removeEventListener("keydown", handleActivity);
-      };
-    }, [inactivityTimeout]);
+  //     return () => {
+  //       if (activityTimer) {
+  //         clearTimeout(activityTimer);
+  //       }
+  //       window.removeEventListener("mousemove", handleActivity);
+  //       window.removeEventListener("keydown", handleActivity);
+  //     };
+  //   }, [inactivityTimeout]);
 
-    // Resto del componente...
-  };
+  //   // Resto del componente...
+  // };
 
   return (
     <>

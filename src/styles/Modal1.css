@@ -28,6 +28,7 @@
 
 #scrolleable {
     overflow-y: auto;
+    height: 90% !important;
 }
 
 .membresiaModal1 h3 {
@@ -109,6 +110,24 @@
     padding: 0;
 }
 
+#x1{
+    margin-top: 0;
+    position: absolute;
+    margin: 0 !important;
+    right: 1rem;
+    top: 1rem;
+    background-color: rgb(82, 82, 82);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+}
+
+.join{
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 1rem;
+}
+
+
 @media (max-width: 767px) {
 
     .listaMembership ul {
@@ -185,14 +204,15 @@
     }
 }
 
-@media only screen and (min-width: 1200px) and (max-width: 1600px) {
+
+@media only screen and (min-width: 1200px) and (max-width: 1700px) {
     #scrolleable {
-        height: 90%;
+        height: 90% !important;
     }
 
     .membresiaModal1 h1 {
-        font-size: 1.7rem;
-        padding: 1rem;
+        font-size: 1.5rem;
+        padding:0.5rem;
     }
 
     .membresiaModal1 h2 {
@@ -204,6 +224,15 @@
     }
     .membresiaModal1 p {
         font-size: 1.2rem;
+        margin-bottom: 5px;
     }
+    .membresiaModal1 h3{
+        margin: 0;
+        font-size: 1.5rem;
+    }
+    .membresiaModal1 h4{
+        margin: 0;
+    }
+
 
 }

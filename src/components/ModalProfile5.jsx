@@ -1,10 +1,13 @@
 import Box from "@mui/material/Box";
+import { motion } from "framer-motion";
+
 import Button from "@mui/material/Button";
 import Modal from "@mui/material/Modal";
 import axios from "axios";
 import * as React from "react";
 import { useNavigate } from "react-router-dom";
 import { BASE_URL } from "../hooks/fetch";
+
 import "../styles/ModalProfile5.css";
 const style = {
   position: "absolute",
@@ -36,6 +39,7 @@ export default function BasicModal5({
   const [check, setCheck] = React.useState(false);
   const nav = useNavigate();
   const [error, setError] = React.useState("");
+  const [listado, setListado] = React.useState(false);
 
   React.useEffect(() => {
     async function getUser() {
@@ -164,7 +168,9 @@ export default function BasicModal5({
               <hr style={{ marginBottom: "1rem" }} />
               <div className="container-sec">
                 <div className="t">
-                  <p>Membresía: <strong> {membershipData.name}</strong></p>
+                  <p>
+                    Membresía: <strong> {membershipData.name}</strong>
+                  </p>
                 </div>
                 <div className="t">
                   <p>Monto:</p>
@@ -173,17 +179,22 @@ export default function BasicModal5({
                 <div className="t">
                   <p>
                     Acumulación para membresía activa:{" "}
-                    <strong>{membershipData.savings_duration_in_months} meses</strong>
+                    <strong>
+                      {membershipData.savings_duration_in_months} meses
+                    </strong>
                   </p>
                 </div>
                 <div className="t">
                   <p>
                     Monto de cuota mensual en USDT:{" "}
-                   <strong> {(
-                      membershipData.monthly_membership_cost *
-                      (membershipData.precio / 10000)
-                    ).toFixed(2)}{" "}
-                    USDT</strong>
+                    <strong>
+                      {" "}
+                      {(
+                        membershipData.monthly_membership_cost *
+                        (membershipData.precio / 10000)
+                      ).toFixed(2)}{" "}
+                      USDT
+                    </strong>
                   </p>
                 </div>
               </div>
@@ -195,18 +206,22 @@ export default function BasicModal5({
               <div className="container-sec">
                 <div className="t">
                   <p>
-                    Porcentaje redimible: <strong> {membershipData.percentage_bonus} %</strong>
+                    Porcentaje redimible:{" "}
+                    <strong> {membershipData.percentage_bonus} %</strong>
                   </p>
                 </div>
                 <div className="t">
                   <p>
                     Monto redimible:{" "}
-                   <strong> {(
-                      (membershipData.percentage_bonus *
-                        membershipData.precio) /
-                      100
-                    ).toLocaleString("en")}{" "}
-                    USDT</strong>
+                    <strong>
+                      {" "}
+                      {(
+                        (membershipData.percentage_bonus *
+                          membershipData.precio) /
+                        100
+                      ).toLocaleString("en")}{" "}
+                      USDT
+                    </strong>
                   </p>
                 </div>
                 <div className="t">
@@ -216,7 +231,9 @@ export default function BasicModal5({
                 <div className="t">
                   <p>
                     Maduración de membresía activa:{" "}
-                    <strong>{membershipData.maturity_period_in_months} Meses</strong>
+                    <strong>
+                      {membershipData.maturity_period_in_months} Meses
+                    </strong>
                   </p>
                 </div>
               </div>
@@ -288,9 +305,27 @@ export default function BasicModal5({
             privacidad y acepto que sus datos serán enviados a SFI
           </label>
           {check ? (
-            <h1 id="transferir1" onClick={handleTransfer}>
-              Realizar transferencia
-            </h1>
+            // <h1 id="transferir1" onClick={handleTransfer}>
+            //   Transferencia USDT
+            // </h1>
+            <div className="listadoPagos">
+              <h1
+                id="transferir1"
+                onClick={() => {
+                  setListado(!listado);
+                }}
+              >
+                Seleccione el método de adquisición {""} ‣
+              </h1>
+
+              {listado ? (
+                <motion.div whileTap={{scale:1.1}}>
+                  <h2 onClick={handleTransfer}>Transferencia con USDT</h2>
+                </motion.div>
+              ) : (
+                ""
+              )}
+            </div>
           ) : (
             ""
           )}

@@ -66,7 +66,7 @@ export default function BasicModal3({ membershipData, activated }) {
     }
   };
 
-  console.log(membershipData)
+  console.log(membershipData);
   return (
     <div>
       <Button onClick={handleOpen} id="continuar">
@@ -80,15 +80,17 @@ export default function BasicModal3({ membershipData, activated }) {
       >
         <Box sx={style} id="scrolleable3">
           <div className="modal3">
-            <h3
-              onClick={() => {
-                handleClose();
-              }}
-              id="x1"
-            >
-              x
-            </h3>
-            <h2>Beneficio a percibir</h2>
+            <div className="join">
+              <h3
+                onClick={() => {
+                  handleClose();
+                }}
+                id="x1"
+              >
+                x
+              </h3>
+              <h2>Beneficio a percibir</h2>
+            </div>
             <hr />
             <div className="montos2">
               <div className="caja3">

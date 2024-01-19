@@ -14,6 +14,7 @@ export const HeaderNormal = () => {
   const [username, setUsername] = useState("");
   const [isLogin, setIsLogin] = useState(false);
   const [isKycState, setIsKyc] = useState();
+  const [aprobado, setAprobado] = useState();
 
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -37,7 +38,6 @@ export const HeaderNormal = () => {
       const res = await axios.get(`${BASE_URL}verify/`, {
         headers: headers,
       });
-      console.log(res.status);
       if (res.status === 200) {
         setIsLogin(true);
       } else {
@@ -61,6 +61,12 @@ export const HeaderNormal = () => {
         headers,
         params: params,
       });
+      console.log(res.data.KYC_Detail.state);
+      if (res.data.KYC_Detail.state === "Aprobado") {
+        setAprobado(true);
+      } else {
+        setAprobado(false);
+      }
 
       if (res.data === "") {
         setIsKyc(false);
@@ -209,9 +215,13 @@ export const HeaderNormal = () => {
               <Link to={"/faq"}>
                 <MenuItem onClick={handleClose}>Preguntas Frecuentes</MenuItem>
               </Link>
-              <Link to={"/foro"}>
-                <MenuItem onClick={handleClose}>Foro</MenuItem>
-              </Link>
+              {aprobado ? (
+                <Link to={"/foro"}>
+                  <MenuItem onClick={handleClose}>Foro</MenuItem>
+                </Link>
+              ) : (
+                ""
+              )}
             </Menu>
             <Link to={"/contacto"}>
               <h2>Contacto</h2>

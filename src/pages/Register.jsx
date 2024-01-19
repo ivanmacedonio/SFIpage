@@ -43,7 +43,7 @@ export const Register = () => {
             setTimeout(() => {
               setIsLoading(false);
               navigate("/login");
-            }, 5000);
+            }, 9000);
           } catch (error) {
             setIsLoading(false);
             console.log(error);
@@ -78,9 +78,22 @@ export const Register = () => {
   return (
     <div className="containergeneralRegister">
       <div className="registercontainer">
-        {toastDisplay ? <Toaster position="top-center" toastOptions={{
-          duration: 5000
-        }}></Toaster> : ""}
+        {/* {toastDisplay ? (
+          <Toaster
+            position="top-center"
+            toastOptions={{
+              duration: 9000,
+            }}
+          ></Toaster>
+        ) : (
+          ""
+        )} */}
+        <Toaster
+          position="top-center"
+          toastOptions={{
+            duration: 9000,
+          }}
+        ></Toaster>
 
         <h1>Crear una cuenta</h1>
         <p>Crea una cuenta en Smart Future Income</p>

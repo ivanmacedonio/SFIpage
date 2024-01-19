@@ -56,16 +56,18 @@ export default function BasicModal2({ membershipData }) {
       >
         <Box sx={style} id="scrol">
           <div className="modal2">
-            <h3
-              id="x"
-              onClick={() => {
-                handleClose();
-              }}
-              style={{ fontWeight: "500" }}
-            >
-              X
-            </h3>
-            <h1>Selección de bono redimible</h1>
+            <div className="join">
+              <h3
+                id="x1"
+                onClick={() => {
+                  handleClose();
+                }}
+                style={{ fontWeight: "500", color: 'white' }}
+              >
+                x
+              </h3>
+              <h1>Selección de bono redimible</h1>
+            </div>
             <hr />
             <p>
               Este bono representa un porcentaje de la totalidad de USDT que ha
