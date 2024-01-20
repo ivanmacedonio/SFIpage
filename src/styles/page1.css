@@ -204,9 +204,13 @@ img {
     }
 
     .textfamilia2 {
-        left: 3.5rem;
+        left: 1rem;
         z-index: 3;
         bottom: 26rem;
+        word-wrap: break-word;
+    }
+    .textfamilia2 h1{
+        max-width: 15rem;
     }
 
     .textfamilia2 p {
