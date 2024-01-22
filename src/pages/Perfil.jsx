@@ -65,7 +65,7 @@ export const Perfil = () => {
                 break;
             }
           } else {
-            console.log("no kyc");
+            setEmpty(true);
           }
         } catch (error) {
           console.log(error);

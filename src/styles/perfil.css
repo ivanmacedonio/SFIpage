@@ -448,7 +448,14 @@ input[type="checkbox"]:checked+.slider:before {
     }
 
     #walletprof {
-        padding: 0;
+        padding: 0; 
+    }
+    #walletprof h4{
+        max-width: 70%;
+        word-wrap: break-word;
+    }
+    #walletprof label{
+        max-width: 20rem;
     }
 
     .box-grid input[type="checkbox"] {

@@ -126,9 +126,10 @@ export default function BasicModal5({
             }
           );
 
-          window.open(`${res.data.detalleRespuesta.url}`, "_blank");
+          setTimeout(() => {
+            window.open(`${res.data.detalleRespuesta.url}`, "_blank");
+          }, 1000);
 
-          // nav('/checkout?canceled=false')
         } else {
           console.log("not check");
         }
@@ -319,7 +320,7 @@ export default function BasicModal5({
               </h1>
 
               {listado ? (
-                <motion.div whileTap={{scale:1.1}}>
+                <motion.div whileTap={{ scale: 1.1 }}>
                   <h2 onClick={handleTransfer}>Transferencia con USDT</h2>
                 </motion.div>
               ) : (

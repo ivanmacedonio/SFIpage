@@ -32,7 +32,7 @@ export const Page1 = () => {
         </div>
       </React.Fragment>,
       {
-        duration: 2000,
+        duration: 5000,
       }
     );
   }, []);

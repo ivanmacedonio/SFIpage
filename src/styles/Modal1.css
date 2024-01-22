@@ -28,7 +28,7 @@
 
 #scrolleable {
     overflow-y: auto;
-    height: 90% !important;
+    height: auto !important;
 }
 
 .membresiaModal1 h3 {
@@ -77,6 +77,8 @@
 
 .membresiaModal1 p {
     font-size: 1.4rem;
+    margin-bottom: 0;
+
 }
 
 .membresiaModal1 output {
@@ -136,7 +138,7 @@
 
 
     #scrolleable {
-        height: 70%;
+        height: 70% !important;
         width: 70% !important;
     }
 
@@ -207,7 +209,7 @@
 
 @media only screen and (min-width: 1200px) and (max-width: 1700px) {
     #scrolleable {
-        height: 90% !important;
+        height: auto !important;
     }
 
     .membresiaModal1 h1 {
@@ -221,10 +223,10 @@
         color: rgb(255, 255, 255);
         font-weight: 700;
         border-radius: 1rem;
+        margin-top: 5px;
     }
     .membresiaModal1 p {
         font-size: 1.2rem;
-        margin-bottom: 5px;
     }
     .membresiaModal1 h3{
         margin: 0;
@@ -232,6 +234,14 @@
     }
     .membresiaModal1 h4{
         margin: 0;
+    }
+
+    .membresiaModal1 output{
+        font-size: 1rem;
+    }
+    #btn-continue{
+        font-size: 1.4rem;
+        padding: 0.4rem;
     }
 
 

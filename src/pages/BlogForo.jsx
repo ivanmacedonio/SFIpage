@@ -14,7 +14,12 @@ export const BlogForo = () => {
   const [dataSelected, setDataSelected] = useState({});
   async function getPosts() {
     try {
-      const res = await axios.get(`${BASE_URL}forum/posts/`);
+      const params = {
+        _cacheBuster: new Date().getTime(),
+      };
+      const res = await axios.get(`${BASE_URL}forum/posts/`, {
+        params: params,
+      });
       setPosts(res.data);
     } catch (error) {
       console.log(error);
@@ -22,8 +27,12 @@ export const BlogForo = () => {
   }
   async function getComments() {
     try {
+      const params = {
+        _cacheBuster: new Date().getTime(),
+      };
       const res = await axios.get(
-        `${BASE_URL}forum/comments/?postid=${data.filtro}`
+        `${BASE_URL}forum/comments/?postid=${data.filtro}`,
+        { params: params }
       );
       console.log(res.data);
     } catch (error) {
@@ -38,8 +47,12 @@ export const BlogForo = () => {
 
   async function onSubmit(data) {
     try {
+      const params = {
+        _cacheBuster: new Date().getTime(),
+      };
       const res = await axios.get(
-        `${BASE_URL}forum/filterpost/?filtro=${data.filtro}`
+        `${BASE_URL}forum/filterpost/?filtro=${data.filtro}`,
+        { params: params }
       );
       console.log(res.data);
       setPosts(res.data);
@@ -62,11 +75,13 @@ export const BlogForo = () => {
         { text: data.comment, post_id: post.id },
         {
           headers: headers,
-          params: params
+          params: params,
         }
       );
       console.log(res.data);
-      window.location.reload();
+      setTimeout(() => {
+        window.location.reload();
+      }, 2000);
     } catch (error) {
       console.log(error.response.data.Error);
     }
@@ -103,7 +118,7 @@ export const BlogForo = () => {
                 <p>{post.description}</p>
                 <img src={post.image} alt="" />
                 <hr />
-                <form
+                {/* <form
                   onSubmit={handleSubmit((data) => onSubmitComment(data, post))}
                 >
                   <div className="formcomments">
@@ -119,7 +134,7 @@ export const BlogForo = () => {
                       </h4>
                     </div>
                   ))}
-                </div>
+                </div> */}
               </div>
             </React.Fragment>
           ))}

@@ -1,13 +1,13 @@
 #continuar {
     background: linear-gradient(to right, rgb(3, 180, 211), rgb(2, 80, 116));
     width: fit-content;
-    padding: 0 2rem 0 2rem;
+    padding: 0rem 2rem;
     border-radius: 1rem;
-    font-size: 2rem;
+    font-size: 1.8rem;
     margin-left: 2.5rem;
     cursor: pointer;
     color: white;
-    margin-top: 2rem;
+    margin-top: 1rem;
     text-transform: capitalize;
 }
 
@@ -34,7 +34,7 @@
 
 #scrolleable3 {
     width: 30%;
-    height: 80%;
+    height: auto;
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -169,7 +169,6 @@
 @media only screen and (min-width: 1200px) and (max-width: 1700px) {
 
     #scrolleable3 {
-        height: 90%;
         overflow-y: auto;
         width: 30%;
     }

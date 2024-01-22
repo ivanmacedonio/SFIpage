@@ -1,5 +1,6 @@
 #modal3h2{
-    font-size: 2rem;
+    font-size: 1.2rem;
+    margin-bottom: 0;
     font-family: 'Lato', sans-serif;
     margin-left: .5rem;
     transition: transform 0.5s ease-in-out;
@@ -8,5 +9,15 @@
 #modal3h2:hover{
     cursor: pointer;
     transform: rotate(1deg);
+}
+#scrolmember{
+    max-height: 90%;
+    overflow: auto;
+}
+#scrolmember h2{
+    font-size: 2rem;
+}
+#scrolmember p{
+    font-size: 1.2rem;
 }
 
