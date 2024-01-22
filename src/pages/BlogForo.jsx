@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import { HeaderNormal } from "../components/Header-normal";
 import { BASE_URL } from "../hooks/fetch";
 
@@ -9,6 +10,7 @@ export const BlogForo = () => {
   const { register, handleSubmit } = useForm({
     shouldUseNativeValidation: true,
   });
+  const nav = useNavigate();
   const [posts, setPosts] = useState([]);
   const [setted, setSetted] = useState(false);
   const [dataSelected, setDataSelected] = useState({});
@@ -67,9 +69,6 @@ export const BlogForo = () => {
       const headers = {
         Authorization: `Bearer ${token}`,
       };
-      const params = {
-        _cacheBuster: new Date().getTime(),
-      };
       const res = await axios.post(
         `${BASE_URL}forum/comments/`,
         { text: data.comment, post_id: post.id },
@@ -79,11 +78,12 @@ export const BlogForo = () => {
         }
       );
       console.log(res.data);
-      setTimeout(() => {
-        window.location.reload();
-      }, 2000);
+      window.location.reload();
     } catch (error) {
       console.log(error.response.data.Error);
+      if (error.response.status === 401) {
+        nav("/login");
+      }
     }
   }
   console.log(posts);
@@ -118,12 +118,12 @@ export const BlogForo = () => {
                 <p>{post.description}</p>
                 <img src={post.image} alt="" />
                 <hr />
-                {/* <form
+                <form
                   onSubmit={handleSubmit((data) => onSubmitComment(data, post))}
                 >
                   <div className="formcomments">
                     <input type="text" {...register("comment")} />
-                    <button type="submit">Comentar</button>
+                    <button type="submit">Enviar</button>
                   </div>
                 </form>
                 <div className="commentContainer">
@@ -134,7 +134,7 @@ export const BlogForo = () => {
                       </h4>
                     </div>
                   ))}
-                </div> */}
+                </div>
               </div>
             </React.Fragment>
           ))}

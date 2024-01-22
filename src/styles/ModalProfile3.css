@@ -152,6 +152,20 @@
     #scrolleable3 {
         padding-left: 1.5rem;
     }
+    
+    .modal3 h3{
+        font-size: 1rem;
+    }
+    .modal3 p{
+        margin-bottom: 5px;
+    }
+    .modal3 h2{
+        margin-top: 0;
+        margin-bottom: 0rem;
+    }
+    .errors{
+        margin-top: 1rem;
+    }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1199px) {

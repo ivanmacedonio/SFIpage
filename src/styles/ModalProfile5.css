@@ -4,6 +4,16 @@
     margin: 0;
     font-family: 'Lato', sans-serif
 }
+.divflex{
+    display: flex;
+    justify-content: center;
+}
+.divflex a{
+    margin: 0 !important;
+    margin-left: 2rem !important;
+    background: green !important;
+}
+
 
 
 .errortransfer {
@@ -55,7 +65,7 @@
     font-size: 1.5rem;
 }
 
-.listadoPagos h2{
+.listadoPagos h2, .listadoPagos a{
     font-family: 'lato';
     background: linear-gradient(to right, rgb(0, 124, 145), rgb(2, 80, 116));
     font-weight: 700;
@@ -190,6 +200,18 @@
     }
     .listadoPagos{
         margin-bottom: 8rem;
+    }
+    #modal55 label{
+        font-family: 'lato';
+        padding-bottom: 15rem;
+    }
+    .divflex{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .divflex a{
+        margin:1rem 0 !important;
     }
 }
 

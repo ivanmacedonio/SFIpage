@@ -40,6 +40,7 @@ export default function BasicModal5({
   const nav = useNavigate();
   const [error, setError] = React.useState("");
   const [listado, setListado] = React.useState(false);
+  const [redirect, setRedirect] = React.useState("");
 
   React.useEffect(() => {
     async function getUser() {
@@ -126,10 +127,7 @@ export default function BasicModal5({
             }
           );
 
-          setTimeout(() => {
-            window.open(`${res.data.detalleRespuesta.url}`, "_blank");
-          }, 1000);
-
+          setRedirect(res.data.detalleRespuesta.url);
         } else {
           console.log("not check");
         }
@@ -320,12 +318,16 @@ export default function BasicModal5({
               </h1>
 
               {listado ? (
-                <motion.div whileTap={{ scale: 1.1 }}>
-                  <h2 onClick={handleTransfer}>Transferencia con USDT</h2>
-                </motion.div>
+                <div className="divflex">
+                  <motion.div whileTap={{ scale: 1.1 }}>
+                    <h2 onClick={handleTransfer}>Transferencia con USDT</h2>
+                  </motion.div>
+                  {redirect !== "" ? <a href={redirect}>Continuar</a> : ""}
+                </div>
               ) : (
                 ""
               )}
+
             </div>
           ) : (
             ""
