@@ -191,7 +191,7 @@ export default function BasicModal5({
                       {(
                         membershipData.monthly_membership_cost *
                         (membershipData.precio / 10000)
-                      ).toFixed(2)}{" "}
+                      ).toLocaleString("en")}{" "}
                       USDT
                     </strong>
                   </p>
@@ -282,7 +282,7 @@ export default function BasicModal5({
                     </div>
                     <div className="t">
                       <p>Teléfono:</p>
-                      <h3>{beneficiario.phone}</h3>
+                      <h3>+{beneficiario.phone}</h3>
                     </div>
                     <div className="t">
                       <p>Porcentaje</p>

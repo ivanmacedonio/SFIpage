@@ -69,24 +69,29 @@ export const BlogForo = () => {
       const headers = {
         Authorization: `Bearer ${token}`,
       };
-      const res = await axios.post(
+      const response = await axios.post(
         `${BASE_URL}forum/comments/`,
         { text: data.comment, post_id: post.id },
         {
           headers: headers,
-          params: params,
         }
       );
-      console.log(res.data);
-      window.location.reload();
+  
+      if (response.status === 201) {
+        console.log(response.data);
+        window.location.reload();
+      } else {
+        console.log("Error en la solicitud:", response.statusText);
+      }
     } catch (error) {
-      console.log(error.response.data.Error);
-      if (error.response.status === 401) {
+      console.error("Error al enviar el comentario:", error);
+  
+      if (error.response && error.response.status === 401) {
         nav("/login");
       }
     }
   }
-  console.log(posts);
+  
 
   return (
     <React.Fragment>

@@ -1,6 +1,7 @@
 import axios from "axios";
 import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
 import toast, { Toaster } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import foto from "../assets/anon.png";
@@ -10,6 +11,7 @@ import { HeaderNormal } from "../components/Header-normal";
 import BasicModal from "../components/ModalProfile1";
 import BasicModalPagos from "../components/modalPagos";
 import { BASE_URL, BASE_URL_LOGIN } from "../hooks/fetch";
+
 import "../styles/perfil.css";
 export const Perfil = () => {
   useEffect(() => {
@@ -27,6 +29,17 @@ export const Perfil = () => {
   const [selected, setSelected] = useState(false);
   const [tempMember, setTempMember] = useState();
   const [loading, setIsLoading] = useState(true);
+  const [errorcheck, setErrorcheck] = useState("");
+
+  const [openModalChecked, setOpenModalChecked] = useState(false);
+  const [checked, setChecked] = useState(false);
+  const { register, handleSubmit, reset } = useForm({
+    shouldUseNativeValidation: true,
+  });
+
+  const handleSwitch = () => {
+    setOpenModalChecked(true);
+  };
   useEffect(() => {
     async function getUser() {
       const token = localStorage.getItem("access");
@@ -137,6 +150,19 @@ export const Perfil = () => {
     }
   }
 
+  const submitCode = (data) => {
+    console.log(data);
+    let codigo = data.code;
+    if (codigo.length !== 8) {
+      setErrorcheck("El codigo debe ser de 8 caracteres");
+    } else {
+      reset();
+      setErrorcheck("");
+      setOpenModalChecked(false);
+      setChecked(!checked);
+    }
+  };
+
   return (
     <div className="general-container">
       <div className="header-container">
@@ -224,11 +250,49 @@ export const Perfil = () => {
                 )}
                 {selected ? (
                   <div className="membresia-data-container">
+                    {openModalChecked ? (
+                      <div className="modalChecked">
+                        <p>
+                          Ingresa los 8 dígitos que te enviamos por correo para
+                          confirmar la acción
+                        </p>
+                        <form onSubmit={handleSubmit(submitCode)}>
+                          <input type="number" {...register("code")} />
+                          <div className="buttonsCheck">
+                            <button id="accept" type="submit">
+                              Aceptar
+                            </button>
+                            <button
+                              id="denny"
+                              type="button"
+                              onClick={() => {
+                                setOpenModalChecked(false);
+                                reset()
+                              }}
+                            >
+                              Cancelar
+                            </button>
+                          </div>
+                          <div className="errorCheck">
+                            {errorcheck !== "" ? (
+                              <div className="errorCheckContainer">
+                                <p>{errorcheck}</p>
+                              </div>
+                            ) : (
+                              ""
+                            )}
+                          </div>
+                        </form>
+                      </div>
+                    ) : (
+                      ""
+                    )}
                     <div
                       className="close"
                       onClick={() => {
                         setSelected(false);
                         setTempMember([]);
+                        setOpenModalChecked(false);
                       }}
                     >
                       Volver
@@ -340,10 +404,11 @@ export const Perfil = () => {
                       <label>
                         <input
                           type="checkbox"
-                          defaultChecked={
-                            tempMember.purchase_Detail
-                              .ind_bonus_will_be_redeemed
-                          }
+                          checked={checked}
+                          readOnly={true}
+                          onClick={() => {
+                            setOpenModalChecked(true);
+                          }}
                         />
                         <div class="slider"></div>
                         <h4>Retiro de quinquenio</h4>
@@ -367,14 +432,23 @@ export const Perfil = () => {
                         <h3>Fecha de Inicio:</h3>
                         <h4>
                           {" "}
-                          {tempMember.purchase_Detail.benefit_start_date}
+                          {tempMember.purchase_Detail.benefit_start_date.replace(
+                            /-/g,
+                            "/"
+                          )}
                         </h4>
                       </label>
                     </div>
                     <div className="box-grid">
                       <label>
                         <h3>Fecha de Vencimiento:</h3>
-                        <h4> {tempMember.purchase_Detail.benefit_end_date}</h4>
+                        <h4>
+                          {" "}
+                          {tempMember.purchase_Detail.benefit_end_date.replace(
+                            /-/g,
+                            "/"
+                          )}
+                        </h4>
                       </label>
                     </div>
                     <div className="box-grid">
@@ -453,10 +527,9 @@ export const Perfil = () => {
 
                             <div className="box-grid">
                               <h3>
-                                {
-                                  membresia.purchase_Detail
-                                    .monthly_membership_cost
-                                }{" "}
+                                {membresia.purchase_Detail.monthly_membership_cost.toLocaleString(
+                                  "en"
+                                )}{" "}
                                 USDT
                               </h3>
                             </div>

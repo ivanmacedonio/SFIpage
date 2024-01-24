@@ -12,6 +12,51 @@
 .member-simple {
     display: none;
 }
+.modalChecked{
+    position: absolute;
+    top: 50%;
+    color: white;
+    font-family: 'lato';
+    left: 30%;
+    background-color: rgb(72, 72, 72);
+    padding: 1rem;
+    border-radius: 1rem;
+}
+.errorCheckContainer p{
+    font-size: 1rem;
+    background-color: orange;
+    width: fit-content;
+    padding: 0.3rem 1rem;
+    border-radius: 0.5rem;
+}
+.modalChecked p{
+    font-size: 1.2rem;
+}
+.modalChecked input{
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    border-radius: 0.3rem;
+    color: gray;
+    box-shadow: 0 0 5rem rgba(0, 0, 0, 0.3);
+
+}
+.modalChecked button{
+    margin-right: 1rem;
+    border: none;
+    font-size: 1.2rem;
+    border-radius: 0.2rem;
+    cursor: pointer;
+    color: white;
+    padding: 0.3rem 1rem;
+    box-shadow: 0 0 5rem rgba(47, 47, 47, 0.3);
+
+}
+#accept{
+    background-color: green;
+}
+#denny{
+    background-color: red;
+}
 
 /* 
 PROFILE
@@ -319,6 +364,16 @@ input[type="checkbox"]:checked+.slider:before {
 
 
 @media(max-width: 768px) {
+    .modalChecked{
+        position: absolute;
+        top: 70%;
+        color: white;
+        font-family: 'lato';
+        left: 0%;
+        background-color: rgb(72, 72, 72);
+        padding: 1rem;
+        border-radius: 1rem;
+    }
 
     #info {
         margin-top: 2.5rem;
