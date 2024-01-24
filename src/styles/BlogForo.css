@@ -6,13 +6,16 @@
     font-family: 'lato';
     margin-top: 3rem;
 }
-.comment h4{
+
+.comment h4 {
     word-wrap: break-word;
 }
-.comment{
+
+.comment {
     max-width: 80%;
 }
-.postContainer{
+
+.postContainer {
     margin-top: 2rem;
     padding: 1rem;
     border-radius: 0.5rem;
@@ -20,13 +23,13 @@
     border: 2px solid rgb(193, 193, 193);
 }
 
-.postContainer h3{
+.postContainer h3 {
     font-size: 1.4rem;
     font-weight: 700;
     max-width: 100%;
 }
 
-.postContainer button{
+.postContainer button {
     background: none;
     border: 2px solid gray;
     padding: 0.4rem;
@@ -35,39 +38,43 @@
     cursor: pointer;
 }
 
-.containerPostsForo{
+.containerPostsForo {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     max-width: 100%;
 }
-.containerPostsForo form{
+
+.containerPostsForo form {
     max-width: 100%;
 }
-.containerPostsForo form input{
-    min-width: 80% ;
+
+.containerPostsForo form input {
+    min-width: 80%;
     font-size: 1.3rem;
 }
 
-.postContainer h2{
+.postContainer h2 {
     font-weight: 900;
     max-width: 80%;
     word-wrap: break-word;
     font-size: 2.5rem;
     font-family: 'Times New Roman', Times, serif;
 }
-.postContainer p{
+
+.postContainer p {
     font-size: 1.5rem;
     color: rgb(89, 89, 89);
     max-width: 100%;
     word-wrap: break-word;
 }
 
-.commentContainer{
+.commentContainer {
     font-size: 1.4rem;
 }
-.comment{
+
+.comment {
     margin-bottom: 1rem;
     background-color: rgb(225, 225, 225);
     width: fit-content;
@@ -75,73 +82,91 @@
     border-radius: 0.5rem;
 }
 
-.containerForoBlog input{
+.containerForoBlog input {
     border-radius: 0.5rem;
     border: 2px gray solid;
     width: 30%;
     padding: 0.5rem 0.5rem;
     font-size: 1rem;
 }
-.containerForoBlog input::placeholder{
+
+.containerForoBlog input::placeholder {
     font-size: 1rem;
 }
 
-.containerForoBlog form{
+.containerForoBlog form {
     display: flex;
     align-items: center;
     width: 50%;
     gap: 1rem;
 }
-.containerForoBlog form img{
+
+.containerForoBlog form img {
     width: 1.5rem;
     height: auto;
 }
 
-.formBuscar{
+.formBuscar {
     min-width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.formcomments{
+.formcomments {
     display: flex;
     gap: 1rem;
     min-width: 80%;
 }
 
-.containerBiblioteca strong{
+.containerBiblioteca strong {
     font-weight: 900;
     color: rgb(0, 75, 151);
 }
 
-@media(max-width: 768px){
-    .postContainer{
+@media(max-width: 768px) {
+    .postContainer {
         border: none;
         min-width: 90%;
     }
-    .postContainer p{
+
+    .postContainer p {
         font-size: 1.2rem;
     }
-    .formBuscar form{
+
+    .formBuscar form {
         min-width: 80%;
     }
-    .containerForoBlog form input{
+
+    .containerForoBlog form input {
         min-width: 80% !important;
     }
-   .formcomments{
+
+    .formcomments {
         display: flex;
+        flex-direction: column;
         gap: 1rem;
-   }
-   .formcomments button{
-    font-size: 1rem;
-   }
-   .postContainer h2{
-    word-wrap: break-word;
-   }
-   
-   
-    
+        width: 100% ;
+    }
+    .containerForoBlog form{
+        width: 80%;
+    }
+    .formcomments form{
+        width: 100%;
+    }
+    .formcomments input{
+        width: 100%;
+    }
+
+    .formcomments button {
+        font-size: 1rem;
+    }
+
+    .postContainer h2 {
+        word-wrap: break-word;
+    }
+
+
+
+
 }
-
-

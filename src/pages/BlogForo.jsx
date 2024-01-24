@@ -14,6 +14,8 @@ export const BlogForo = () => {
   const [posts, setPosts] = useState([]);
   const [setted, setSetted] = useState(false);
   const [dataSelected, setDataSelected] = useState({});
+  const [reload, setReload] = useState(false);
+
   async function getPosts() {
     try {
       const params = {
@@ -65,6 +67,7 @@ export const BlogForo = () => {
 
   async function onSubmitComment(data, post) {
     try {
+      window.location.reload();
       const token = localStorage.getItem("access");
       const headers = {
         Authorization: `Bearer ${token}`,
@@ -76,22 +79,20 @@ export const BlogForo = () => {
           headers: headers,
         }
       );
-  
+
       if (response.status === 201) {
         console.log(response.data);
-        window.location.reload();
       } else {
         console.log("Error en la solicitud:", response.statusText);
       }
     } catch (error) {
       console.error("Error al enviar el comentario:", error);
-  
+
       if (error.response && error.response.status === 401) {
         nav("/login");
       }
     }
   }
-  
 
   return (
     <React.Fragment>
