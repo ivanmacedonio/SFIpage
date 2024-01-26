@@ -1,8 +1,6 @@
 import { motion } from "framer-motion";
-import React, { useEffect } from "react";
-import toast, { Toaster } from "react-hot-toast";
+import React from "react";
 import { Link } from "react-router-dom";
-import imagen from "../assets/mic.png";
 import mujeresinicio from "../assets/mujeres_inicio.webp";
 import familia from "../assets/pareja_inicio.webp";
 import { Footer } from "../components/Footer";
@@ -11,31 +9,31 @@ import { Scrollpage1 } from "../components/Scrollpage1";
 
 import "../styles/page1.css";
 export const Page1 = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    toast(
-      <React.Fragment>
-        <div className="add-desktop">
-          <h3>
-            {" "}
-            👏 Prueba agregar nuestra{" "}
-            <b style={{ fontWeight: 900 }}>web al escritorio</b>!
-          </h3>
-          <ul>
-            <li>
-              En Safari, click en{" "}
-              <img src={imagen} style={{ width: "1.5rem" }} />
-            </li>
-            <li>Agregar a Inicio</li>
-            <li style={{ color: "green" }}>Aceptar</li>
-          </ul>
-        </div>
-      </React.Fragment>,
-      {
-        duration: 5000,
-      }
-    );
-  }, []);
+  // useEffect(() => {
+  //   window.scrollTo(0, 0);
+  //   toast(
+  //     <React.Fragment>
+  //       <div className="add-desktop">
+  //         <h3>
+  //           {" "}
+  //           👏 Prueba agregar nuestra{" "}
+  //           <b style={{ fontWeight: 900 }}>web al escritorio</b>!
+  //         </h3>
+  //         <ul>
+  //           <li>
+  //             En Safari, click en{" "}
+  //             <img src={imagen} style={{ width: "1.5rem" }} />
+  //           </li>
+  //           <li>Agregar a Inicio</li>
+  //           <li style={{ color: "green" }}>Aceptar</li>
+  //         </ul>
+  //       </div>
+  //     </React.Fragment>,
+  //     {
+  //       duration: 5000,
+  //     }
+  //   );
+  // }, []);
 
   return (
     <div className="page1">
@@ -47,9 +45,9 @@ export const Page1 = () => {
         <div className="header">
           <HeaderNormal></HeaderNormal>
         </div>
-        <div className="toast">
+        {/* <div className="toast">
           <Toaster position="bottom-center" reverseOrder={false} />
-        </div>
+        </div> */}
 
         <div className="divpage1">
           <React.Fragment>

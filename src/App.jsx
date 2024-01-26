@@ -1,5 +1,5 @@
 import { GoogleOAuthProvider } from "@react-oauth/google";
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import { Activate } from "./pages/Activate";
@@ -25,17 +25,20 @@ import { Register } from "./pages/Register";
 import { Reset } from "./pages/Reset";
 import { Verificacion } from "./pages/Verificacion";
 function App() {
-  // useEffect(() => {
-  //   const handleBeforeUnload = () => {
-  //     localStorage.removeItem("access");
-  //   };
 
-  //   window.addEventListener("beforeunload", handleBeforeUnload);
+  useEffect(() => {
+    const handleBeforeUnload = (event) => {
+      if (event.reason !== "reload") {
+        localStorage.removeItem("access");
+      }
+    };
 
-  //   return () => {
-  //     window.removeEventListener("beforeunload", handleBeforeUnload);
-  //   };
-  // }, []);
+    window.addEventListener("beforeunload", handleBeforeUnload);
+
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+    };
+  }, []);
   // const inactivityTimeout = 600000;
   // const localStorageKey = "access";
 

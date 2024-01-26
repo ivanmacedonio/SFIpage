@@ -12,9 +12,12 @@ export const BlogForo = () => {
   });
   const nav = useNavigate();
   const [posts, setPosts] = useState([]);
+  const [comments, setComments] = useState([]);
   const [setted, setSetted] = useState(false);
   const [dataSelected, setDataSelected] = useState({});
   const [reload, setReload] = useState(false);
+
+
 
   async function getPosts() {
     try {
@@ -67,7 +70,6 @@ export const BlogForo = () => {
 
   async function onSubmitComment(data, post) {
     try {
-      window.location.reload();
       const token = localStorage.getItem("access");
       const headers = {
         Authorization: `Bearer ${token}`,
@@ -79,7 +81,8 @@ export const BlogForo = () => {
           headers: headers,
         }
       );
-
+      setReload(!reload);
+      window.location.reload()
       if (response.status === 201) {
         console.log(response.data);
       } else {
