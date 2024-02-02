@@ -439,6 +439,7 @@ export const Perfil = () => {
                       <label>
                         <input
                           type="checkbox"
+                          disabled = {check}
                           defaultChecked={
                             tempMember.purchase_Detail
                               .ind_bonus_will_be_redeemed
@@ -446,7 +447,7 @@ export const Perfil = () => {
                           onClick={() => {
                             handleBonus();
                           }}
-                          readOnly={check ? true : false}
+                          
                         />
                         <div class="slider"></div>
                         <h4>Retiro de quinquenio</h4>
