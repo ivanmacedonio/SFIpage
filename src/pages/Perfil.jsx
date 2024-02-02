@@ -185,9 +185,13 @@ export const Perfil = () => {
           params: params,
         }
       );
-      console.log(res.data);
-      setCheck(true);
-      window.location.reload()
+      console.log(res.status);
+
+      if (res.status === 200) {
+        window.location.reload();
+      } else {
+        console.log(res.data);
+      }
     } catch (error) {
       console.log(error);
       toast.error(error.response.data.error);
@@ -442,7 +446,7 @@ export const Perfil = () => {
                           onClick={() => {
                             handleBonus();
                           }}
-                          readOnly={check}
+                          readOnly={check ? true : false}
                         />
                         <div class="slider"></div>
                         <h4>Retiro de quinquenio</h4>
