@@ -35,6 +35,7 @@ export const Checkout = () => {
           headers: headers,
           params: params,
         });
+        console.log(res2.data)
       } catch (error) {
         console.log(error);
       }

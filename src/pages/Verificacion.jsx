@@ -182,7 +182,7 @@ export const Verificacion = () => {
               <div className="slot">
                 <p>Identificacion</p>
                 <input
-                  type="text"
+                  type="number"
                   placeholder="Ingresa tu identificacion"
                   {...register("identification", {
                     required: "Por favor ingresa una identificacion valida",
@@ -275,7 +275,12 @@ export const Verificacion = () => {
               </div>
               <div className="slot" id="select">
                 <p>Expediente de identificación/pasaporte o fotografía</p>
-                <input type="file" name="archivo" onChange={handleFileChange} />
+                <input
+                  type="file"
+                  name="archivo"
+                  onChange={handleFileChange}
+                  accept="image/*"
+                />
                 {isFile ? (
                   <div className="slot" id="selectImage">
                     Archivo seleccionado correctamente

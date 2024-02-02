@@ -42,9 +42,9 @@ export default function BasicModal() {
     setPrecio(parseInt(event.target.value, 10));
   };
 
-  useEffect(() => {
-    setCostoMensual(membershipData.minimum);
-  }, [membershipData]);
+  // useEffect(() => {
+  //   setCostoMensual(membershipData.minimum);
+  // }, [membershipData]);
 
   useEffect(() => {
     setPrecio(membershipData.minimum);
@@ -141,7 +141,9 @@ export default function BasicModal() {
           <div className="membresiaModal1">
             <div className="join">
               <h3>Tipo de membresía</h3>
-              <h4 onClick={handleClose} id="x1">x</h4>
+              <h4 onClick={handleClose} id="x1">
+                x
+              </h4>
             </div>
             <hr />
 
@@ -187,11 +189,13 @@ export default function BasicModal() {
                     <p>Acumulación para membresía activa</p>
                     <h2>{membershipData.savings_duration_in_months} </h2>
                     <p>Monto de cuota mensual en USDT</p>
-                    {costoMenual ? (
+                    {/* {costoMenual ? (
                       <h2>{costoMenual.toLocaleString("en")}</h2>
                     ) : (
                       <h2> {membershipData.monthly_membership_cost}</h2>
-                    )}
+                    )} */}
+                      <h2>{costoMenual.toLocaleString("en")}</h2>
+
                     <p>Maduración de membresía activa</p>
                     <h2>{membershipData.maturity_period_in_months}</h2>
                   </div>

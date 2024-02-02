@@ -30,6 +30,7 @@ export const Perfil = () => {
   const [tempMember, setTempMember] = useState();
   const [loading, setIsLoading] = useState(true);
   const [errorcheck, setErrorcheck] = useState("");
+  const [checkedAPI, setCheckedApi] = useState(null);
 
   const [openModalChecked, setOpenModalChecked] = useState(false);
   const [checked, setChecked] = useState(false);
@@ -40,6 +41,7 @@ export const Perfil = () => {
   const handleSwitch = () => {
     setOpenModalChecked(true);
   };
+
   useEffect(() => {
     async function getUser() {
       const token = localStorage.getItem("access");
@@ -163,6 +165,35 @@ export const Perfil = () => {
     }
   };
 
+  const [check, setCheck] = useState(false);
+
+  async function handleBonus() {
+    const token = localStorage.getItem("access");
+    const headers = {
+      Authorization: `Bearer ${token}`,
+    };
+    const params = {
+      _cacheBuster: new Date().getTime(),
+    };
+    let purchase_id = tempMember.purchase_Detail.purchase_id;
+    try {
+      const res = await axios.post(
+        `${BASE_URL}changeBonusRedeemed/`,
+        { purchase_id: purchase_id },
+        {
+          headers: headers,
+          params: params,
+        }
+      );
+      console.log(res.data);
+      setCheck(true);
+      window.location.reload()
+    } catch (error) {
+      console.log(error);
+      toast.error(error.response.data.error);
+    }
+  }
+
   return (
     <div className="general-container">
       <div className="header-container">
@@ -267,7 +298,7 @@ export const Perfil = () => {
                               type="button"
                               onClick={() => {
                                 setOpenModalChecked(false);
-                                reset()
+                                reset();
                               }}
                             >
                               Cancelar
@@ -404,11 +435,14 @@ export const Perfil = () => {
                       <label>
                         <input
                           type="checkbox"
-                          checked={checked}
-                          readOnly={true}
+                          defaultChecked={
+                            tempMember.purchase_Detail
+                              .ind_bonus_will_be_redeemed
+                          }
                           onClick={() => {
-                            setOpenModalChecked(true);
+                            handleBonus();
                           }}
+                          readOnly={check}
                         />
                         <div class="slider"></div>
                         <h4>Retiro de quinquenio</h4>
@@ -469,7 +503,8 @@ export const Perfil = () => {
                             tempMember.purchase_Detail
                               .amount_without_five_year_withdrawal *
                             (tempMember.purchase_Detail.amount / 10000)
-                          ).toLocaleString("en")}
+                          ).toLocaleString("en")}{" "}
+                          {""}
                           USDT
                         </h4>
                       </label>

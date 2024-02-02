@@ -60,7 +60,11 @@ export default function BasicModal4({ membershipData, wallet, activated }) {
   }
 
   React.useEffect(() => {
-    if (aditionalBeneficiaty.length === 0 || maxPer != 0 || aditionalBeneficiaty.length === 4) {
+    if (
+      aditionalBeneficiaty.length === 0 ||
+      maxPer != 0 ||
+      aditionalBeneficiaty.length === 4
+    ) {
       setShow(false);
       if (maxPer != 0) {
         setError("El porcentaje total de los beneficiarios debe ser del 100%");
@@ -70,8 +74,8 @@ export default function BasicModal4({ membershipData, wallet, activated }) {
           "La lista de beneficiarios debe contar con al menos un miembro"
         );
       }
-      if (aditionalBeneficiaty.length === 4){
-        setError('El máximo son 3 beneficiarios')
+      if (aditionalBeneficiaty.length === 4) {
+        setError("El máximo son 3 beneficiarios");
       }
     } else {
       setShow(true);
@@ -190,7 +194,7 @@ export default function BasicModal4({ membershipData, wallet, activated }) {
                   />
                 </div>
               </div>
-              <div className="continuar6">
+              <div className="caja4">
                 <button type="submit">
                   <div className="check2">
                     <h2>Continuar</h2>

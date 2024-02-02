@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import mujeresinicio from "../assets/mujeres_inicio.webp";
 import familia from "../assets/pareja_inicio.webp";
 import { Footer } from "../components/Footer";
@@ -9,31 +9,28 @@ import { Scrollpage1 } from "../components/Scrollpage1";
 
 import "../styles/page1.css";
 export const Page1 = () => {
-  // useEffect(() => {
-  //   window.scrollTo(0, 0);
-  //   toast(
-  //     <React.Fragment>
-  //       <div className="add-desktop">
-  //         <h3>
-  //           {" "}
-  //           👏 Prueba agregar nuestra{" "}
-  //           <b style={{ fontWeight: 900 }}>web al escritorio</b>!
-  //         </h3>
-  //         <ul>
-  //           <li>
-  //             En Safari, click en{" "}
-  //             <img src={imagen} style={{ width: "1.5rem" }} />
-  //           </li>
-  //           <li>Agregar a Inicio</li>
-  //           <li style={{ color: "green" }}>Aceptar</li>
-  //         </ul>
-  //       </div>
-  //     </React.Fragment>,
-  //     {
-  //       duration: 5000,
-  //     }
-  //   );
-  // }, []);
+  const nav = useNavigate();
+  async function verify() {
+    const token = localStorage.getItem("access");
+
+    const headers = {
+      Authorization: `Bearer ${token}`,
+    };
+    const res = await axios.get(`${BASE_URL}kyc`, {
+      headers: headers,
+    });
+    console.log(res.data);
+
+    useEffect(() => {
+      try {
+        verify();
+      } catch (error) {
+        console.log(error);
+        localStorage.removeItem('access')
+        nav("/login");
+      }
+    }, []);
+  }
 
   return (
     <div className="page1">

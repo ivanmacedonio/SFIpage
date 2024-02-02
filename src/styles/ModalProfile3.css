@@ -142,7 +142,7 @@
     }
 
     .caja3 h1 {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
         width: fit-content;
     }
 
@@ -166,6 +166,9 @@
     }
     .errors{
         margin-top: 1rem;
+    }
+    .modal3 form  h3{
+        font-size: 0.8rem;
     }
 }
 

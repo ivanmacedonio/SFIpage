@@ -80,7 +80,9 @@ export default function BasicModalPagos({ movements }) {
                 <h2 key={movement.code}>{movement.created_by_name}</h2>
                 <h2 key={movement.code}>{movement.code}</h2>
                 <h2 key={movement.code}>{movement.created_date}</h2>
-                <h2 key={movement.code}>{movement.amount} USDT</h2>
+                <h2 key={movement.code}>
+                  {movement.amount.toLocaleString("en")} USDT
+                </h2>
                 <h2 key={movement.code}>{movement.status}</h2>
               </React.Fragment>
             ))}
@@ -118,7 +120,7 @@ export default function BasicModalPagos({ movements }) {
                 {Array.from(
                   { length: Math.ceil(movements.length / itemsPerPage) },
                   (_, i) => (
-                    <motion.div whileTap={{scale: 2}}>
+                    <motion.div whileTap={{ scale: 2 }}>
                       <button
                         key={i + 1}
                         onClick={() => paginate(i + 1)}
